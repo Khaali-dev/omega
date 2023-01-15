@@ -1,0 +1,59 @@
+.omega.sheet.item {
+  .window-content {
+    background: none;
+    background-color: black;
+    font: @default-font;
+    color: white;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .editor {
+    height: 100%;
+    width: 100%;
+    background: @edit-background;
+    box-shadow: inset 0 0 6px black;
+    min-height: 5em;
+    .editor-content{
+      color:black;
+        min-height: 5em;
+    }
+  }
+
+  input {
+    background-color: @edit-background;
+    box-shadow: inset 0 0 3px black;
+  }
+
+  input:focus {
+    background-color: @editactive-background;
+  }
+
+  select {
+    background-color: @edit-background;
+    box-shadow: inset 0 0 3px black;
+    height: 1.5em;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .right-icon {
+    margin-left: auto;
+    font: @default-font;
+    font-size: 1.2rem;
+    color: #e84d0e;
+  }
+
+  .main {
+    img {
+      align-self: center;
+      width: 110px;
+      height: 129px;
+    
+      }
+    }
+}

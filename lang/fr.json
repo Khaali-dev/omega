@@ -1,0 +1,85 @@
+{
+  "ACTOR": {
+    "TypePlayer": "Joueur",
+    "TypeNpc": "PNJ"
+  },
+
+  "ITEM": {
+    "TypeArme": "Arme"
+  },
+
+  "OMEGA": {
+    "label": {
+      "caracteristiques": {
+        "ia": "IA",
+        "cpu": "CPU",
+        "interface": "Interface",
+        "ossature": "Ossature",
+        "moteur": "Moteur",
+        "balise": "Balise"
+      },
+      "diode": {
+        "rouge": "Rouge",
+        "vert": "Verte",
+        "bleu": "Bleue",
+        "blanc": "Blanche",
+        "noir": "Noire"
+      },
+      "firme": "Firme",
+      "name": "Nom",
+      "programmes": {
+        "basededonnees": "Base de données",
+        "connexion": "Connexion",
+        "contremesure": "Contre-mesures",
+        "dissipateur": "Dissipateur",
+        "hacking": "Hacking",
+        "omega": "Omega",
+        "armesaenergie": "Armes à énergie",
+        "detecteur": "Détecteur",
+        "defense": "Défense",
+        "energie": "Énergie",
+        "exterminateur": "Exterminateur",
+        "resistance": "Résistance"
+      },
+      "sousprogrammes": {
+        "armesetdestruction": "Armes et destruction",
+        "biologieorganiques": "Biologie / organiques",
+        "conduitedetir": "Conduite de tir",
+        "espace": "Espace",
+        "mecanique": "Mécanique",
+        "medecine": "Médecine",
+        "opsar": "Opsar",
+        "pilotage": "pilotage",
+        "tactique": "tactique"
+      },
+      "systemesauxiliaires": {
+        "blindage": "Blindage",
+        "resistancemoteur": "Résistance moteur",
+        "blindageiem": "Blindage IEM",
+        "integriteinformatique": "Intégrité informatique",
+        "initiative": "Initiative",
+        "vitesse": "Vitesse"
+      },
+      "traits": "Traits de personnalité",
+      "type": "Type",
+      "typeomega": "Type d'Oméga",
+      "unlock_sheet": "Verrouiller/Déverrouiller la feuille"
+    },
+    "chatmessage": {
+        "custommodifier": "Modificateur libre ajouté : ({rollModifier})",
+        "difficulty": "Difficulté : ({difficulty})"
+    },
+    "dialog": {
+      "button": {
+        "cancel": "Annuler",
+        "roll": "Piocher",
+        "validate": "Valider"
+      },
+      "difficulty": "Difficulté : ",
+      "introtext": {
+        "program": "{actorname} utilise son programme {program}."
+      },
+      "rollmodifier": "Modificateur : "
+    }
+  }
+}

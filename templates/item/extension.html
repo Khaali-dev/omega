@@ -1,0 +1,29 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" /></h1>
+    </header>
+    <div class="main">
+        <table>
+            <thead>
+                <tr>
+                    <th>Slots</th>
+                    <th>type</th>
+                    <th>Coût énergie</th>
+                    <th>Arme</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input name="system.nbSlots" type="number" value="{{system.nbSlots}}"/></td>
+                    <td><input name="system.type" type="text" value="{{system.type}}"/></td>
+                    <td><input name="system.coutenergie.label" type="text" value="{{system.coutenergie.label}}"/></td>
+                    <td><input name="system.weapon.isweapon" type="checkbox" {{checked
+                            system.weapon.isweapon}} />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

@@ -1,0 +1,531 @@
+@font-face {
+  font-family: "exo2";
+  src: url("./assets/fonts/exo2regular.ttf");
+}
+@font-face {
+  font-family: "exo2";
+  src: url("./assets/fonts/exo2bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "exo2";
+  src: url("./assets/fonts/exo2italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "exo2";
+  src: url("./assets/fonts/exo2bolditalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("./assets/fonts/helvetica.ttf");
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("./assets/fonts/helveticabold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("./assets/fonts/helveticaoblique.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("./assets/fonts/helveticaboldoblique.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "courier";
+  src: url("./assets/fonts/courierprimeregular.ttf");
+}
+@font-face {
+  font-family: "frutiger";
+  src: url("./assets/fonts/frutiger.woff");
+}
+@font-face {
+  font-family: "frutiger";
+  src: url("./assets/fonts/frutigerbold.woff");
+  font-weight: bold;
+}
+/*
+//Playersheet
+//titres: "compétences", "armes", "protections"
+@pc-title-font: 1.1rem "Signika";
+//char name
+@pc-name-font: 1.4rem "Signika";
+//skill names
+@pc-skill-font: 1.2rem "Modesto condensed";
+//description, activity
+@pc-description-font: 1.1rem "Modesto condensed";
+@pc-activity-font: 1rem "Signika";
+//tabs
+@pc-tab-font: 1.1rem "Modesto condensed";
+@pc-tab-font-color: #726e6e;
+//combat
+@combat-trainings-font: 1.1rem "Modesto condensed";
+@combat-bonus-font: 1.1rem "Modesto condensed";
+@combat-table-title-font: 0.9rem "Signika";
+@combat-table-font: normal 0.9rem "Signika";
+//boons
+@boon-name-font: 1.2rem "Modesto condensed";
+@boon-text-font: 0.7rem "Merriweather";
+@boon-extratext-font: 1.2rem "Modesto condensed";
+//equipment
+@equipment-name-font: 0.9rem "Signika";
+//bio
+@bio-title-font: 1rem "Signika";
+@bio-border: 2px  solid black ;
+
+//npc
+@npc-name-font: 2em "Signika";
+@npc-name-color: @title-color;
+@npc-activity-font: 1.1em "Signika";
+@npc-combat-line-font: 1.2rem "Signika";
+@npc-combat-line-font-color: black;
+@npc-skill-font: 1.2rem "Modesto condensed";
+@npc-skill-font-color: black;
+@npc-health-font: 1.2rem "Signika";
+
+@dialog-font: 1rem "Signika";
+@dialog-intro-font: bold 1.2rem "Signika";
+@dialog-formula-font: bold 1.2rem "Signika";
+@dialog-bonus-label-font: 1rem "Signika";
+
+@chat-font: 1rem "Signika";
+@chat-intro-font: 1rem "Signika";
+@chat-title-border-radius: 20px;
+@chat-modifier-font: italic 0.9rem "Signika";
+@chat-formulatext-font: 1rem "Signika";
+@chat-finaltext-font: 1rem "Signika";
+@chat-end-height: 0px;
+
+@h1-font: 1.2rem "Signika";
+@h1-text-transform: uppercase;
+@h1-border: none;
+
+@h2-font: 1rem "Signika";
+
+input {
+    color: @core-main-color;
+}
+
+//colors
+@title-color: black;
+@h1-color: black;
+@h2-color: black;
+@font-soft-color: #8e8d8d;
+@core-main-color: #456;
+@boon-color: black;
+@icon-color: rgb(112, 90, 16);
+@font-color-booncard: black;
+@border-color-skill: rgb(146, 142, 142);
+@border-color-combat-bonus: rgb(146, 142, 142);
+@chat-introtext: white;
+@chat-formulatext: black;
+@chat-finaltext: black;
+@chat-modifiertext: rgb(71, 14, 14);
+
+//size
+@editor-height: 5em;
+
+//images
+@playersheet-background: repeat url('../../../ui/parchment.jpg');
+@itemsheet-background: repeat url('../../../ui/parchment-white.jpg');
+@npcsheet-background: repeat url('../../../ui/parchment-white.jpg');
+@chat-background: repeat url('../../../ui/parchment-white.jpg');
+@chat-title-background: repeat url('../../../ui/denim.png');
+@chat-end-background: top/50% repeat url('../../../ui/parchment-white.jpg');
+@booncard-background: url('../../../ui/parchment-white.jpg');*/
+.omega.sheet.player .window-content {
+  background: repeat url('./assets/image/feuilleperso.webp');
+  background-color: black;
+  font: 1rem "helvetica";
+  color: white;
+}
+.omega.sheet.player .item-control:hover {
+  text-shadow: 0 0 10px var(--color-active);
+  box-shadow: none;
+}
+.omega.sheet.player textarea {
+  resize: none;
+}
+.omega.sheet.player .editor {
+  height: 100%;
+  width: 100%;
+  background: #f5fdfb;
+  box-shadow: inset 0 0 6px black;
+}
+.omega.sheet.player input {
+  background-color: #f5fdfb;
+  box-shadow: inset 0 0 3px black;
+}
+.omega.sheet.player input:focus {
+  background-color: #c3d4d0;
+}
+.omega.sheet.player select {
+  background-color: #f5fdfb;
+  box-shadow: inset 0 0 3px black;
+  height: 1.5em;
+}
+.omega.sheet.player form {
+  display: flex;
+  flex-direction: row;
+}
+.omega.sheet.player .right-icon {
+  margin-left: auto;
+  font: 1rem "helvetica";
+  font-size: 1.2rem;
+  color: #e84d0e;
+}
+.omega.sheet.player .main {
+  padding: 5px 5px 5px 5px;
+}
+.omega.sheet.player .main img {
+  align-self: center;
+  width: 110px;
+  height: 129px;
+}
+.omega.sheet.player .main table {
+  white-space: nowrap;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.omega.sheet.player .main .diode {
+  width: 20px;
+  height: 20px;
+}
+.omega.sheet.player .main .diode-rouge {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_rouge.webp');
+}
+.omega.sheet.player .main .diode-bleue {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_bleue.webp');
+}
+.omega.sheet.player .main .diode-verte {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_verte.webp');
+}
+.omega.sheet.player .main .diode-blanche {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_blanche.webp');
+}
+.omega.sheet.player .main .diode-noire {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_noire.webp');
+}
+.omega.sheet.player .main .tablename {
+  background-color: black;
+  padding: 3px;
+}
+.omega.sheet.player .main .tablename thead th:nth-child(1) {
+  width: 20%;
+}
+.omega.sheet.player .main .tablename thead th:nth-child(2) {
+  width: 20%;
+  text-align: center;
+}
+.omega.sheet.player .main .tablename thead th:nth-child(3) {
+  width: 30%;
+  text-align: right;
+}
+.omega.sheet.player .main .tablename thead th:nth-child(4) {
+  width: 30%;
+}
+.omega.sheet.player .main .tablename .orangeborder {
+  border: solid 2px #e84d0e;
+}
+.omega.sheet.player .main .tablename .pcname {
+  font: 1.5rem "courier";
+}
+.omega.sheet.player .main .tablename .name-text {
+  font: 0.9 rem "exo2";
+  color: #e84d0e;
+}
+.omega.sheet.player .main .tablename .pcfirme {
+  font: 1rem "exo2";
+  color: #e84d0e;
+  padding: 0 1em 0 1em;
+}
+.omega.sheet.player .main .ssprogtable {
+  font: 0.8em "frutiger";
+  text-transform: uppercase;
+}
+.omega.sheet.player .main .ssprogtable td:nth-child(1) {
+  width: 90%;
+  cursor: pointer;
+}
+.omega.sheet.player .main .ssprogtable td:nth-child(2) {
+  width: 10%;
+  text-align: center;
+}
+.omega.sheet.player .main .intro-block {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 1em 0;
+}
+.omega.sheet.player .main .intro-block .intro-block-left {
+  align-self: center;
+  width: 110px;
+  height: 129px;
+  object-fit: contain;
+}
+.omega.sheet.player .main .intro-block .intro-block-middle {
+  width: 250px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.omega.sheet.player .main .intro-block .intro-block-middle .right-icon {
+  align-self: flex-end;
+}
+.omega.sheet.player .main .intro-block .intro-block-middle .space-between {
+  justify-content: space-between;
+}
+.omega.sheet.player .main .intro-block .intro-block-middle .nameline {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0.5em;
+  white-space: nowrap;
+  padding: 3px;
+  border: solid 2px #e84d0e;
+}
+.omega.sheet.player .main .intro-block .intro-block-middle .nameline .pcname {
+  font: 1.5rem "courier";
+}
+.omega.sheet.player .main .intro-block .intro-block-middle .nameline .name-text {
+  font: 0.9 rem "exo2";
+  color: #e84d0e;
+}
+.omega.sheet.player .main .intro-block .intro-block-middle .nameline .pcfirme {
+  font: 1rem "exo2";
+  color: #e84d0e;
+  padding: 0 1em 0 1em;
+}
+.omega.sheet.player .main .intro-block .intro-block-middle .nameline .right-icon {
+  margin: 0 0 0 0.5em;
+}
+.omega.sheet.player .main .intro-block .intro-block-right {
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+}
+.omega.sheet.player .main .intro-block .intro-block-right table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.omega.sheet.player .main .intro-block .intro-block-right td:nth-child(1) {
+  width: 40%;
+}
+.omega.sheet.player .main .intro-block .intro-block-right td:nth-child(2) {
+  width: 60%;
+}
+.omega.sheet.player .main .central-block {
+  display: flex;
+  flex-direction: row;
+}
+.omega.sheet.player .main .central-block .stats-block {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em 0 1em;
+}
+.omega.sheet.player .main .central-block .stats-block .stats-block-name {
+  font: 1.5rem "exo2";
+  text-align: center;
+}
+.omega.sheet.player .main .central-block .stats-block .stats-miniblock {
+  font: "frutiger";
+  border: solid 2px #236d78;
+}
+.omega.sheet.player .main .central-block .stats-block .stats-miniblock .caract-line {
+  display: flex;
+  flex-direction: row;
+  background-color: #236d78;
+  color: white;
+  cursor: pointer;
+}
+.omega.sheet.player .main .central-block .stats-block .stats-miniblock .caract-line .caract-value {
+  padding-left: 1rem;
+}
+.omega.sheet.player .main .central-block .stats-block .stats-miniblock .program-line {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  color: #236d78;
+  padding: 0 1em 0 1em;
+}
+.omega.sheet.player .main .central-block .stats-block .stats-miniblock .program-line .prog-value {
+  width: 29px;
+  height: 25px;
+  background-image: url("./assets/image/cadre1.webp");
+  text-align: center;
+}
+.omega.sheet.item .window-content {
+  background: none;
+  background-color: black;
+  font: 1rem "helvetica";
+  color: white;
+}
+.omega.sheet.item textarea {
+  resize: none;
+}
+.omega.sheet.item .editor {
+  height: 100%;
+  width: 100%;
+  background: #f5fdfb;
+  box-shadow: inset 0 0 6px black;
+  min-height: 5em;
+}
+.omega.sheet.item .editor .editor-content {
+  color: black;
+  min-height: 5em;
+}
+.omega.sheet.item input {
+  background-color: #f5fdfb;
+  box-shadow: inset 0 0 3px black;
+}
+.omega.sheet.item input:focus {
+  background-color: #c3d4d0;
+}
+.omega.sheet.item select {
+  background-color: #f5fdfb;
+  box-shadow: inset 0 0 3px black;
+  height: 1.5em;
+}
+.omega.sheet.item form {
+  display: flex;
+  flex-direction: column;
+}
+.omega.sheet.item .right-icon {
+  margin-left: auto;
+  font: 1rem "helvetica";
+  font-size: 1.2rem;
+  color: #e84d0e;
+}
+.omega.sheet.item .main img {
+  align-self: center;
+  width: 110px;
+  height: 129px;
+}
+.dialog {
+  background-color: #fffdfc;
+  display: flex;
+  flex-direction: column;
+  font: 1rem "helvetica";
+}
+.dialog .tooltip {
+  position: relative;
+  display: inline-block;
+}
+.dialog .intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.dialog .intro .introImg {
+  border: none;
+  padding: 5px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  object-position: center;
+  align-self: center;
+}
+.dialog .intro .introtext {
+  font: 1rem "helvetica";
+  margin: 0.5em;
+  padding-top: 1.5em;
+  text-align: center;
+}
+.dialog .formula {
+  text-align: center;
+  margin: 0.5em;
+  font: 1rem "helvetica";
+}
+.dialog .rollmodifier {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 1em 1em;
+}
+.dialog .rollmodifier input {
+  width: 5em;
+  margin: 0 0 1em 1em;
+}
+.dialog .rollmodifier select {
+  width: 5em;
+  margin: 0 0 1em 1em;
+}
+.dialog .difficulty {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 1em 1em;
+}
+.dialog .difficulty input {
+  width: 5em;
+  margin: 0 0 1em 1em;
+}
+.dialog .difficulty select {
+  width: 5em;
+  margin: 0 0 1em 1em;
+}
+.chatroll {
+  background: #2e3b38;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  font: "exo2";
+  color: white;
+}
+.chatroll .intro {
+  background: #2e3b38;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.chatroll .intro .introImg {
+  border: none;
+  padding: 5px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  object-position: center;
+  align-self: center;
+}
+.chatroll .intro .introText {
+  width: 210px;
+  min-height: 60px;
+  padding-top: 0.5em;
+  font: "frutiger";
+  text-align: center;
+}
+.chatroll .resultText {
+  font: "helvetica";
+  padding: 1em 0.5em 0.5em 0.5em;
+}
+.chatroll table {
+  white-space: nowrap;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.chatroll .diode {
+  width: 20px;
+  height: 20px;
+}
+.chatroll .diode-rouge {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_rouge.webp');
+}
+.chatroll .diode-bleue {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_bleue.webp');
+}
+.chatroll .diode-verte {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_verte.webp');
+}
+.chatroll .diode-blanche {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_blanche.webp');
+}
+.chatroll .diode-noire {
+  background: center / contain no-repeat url('./assets/image/diodes/diode_noire.webp');
+}

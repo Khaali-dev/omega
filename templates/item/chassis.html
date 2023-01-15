@@ -1,0 +1,32 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" /></h1>
+    </header>
+    <div class="main">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de slots</th>
+                    <th>Slots</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Nombre de slots : Ossature + <input title="Nombre de slots : Ossature + " id="slots"
+                            name="system.nbslots" type="number" value="{{system.nbslots}}" />
+                    </td>
+                    <td>
+                        {{#if item.actor}}
+                        {{system.nbslotstotal}}
+                        {{else}}
+                        N/A
+                        {{/if}}
+                    <td>
+                </tr>
+            </tbody>
+        </table>
+        {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

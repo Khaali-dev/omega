@@ -1,0 +1,247 @@
+.omega.sheet.player {
+  .window-content {
+    background: @playersheet-background;
+    background-color: black;
+    font: @default-font;
+    color: white;
+  }
+  .item-control:hover {
+    text-shadow: 0 0 10px var(--color-active);
+    box-shadow: none;
+  }
+  textarea {
+    resize: none;
+  }
+
+  .editor {
+    height: 100%;
+    width: 100%;
+    background: @edit-background;
+    box-shadow: inset 0 0 6px black;
+  }
+
+  input {
+    background-color: @edit-background;
+    box-shadow: inset 0 0 3px black;
+  }
+
+  input:focus {
+    background-color: @editactive-background;
+  }
+
+  select {
+    background-color: @edit-background;
+    box-shadow: inset 0 0 3px black;
+    height: 1.5em;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+  }
+  .right-icon {
+    margin-left: auto;
+    font: @default-font;
+    font-size: 1.2rem;
+    color: #e84d0e;
+  }
+
+  .main {
+    img {
+      align-self: center;
+      width: 110px;
+      height: 129px;
+    }
+    padding: 5px 5px 5px 5px;
+    table {
+      white-space: nowrap;
+      table-layout: fixed;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .diode {
+      width: 20px;
+      height: 20px;
+    }
+    .diode-rouge {
+      background: @diode-rouge;
+    }
+    .diode-bleue {
+      background: @diode-bleue;
+    }
+    .diode-verte {
+      background: @diode-verte;
+    }
+    .diode-blanche {
+      background: @diode-blanche;
+    }
+    .diode-noire {
+      background: @diode-noire;
+    }
+
+    .tablename {
+      background-color: black;
+      thead th:nth-child(1) {
+        width: 20%;
+      }
+
+      thead th:nth-child(2) {
+        width: 20%;
+        text-align: center;
+      }
+
+      thead th:nth-child(3) {
+        width: 30%;
+        text-align: right;
+      }
+
+      thead th:nth-child(4) {
+        width: 30%;
+      }
+
+      padding: 3px;
+      .orangeborder {
+        border: solid 2px #e84d0e;
+      }
+
+      .pcname {
+        font: 1.5rem "courier";
+      }
+
+      .name-text {
+        font: 0.9 rem "exo2";
+        color: #e84d0e;
+      }
+      .pcfirme {
+        font: 1rem "exo2";
+        color: #e84d0e;
+        padding: 0 1em 0 1em;
+      }
+    }
+    .ssprogtable {
+      font: 0.8em "frutiger";
+      text-transform: uppercase; 
+      td:nth-child(1) {
+        width: 90%;
+        cursor: pointer;
+      }
+
+      td:nth-child(2) {
+        width: 10%;
+        text-align: center;
+      }
+    }
+    .intro-block {
+      display: flex;
+      flex-direction: row;
+      margin: 0 0 1em 0;
+
+      .intro-block-left {
+        align-self: center;
+        width: 110px;
+        height: 129px;
+        object-fit: contain;
+      }
+
+      .intro-block-middle {
+        width: 250px;
+        display: flex;
+        flex-flow: column nowrap;
+
+        .right-icon {
+          align-self: flex-end;
+        }
+
+        .space-between {
+          justify-content: space-between;
+        }
+
+        .nameline {
+          display: flex;
+          flex-flow: row nowrap;
+          margin: 0.5em;
+          white-space: nowrap;
+          padding: 3px;
+          border: solid 2px #e84d0e;
+
+          .pcname {
+            font: 1.5rem "courier";
+          }
+
+          .name-text {
+            font: 0.9 rem "exo2";
+            color: #e84d0e;
+          }
+          .pcfirme {
+            font: 1rem "exo2";
+            color: #e84d0e;
+            padding: 0 1em 0 1em;
+          }
+
+          .right-icon {
+            margin: 0 0 0 0.5em;
+          }
+        }
+      }
+      .intro-block-right {
+        width: 110px;
+        display: flex;
+        flex-direction: column;
+        table {
+          table-layout: fixed;
+          width: 100%;
+          border-collapse: collapse;
+        }
+
+        td:nth-child(1) {
+          width: 40%;
+        }
+
+        td:nth-child(2) {
+          width: 60%;
+        }
+      }
+    }
+    .central-block {
+      display: flex;
+      flex-direction: row;
+      .stats-block {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 1em 0 1em;
+        .stats-block-name {
+          font: @title-font;
+          text-align: center;
+        }
+        .stats-miniblock {
+          font: "frutiger";
+          border: solid 2px #236d78;
+          .caract-line {
+            display: flex;
+            flex-direction: row;
+            background-color: #236d78;
+            color: white;
+            cursor: pointer;
+            .caract-value {
+              padding-left: 1rem;
+            }
+          }
+          .program-line {
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+            color: #236d78;
+            padding: 0 1em 0 1em;
+            .prog-value {
+              width: 29px;
+              height: 25px;
+              background-image: url("./assets/image/cadre1.webp");
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "Actor": {
+    "types": [
+      "player",
+      "synthetique"
+    ],
+    "templates": {
+      "caracteristiques": {
+        "caracteristiques": {
+          "ia": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.caracteristiques.ia"
+          },
+          "cpu": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.caracteristiques.cpu"
+          },
+          "interface": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.caracteristiques.interface"
+          },
+          "ossature": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.caracteristiques.ossature"
+          },
+          "moteur": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.caracteristiques.moteur"
+          },
+          "balise": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.caracteristiques.balise"
+          }
+        }
+      },
+      "programmes": {
+        "programmes": {
+          "basededonnees": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.basededonnees"
+          },
+          "connexion": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.connexion"
+          },
+          "contremesure": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.contremesure"
+          },
+          "dissipateur": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.dissipateur"
+          },
+          "hacking": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.hacking"
+          },
+          "omega": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.omega"
+          },
+          "armesaenergie": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.armesaenergie"
+          },
+          "detecteur": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.detecteur"
+          },
+          "defense": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.defense"
+          },
+          "energie": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.energie"
+          },
+          "exterminateur": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.exterminateur"
+          },
+          "resistance": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.programmes.resistance"
+          }
+        }
+      },
+      "sousprogrammes": {
+        "sousprogrammes": {
+          "armesetdestruction": {
+            "max": 0,
+            "value": 0,
+            "label": "Armes et destruction"
+          },
+          "biologieorganiques": {
+            "max": 0,
+            "value": 0,
+            "label": "Biologie / Organiques"
+          },
+          "conduitedetir": {
+            "max": 0,
+            "value": 0,
+            "label": "Conduite de tir"
+          },
+          "espace": {
+            "max": 0,
+            "value": 0,
+            "label": "Espace"
+          },
+          "mecanique": {
+            "max": 0,
+            "value": 0,
+            "label": "Mécanique"
+          },
+          "medecine": {
+            "max": 0,
+            "value": 0,
+            "label": "Médecine"
+          },
+          "opsar": {
+            "max": 0,
+            "value": 0,
+            "label": "Opsar"
+          },
+          "pilotage": {
+            "max": 0,
+            "value": 0,
+            "label": "Pilotage"
+          },
+          "tactique": {
+            "max": 0,
+            "value": 0,
+            "label": "Tactique"
+          }
+        }
+      },
+      "chance": {
+        "chance": {
+          "rouge": 0,
+          "verte": 0,
+          "bleue": 0,
+          "blanche": 0,
+          "noire": 0
+        }
+      },
+      "evolution": {
+        "evolution": {
+          "rouge": 0,
+          "verte": 0,
+          "bleue": 0,
+          "blanche": 0,
+          "noire": 0
+        }
+      },
+      "systemesauxiliaires": {
+        "systemesauxiliaires": {
+          "blindage": {
+            "max": 4,
+            "value": 4,
+            "label": "OMEGA.label.systemesauxiliaires.blindage"
+          },
+          "resistancemoteur": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.systemesauxiliaires.resistancemoteur"
+          },
+          "blindageiem": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.systemesauxiliaires.blindageiem"
+          },
+          "integriteinformatique": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.systemesauxiliaires.integriteinformatique"
+          },
+          "initiative": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.systemesauxiliaires.initiative"
+          },
+          "vitesse": {
+            "max": 2,
+            "value": 2,
+            "label": "OMEGA.label.systemesauxiliaires.vitesse"
+          }
+        }
+      },
+      "base": {
+        "bug": "",
+        "chassisId":"",
+        "description": "",
+        "dissidence":0,
+        "firme": "",
+        "traits": "",
+        "typeomega": ""
+      }
+    },
+    "player": {
+      "templates": [
+        "caracteristiques",
+        "programmes",
+        "sousprogrammes",
+        "chance",
+        "evolution",
+        "systemesauxiliaires",
+        "base"
+      ],
+      "notebook": "",
+      "modifiers": []
+    },
+    "npc": {
+      "templates": [
+        "caracteristiques",
+        "programmes",
+        "sousprogrammes",
+        "systemesauxiliaires",
+        "base"
+      ],
+      "modifiers": []
+    }
+  },
+  "Item": {
+    "types": [
+      "equipement",
+      "extension",
+      "chassis"
+    ],
+    "templates": {
+      "base": {
+        "description": ""
+      },
+      "weapon": {
+        "weapon": {
+          "isweapon": false,
+          "autonomie": "",
+          "cadence": "",
+          "initiative": "",
+          "portee": "",
+          "type": "",
+          "effetdiode": {
+            "noir": {
+              "degat": 0,
+              "label": "Rien",
+              "effet": []
+            },
+            "blanc": {
+              "degat": 0,
+              "label": "Raté",
+              "effet": []
+            },
+            "bleu": {
+              "degat": 1,
+              "label": "1",
+              "effet": []
+            },
+            "vert": {
+              "degat": 2,
+              "label": "2",
+              "effet": []
+            },
+            "rouge": {
+              "degat": 3,
+              "label": "3",
+              "effet": []
+            }
+          },
+          "program": {
+            "group": "",
+            "reference": ""
+          },
+          "effet": []
+        }
+      },
+      "etat": {
+        "estActif": false
+      }
+    },
+    "extension": {
+      "templates": [
+        "base",
+        "weapon",
+        "etat"
+      ],
+      "chassisId":"",
+      "type": "Application immédiate",
+      "coutenergie": {
+        "label": "Non applicable",
+        "value": 0
+      },
+      "nbSlots": 0,
+      "effet": []
+    },
+    "chassis": {
+      "templates": [
+        "base",
+        "etat"
+      ],
+      "nbslots": 0,
+      "effet": []
+    },
+    "equipement": {
+      "templates": [
+        "base",
+        "weapon",
+        "etat"
+      ],
+      "effet": []
+    }
+  }
+}

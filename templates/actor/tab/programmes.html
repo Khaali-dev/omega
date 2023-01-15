@@ -1,0 +1,224 @@
+<div class="programmes-tab"><div class="central-block">
+    <div class="stats-block">
+        <div class="stats-block-name">Software</div>
+        <div class="stats-miniblock">
+            <div class="caract-line" data-field="cpu">
+                <div class="caract-text">{{localize "OMEGA.label.caracteristiques.cpu"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.caracteristiques.cpu'}}" id="cpu"
+                    name="system.caracteristiques.cpu.value" type="number"
+                    value="{{actorSystem.caracteristiques.cpu.value}}" />
+                {{else}}
+                <div class="caract-value">{{actorSystem.caracteristiques.cpu.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="contremesure">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.contremesure"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.contremesure'}}"
+                    id="contremesure" name="system.programmes.contremesure.value" type="number"
+                    value="{{actorSystem.programmes.contremesure.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.contremesure.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="dissipateur">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.dissipateur"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.dissipateur'}}"
+                    id="dissipateur" name="system.programmes.dissipateur.value" type="number"
+                    value="{{actorSystem.programmes.dissipateur.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.dissipateur.value}}</div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="stats-miniblock">
+            <div class="caract-line" data-field="ia">
+                <div class="caract-text">{{localize "OMEGA.label.caracteristiques.ia"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.caracteristiques.ia'}}" id="ia"
+                    name="system.caracteristiques.ia.value" type="number"
+                    value="{{actorSystem.caracteristiques.ia.value}}" />
+                {{else}}
+                <div class="caract-value">{{actorSystem.caracteristiques.ia.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="basededonnees">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.basededonnees"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.basededonnees'}}"
+                    id="basededonnees" name="system.programmes.basededonnees.value" type="number"
+                    value="{{actorSystem.programmes.basededonnees.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.basededonnees.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="connexion">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.connexion"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.connexion'}}"
+                    id="connexion" name="system.programmes.connexion.value" type="number"
+                    value="{{actorSystem.programmes.connexion.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.connexion.value}}</div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="stats-miniblock">
+            <div class="caract-line" data-field="interface">
+                <div class="caract-text">{{localize "OMEGA.label.caracteristiques.interface"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.caracteristiques.interface'}}"
+                    id="interface" name="system.caracteristiques.interface.value" type="number"
+                    value="{{actorSystem.caracteristiques.interface.value}}" />
+                {{else}}
+                <div class="caract-value">{{actorSystem.caracteristiques.interface.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="hacking">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.hacking"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.hacking'}}" id="hacking"
+                    name="system.programmes.hacking.value" type="number"
+                    value="{{actorSystem.programmes.hacking.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.hacking.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="omega">
+                <div class="prog-text">Omeg&Omega;</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.omega'}}" id="omega"
+                    name="system.programmes.omega.value" type="number"
+                    value="{{actorSystem.programmes.omega.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.omega.value}}</div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="stats-block">
+        <div class="stats-block-name">Hardware</div>
+        <div class="stats-miniblock">
+            <div class="caract-line" data-field="balise">
+                <div class="caract-text">{{localize "OMEGA.label.caracteristiques.balise"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.caracteristiques.balise'}}"
+                    id="balise" name="system.caracteristiques.balise.value" type="number"
+                    value="{{actorSystem.caracteristiques.balise.value}}" />
+                {{else}}
+                <div class="caract-value">{{actorSystem.caracteristiques.balise.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="armesaenergie">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.armesaenergie"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.armesaenergie'}}"
+                    id="armesaenergie" name="system.programmes.armesaenergie.value" type="number"
+                    value="{{actorSystem.programmes.armesaenergie.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.contremesure.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="detecteur">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.detecteur"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.detecteur'}}"
+                    id="detecteur" name="system.programmes.detecteur.value" type="number"
+                    value="{{actorSystem.programmes.detecteur.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.detecteur.value}}</div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="stats-miniblock">
+            <div class="caract-line" data-field="moteur">
+                <div class="caract-text">{{localize "OMEGA.label.caracteristiques.moteur"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.caracteristiques.ia'}}" id="moteur"
+                    name="system.caracteristiques.moteur.value" type="number"
+                    value="{{actorSystem.caracteristiques.moteur.value}}" />
+                {{else}}
+                <div class="caract-value">{{actorSystem.caracteristiques.moteur.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="defense">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.defense"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.defense'}}" id="defense"
+                    name="system.programmes.defense.value" type="number"
+                    value="{{actorSystem.programmes.defense.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.defense.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="energie">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.energie"}} :</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.energie'}}" id="energie"
+                    name="system.programmes.energie.value" type="number"
+                    value="{{actorSystem.programmes.energie.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.energie.value}}</div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="stats-miniblock">
+            <div class="caract-line" data-field="ossature">
+                <div class="caract-text">{{localize "OMEGA.label.caracteristiques.ossature"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.caracteristiques.ossature'}}"
+                    id="ossature" name="system.caracteristiques.ossature.value" type="number"
+                    value="{{actorSystem.caracteristiques.ossature.value}}" />
+                {{else}}
+                <div class="caract-value">{{actorSystem.caracteristiques.ossature.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="exterminateur">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.exterminateur"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.exterminateur'}}"
+                    id="exterminateur" name="system.programmes.exterminateur.value" type="number"
+                    value="{{actorSystem.programmes.exterminateur.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.exterminateur.value}}</div>
+                {{/if}}
+            </div>
+            <div class="program-line" data-field="resistance">
+                <div class="prog-text">{{localize "OMEGA.label.programmes.resistance"}}</div>
+                {{#if unlocked}}
+                <input class="stats-input" title="{{localize 'OMEGA.label.programmes.resistance'}}"
+                    id="resistance" name="system.programmes.resistance.value" type="number"
+                    value="{{actorSystem.programmes.resistance.value}}" />
+                {{else}}
+                <div class="prog-value">{{actorSystem.programmes.resistance.value}}</div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="stats-block">
+        <div class="stats-block-name">Sous-programmes</div>
+        <table class="ssprogtable">
+            <tbody>
+                {{#if unlocked}}
+                {{#each ssprogfull as |ssprog index|}}
+                <tr class="ssprogram-line"></tr>
+                <td class="ssprogram-text" data-field="{{ssprog.reference}}">{{ssprog.label}}</td>
+                <td><input class="ssprog-input" title="{{ssprog.label}}" data-field="{{ssprog.reference}}"
+                        data-group="index" name="index" type="number" value="{{ssprog.value}}" /></td>
+                </tr>
+                {{/each}}
+                {{else}}
+                {{#each ssprognonnul as |ssprog index|}}
+                <tr>
+                    <td class="ssprogram-text" data-field="{{ssprog.reference}}">{{ssprog.label}}</td>
+                    <td class="ssprogram-text" data-field="{{ssprog.reference}}">{{ssprog.value}}</td>
+                </tr>
+                {{/each}}
+                {{/if}}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
