@@ -93,8 +93,8 @@ export class Diodes {
     this.data.diodesSorties = [];
     this.data.diodesParCouleur = {
       rouge: 0,
-      bleue: 0,
       verte: 0,
+      bleue: 0,
       blanche: 0,
       noire: 0,
     };
@@ -117,8 +117,8 @@ export class Diodes {
     let color = "blanche";
     if (roll.result < 4) color = "noire";
     else if (roll.result > 27) color = "rouge";
-    else if (roll.result > 21) color = "bleue";
-    else if (roll.result > 15) color = "verte";
+    else if (roll.result > 21) color = "verte";
+    else if (roll.result > 15) color = "bleue";
 
     return {
       value: roll.result,

@@ -27,23 +27,23 @@
                             </thead>
                             <tbody style="text-align:center;">
                                 <tr height="10px">
-                                    <td><img class="diode diode-rouge" </td>
+                                    <td><img class="diode diode-rouge" ></td>
                                     <td class="chance-diode-line">{{actorSystem.chance.rouge}}</td>
                                 </tr>
                                 <tr>
-                                    <td><img class="diode diode-bleue" </td>
-                                    <td class="chance-diode-line">{{actorSystem.chance.bleue}}</td>
-                                </tr>
-                                <tr>
-                                    <td><img class="diode diode-verte" </td>
+                                    <td><img class="diode diode-verte" ></td>
                                     <td class="chance-diode-line">{{actorSystem.chance.verte}}</td>
                                 </tr>
                                 <tr>
-                                    <td><img class="diode diode-blanche" </td>
+                                    <td><img class="diode diode-bleue" ></td>
+                                    <td class="chance-diode-line">{{actorSystem.chance.bleue}}</td>
+                                </tr>
+                                <tr>
+                                    <td><img class="diode diode-blanche" ></td>
                                     <td class="chance-diode-line">{{actorSystem.chance.blanche}}</td>
                                 </tr>
                                 <tr>
-                                    <td><img class="diode diode-noire" </td>
+                                    <td><img class="diode diode-noire" ></td>
                                     <td class="chance-diode-line">{{actorSystem.chance.noire}}</td>
                                 </tr>
                         </table>
@@ -59,13 +59,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="name-text">{{localize "OMEGA.label.typeomega"}}</td>
-                    {{#if unlocked}}
-                    <td><input name="system.typeomega" type="text" value="{{actorSystem.typeomega}}"
-                            placeholder="typeomega" />
-                        {{else}}
-                    <td class="pcfirme">{{actorSystem.typeomega}}
-                        {{/if}}
+                    <td class="name-text">Chassis</td>
+                    <td class="pcfirme">{{actorSystem.chassisActif.label}}
                     </td>
                 </tr>
                 <tr>

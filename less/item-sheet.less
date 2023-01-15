@@ -16,9 +16,9 @@
     background: @edit-background;
     box-shadow: inset 0 0 6px black;
     min-height: 5em;
-    .editor-content{
-      color:black;
-        min-height: 5em;
+    .editor-content {
+      color: black;
+      min-height: 5em;
     }
   }
 
@@ -53,7 +53,32 @@
       align-self: center;
       width: 110px;
       height: 129px;
-    
+    }
+    table {
+      .diode {
+        width: 20px;
+        height: 20px;
+      }
+      td, th {
+        border: 1px solid;
+        border-collapse: collapse;
+        border-color: rgb(126, 36, 36);
+      }
+      .diode-rouge {
+        background: @diode-rouge;
+      }
+      .diode-verte {
+        background: @diode-verte;
+      }
+      .diode-bleue {
+        background: @diode-bleue;
+      }
+      .diode-blanche {
+        background: @diode-blanche;
+      }
+      .diode-noire {
+        background: @diode-noire;
       }
     }
+  }
 }

@@ -1,3 +1,26 @@
-<div class="notes-tab">
-    {{editor notebookhtml target="system.notebook" button=true owner=owner editable=editable}}
+<div class="equipement-tab droppable">
+    <h2>Équipements</h2>
+    <div class="equipment-column">
+        {{#each equipements as |item id|}}
+        <details>
+            <summary class="equipment-line item" data-item-id="{{_id}}">
+                {{#if (ne item.img "icons/svg/item-bag.svg")}}
+                <div class="image-container">
+                    <img src="{{item.img}}" title="{{item.name}}" />
+                </div>
+                {{/if}}
+                <div class="equipment-name">{{item.name}}</div>
+                <div class="icon-group">
+                    <a class="item-control item-edit" data-field="{{item.id}}" data-tooltip="Modifier"><i
+                            class="fas fa-cog"></i></a>
+                    {{#if ../unlocked}}
+                    <a class="item-control item-delete" data-field="{{item.id}}" data-tooltip="Supprimer"><i
+                            class="fas fa-trash"></i></a>
+                    {{/if}}
+                </div>
+            </summary>
+            {{{item.system.descriptionhtml}}}
+        </details>
+        {{/each}}
+    </div>
 </div>

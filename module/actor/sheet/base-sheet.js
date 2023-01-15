@@ -21,6 +21,10 @@ export class OmegaBaseActorSheet extends ActorSheet {
     context.extensions.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
     });
+    context.equipements = this.actor.items.filter((item) => item.type == "equipement");
+    context.equipements.forEach((element) => {
+      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    });
 
     /*context.weapons = context.items.filter((item) => item.type == "weapon");
     context.equipments = context.items.filter((item) => ["equipment", "armor", "weapon"].includes(item.type));
@@ -132,7 +136,6 @@ export class OmegaBaseActorSheet extends ActorSheet {
     event.preventDefault();
     let element = event.currentTarget;
     let itemId = element.dataset.field;
-    console.log(element);
     let item = this.actor.items.get(itemId);
     if (item) item.sheet.render(true);
   }
@@ -141,7 +144,6 @@ export class OmegaBaseActorSheet extends ActorSheet {
     event.preventDefault();
     let element = event.currentTarget;
     let itemId = element.dataset.field;
-    console.log(element);
     let item = this.actor.items.get(itemId);
     if (item === null) {
       return;
@@ -153,7 +155,6 @@ export class OmegaBaseActorSheet extends ActorSheet {
     event.preventDefault();
     let element = event.currentTarget;
     let chassisId = element.dataset.field;
-    console.log(element);
     return this.actor.activerChassis(chassisId);
   }
   _onExtensionRemove(event) {

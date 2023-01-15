@@ -31,9 +31,9 @@ export default class OmegaBaseActor extends Actor {
     this.system.chassis = {};
     this.system.chassisActif = {};
     let chassisList = this.items.filter((item) => item.type == "chassis");
-    let chassisActif = this.items.filter((item) => item.type == "chassis" && item.estActif);
+    let chassisActif = this.items.filter((item) => item.type == "chassis" && item.system.estActif);
     if (chassisActif.length) {
-      activerChassis(chassisActif[0].id);
+      this.activerChassis(chassisActif[0].id);
     }
     for (let chassis of chassisList) {
       this.system.chassis[chassis.id] = {
@@ -50,18 +50,16 @@ export default class OmegaBaseActor extends Actor {
   }
 
   async activerChassis(chassisId) {
+    let chassisArray = [];
     let item = this.items.get(chassisId);
     if (item) {
-      this.system.chassisActif = {
-        label: item.name,
-        id: chassisId,
-      };
+      this.system.chassisActif.label = item.name;
+      this.system.chassisActif.id= chassisId;
       let itemDup = duplicate(item);
       itemDup.system.estActif = true;
-      this.updateEmbeddedDocuments("Item", [itemDup]);
+      chassisArray.push(itemDup);
       //Ajouter la prise en compte des différents bonus des extensions du chassis
 
-      let chassisArray = [];
       //desactive tous les autres chassis
       for (const [key, item2] of this.items.entries()) {
         if (item2.type === "chassis" && item2.id !== chassisId) {

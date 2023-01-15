@@ -24,6 +24,100 @@
                 </tr>
             </tbody>
         </table>
+        {{#if system.weapon.isweapon}}
+        <table>
+            <thead>
+                <tr>
+                    <th>Autonomie</th>
+                    <th>Cadence</th>
+                    <th>Initiative</th>
+                    <th>Portée</th>
+                    <th>Type</th>
+                    <th>Effet de zone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input name="system.weapon.autonomie" type="text" value="{{system.weapon.autonomie}}" /></td>
+                    <td><input name="system.weapon.cadence" type="text" value="{{system.weapon.cadence}}" /></td>
+                    <td><input name="system.weapon.initiative" type="text" value="{{system.weapon.initiative}}" /></td>
+                    <td><input name="system.weapon.portee" type="text" value="{{system.weapon.portee}}" /></td>
+                    <td><input name="system.weapon.type" type="text" value="{{system.weapon.type}}" /></td>
+                    <td><input name="system.weapon.zone" type="text" value="{{system.weapon.zone}}" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="diodesarmes">
+            <thead>
+                <tr>
+                    <th colspan="2"><img class="diode diode-noire"></th>
+                    <th colspan="2"><img class="diode diode-blanche"></th>
+                    <th colspan="2"><img class="diode diode-verte"></th>
+                    <th colspan="2"><img class="diode diode-bleue"></th>
+                    <th colspan="2"><img class="diode diode-rouge"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select name="system.weapon.effetdiode.noire.degat">
+                            {{#select system.weapon.effetdiode.noire.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.weapon.effetdiode.noire.label" type="text"
+                            value="{{system.weapon.effetdiode.noire.label}}" /></td>
+                    <td>
+                        <select name="system.weapon.effetdiode.blanche.degat">
+                            {{#select system.weapon.effetdiode.blanche.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.weapon.effetdiode.blanche.label" type="text"
+                            value="{{system.weapon.effetdiode.blanche.label}}" /></td>
+                    <td>
+                        <select name="system.weapon.effetdiode.bleue.degat">
+                            {{#select system.weapon.effetdiode.bleue.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.weapon.effetdiode.bleue.label" type="text"
+                            value="{{system.weapon.effetdiode.bleue.label}}" /></td>
+                    <td>
+                        <select name="system.weapon.effetdiode.verte.degat">
+                            {{#select system.weapon.effetdiode.verte.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.weapon.effetdiode.verte.label" type="text"
+                            value="{{system.weapon.effetdiode.verte.label}}" /></td>
+                    <td>
+                        <select name="system.weapon.effetdiode.rouge.degat">
+                            {{#select system.weapon.effetdiode.rouge.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.weapon.effetdiode.rouge.label" type="text"
+                            value="{{system.weapon.effetdiode.rouge.label}}" /></td>
+                </tr>
+            </tbody>
+        </table>
+        {{/if}}
         {{editor system.description target="system.description" button=true owner=owner editable=editable}}
     </div>
 </form>
