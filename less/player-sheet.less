@@ -12,7 +12,11 @@
   textarea {
     resize: none;
   }
-
+  table{
+    tr:nth-child(2n){
+      background-color: inherit;
+    }
+  }
   .editor {
     height: 100%;
     width: 100%;
@@ -58,6 +62,7 @@
       table-layout: fixed;
       width: 100%;
       border-collapse: collapse;
+      background-color: rgba(0, 0, 0, 0.3);
     }
     .diode {
       width: 20px;
@@ -117,10 +122,31 @@
         color: #e84d0e;
         padding: 0 1em 0 1em;
       }
+      .chancetable {table{
+        thead th:nth-child(1) {
+          width: 20%;
+        }
+
+        thead th:nth-child(2) {
+          width: 20%;
+        }
+
+        thead th:nth-child(3) {
+          width: 20%;
+        }
+
+        thead th:nth-child(4) {
+          width: 20%;
+        }
+
+        thead th:nth-child(5) {
+          width: 20%;
+        }
+      }}
     }
     .ssprogtable {
-      font: 0.8em "frutiger";
-      text-transform: uppercase; 
+      font: 0.9em "frutiger";
+      text-transform: uppercase;
       td:nth-child(1) {
         width: 90%;
         cursor: pointer;
@@ -129,7 +155,19 @@
         width: 10%;
         text-align: center;
       }
-      input {width: 2em}
+      input {
+        width: 2em;
+      }
+      .caract-line {
+        background-color: #143c42;
+        font-size: 1em;
+        font-weight: bold;
+        padding-right: 2em;
+        cursor: pointer;
+        .caract-value {
+          padding-left: 1rem;
+        }
+      }
     }
     .intro-block {
       display: flex;
@@ -213,33 +251,71 @@
         .stats-block-name {
           font: @title-font;
           text-align: center;
+          padding-top: 3px;
         }
-        .stats-miniblock {
-          font: "frutiger";
-          border: solid 2px #236d78;
-          .caract-line {
-            display: flex;
-            flex-direction: row;
-            background-color: #236d78;
-            color: white;
-            cursor: pointer;
-            .caract-value {
-              padding-left: 1rem;
-            }
+        .caract-line {
+          text-align: center;
+        }
+        .program-line {
+          cursor: pointer;
+          color: white;
+          padding: 0 1em 0 1em;
+          .prog-value {
+            width: 29px;
+            height: 25px;
+            background-image: url("./assets/image/cadre1.webp");
+            text-align: center;
           }
-          .program-line {
-            display: flex;
-            flex-direction: row;
-            cursor: pointer;
-            color: #236d78;
-            padding: 0 1em 0 1em;
-            .prog-value {
-              width: 29px;
-              height: 25px;
-              background-image: url("./assets/image/cadre1.webp");
-              text-align: center;
-            }
-          }
+        }
+      }
+    }
+    .aux-block {
+      text-align: center;
+      input {
+        width: 2em;
+      }
+      .stats-block-name {
+        font: @title-font;
+        text-align: center;
+        padding-top: 3px;
+      }
+      table {
+        thead th:nth-child(1) {
+          width: 20%;
+        }
+
+        thead th:nth-child(2) {
+          width: 10%;
+          text-align: center;
+        }
+
+        thead th:nth-child(3) {
+          width: 10%;
+          text-align: center;
+        }
+
+        thead th:nth-child(4) {
+          width: 10%;
+          text-align: center;
+        }
+
+        thead th:nth-child(5) {
+          width: 20%;
+        }
+
+        thead th:nth-child(6) {
+          width: 10%;
+          text-align: center;
+        }
+
+        thead th:nth-child(7) {
+          width: 10%;
+          text-align: center;
+        }
+
+        thead th:nth-child(8) {
+          width: 10%;
+          text-align: center;
         }
       }
     }

@@ -8,32 +8,26 @@
       "caracteristiques": {
         "caracteristiques": {
           "ia": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.caracteristiques.ia"
           },
           "cpu": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.caracteristiques.cpu"
           },
           "interface": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.caracteristiques.interface"
           },
           "ossature": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.caracteristiques.ossature"
           },
           "moteur": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.caracteristiques.moteur"
           },
           "balise": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.caracteristiques.balise"
           }
@@ -42,62 +36,50 @@
       "programmes": {
         "programmes": {
           "basededonnees": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.basededonnees"
           },
           "connexion": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.connexion"
           },
           "contremesure": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.contremesure"
           },
           "dissipateur": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.dissipateur"
           },
           "hacking": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.hacking"
           },
           "omega": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.omega"
           },
           "armesaenergie": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.armesaenergie"
           },
           "detecteur": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.detecteur"
           },
           "defense": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.defense"
           },
           "energie": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.energie"
           },
           "exterminateur": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.exterminateur"
           },
           "resistance": {
-            "max": 2,
             "value": 2,
             "label": "OMEGA.label.programmes.resistance"
           }
@@ -106,47 +88,38 @@
       "sousprogrammes": {
         "sousprogrammes": {
           "armesetdestruction": {
-            "max": 0,
             "value": 0,
             "label": "Armes et destruction"
           },
           "biologieorganiques": {
-            "max": 0,
             "value": 0,
             "label": "Biologie / Organiques"
           },
           "conduitedetir": {
-            "max": 0,
             "value": 0,
             "label": "Conduite de tir"
           },
           "espace": {
-            "max": 0,
             "value": 0,
             "label": "Espace"
           },
           "mecanique": {
-            "max": 0,
             "value": 0,
             "label": "Mécanique"
           },
           "medecine": {
-            "max": 0,
             "value": 0,
             "label": "Médecine"
           },
           "opsar": {
-            "max": 0,
             "value": 0,
             "label": "Opsar"
           },
           "pilotage": {
-            "max": 0,
             "value": 0,
             "label": "Pilotage"
           },
           "tactique": {
-            "max": 0,
             "value": 0,
             "label": "Tactique"
           }
@@ -174,41 +147,63 @@
         "systemesauxiliaires": {
           "blindage": {
             "max": 4,
-            "value": 4,
+            "value": 0,
+            "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.blindage"
-          },
-          "resistancemoteur": {
-            "max": 2,
-            "value": 2,
-            "label": "OMEGA.label.systemesauxiliaires.resistancemoteur"
           },
           "blindageiem": {
             "max": 2,
-            "value": 2,
+            "value": 0,
+            "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.blindageiem"
           },
-          "integriteinformatique": {
+          "chance": {
             "max": 2,
-            "value": 2,
-            "label": "OMEGA.label.systemesauxiliaires.integriteinformatique"
+            "value": 0,
+            "mod": 0,
+            "label": "OMEGA.label.systemesauxiliaires.initiative"
+          },
+          "defense": {
+            "max": 2,
+            "value": 0,
+            "mod": 0,
+            "label": "OMEGA.label.systemesauxiliaires.initiative"
+          },
+          "energiedisponible": {
+            "max": 2,
+            "value": 0,
+            "mod": 0,
+            "label": "OMEGA.label.systemesauxiliaires.energiedisponible"
           },
           "initiative": {
             "max": 2,
-            "value": 2,
+            "value": 0,
+            "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.initiative"
+          },
+          "integriteinformatique": {
+            "max": 2,
+            "value": 0,
+            "mod": 0,
+            "label": "OMEGA.label.systemesauxiliaires.integriteinformatique"
+          },
+          "resistancemoteur": {
+            "max": 2,
+            "value": 0,
+            "mod": 0,
+            "label": "OMEGA.label.systemesauxiliaires.resistancemoteur"
           },
           "vitesse": {
             "max": 2,
-            "value": 2,
+            "value": 0,
+            "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.vitesse"
           }
         }
       },
       "base": {
-        "bug": "",
         "chassisId":"",
         "description": "",
-        "dissidence":0,
         "firme": "",
         "traits": "",
         "typeomega": ""
@@ -225,9 +220,12 @@
         "base"
       ],
       "notebook": "",
+      "miseajour":0,
+      "deviance":0,
+      "dissidence":0,
       "modifiers": []
     },
-    "npc": {
+    "synthetique": {
       "templates": [
         "caracteristiques",
         "programmes",
@@ -255,7 +253,8 @@
           "cadence": "",
           "initiative": "",
           "portee": "",
-          "type": "",
+          "technologie": "",
+          "typeprogramme": "armeaenergie",
           "zone":"",
           "effetdiode": {
             "noire": {

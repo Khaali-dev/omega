@@ -1,151 +1,94 @@
 <div class="combat-tab">
-    <!-- PROTECTIONS PART -->
-    <div class="title-line">
-        <h1 class="combat-domain-label">{{localize "OMEGA.label.protections"}}  ( <span class="tooltip">{{protection}}<span class="tooltiptext">{{localize "OMEGA.tooltip.protection"}}</span></span> ) {{#if defenceModifier}}<span class="tooltip">{{defenceModifier}}<span class="tooltiptext">{{localize "OMEGA.tooltip.defence_modifier"}}</span></span>{{/if}}
-            {{#if unlocked}}
-                <a class="item-create right-icon" data-type="armor" title="{{localize 'OMEGA.armor.add'}}"><i class="fas fa-plus"></i></a>
-            {{/if}}
-        </h1>
-    </div>
-    <div class="trainings-list">
-        <div class="combat-group-label">{{localize "OMEGA.label.trainings"}}</div>
-        <div class="trainings-group">
-            {{#if unlocked}}
-                <input class="checkbox" name="system.trainings.armors.war" type="checkbox" {{checked actorSystem.trainings.armors.war}}>
-            {{else}}
-                <i class="{{getCheckboxIcon  actorSystem.trainings.armors.war}}"></i>
-            {{/if}}
-            <div class="trainings-name">{{localize "OMEGA.armor.category.war"}}</div>
-        </div>
-        <div class="trainings-group">
-            {{#if unlocked}}
-                <input class="checkbox" name="system.trainings.armors.heavy" type="checkbox" {{checked actorSystem.trainings.armors.heavy}}>
-            {{else}}
-                <i class="{{getCheckboxIcon  actorSystem.trainings.armors.heavy}}"></i>
-            {{/if}}
-            <div class="trainings-name">{{localize "OMEGA.armor.category.heavy"}}</div>
-        </div>
-        <div class="trainings-group">
-            {{#if unlocked}}
-                <input class="checkbox" name="system.trainings.armors.shield" type="checkbox" {{checked actorSystem.trainings.armors.shield}}>
-            {{else}}
-                <i class="{{getCheckboxIcon  actorSystem.trainings.armors.shield}}"></i>
-            {{/if}}
-            <div class="trainings-name">{{localize "OMEGA.armor.category.shield"}}</div>
-        </div>
-    </div>
-    <div class="combat-table-head armors droppable">
-        <table>
-            <thead>
-                    <tr>
-                        <th>{{localize "OMEGA.label.armors"}}</th>
-                        <th>{{localize "OMEGA.label.category"}}</th>
-                        <th>{{localize "OMEGA.armor.protection"}}</th>
-                        <th>{{localize "OMEGA.armor.malus"}}</th>
-                        <th>{{localize "OMEGA.armor.special"}}</th>
-                        <th></th>
-                    </tr>
-            </thead>
-            {{#each armors as |item id|}}
-                {{#ife item.system.state "active"}}
-                    <tr class="combat-table item draggable" data-item-id="{{item._id}}">
-                        <th>{{name}}</th>
-                        <th>{{getCategoryLabel "armor" item.system.category}}</th>
-                        <th>{{item.system.protection}}</th>
-                        <th>{{getArmorMalus @root.actor item}}</th> 
-                        <th>{{item.system.special}}</th>
-                        {{#if ../unlocked}}
-                            <th>
-                                <a class="item-open-sheet" title="{{localize 'OMEGA.sheet.edit'}}"><i class="fas fa-pen"></i></a>
-                                <a class="inline-delete" title="{{localize 'OMEGA.sheet.delete'}}"><i class="fas fa-trash"></i></a>
-                            </th>
-                        {{/if}}
-                    </tr>
-                {{/ife}}
-            {{/each}}
-        </table>
-    </div>
-
-    <!-- WEAPONS PART -->
-    <div class="title-line">
-        <h1 class="combat-domain-label">{{localize "OMEGA.label.weapons"}}
-            {{#if unlocked}}
-                <a class="item-create right-icon" data-type="weapon" title="{{localize 'OMEGA.weapon.add'}}"><i class="fas fa-plus"></i></a>
-            {{/if}}
-        </h1>
-    </div>
-    <div class="trainings-list">
-        <div class="combat-group-label">{{localize "OMEGA.label.trainings"}}</div>
-        <div class="trainings-group">
-            {{#if unlocked}}
-                <input class="checkbox" name="system.trainings.weapons.war" type="checkbox" {{checked actorSystem.trainings.weapons.war}}>
-            {{else}}
-                <i class="{{getCheckboxIcon  actorSystem.trainings.weapons.war}}"></i>
-            {{/if}}
-            <div class="trainings-name">{{localize "OMEGA.weapon.category.war"}}</div>
-        </div>
-        <div class="trainings-group">
-            {{#if unlocked}}
-                <input class="checkbox" name="system.trainings.weapons.heavy" type="checkbox" {{checked actorSystem.trainings.weapons.heavy}}>
-            {{else}}
-                <i class="{{getCheckboxIcon  actorSystem.trainings.weapons.heavy}}"></i>
-            {{/if}}
-            <div class="trainings-name">{{localize "OMEGA.weapon.category.heavy"}}</div>
-        </div>
-    </div>
-    <div class="bonus-list">
-        <div class="combat-group-label">{{localize "OMEGA.label.bonus"}} :</div>
-        <div class="bonus-line">            
-            {{#if unlocked}}
-                <div class="bonus-name">{{localize "OMEGA.label.melee"}}</div>
-                <input class="bonus-text input-small" id="bonusmelee" name="system.damageBonus.melee" type="number" value="{{actorSystem.damageBonus.melee}}"/>
-                <div class="bonus-name">{{localize "OMEGA.label.ranged"}}</div>
-                <input class="bonus-text input-small" id="bonusranged" name="system.damageBonus.ranged" type="number" value="{{actorSystem.damageBonus.ranged}}"/>
-            {{else}}
-                <div class="bonus-name">{{localize "OMEGA.label.melee"}}</div>
-                <div class="bonus-text input-small">{{meleeBonus}}</div>
-                <div class="bonus-name">{{localize "OMEGA.label.ranged"}}</div>
-                <div class="bonus-text input-small">{{rangedBonus}}</div>
-            {{/if}}
-        </div>
-    </div>
-    <div class="weapons droppable">
-        <table>
-            <thead class="combat-table-head">
-                <tr>
-                    <th>{{localize "OMEGA.weapon.name"}}</th>
-                    <th>{{localize "OMEGA.label.category"}}</th>
-                    <th>{{localize "OMEGA.weapon.skillName"}}</th>
-                    <th>{{localize "OMEGA.weapon.attack"}}</th>
-                    <th>{{localize "OMEGA.weapon.damage"}}</th>
-                    <th>{{localize "OMEGA.weapon.sixPlus"}}</th>
-                    <th></th>
-                </tr>
-            </thead>
-            {{#each weapons as |item id|}}
-                {{#ife item.system.state "active"}}
-                    <tr class="combat-table item draggable" data-item-id="{{item._id}}">
-                        <th>{{name}}</th>
-                        <th>{{getCategoryLabel "weapon" item.system.category}}</th>
-                        <th>{{getWeaponSkillName @root.actor item}}</th>
-                        <th>{{getWeaponSkill @root.actor item}}<a class="weapon-attack-roll"><i class="fas fa-dice"></i></a></th>
-                        <th>{{getWeaponDamage @root.actor item}}<a class="weapon-damage-roll"><i class="fas fa-dice"></i></a></th>
-                        <th>
-                            {{#if unlocked}}
-                                <input class="checkbox" name="item.system.sixPlus" type="checkbox" {{checked item.system.sixPlus}}>
-                            {{else}}
-                                <i class="{{getCheckboxIcon  item.system.sixPlus}}"></i>
-                            {{/if}}
-                        </th>
-                        <th>
-                            {{#if ../unlocked}}
-                                <a class="item-open-sheet" title="{{localize 'OMEGA.sheet.edit'}}"><i class="fas fa-pen"></i></a>
-                                <a class="inline-delete" title="{{localize 'OMEGA.sheet.delete'}}"><i class="fas fa-trash"></i></a>
-                            {{/if}}
-                        </th>
-                    </tr>
-                {{/ife}}
-            {{/each}}
-        </table>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Programme</th>
+                <th>Valeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Initiative</td>
+                <td class="prog-text" data-field="dissipateur">{{localize "OMEGA.label.programmes.dissipateur"}}</td>
+                <td class="prog-text" data-field="dissipateur">{{actorSystem.programmes.dissipateur.value}}</td>
+            </tr>
+            <tr>
+                <td>Hacking</td>
+                <td class="prog-text" data-field="hacking">{{localize "OMEGA.label.programmes.hacking"}}</td>
+                <td class="prog-text" data-field="hacking">{{actorSystem.programmes.hacking.value}}</td>
+            </tr>
+            <tr>
+                <td>Évasion</td>
+                <td class="prog-text" data-field="detecteur">{{localize "OMEGA.label.programmes.detecteur"}}</td>
+                <td class="prog-text" data-field="detecteur">{{actorSystem.programmes.detecteur.value}}</td>
+            </tr>
+            <tr>
+                <td>Contre-mesures</td>
+                <td class="prog-text" data-field="contremesure">{{localize "OMEGA.label.programmes.contremesure"}}</td>
+                <td class="prog-text" data-field="contremesure">{{actorSystem.programmes.contremesure.value}}</td>
+            </tr>
+            <tr>
+                <td>Défense</td>
+                <td class="prog-text" data-field="defense">{{localize "OMEGA.label.programmes.defense"}}</td>
+                <td class="prog-text" data-field="defense">{{actorSystem.programmes.defense.value}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Armes</h2>
+    {{#each weapons as |item id|}}
+    <table>
+        <tbody>
+            <tr>
+                <td>{{item.name}}</td>
+                <td class="weapon-attack" data-field={{item.id}}>item.system.weapon.attackprogname</td>
+                <td class="weapon-attack" data-field={{item.id}}>item.system.weapon.attackvalue</td>
+                <td><a class="item-control item-shoot" data-field="{{item.id}}" data-tooltip="Utiliser"><i
+                            class="fas fa-gun"></i></a>
+                    <a class="item-control item-edit" data-field="{{item.id}}" data-tooltip="Modifier"><i
+                            class="fas fa-cog"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="diodesarmes">
+        <thead>
+            <tr>
+                <th><img class="diode diode-noire"></th>
+                <th><img class="diode diode-blanche"></th>
+                <th><img class="diode diode-verte"></th>
+                <th><img class="diode diode-bleue"></th>
+                <th><img class="diode diode-rouge"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{item.system.weapon.effetdiode.noire.degat}} {{item.system.weapon.effetdiode.noire.label}}</td>
+                <td>{{item.system.weapon.effetdiode.blanche.degat}} {{item.system.weapon.effetdiode.blanche.label}}</td>
+                <td>{{item.system.weapon.effetdiode.bleue.degat}} {{item.system.weapon.effetdiode.bleue.label}}</td>
+                <td>{{item.system.weapon.effetdiode.verte.degat}} {{item.system.weapon.effetdiode.verte.label}}</td>
+                <td>{{item.system.weapon.effetdiode.rouge.degat}} {{item.system.weapon.effetdiode.rouge.label}}</td>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <th>Type</th>
+            <th>Autonomie</th>
+            <th>Cadence</th>
+            <th>Initiative</th>
+            <th>Portée</th>
+            <th>Effet de zone</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{item.system.weapon.type}}</td>
+                <td>{{item.system.weapon.autonomie}}</td>
+                <td>{{item.system.weapon.cadence}}</td>
+                <td>{{item.system.weapon.initiative}}</td>
+                <td>{{item.system.weapon.portee}}</td>
+                <td>{{item.system.weapon.zone}}</td>
+            </tr>
+        </tbody>
+    </table>
+    {{/each}}
 </div>

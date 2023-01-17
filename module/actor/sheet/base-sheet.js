@@ -26,8 +26,18 @@ export class OmegaBaseActorSheet extends ActorSheet {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
     });
 
-    /*context.weapons = context.items.filter((item) => item.type == "weapon");
-    context.equipments = context.items.filter((item) => ["equipment", "armor", "weapon"].includes(item.type));
+    let extWeap = context.extensions.filter((item) => item.system.weapon.isweapon);
+    let eqWeap = context.equipements.filter((item) => item.system.weapon.isweapon);
+    context.weapons=extWeap.concat(eqWeap);
+    context.weapons.forEach((element) => {
+      console.log("element",element);
+      console.log("element.system.weapon.typeprogramme",element.system.weapon.typeprogramme);
+      //element.system.weapon.attackvalue=this.actor.system.programmes[element.system.weapon.typeprogramme].value;
+      //element.system.weapon.attackprogname=game.i18n.localize(this.actor.system.programmes[element.system.weapon.typeprogramme].label);
+    });
+
+    
+    /*context.equipments = context.items.filter((item) => ["equipment", "armor", "weapon"].includes(item.type));
     for (let item of context.equipments) {
         item.system.descriptionhtml = TextEditor.enrichHTML(item.system.description, { async: false });
     }
@@ -65,14 +75,19 @@ export class OmegaBaseActorSheet extends ActorSheet {
     html.find(".ssprog-input").change(this._onssprogChange.bind(this));
     html.find(".nomchassis").change(this._onChassisChange.bind(this));
 
-    html.find(".caract-line").click(this._onCaractRoll.bind(this));
-    html.find(".program-line").click(this._onProgramRoll.bind(this));
+    html.find(".caract-text").click(this._onCaractRoll.bind(this));
+    html.find(".prog-text").click(this._onProgramRoll.bind(this));
+    html.find(".chance-roll").click(this._onChanceRoll.bind(this));
     html.find(".ssprogram-text").click(this._onSsProgramRoll.bind(this));
 
     html.find(".item-edit").click((ev) => this._onItemEdit(ev));
     html.find(".item-delete").click((ev) => this._onItemDelete(ev));
     html.find(".item-activer").click((ev) => this._onChassisActivate(ev));
     html.find(".item-remove").click((ev) => this._onExtensionRemove(ev));
+
+    
+    html.find(".item-shoot").click((ev) => this._onItemRoll(ev));
+    
   }
 
   /**
@@ -113,6 +128,8 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let element = event.currentTarget;
     let field = element.dataset.field;
     let group = "caracteristiques";
+    console.log("group", group);
+    console.log("field", field);
     return this.actor.check(group, field);
   }
 
@@ -132,6 +149,19 @@ export class OmegaBaseActorSheet extends ActorSheet {
     return this.actor.check(group, field);
   }
 
+  async _onChanceRoll(event) {
+    event.preventDefault();
+    return this.actor.chanceRoll();
+  }
+
+  async _onItemRoll(event) {
+    event.preventDefault();
+    let element = event.currentTarget;
+    let field = element.dataset.field;
+    let item = this.actor.items.get(field);
+    if(!item || !item.system.weapon.isweapon) return;
+    return this.actor.shoot(field);
+  }
   _onItemEdit(event) {
     event.preventDefault();
     let element = event.currentTarget;

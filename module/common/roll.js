@@ -7,7 +7,7 @@ export class Diodes {
    * @param rolltype the type of roll (program, weapon)
    * @param program  The program (skill) : '{Value , label, group, reference}
    * @param data
-   *        item  the weapon used
+   *        itemId  the id of the weapon used
    *        mod  modifier to the roll
    */
 
@@ -21,71 +21,104 @@ export class Diodes {
 
   async openDialog() {
     this.data.isAttack = this.rolltype === ROLL_TYPE.ATTACK ? true : false;
-    let namesForText = { actorname: this.actor.name, program: game.i18n.localize(this.program.label) };
-    if (this.data.isAttack && !this.data.weapon) return;
-    this.data.introText = game.i18n.format("OMEGA.dialog.introtext." + this.rolltype, namesForText);
-    const html = await renderTemplate("systems/omega/templates/chat/roll-dialog.html", {
-      actor: this.actor,
-      program: this.program,
-      type: this.rollType,
-      action: this.data,
-      isAttack: this.data.isAttack,
-      weapon: this.data?.weapon,
-      introText: this.data.introText,
-      charImg: this.actor.img,
-      isPlayer: this.actor.isPlayer(),
-    });
+    if (this.rolltype === ROLL_TYPE.SIMPLE) {
+      let userId = game.userId;
+      this.data.introText = "Pioche simple de diodes";
+      this.data.actorname = game.users.get(userId)?.name;
+      this.data.charImg = "icons/svg/mystery-man.svg";
+      this.data.isPlayer = true;
+    } else {
+      let namesForText = { actorname: this.actor.name, program: game.i18n.localize(this.program.label) };
+      if (this.data.isAttack) {
+        if (!this.data.itemId) {
+          return;
+        } else {
+          let weapon = this.actor.items.get(this.data.itemId);
+          if (!weapon) return;
+          namesForText.weapon = weapon.name;
+        }
+      }
+      this.data.introText = game.i18n.format("OMEGA.dialog.introtext." + this.rolltype, namesForText);
+      this.actorname = this.actor.name;
+      this.data.charImg = this.actor.img;
+      this.data.isPlayer = this.actor.isPlayer();
+    }
 
-    // Display the action panel
-    await new Dialog({
-      title: "Tirage de diode",
-      content: html,
-      buttons: {
-        roll: {
-          icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize("OMEGA.dialog.button.roll"),
-          callback: async (html) => {
-            this.data.formula = this.program.value.toString();
-            this.data.formulaValue = this.program.value;
+    if (this.rolltype === ROLL_TYPE.CHANCE) {
+      this.data.formula = this.program.value.toString();
+      this.data.formulaValue = this.program.value;
+      await this.piocher();
+      await this.showResult();
+    } else {
+      const html = await renderTemplate("systems/omega/templates/chat/roll-dialog.html", {
+        actorname: this.data.actorname,
+        program: this.program,
+        type: this.rollType,
+        action: this.data,
+        isAttack: this.data.isAttack,
+        weapon: this.data?.weapon,
+        introText: this.data.introText,
+        charImg: this.data.charImg,
+        isPlayer: this.data.isPlayer,
+      });
+      await new Dialog({
+        title: "Tirage de diode",
+        content: html,
+        buttons: {
+          roll: {
+            icon: '<i class="fas fa-check"></i>',
+            label: game.i18n.localize("OMEGA.dialog.button.roll"),
+            callback: async (html) => {
+              this.data.applyModifiers = [];
 
-            this.data.applyModifiers = [];
+              if (this.rolltype === ROLL_TYPE.SIMPLE) {
+                // Piochage simple
+                const nbdiodes = html.find("#nbdiodes")[0].value;
+                let diodesNum = parseInt(nbdiodes);
+                if (diodesNum) {
+                  this.data.formula = nbdiodes;
+                  this.data.formulaValue = diodesNum;
+                }
+              } else {
+                this.data.formula = this.program.value.toString();
+                this.data.formulaValue = this.program.value;
+                // The optional modifier
+                const modifier = html.find("#rollmodifier")[0].value;
+                this.data.modifier = parseInt(modifier);
 
-            // The optional modifier
-            const modifier = html.find("#rollmodifier")[0].value;
-            this.data.modifier = parseInt(modifier);
-
-            if (this.data.modifier) {
-              if (this.data.modifier > 0) {
-                this.data.formula = this.data.formula.concat(" +");
+                if (this.data.modifier) {
+                  if (this.data.modifier > 0) {
+                    this.data.formula = this.data.formula.concat(" +");
+                  }
+                  this.data.formula = this.data.formula.concat(" ", this.data.modifier.toString());
+                  this.data.formulaValue = this.data.formulaValue + this.data.modifier;
+                  this.data.applyModifiers.push(game.i18n.format("OMEGA.chatmessage.custommodifier", { rollModifier: this.data.modifier }));
+                }
+                // Difficulte
+                const difficulty = html.find("#difficulty")[0].value;
+                this.data.difficulty = parseInt(difficulty);
+                this.data.difficultyText = game.i18n.format("OMEGA.chatmessage.difficulty", { difficulty: this.data.difficulty });
+                if (this.data.difficulty) {
+                  this.data.formula = this.data.formula.concat(" - ", this.data.difficulty.toString());
+                  this.data.formulaValue = this.data.formulaValue - this.data.difficulty;
+                  this.data.applyModifiers.push(this.data.difficultyText);
+                }
               }
-              this.data.formula = this.data.formula.concat(" ", this.data.modifier.toString());
-              this.data.formulaValue = this.data.formulaValue + this.data.modifier;
-              this.data.applyModifiers.push(game.i18n.format("OMEGA.chatmessage.custommodifier", { rollModifier: this.data.modifier }));
-            }
-            // Difficulte
-            const difficulty = html.find("#difficulty")[0].value;
-            this.data.difficulty = parseInt(difficulty);
-            this.data.difficultyText = game.i18n.format("OMEGA.chatmessage.difficulty", { difficulty: this.data.difficulty });
-            if (this.data.difficulty) {
-              this.data.formula = this.data.formula.concat(" - ", this.data.difficulty.toString());
-              this.data.formulaValue = this.data.formulaValue - this.data.difficulty;
-              this.data.applyModifiers.push(this.data.difficultyText);
-            }
-
-            // Process to the roll
-            await this.piocher();
-            await this.showResult();
+              // Process to the roll
+              await this.piocher();
+              await this.showResult();
+            },
+          },
+          cancel: {
+            icon: '<i class="fas fa-times"></i>',
+            label: game.i18n.localize("OMEGA.dialog.button.cancel"),
+            callback: () => {},
           },
         },
-        cancel: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize("OMEGA.dialog.button.cancel"),
-          callback: () => {},
-        },
-      },
-      default: "roll",
-      close: () => {},
-    }).render(true);
+        default: "roll",
+        close: () => {},
+      }).render(true);
+    }
   }
   async piocher() {
     this.data.nbDiodes = await this.evaluerDiodesAPiocher(this.data.formulaValue);
@@ -128,7 +161,16 @@ export class Diodes {
   async showResult() {
     let rerollButton = false;
     this.resultText = "Résultat final.";
-    if (this.data.formulaValue === 1 && !this.isReroll) {
+    if (this.rolltype === ROLL_TYPE.SIMPLE) {
+      this.resultText = "Résultat.";
+    } else if (this.rolltype === ROLL_TYPE.CHANCE) {
+      this.resultText = "Résultat.";
+      let modification = {};
+      for (let diodecolor of ["noire", "blanche", "verte", "bleue", "rouge"]) {
+        await setProperty(modification, "system.chance." + diodecolor, this.data.diodesParCouleur[diodecolor]);
+      }
+      await this.actor.update(modification);
+    } else if (this.data.formulaValue === 1 && !this.isReroll) {
       rerollButton = true;
       this.playerCanReroll = true;
       this.resultText = "Vous pouvez choisir de remplacer cette diode par une autre prise au hasard.";
@@ -141,21 +183,27 @@ export class Diodes {
     } else if (this.data.formulaValue < -1) {
       this.resultText = "La Matrice choisit quelle diode indique le résultat de l'action.";
     }
+    let weapondata;
+    if (this.rolltype === ROLL_TYPE.ATTACK) {
+      let weapon = this.actor.items.get(this.data.itemId);
+      weapondata = duplicate(weapon.system.weapon.effetdiode);
+    }
 
     const html = await renderTemplate("systems/omega/templates/chat/roll-result.html", {
-      owner: this.actor.id,
+      owner: this.actor?.id,
       introText: this.introtext,
-      actingCharName: this.actor.name,
-      actingCharImg: this.actor.img,
+      actingCharName: this.data.actorname,
+      actingCharImg: this.data.charImg,
       data: this.data,
       rerollButton: rerollButton,
       resultText: this.resultText,
+      weapondata:weapondata
     });
     const chatData = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({
         alias: game.user.name,
-        actor: this.actor.id,
+        actor: this.actor?.id,
       }),
       content: html,
       type: CONST.CHAT_MESSAGE_TYPES.OTHER,

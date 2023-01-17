@@ -9,6 +9,7 @@
         //Actors
         "systems/omega/templates/actor/player.html",
         "systems/omega/templates/actor/tab/chassis.html",
+        "systems/omega/templates/actor/tab/combat.html",
         "systems/omega/templates/actor/tab/equipement.html",
         "systems/omega/templates/actor/tab/notes.html",
         "systems/omega/templates/actor/tab/programmes.html",

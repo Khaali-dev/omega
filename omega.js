@@ -1,4 +1,5 @@
-import { OMEGA, LOG_HEAD } from "./module/common/config.js";
+import { OMEGA, LOG_HEAD, ROLL_TYPE } from "./module/common/config.js";
+import { Diodes } from "./module/common/roll.js";
 
 import preloadTemplates from "./module/common/templates.js";
 import registerHandlebarsHelpers from "./module/common/helpers.js";
@@ -43,3 +44,36 @@ Hooks.once("init", function(){
 	registerHooks();
 
 });
+
+Hooks.on('init', () => {
+  initControlButtons();
+});
+
+async function initControlButtons() {
+
+    CONFIG.Canvas.layers.omega = { layerClass: ControlsLayer, group: "primary" };
+  
+    Hooks.on("getSceneControlButtons", (btns) => {
+      let menu = [];
+  
+        menu.push({
+          name: "piocherdiodes",
+          title: "Piocher des diodes",
+          icon: "fas fa-diamond",
+          button: true,
+          onClick: () => {
+            let data = {};
+            let diodes = new Diodes(undefined, ROLL_TYPE.SIMPLE, undefined, data);
+            diodes.openDialog();
+          },
+        }
+        )
+        btns.push({
+          name: "omega",
+          title: "Oméga",
+          icon: "fas fa-microchip",
+          layer: "omega",
+          tools: menu
+        });
+    });
+  }

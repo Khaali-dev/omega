@@ -24,25 +24,38 @@
                 </tr>
             </tbody>
         </table>
-        {{#if system.weapon.isweapon}}
-        <table>
+        {{#if system.weapon.isweapon}}        <table>
             <thead>
                 <tr>
+                    <th>Technologie</th>
+                    <th>Programme</th>
+                    <th>Portée</th>
                     <th>Autonomie</th>
                     <th>Cadence</th>
                     <th>Initiative</th>
-                    <th>Portée</th>
-                    <th>Type</th>
                     <th>Effet de zone</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td><select name="system.weapon.technologie">
+                        {{#select system.weapon.technologie}}
+                        {{#each config.WEAPON.TECHNOLOGIE as |name type|}}
+                        <option value="{{type}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select></td>
+                    <td><select name="system.weapon.typeprogramme">
+                        {{#select system.weapon.typeprogramme}}
+                        {{#each config.WEAPON.TYPEPROGRAMME as |name type|}}
+                        <option value="{{type}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select></td>
                     <td><input name="system.weapon.autonomie" type="text" value="{{system.weapon.autonomie}}" /></td>
                     <td><input name="system.weapon.cadence" type="text" value="{{system.weapon.cadence}}" /></td>
                     <td><input name="system.weapon.initiative" type="text" value="{{system.weapon.initiative}}" /></td>
                     <td><input name="system.weapon.portee" type="text" value="{{system.weapon.portee}}" /></td>
-                    <td><input name="system.weapon.type" type="text" value="{{system.weapon.type}}" /></td>
                     <td><input name="system.weapon.zone" type="text" value="{{system.weapon.zone}}" /></td>
                 </tr>
             </tbody>

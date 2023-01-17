@@ -165,7 +165,7 @@ input {
 .omega.sheet.player .window-content {
   background: repeat url('./assets/image/feuilleperso.webp');
   background-color: black;
-  font: 1rem "helvetica";
+  font: 0.8rem "helvetica";
   color: white;
 }
 .omega.sheet.player .item-control:hover {
@@ -174,6 +174,9 @@ input {
 }
 .omega.sheet.player textarea {
   resize: none;
+}
+.omega.sheet.player table tr:nth-child(2n) {
+  background-color: inherit;
 }
 .omega.sheet.player .editor {
   height: 100%;
@@ -199,7 +202,7 @@ input {
 }
 .omega.sheet.player .right-icon {
   margin-left: auto;
-  font: 1rem "helvetica";
+  font: 0.8rem "helvetica";
   font-size: 1.2rem;
   color: #e84d0e;
 }
@@ -216,6 +219,7 @@ input {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .omega.sheet.player .main .diode {
   width: 20px;
@@ -269,8 +273,23 @@ input {
   color: #e84d0e;
   padding: 0 1em 0 1em;
 }
+.omega.sheet.player .main .tablename .chancetable table thead th:nth-child(1) {
+  width: 20%;
+}
+.omega.sheet.player .main .tablename .chancetable table thead th:nth-child(2) {
+  width: 20%;
+}
+.omega.sheet.player .main .tablename .chancetable table thead th:nth-child(3) {
+  width: 20%;
+}
+.omega.sheet.player .main .tablename .chancetable table thead th:nth-child(4) {
+  width: 20%;
+}
+.omega.sheet.player .main .tablename .chancetable table thead th:nth-child(5) {
+  width: 20%;
+}
 .omega.sheet.player .main .ssprogtable {
-  font: 0.8em "frutiger";
+  font: 0.9em "frutiger";
   text-transform: uppercase;
 }
 .omega.sheet.player .main .ssprogtable td:nth-child(1) {
@@ -283,6 +302,16 @@ input {
 }
 .omega.sheet.player .main .ssprogtable input {
   width: 2em;
+}
+.omega.sheet.player .main .ssprogtable .caract-line {
+  background-color: #143c42;
+  font-size: 1em;
+  font-weight: bold;
+  padding-right: 2em;
+  cursor: pointer;
+}
+.omega.sheet.player .main .ssprogtable .caract-line .caract-value {
+  padding-left: 1rem;
 }
 .omega.sheet.player .main .intro-block {
   display: flex;
@@ -358,38 +387,67 @@ input {
 .omega.sheet.player .main .central-block .stats-block .stats-block-name {
   font: 1.5rem "exo2";
   text-align: center;
+  padding-top: 3px;
 }
-.omega.sheet.player .main .central-block .stats-block .stats-miniblock {
-  font: "frutiger";
-  border: solid 2px #236d78;
+.omega.sheet.player .main .central-block .stats-block .caract-line {
+  text-align: center;
 }
-.omega.sheet.player .main .central-block .stats-block .stats-miniblock .caract-line {
-  display: flex;
-  flex-direction: row;
-  background-color: #236d78;
+.omega.sheet.player .main .central-block .stats-block .program-line {
+  cursor: pointer;
   color: white;
-  cursor: pointer;
-}
-.omega.sheet.player .main .central-block .stats-block .stats-miniblock .caract-line .caract-value {
-  padding-left: 1rem;
-}
-.omega.sheet.player .main .central-block .stats-block .stats-miniblock .program-line {
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-  color: #236d78;
   padding: 0 1em 0 1em;
 }
-.omega.sheet.player .main .central-block .stats-block .stats-miniblock .program-line .prog-value {
+.omega.sheet.player .main .central-block .stats-block .program-line .prog-value {
   width: 29px;
   height: 25px;
   background-image: url("./assets/image/cadre1.webp");
   text-align: center;
 }
+.omega.sheet.player .main .aux-block {
+  text-align: center;
+}
+.omega.sheet.player .main .aux-block input {
+  width: 2em;
+}
+.omega.sheet.player .main .aux-block .stats-block-name {
+  font: 1.5rem "exo2";
+  text-align: center;
+  padding-top: 3px;
+}
+.omega.sheet.player .main .aux-block table thead th:nth-child(1) {
+  width: 20%;
+}
+.omega.sheet.player .main .aux-block table thead th:nth-child(2) {
+  width: 10%;
+  text-align: center;
+}
+.omega.sheet.player .main .aux-block table thead th:nth-child(3) {
+  width: 10%;
+  text-align: center;
+}
+.omega.sheet.player .main .aux-block table thead th:nth-child(4) {
+  width: 10%;
+  text-align: center;
+}
+.omega.sheet.player .main .aux-block table thead th:nth-child(5) {
+  width: 20%;
+}
+.omega.sheet.player .main .aux-block table thead th:nth-child(6) {
+  width: 10%;
+  text-align: center;
+}
+.omega.sheet.player .main .aux-block table thead th:nth-child(7) {
+  width: 10%;
+  text-align: center;
+}
+.omega.sheet.player .main .aux-block table thead th:nth-child(8) {
+  width: 10%;
+  text-align: center;
+}
 .omega.sheet.item .window-content {
   background: none;
   background-color: black;
-  font: 1rem "helvetica";
+  font: 0.8rem "helvetica";
   color: white;
 }
 .omega.sheet.item textarea {
@@ -424,7 +482,7 @@ input {
 }
 .omega.sheet.item .right-icon {
   margin-left: auto;
-  font: 1rem "helvetica";
+  font: 0.8rem "helvetica";
   font-size: 1.2rem;
   color: #e84d0e;
 }
@@ -462,7 +520,7 @@ input {
   background-color: #fffdfc;
   display: flex;
   flex-direction: column;
-  font: 1rem "helvetica";
+  font: 0.8rem "helvetica";
 }
 .dialog .tooltip {
   position: relative;
@@ -483,7 +541,7 @@ input {
   align-self: center;
 }
 .dialog .intro .introtext {
-  font: 1rem "helvetica";
+  font: 0.8rem "helvetica";
   margin: 0.5em;
   padding-top: 1.5em;
   text-align: center;
@@ -491,7 +549,7 @@ input {
 .dialog .formula {
   text-align: center;
   margin: 0.5em;
-  font: 1rem "helvetica";
+  font: 0.8rem "helvetica";
 }
 .dialog .rollmodifier {
   display: flex;
@@ -559,6 +617,18 @@ input {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
+}
+.chatroll table thead th:nth-child(1) {
+  width: 10%;
+}
+.chatroll table thead th:nth-child(2) {
+  width: 20%;
+}
+.chatroll table thead th:nth-child(3) {
+  width: 10%;
+}
+.chatroll table thead th:nth-child(4) {
+  width: 60%;
 }
 .chatroll .diode {
   width: 20px;

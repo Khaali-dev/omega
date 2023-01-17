@@ -8,35 +8,63 @@
         <div class="introText">{{data.introText}}</div>
     </div>
     <table>
+        <thead>
+            <th></th>
+            <th></th>
+            {{#if data.isAttack}}
+            <th>Dégats</th>
+            <th>Effet</th>
+            {{/if}}
+        </thead>
         <tbody style="text-align:center;">
             {{#if data.diodesParCouleur.rouge}}
             <tr height="10px">
-                <td><img class="diode diode-rouge"></td>
                 <td class="chance-diode-line">{{data.diodesParCouleur.rouge}}</td>
+                <td><img class="diode diode-rouge"></td>
+                {{#if data.isAttack}}
+                <td>{{weapondata.rouge.degat}}</td>
+                <td style="text-align: left;">{{weapondata.rouge.label}}</td>
+                {{/if}}
             </tr>
             {{/if}}
             {{#if data.diodesParCouleur.verte}}
             <tr>
-                <td><img class="diode diode-verte"></td>
                 <td class="chance-diode-line">{{data.diodesParCouleur.verte}}</td>
+                <td><img class="diode diode-verte"></td>
+                {{#if data.isAttack}}
+                <td>{{weapondata.verte.degat}}</td>
+                <td style="text-align: left;">{{weapondata.verte.label}}</td>
+                {{/if}}
             </tr>
             {{/if}}
             {{#if data.diodesParCouleur.bleue}}
             <tr>
-                <td><img class="diode diode-bleue"></td>
                 <td class="chance-diode-line">{{data.diodesParCouleur.bleue}}</td>
+                <td><img class="diode diode-bleue"></td>
+                {{#if data.isAttack}}
+                <td>{{weapondata.bleue.degat}}</td>
+                <td style="text-align: left;">{{weapondata.bleue.label}}</td>
+                {{/if}}
             </tr>
             {{/if}}
             {{#if data.diodesParCouleur.blanche}}
             <tr>
-                <td><img class="diode diode-blanche"></td>
                 <td class="chance-diode-line">{{data.diodesParCouleur.blanche}}</td>
+                <td><img class="diode diode-blanche"></td>
+                {{#if data.isAttack}}
+                <td>{{weapondata.blanche.degat}}</td>
+                <td style="text-align: left;">{{weapondata.blanche.label}}</td>
+                {{/if}}
             </tr>
             {{/if}}
             {{#if data.diodesParCouleur.noire}}
             <tr>
-                <td><img class="diode diode-noire"></td>
                 <td class="chance-diode-line">{{data.diodesParCouleur.noire}}</td>
+                <td><img class="diode diode-noire"></td>
+                {{#if data.isAttack}}
+                <td>{{weapondata.noire.degat}}</td>
+                <td style="text-align: left;">{{weapondata.noire.label}}</td>
+                {{/if}}
             </tr>
             {{/if}}
         </tbody>

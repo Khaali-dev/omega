@@ -77,6 +77,8 @@
       },
       "difficulty": "Difficulté : ",
       "introtext": {
+        "attack": "{actorname} utilise l'arme {weapon} avec le programme {program}.",
+        "chance": "{actorname} tente sa chance.",
         "program": "{actorname} utilise son programme {program}."
       },
       "rollmodifier": "Modificateur : "

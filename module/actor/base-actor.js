@@ -1,4 +1,5 @@
 import { Diodes } from "../common/roll.js";
+import { ROLL_TYPE } from "../common/config.js";
 
 export default class OmegaBaseActor extends Actor {
   /** @override */
@@ -14,18 +15,17 @@ export default class OmegaBaseActor extends Actor {
   async _prepareDataPlayer() {
     console.log("demarrage Acteurs");
     // Evaluation des systèmes auxiliaires
-    this.system.auxiliaires = {
-      blindage: this.system.programmes.resistance.value * 2,
-      resistancemoteur: this.system.programmes.energie.value,
-      blindageiem: this.system.caracteristiques.balise.value,
-      chance: this.system.caracteristiques.interface.value,
-      integriteinformatique: this.system.caracteristiques.cpu.value,
-      vitesse: this.system.caracteristiques.moteur.value,
-      defense: this.system.programmes.defense.value,
-      initiative: this.system.programmes.dissipateur.value,
-      energiedisponible: this.system.programmes.energie.value * 3,
-      resistancemoteur: this.system.programmes.energie.value,
-    };
+    this.system.systemesauxiliaires.blindage.max= (this.system.programmes.resistance.value * 2) + this.system.systemesauxiliaires.blindage.mod;
+    this.system.systemesauxiliaires.resistancemoteur.max= this.system.programmes.energie.value + this.system.systemesauxiliaires.resistancemoteur.mod;
+    this.system.systemesauxiliaires.blindageiem.max= this.system.caracteristiques.balise.value + this.system.systemesauxiliaires.blindageiem.mod;
+    this.system.systemesauxiliaires.integriteinformatique.max= this.system.caracteristiques.cpu.value + this.system.systemesauxiliaires.integriteinformatique.mod;
+    this.system.systemesauxiliaires.energiedisponible.max= (this.system.programmes.energie.value * 3) + this.system.systemesauxiliaires.energiedisponible.mod;
+
+    this.system.systemesauxiliaires.chance.max= this.system.caracteristiques.interface.value + this.system.systemesauxiliaires.chance.mod;
+    this.system.systemesauxiliaires.vitesse.max= this.system.caracteristiques.moteur.value + this.system.systemesauxiliaires.vitesse.mod;
+    this.system.systemesauxiliaires.defense.max= this.system.programmes.defense.value + this.system.systemesauxiliaires.defense.mod;
+    this.system.systemesauxiliaires.initiative.max= this.system.programmes.dissipateur.value + this.system.systemesauxiliaires.initiative.mod;
+    
     //traitement du chassis
 
     this.system.chassis = {};
@@ -132,7 +132,32 @@ export default class OmegaBaseActor extends Actor {
       reference: field,
     };
     let data = {};
-    let diodes = new Diodes(this, "program", program, data);
+    let diodes = new Diodes(this, ROLL_TYPE.PROGRAM, program, data);
     diodes.openDialog();
+  }
+  async shoot(weaponId){
+    let weapon = this.items.get(weaponId);
+    let program = {
+      value: this.system.programmes[weapon.system.weapon.typeprogramme].value,
+      label: game.i18n.localize(this.system.programmes[weapon.system.weapon.typeprogramme].label),
+      group: "programmes",
+      reference: weapon.system.weapon.typeprogramme,
+    };
+    let data = {itemId: weaponId};
+    let diodes = new Diodes(this, ROLL_TYPE.ATTACK, program, data);
+    diodes.openDialog();
+
+  }
+  async chanceRoll(){
+    let program = {
+      value: this.system.systemesauxiliaires.chance.max,
+      label: "Chance",
+      group: "systemesauxiliaires",
+      reference: "chance",
+    };
+    let data = {};
+    let diodes = new Diodes(this, ROLL_TYPE.CHANCE, program, data);
+    diodes.openDialog();
+
   }
 }
