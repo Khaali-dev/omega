@@ -1,0 +1,138 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" /></h1>
+    </header>
+    <div class="main">
+        <table>
+            <thead>
+                <tr>
+                    <th>Slots</th>
+                    <th>Type</th>
+                    <th>Coût énergie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input name="system.nbSlots" type="number" value="{{system.nbSlots}}"/></td>
+                    <td><select name="system.type">
+                        {{#select system.type}}
+                        {{#each config.EXTENSION.TYPE as |name type|}}
+                        <option value="{{type}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select></td>
+                    <td><input name="system.coutenergie.label" type="text" value="{{system.coutenergie.label}}"/></td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technologie</th>
+                    <th>Programme</th>
+                    <th>Portée</th>
+                    <th>Autonomie</th>
+                    <th>Cadence</th>
+                    <th>Initiative</th>
+                    <th>Effet de zone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><select name="system.technologie">
+                        {{#select system.technologie}}
+                        {{#each config.ARME.TECHNOLOGIE as |name type|}}
+                        <option value="{{type}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select></td>
+                    <td><select name="system.typeprogramme">
+                        {{#select system.typeprogramme}}
+                        {{#each config.ARME.TYPEPROGRAMME as |name type|}}
+                        <option value="{{type}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select></td>
+                    <td><input name="system.portee" type="text" value="{{system.portee}}" /></td>
+                    <td><input name="system.autonomie" type="text" value="{{system.autonomie}}" /></td>
+                    <td><input name="system.cadence" type="text" value="{{system.cadence}}" /></td>
+                    <td><input name="system.initiative" type="text" value="{{system.initiative}}" /></td>
+                    <td><input name="system.zone" type="text" value="{{system.zone}}" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="diodesarmes">
+            <thead>
+                <tr>
+                    <th colspan="2"><img class="diode diode-noire"></th>
+                    <th colspan="2"><img class="diode diode-blanche"></th>
+                    <th colspan="2"><img class="diode diode-verte"></th>
+                    <th colspan="2"><img class="diode diode-bleue"></th>
+                    <th colspan="2"><img class="diode diode-rouge"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select name="system.effetdiode.noire.degat">
+                            {{#select system.effetdiode.noire.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.effetdiode.noire.label" type="text"
+                            value="{{system.effetdiode.noire.label}}" /></td>
+                    <td>
+                        <select name="system.effetdiode.blanche.degat">
+                            {{#select system.effetdiode.blanche.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.effetdiode.blanche.label" type="text"
+                            value="{{system.effetdiode.blanche.label}}" /></td>
+                    <td>
+                        <select name="system.effetdiode.bleue.degat">
+                            {{#select system.effetdiode.bleue.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.effetdiode.bleue.label" type="text"
+                            value="{{system.effetdiode.bleue.label}}" /></td>
+                    <td>
+                        <select name="system.effetdiode.verte.degat">
+                            {{#select system.effetdiode.verte.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.effetdiode.verte.label" type="text"
+                            value="{{system.effetdiode.verte.label}}" /></td>
+                    <td>
+                        <select name="system.effetdiode.rouge.degat">
+                            {{#select system.effetdiode.rouge.degat}}
+                            {{#each damagevalue as |name type|}}
+                            <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td><input name="system.effetdiode.rouge.label" type="text"
+                            value="{{system.effetdiode.rouge.label}}" /></td>
+                </tr>
+            </tbody>
+        </table>
+        {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

@@ -5,14 +5,14 @@
             <table class="ssprogtable">
                 <tbody>
                     <tr class="caract-line" data-field="cpu">
-                        {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.cpu"}}</td>
+                        {{#if unlocked}}<td>{{localize "OMEGA.label.caracteristiques.cpu"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.caracteristiques.cpu"}}" data-field="cpu" data-group="caracteristiques"
-                                name="system.caracteristiques.cpu.value" type="number" value="{{actorSystem.caracteristiques.cpu.value}}" /></td>
+                                name="system.caracteristiques.cpu.value" type="number"
+                                value="{{system.caracteristiques.cpu.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="cpu">{{localize "OMEGA.label.caracteristiques.cpu"}}</td>
-                        <td class="caract-text" data-field="cpu">{{actorSystem.caracteristiques.cpu.value}}</td>
+                        <td class="caract-text" data-field="cpu">{{system.caracteristiques.cpu.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="program-line">
@@ -22,12 +22,12 @@
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.programmes.contremesure"}}" data-field="contremesure"
                                 data-group="programmes" name="system.programmes.contremesure.value" type="number"
-                                value="{{actorSystem.programmes.contremesure.value}}" /></td>
+                                value="{{system.programmes.contremesure.value}}" /></td>
 
                         {{else}}
                         <td class="prog-text" data-field="contremesure">{{localize
                             "OMEGA.label.programmes.contremesure"}}</td>
-                        <td class="prog-text" data-field="contremesure">{{actorSystem.programmes.contremesure.value}}
+                        <td class="prog-text" data-field="contremesure">{{system.programmes.contremesure.value}}
                         </td>
                         {{/if}}
                     </tr>
@@ -37,12 +37,13 @@
                         </td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.programmes.dissipateur"}}" data-field="dissipateur" data-group="programmes"
-                                name="system.programmes.dissipateur.value" type="number" value="{{actorSystem.programmes.dissipateur.value}}" />
+                                name="system.programmes.dissipateur.value" type="number"
+                                value="{{system.programmes.dissipateur.value}}" />
                         </td>
                         {{else}}
                         <td class="prog-text" data-field="dissipateur">{{localize "OMEGA.label.programmes.dissipateur"}}
                         </td>
-                        <td class="prog-text" data-field="dissipateur">{{actorSystem.programmes.dissipateur.value}}</td>
+                        <td class="prog-text" data-field="dissipateur">{{system.programmes.dissipateur.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="caract-line">
@@ -50,13 +51,15 @@
                         <td>{{localize "OMEGA.label.caracteristiques.ia"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.caracteristiques.ia"}}" data-field="ia" data-group="caracteristiques"
-                                name="system.caracteristiques.ia.value" type="number" value="{{actorSystem.caracteristiques.ia.value}}" /></td>
+                                name="system.caracteristiques.ia.value" type="number"
+                                value="{{system.caracteristiques.ia.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="ia">{{localize "OMEGA.label.caracteristiques.ia"}}</td>
-                        <td class="caract-text" data-field="ia">{{actorSystem.caracteristiques.ia.value}}</td>
+                        <td class="caract-text" data-field="ia">{{system.caracteristiques.ia.value}}</td>
 
                         {{/if}}
                     </tr>
+                    {{#ife system.typeSynth "omega"}}
                     <tr class="program-line">
                         {{#if unlocked}}
                         <td class="prog-text" data-field="basededonnees">{{localize
@@ -64,26 +67,79 @@
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.programmes.basededonnees"}}" data-field="basededonnees"
                                 data-group="programmes" name="system.programmes.basededonnees.value" type="number"
-                                value="{{actorSystem.programmes.basededonnees.value}}" /></td>
+                                value="{{system.programmes.basededonnees.value}}" /></td>
                         {{else}}
                         <td class="prog-text" data-field="basededonnees">{{localize
                             "OMEGA.label.programmes.basededonnees"}}</td>
-                        <td class="prog-text" data-field="basededonnees">{{actorSystem.programmes.basededonnees.value}}
+                        <td class="prog-text" data-field="basededonnees">{{system.programmes.basededonnees.value}}
                         </td>
                         {{/if}}
                     </tr>
+                    {{/ife}}
+                    {{#ife system.typeSynth "alpha"}}
+                    <tr class="program-line">
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="tactique">{{localize
+                            "OMEGA.label.programmes.tactique"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.programmes.tactique"}}" data-field="tactique"
+                                data-group="programmes" name="system.programmes.tactique.value" type="number"
+                                value="{{system.programmes.tactique.value}}" /></td>
+                        {{else}}
+                        <td class="prog-text" data-field="tactique">{{localize
+                            "OMEGA.label.programmes.tactique"}}</td>
+                        <td class="prog-text" data-field="tactique">{{system.programmes.tactique.value}}
+                        </td>
+                        {{/if}}
+                    </tr>
+                    {{/ife}}
+                    {{#ife system.typeSynth "psy"}}
+                    <tr class="program-line">
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="neutralisationcognitive">{{localize
+                            "OMEGA.label.programmes.neutralisationcognitive"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.programmes.neutralisationcognitive"}}" data-field="neutralisationcognitive"
+                                data-group="programmes" name="system.programmes.neutralisationcognitive.value" type="number"
+                                value="{{system.programmes.neutralisationcognitive.value}}" /></td>
+                        {{else}}
+                        <td class="prog-text" data-field="neutralisationcognitive">{{localize
+                            "OMEGA.label.programmes.neutralisationcognitive"}}</td>
+                        <td class="prog-text" data-field="neutralisationcognitive">{{system.programmes.neutralisationcognitive.value}}
+                        </td>
+                        {{/if}}
+                    </tr>
+                    {{/ife}}
+                    {{#ife system.typeSynth "sigma"}}
+                    <tr class="program-line">
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="recherche">{{localize
+                            "OMEGA.label.programmes.recherche"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.programmes.recherche"}}" data-field="recherche"
+                                data-group="programmes" name="system.programmes.recherche.value" type="number"
+                                value="{{system.programmes.recherche.value}}" /></td>
+                        {{else}}
+                        <td class="prog-text" data-field="recherche">{{localize
+                            "OMEGA.label.programmes.recherche"}}</td>
+                        <td class="prog-text" data-field="recherche">{{system.programmes.recherche.value}}
+                        </td>
+                        {{/if}}
+                    </tr>
+                    {{/ife}}
                     <tr class="program-line">
                         {{#if unlocked}}
                         <td class="prog-text" data-field="connexion">{{localize "OMEGA.label.programmes.connexion"}}
                         </td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.programmes.connexion"}}" data-field="connexion" data-group="programmes"
-                                name="system.programmes.connexion.value" type="number" value="{{actorSystem.programmes.connexion.value}}" />
+                                name="system.programmes.connexion.value" type="number"
+                                value="{{system.programmes.connexion.value}}" />
                         </td>
                         {{else}}
                         <td class="prog-text" data-field="connexion">{{localize "OMEGA.label.programmes.connexion"}}
                         </td>
-                        <td class="prog-text" data-field="connexion">{{actorSystem.programmes.connexion.value}}</td>
+                        <td class="prog-text" data-field="connexion">{{system.programmes.connexion.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="caract-line">
@@ -92,12 +148,12 @@
                             "OMEGA.label.caracteristiques.interface"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.caracteristiques.interface"}}" data-field="interface"
-                                data-group="caracteristiques" name="system.caracteristiques.interface.value" type="number"
-                                value="{{actorSystem.caracteristiques.interface.value}}" /></td>
+                                data-group="caracteristiques" name="system.caracteristiques.interface.value"
+                                type="number" value="{{system.caracteristiques.interface.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="interface">{{localize
                             "OMEGA.label.caracteristiques.interface"}}</td>
-                        <td class="caract-text" data-field="interface">{{actorSystem.caracteristiques.interface.value}}
+                        <td class="caract-text" data-field="interface">{{system.caracteristiques.interface.value}}
                         </td>
                         {{/if}}
                     </tr>
@@ -106,23 +162,87 @@
                         <td class="prog-text" data-field="hacking">{{localize "OMEGA.label.programmes.hacking"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.programmes.hacking"}}" data-field="hacking" data-group="programmes"
-                                name="system.programmes.hacking.value" type="number" value="{{actorSystem.programmes.hacking.value}}" /></td>
+                                name="system.programmes.hacking.value" type="number"
+                                value="{{system.programmes.hacking.value}}" /></td>
                         {{else}}
                         <td class="prog-text" data-field="hacking">{{localize "OMEGA.label.programmes.hacking"}}</td>
-                        <td class="prog-text" data-field="hacking">{{actorSystem.programmes.hacking.value}}</td>
+                        <td class="prog-text" data-field="hacking">{{system.programmes.hacking.value}}</td>
+                        {{/if}}
+                    </tr>
+                    {{#ife system.typeSynth "omega"}}
+                    <tr class="program-line">
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="omega">{{localize "OMEGA.label.programmes.omega"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize " OMEGA.label.programmes.omega"}}"
+                                data-field="omega" data-group="programmes" name="system.programmes.omega.value"
+                                type="number" value="{{system.programmes.omega.value}}" /></td>
+                        {{else}}
+                        <td class="prog-text" data-field="omega">{{localize "OMEGA.label.programmes.omega"}}</td>
+                        <td class="prog-text" data-field="omega">{{system.programmes.omega.value}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/ife}}
+                    {{#ife system.typeSynth "alpha"}}
+                    <tr class="program-line">
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="artillerie">{{localize "OMEGA.label.programmes.artillerie"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize " OMEGA.label.programmes.artillerie"}}"
+                                data-field="artillerie" data-group="programmes" name="system.programmes.artillerie.value"
+                                type="number" value="{{system.programmes.artillerie.value}}" /></td>
+                        {{else}}
+                        <td class="prog-text" data-field="artillerie">{{localize "OMEGA.label.programmes.artillerie"}}</td>
+                        <td class="prog-text" data-field="artillerie">{{system.programmes.artillerie.value}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/ife}}
+                    {{#ife system.typeSynth "psy"}}
+                    <tr class="program-line">
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="reprogrammation">{{localize "OMEGA.label.programmes.reprogrammation"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize " OMEGA.label.programmes.reprogrammation"}}"
+                                data-field="reprogrammation" data-group="programmes" name="system.programmes.reprogrammation.value"
+                                type="number" value="{{system.programmes.reprogrammation.value}}" /></td>
+                        {{else}}
+                        <td class="prog-text" data-field="reprogrammation">{{localize "OMEGA.label.programmes.reprogrammation"}}</td>
+                        <td class="prog-text" data-field="reprogrammation">{{system.programmes.reprogrammation.value}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/ife}}
+                    {{#ife system.typeSynth "sigma"}}
+                    <tr class="program-line">
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="cybernetique">{{localize "OMEGA.label.programmes.cybernetique"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize " OMEGA.label.programmes.cybernetique"}}"
+                                data-field="cybernetique" data-group="programmes" name="system.programmes.cybernetique.value"
+                                type="number" value="{{system.programmes.cybernetique.value}}" /></td>
+                        {{else}}
+                        <td class="prog-text" data-field="cybernetique">{{localize "OMEGA.label.programmes.cybernetique"}}</td>
+                        <td class="prog-text" data-field="cybernetique">{{system.programmes.cybernetique.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="program-line">
-                        {{#if unlocked}}>
-                        <td class="prog-text" data-field="omega">{{localize "OMEGA.label.programmes.omega"}}</td>
-                        <td><input class="stats-input small-input" title="{{localize " OMEGA.label.programmes.omega"}}"
-                                data-field="omega" data-group="programmes" name="system.programmes.omega.value" type="number"
-                                value="{{actorSystem.programmes.omega.value}}" /></td>
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="ingenierie">{{localize "OMEGA.label.programmes.ingenierie"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize " OMEGA.label.programmes.ingenierie"}}"
+                                data-field="ingenierie" data-group="programmes" name="system.programmes.ingenierie.value"
+                                type="number" value="{{system.programmes.ingenierie.value}}" /></td>
                         {{else}}
-                        <td class="prog-text" data-field="omega">{{localize "OMEGA.label.programmes.omega"}}</td>
-                        <td class="prog-text" data-field="omega">{{actorSystem.programmes.omega.value}}</td>
+                        <td class="prog-text" data-field="ingenierie">{{localize "OMEGA.label.programmes.ingenierie"}}</td>
+                        <td class="prog-text" data-field="ingenierie">{{system.programmes.ingenierie.value}}</td>
                         {{/if}}
                     </tr>
+                    <tr class="program-line">
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="chirurgie">{{localize "OMEGA.label.programmes.chirurgie"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize " OMEGA.label.programmes.chirurgie"}}"
+                                data-field="chirurgie" data-group="programmes" name="system.programmes.chirurgie.value"
+                                type="number" value="{{system.programmes.chirurgie.value}}" /></td>
+                        {{else}}
+                        <td class="prog-text" data-field="chirurgie">{{localize "OMEGA.label.programmes.chirurgie"}}</td>
+                        <td class="prog-text" data-field="chirurgie">{{system.programmes.chirurgie.value}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/ife}}
                 </tbody>
             </table>
         </div>
@@ -132,13 +252,16 @@
                 <tbody>
                     <tr class="caract-line">
                         {{#if unlocked}}
-                        <td class="caract-text" data-field="balise">{{localize "OMEGA.label.caracteristiques.balise"}}</td>
+                        <td class="caract-text" data-field="balise">{{localize "OMEGA.label.caracteristiques.balise"}}
+                        </td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.balise"}}" data-field="balise" data-group="caracteristiques"
-                                name="system.caracteristiques.balise.value" type="number" value="{{actorSystem.caracteristiques.balise.value}}" /></td>
+                                OMEGA.label.caracteristiques.balise"}}" data-field="balise"
+                                data-group="caracteristiques" name="system.caracteristiques.balise.value" type="number"
+                                value="{{system.caracteristiques.balise.value}}" /></td>
                         {{else}}
-                        <td class="caract-text" data-field="balise">{{localize "OMEGA.label.caracteristiques.balise"}}</td>
-                        <td class="caract-text" data-field="balise">{{actorSystem.caracteristiques.balise.value}}</td>
+                        <td class="caract-text" data-field="balise">{{localize "OMEGA.label.caracteristiques.balise"}}
+                        </td>
+                        <td class="caract-text" data-field="balise">{{system.caracteristiques.balise.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="program-line">
@@ -148,12 +271,12 @@
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.programmes.armesaenergie"}}" data-field="armesaenergie"
                                 data-group="programmes" name="system.programmes.armesaenergie.value" type="number"
-                                value="{{actorSystem.programmes.armesaenergie.value}}" /></td>
+                                value="{{system.programmes.armesaenergie.value}}" /></td>
 
                         {{else}}
                         <td class="prog-text" data-field="armesaenergie">{{localize
                             "OMEGA.label.programmes.armesaenergie"}}</td>
-                        <td class="prog-text" data-field="armesaenergie">{{actorSystem.programmes.armesaenergie.value}}
+                        <td class="prog-text" data-field="armesaenergie">{{system.programmes.armesaenergie.value}}
                         </td>
                         {{/if}}
                     </tr>
@@ -163,23 +286,27 @@
                         </td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.programmes.detecteur"}}" data-field="detecteur" data-group="programmes"
-                                name="system.programmes.detecteur.value" type="number" value="{{actorSystem.programmes.detecteur.value}}" />
+                                name="system.programmes.detecteur.value" type="number"
+                                value="{{system.programmes.detecteur.value}}" />
                         </td>
                         {{else}}
                         <td class="prog-text" data-field="detecteur">{{localize "OMEGA.label.programmes.detecteur"}}
                         </td>
-                        <td class="prog-text" data-field="detecteur">{{actorSystem.programmes.detecteur.value}}</td>
+                        <td class="prog-text" data-field="detecteur">{{system.programmes.detecteur.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="caract-line">
                         {{#if unlocked}}
-                        <td class="caract-text" data-field="moteur">{{localize "OMEGA.label.caracteristiques.moteur"}}</td>
+                        <td class="caract-text" data-field="moteur">{{localize "OMEGA.label.caracteristiques.moteur"}}
+                        </td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.moteur"}}" data-field="moteur" data-group="caracteristiques"
-                                name="system.caracteristiques.moteur.value" type="number" value="{{actorSystem.caracteristiques.moteur.value}}" /></td>
+                                OMEGA.label.caracteristiques.moteur"}}" data-field="moteur"
+                                data-group="caracteristiques" name="system.caracteristiques.moteur.value" type="number"
+                                value="{{system.caracteristiques.moteur.value}}" /></td>
                         {{else}}
-                        <td class="caract-text" data-field="moteur">{{localize "OMEGA.label.caracteristiques.moteur"}}</td>
-                        <td class="caract-text" data-field="moteur">{{actorSystem.caracteristiques.moteur.value}}</td>
+                        <td class="caract-text" data-field="moteur">{{localize "OMEGA.label.caracteristiques.moteur"}}
+                        </td>
+                        <td class="caract-text" data-field="moteur">{{system.caracteristiques.moteur.value}}</td>
 
                         {{/if}}
                     </tr>
@@ -188,13 +315,13 @@
                         <td class="prog-text" data-field="defense">{{localize
                             "OMEGA.label.programmes.defense"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.programmes.defense"}}" data-field="defense"
-                                data-group="programmes" name="system.programmes.defense.value" type="number"
-                                value="{{actorSystem.programmes.defense.value}}" /></td>
+                                OMEGA.label.programmes.defense"}}" data-field="defense" data-group="programmes"
+                                name="system.programmes.defense.value" type="number"
+                                value="{{system.programmes.defense.value}}" /></td>
                         {{else}}
                         <td class="prog-text" data-field="defense">{{localize
                             "OMEGA.label.programmes.defense"}}</td>
-                        <td class="prog-text" data-field="defense">{{actorSystem.programmes.defense.value}}
+                        <td class="prog-text" data-field="defense">{{system.programmes.defense.value}}
                         </td>
                         {{/if}}
                     </tr>
@@ -204,12 +331,13 @@
                         </td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.programmes.energie"}}" data-field="energie" data-group="programmes"
-                                name="system.programmes.energie.value" type="number" value="{{actorSystem.programmes.energie.value}}" />
+                                name="system.programmes.energie.value" type="number"
+                                value="{{system.programmes.energie.value}}" />
                         </td>
                         {{else}}
                         <td class="prog-text" data-field="energie">{{localize "OMEGA.label.programmes.energie"}}
                         </td>
-                        <td class="prog-text" data-field="energie">{{actorSystem.programmes.energie.value}}</td>
+                        <td class="prog-text" data-field="energie">{{system.programmes.energie.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="caract-line">
@@ -218,41 +346,49 @@
                             "OMEGA.label.caracteristiques.ossature"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
                                 OMEGA.label.caracteristiques.ossature"}}" data-field="ossature"
-                                data-group="caracteristiques" name="system.caracteristiques.ossature.value" type="number"
-                                value="{{actorSystem.caracteristiques.ossature.value}}" /></td>
+                                data-group="caracteristiques" name="system.caracteristiques.ossature.value"
+                                type="number" value="{{system.caracteristiques.ossature.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="ossature">{{localize
                             "OMEGA.label.caracteristiques.ossature"}}</td>
-                        <td class="caract-text" data-field="ossature">{{actorSystem.caracteristiques.ossature.value}}
+                        <td class="caract-text" data-field="ossature">{{system.caracteristiques.ossature.value}}
                         </td>
                         {{/if}}
                     </tr>
                     <tr class="program-line">
                         {{#if unlocked}}
-                        <td class="prog-text" data-field="exterminateur">{{localize "OMEGA.label.programmes.exterminateur"}}</td>
+                        <td class="prog-text" data-field="exterminateur">{{localize
+                            "OMEGA.label.programmes.exterminateur"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.programmes.exterminateur"}}" data-field="exterminateur" data-group="programmes"
-                                name="system.programmes.exterminateur.value" type="number" value="{{actorSystem.programmes.exterminateur.value}}" /></td>
+                                OMEGA.label.programmes.exterminateur"}}" data-field="exterminateur"
+                                data-group="programmes" name="system.programmes.exterminateur.value" type="number"
+                                value="{{system.programmes.exterminateur.value}}" /></td>
                         {{else}}
-                        <td class="prog-text" data-field="exterminateur">{{localize "OMEGA.label.programmes.exterminateur"}}</td>
-                        <td class="prog-text" data-field="exterminateur">{{actorSystem.programmes.exterminateur.value}}</td>
+                        <td class="prog-text" data-field="exterminateur">{{localize
+                            "OMEGA.label.programmes.exterminateur"}}</td>
+                        <td class="prog-text" data-field="exterminateur">{{system.programmes.exterminateur.value}}
+                        </td>
                         {{/if}}
                     </tr>
                     <tr class="program-line">
-                        {{#if unlocked}}>
-                        <td class="prog-text" data-field="resistance">{{localize "OMEGA.label.programmes.resistance"}}</td>
-                        <td><input class="stats-input small-input" title="{{localize " OMEGA.label.programmes.resistance"}}"
-                                data-field="resistance" data-group="programmes" name="system.programmes.resistance.value" type="number"
-                                value="{{actorSystem.programmes.resistance.value}}" /></td>
+                        {{#if unlocked}}
+                        <td class="prog-text" data-field="resistance">{{localize "OMEGA.label.programmes.resistance"}}
+                        </td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.programmes.resistance"}}" data-field="resistance" data-group="programmes"
+                                name="system.programmes.resistance.value" type="number"
+                                value="{{system.programmes.resistance.value}}" /></td>
                         {{else}}
-                        <td class="prog-text" data-field="resistance">{{localize "OMEGA.label.programmes.resistance"}}</td>
-                        <td class="prog-text" data-field="resistance">{{actorSystem.programmes.resistance.value}}</td>
+                        <td class="prog-text" data-field="resistance">{{localize "OMEGA.label.programmes.resistance"}}
+                        </td>
+                        <td class="prog-text" data-field="resistance">{{system.programmes.resistance.value}}</td>
                         {{/if}}
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="stats-block">
+            {{#ife system.typeSynth "omega"}}
             <div class="stats-block-name">Sous-programmes</div>
             <table class="ssprogtable">
                 <tbody>
@@ -275,119 +411,101 @@
                     {{/if}}
                 </tbody>
             </table>
+            {{/ife}}
         </div>
     </div>
+    <div class="lignejaune"></div>
     <div class="aux-block">
         <div class="stats-block-name">Systèmes auxiliaires</div>
-        <table {{#if unlocked}}class="bigauxtable" {{/if}}>
+        <table class="bigauxtable">
             <thead>
                 <tr>
+                    {{#ifn unlocked}}<th></th>{{/ifn}}<th></th>
                     <th></th>
-                    <th></th>
-                    <th>Valeur</th>
                     <th>Max</th>{{#if unlocked}}<th>Mod</th>{{/if}}
+                    {{#ifn unlocked}}<th></th>{{/ifn}}<th></th>
                     <th></th>
-                    <th></th>
-                    <th>Valeur</th>
+                    <th>Max</th>{{#if unlocked}}<th>Mod</th>{{/if}}
+                    {{#ifn unlocked}}<th></th>{{/ifn}}<th></th>
                     <th>Max</th>{{#if unlocked}}<th>Mod</th>{{/if}}
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Blindage</td>
-                    <td><input class="aux-input" title="Valeur courante" id="blindage"
-                            name="system.systemesauxiliaires.blindage.value" type="number" min="0"
-                            max="{{actorSystem.systemesauxiliaires.blindage.max}}"
-                            value="{{actorSystem.systemesauxiliaires.blindage.value}}" /></td>
-                    <td>{{actorSystem.systemesauxiliaires.blindage.max}}</td>
+                    <td>{{system.systemesauxiliaires.blindage.value}}</td>
+                    <td>{{system.systemesauxiliaires.blindage.max}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="blindagemod"
                             name="system.systemesauxiliaires.blindage.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.blindage.mod}}" /></td>
+                            value="{{system.systemesauxiliaires.blindage.mod}}" /></td>
                     {{/if}}
                     <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Résistance moteur</td>
-                    <td><input class="aux-input" title="Valeur courante" id="resistancemoteur"
-                            name="system.systemesauxiliaires.resistancemoteur.value" type="number" min="0"
-                            max="{{actorSystem.systemesauxiliaires.resistancemoteur.max}}"
-                            value="{{actorSystem.systemesauxiliaires.resistancemoteur.value}}" /></td>
-                    <td>{{actorSystem.systemesauxiliaires.resistancemoteur.max}}</td>
+                    <td>{{system.systemesauxiliaires.resistancemoteur.value}}</td>
+                    <td>{{system.systemesauxiliaires.resistancemoteur.max}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="resistancemoteurmod"
                             name="system.systemesauxiliaires.resistancemoteur.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.resistancemoteur.mod}}" /></td>
+                            value="{{system.systemesauxiliaires.resistancemoteur.mod}}" /></td>
+                    {{/if}}
+                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Vitesse</td>
+                    <td>{{system.systemesauxiliaires.vitesse.value}}</td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input" title="Modificateur" id="vitessemod"
+                            name="system.systemesauxiliaires.vitesse.mod" type="number"
+                            value="{{system.systemesauxiliaires.vitesse.mod}}" /></td>
                     {{/if}}
                 </tr>
                 <tr>
                     <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Blindage IEM</td>
-                    <td><input class="aux-input" title="Valeur courante" id="blindageiem"
-                            name="system.systemesauxiliaires.blindageiem.value" type="number" min="0"
-                            max="{{actorSystem.systemesauxiliaires.blindageiem.max}}"
-                            value="{{actorSystem.systemesauxiliaires.blindageiem.value}}" /></td>
-                    <td>{{actorSystem.systemesauxiliaires.blindageiem.max}}</td>
+                    <td>{{system.systemesauxiliaires.blindageiem.value}}</td>
+                    <td>{{system.systemesauxiliaires.blindageiem.max}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="blindageiemmod"
                             name="system.systemesauxiliaires.blindageiem.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.blindageiem.mod}}" />
+                            value="{{system.systemesauxiliaires.blindageiem.mod}}" />
                     </td>
                     {{/if}}
                     <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Intégrité informatique</td>
-                    <td><input class="aux-input" title="Valeur courante" id="integriteinformatique"
-                            name="system.systemesauxiliaires.integriteinformatique.value" type="number" min="0"
-                            max="{{actorSystem.systemesauxiliaires.integriteinformatique.max}}"
-                            value="{{actorSystem.systemesauxiliaires.integriteinformatique.value}}" /></td>
-                    <td>{{actorSystem.systemesauxiliaires.integriteinformatique.max}}</td>
+                    <td>{{system.systemesauxiliaires.integriteinformatique.value}}</td>
+                    <td>{{system.systemesauxiliaires.integriteinformatique.max}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="integriteinformatiquemod"
                             name="system.systemesauxiliaires.integriteinformatique.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.integriteinformatique.mod}}" />
+                            value="{{system.systemesauxiliaires.integriteinformatique.mod}}" />
                     </td>
+                    {{/if}}
+                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Initiative</td>
+                    <td>{{system.systemesauxiliaires.initiative.value}}</td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input" title="Modificateur" id="initiativemod"
+                            name="system.systemesauxiliaires.initiative.mod" type="number"
+                            value="{{system.systemesauxiliaires.initiative.mod}}" /></td>
                     {{/if}}
                 </tr>
                 <tr>
                     <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Énergie disponible</td>
-                    <td><input class="aux-input" title="Valeur courante" id="energie"
-                            name="system.systemesauxiliaires.energiedisponible.value" type="number" min="0"
-                            max="{{actorSystem.systemesauxiliaires.energiedisponible.max}}"
-                            value="{{actorSystem.systemesauxiliaires.energiedisponible.value}}" /></td>
-                    <td>{{actorSystem.systemesauxiliaires.energiedisponible.max}}</td>
+                    <td>{{system.systemesauxiliaires.energiedisponible.value}}</td>
+                    <td>{{system.systemesauxiliaires.energiedisponible.max}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="energiemod"
                             name="system.systemesauxiliaires.energiedisponible.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.energiedisponible.mod}}" />
+                            value="{{system.systemesauxiliaires.energiedisponible.mod}}" />
                     </td>
                     {{/if}}
-                </tr>
-                <tr>
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Vitesse</td>
-                    <td colspan="2">{{actorSystem.systemesauxiliaires.vitesse.max}}</td>
-                    {{#if unlocked}}
-                    <td><input class="aux-input" title="Modificateur" id="vitessemod"
-                            name="system.systemesauxiliaires.vitesse.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.vitesse.mod}}" /></td>
-                    {{/if}}
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Initiative</td>
-                    <td colspan="2">{{actorSystem.systemesauxiliaires.initiative.max}}</td>
-                    {{#if unlocked}}
-                    <td><input class="aux-input" title="Modificateur" id="initiativemod"
-                            name="system.systemesauxiliaires.initiative.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.initiative.mod}}" /></td>
-                    {{/if}}
-                </tr>
-                <tr>
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Défense</td>
-                    <td colspan="2">{{actorSystem.systemesauxiliaires.defense.max}}</td>
-                    {{#if unlocked}}
-                    <td><input class="aux-input" title="Modificateur" id="defensemod"
-                            name="system.systemesauxiliaires.defense.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.defense.mod}}" />
-                    </td>
-                    {{/if}}
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Chance</td>
-                    <td colspan="2">{{actorSystem.systemesauxiliaires.chance.max}}</td>
+                    <td {{#ifn unlocked}}colspan="3" {{else}}colspan="2" {{/ifn}}>Chance</td>
+                    <td>{{system.systemesauxiliaires.chance.value}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="chancemod"
                             name="system.systemesauxiliaires.chance.mod" type="number"
-                            value="{{actorSystem.systemesauxiliaires.chance.mod}}" /></td>
+                            value="{{system.systemesauxiliaires.chance.mod}}" /></td>{{/if}}
+                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Défense</td>
+                    <td>{{system.systemesauxiliaires.defense.value}}</td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input" title="Modificateur" id="defensemod"
+                            name="system.systemesauxiliaires.defense.mod" type="number"
+                            value="{{system.systemesauxiliaires.defense.mod}}" />
+                    </td>
                     {{/if}}
                 </tr>
             </tbody>

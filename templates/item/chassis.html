@@ -1,21 +1,23 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
         <h1><input name="name" type="text" value="{{item.name}}" /></h1>
     </header>
     <div class="main">
         <table>
             <thead>
                 <tr>
-                    <th>Nombre de slots</th>
+                    <th colspan="2">Nombre de slots</th>
                     <th>Slots</th>
+                    <th>Extension native</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        Nombre de slots : Ossature + <input title="Nombre de slots : Ossature + " id="slots"
-                            name="system.nbslots" type="number" value="{{system.nbslots}}" />
+                        Ossature +</td>
+                    <td><input title="Nombre de slots : Ossature + " id="slots" name="system.nbslots" type="number"
+                            value="{{system.nbslots}}" />
                     </td>
                     <td>
                         {{#if item.actor}}
@@ -23,7 +25,10 @@
                         {{else}}
                         N/A
                         {{/if}}
+                    </td>
                     <td>
+                        {{system.extensionNative}}
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -1,11 +1,14 @@
 {
   "ACTOR": {
-    "TypePlayer": "Joueur",
-    "TypeNpc": "PNJ"
+    "TypeAdvancedsynth": "Synthetique avancé",
+    "TypeSynthetique": "Synthetique asservi",
+    "TypeOrganique": "Organique"
   },
-
   "ITEM": {
-    "TypeArme": "Arme"
+    "TypeArme": "Arme",
+    "TypeEquipement": "Équipement",
+    "TypeChassis": "Chassis",
+    "TypeExtension": "Extension"
   },
 
   "OMEGA": {
@@ -16,7 +19,17 @@
         "interface": "Interface",
         "ossature": "Ossature",
         "moteur": "Moteur",
-        "balise": "Balise"
+        "balise": "Balise",
+        "connaissance": "Connaissance",
+        "corpsacorps": "Corps à corps",
+        "defense": "Défense",
+        "empathie": "Empathie",
+        "initiative": "Initiative",
+        "raisonnement": "Raisonnement",
+        "rapidite": "Rapidité",
+        "sens": "Sens",
+        "tir": "Tir",
+        "vitalite": "Vitalité"
       },
       "diode": {
         "rouge": "Rouge",
@@ -27,20 +40,30 @@
       },
       "firme": "Firme",
       "name": "Nom",
+      "occupation": "Occupation",
       "programmes": {
+        "armesaenergie": "Armes à énergie",
         "basededonnees": "Base de données",
         "connexion": "Connexion",
         "contremesure": "Contre-mesures",
         "dissipateur": "Dissipateur",
-        "hacking": "Hacking",
-        "omega": "Omega",
-        "armesaenergie": "Armes à énergie",
         "detecteur": "Détecteur",
         "defense": "Défense",
         "energie": "Énergie",
         "exterminateur": "Exterminateur",
-        "resistance": "Résistance"
+        "hacking": "Hacking",
+        "omega": "Omega",
+        "resistance": "Résistance",
+        "artillerie": "Artillerie",
+        "chirurgie": "Chirurgie/génétique",
+        "cybernetique": "Cybernétique",
+        "ingenierie": "Ingénierie",
+        "neutralisationcognitive": "Neutralisation cognitive",
+        "recherche": "Recherche",
+        "reprogrammation": "Reprogrammation",
+        "tactique": "Tactique"
       },
+      "race": "Race",
       "sousprogrammes": {
         "armesetdestruction": "Armes et destruction",
         "biologieorganiques": "Biologie / organiques",
@@ -54,10 +77,11 @@
       },
       "systemesauxiliaires": {
         "blindage": "Blindage",
-        "resistancemoteur": "Résistance moteur",
         "blindageiem": "Blindage IEM",
-        "integriteinformatique": "Intégrité informatique",
+        "defense": "Défense",
         "initiative": "Initiative",
+        "integriteinformatique": "Intégrité informatique",
+        "resistancemoteur": "Résistance moteur",
         "vitesse": "Vitesse"
       },
       "traits": "Traits de personnalité",
@@ -77,9 +101,12 @@
       },
       "difficulty": "Difficulté : ",
       "introtext": {
-        "attack": "{actorname} utilise l'arme {weapon} avec le programme {program}.",
+        "attack": "{actorname} utilise l'arme {arme} avec le programme {program} ",
+        "attackorganique": "{actorname} utilise l'arme {arme} avec sa compétence {program} ",
         "chance": "{actorname} tente sa chance.",
-        "program": "{actorname} utilise son programme {program}."
+        "chanceorganique": "{actorname} tente sa chance.",
+        "program": "{actorname} utilise son programme {program} ",
+        "programorganique": "{actorname} utilise sa compétence {program} "
       },
       "rollmodifier": "Modificateur : "
     }

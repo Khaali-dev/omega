@@ -1,61 +1,86 @@
-.dialog{
-    background-color: @clear-background;
+.dialog {
+  background-color: @clear-background;
+  display: flex;
+  flex-direction: column;
+  font: @default-font;
+  .intro {
     display: flex;
-    flex-direction: column;
-    font: @default-font;
-    .tooltip {
-    position: relative;
-    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    .introImg {
+      border: none;
+      padding: 5px;
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      object-position: center;
+      align-self: center;
+      max-width: 120px;
+      max-height: 120px;
+      display: inline;
     }
-    .intro{
-        display: flex;
-        flex-direction: row;
-        justify-content:center;
-        .introImg {
-            border: none;
-            padding: 5px;
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            object-position: center;
-            align-self:center;
-        }
-        .introtext{
-            font: @default-font;
-            margin: 0.5em;
-            padding-top: 1.5em;
-            text-align: center;
-        }
+    .introtext {
+      font: @default-font;
+      margin: 0.5em;
+      padding-top: 1.5em;
+      text-align: center;
     }
-    .formula{
-        text-align: center;
-        margin: 0.5em;
+    .introtable{
+      border: none;
+      td:nth-child(1) {
+        width: 20%;
+      }
+      td:nth-child(2) {
+        width: 80%;
+      }
+      .introImg {
+        border: none;
+        padding: 5px;
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        object-position: center;
+        align-self: center;
+        max-width: 120px;
+        max-height: 120px;
+        display: inline;
+      }
+      .introtext {
         font: @default-font;
+        padding: 2em;
+        text-align: center;
+      }
     }
-    .rollmodifier{
-        display: flex;
-        flex-direction: row;
+  }
+  .dialog-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .rollmodifier {
+      display: flex;
+      flex-direction: row;
+      margin: 0 0 1em 1em;
+      input {
+        width: 5em;
         margin: 0 0 1em 1em;
-        input{
-            width: 5em;
-            margin: 0 0 1em 1em;
-        }
-        select{
-            width: 5em;
-            margin: 0 0 1em 1em;
-        }
-    }
-    .difficulty{
-        display: flex;
-        flex-direction: row;
+      }
+      select {
+        width: 5em;
         margin: 0 0 1em 1em;
-        input{
-            width: 5em;
-            margin: 0 0 1em 1em;
-        }
-        select{
-            width: 5em;
-            margin: 0 0 1em 1em;
-        }
+      }
     }
+    .difficulty {
+      display: flex;
+      flex-direction: row;
+      margin: 0 0 1em 1em;
+      input {
+        width: 5em;
+        margin: 0 0 1em 1em;
+      }
+      select {
+        width: 5em;
+        margin: 0 0 1em 1em;
+      }
+    }
+  }
 }

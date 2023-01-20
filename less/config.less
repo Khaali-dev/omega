@@ -56,6 +56,7 @@
 @title-font: 1.5rem "exo2";
 @long-text-font: 0.7rem "helvetica";
 @playersheet-background: repeat url('./assets/image/feuilleperso.webp');
+@organiquesheet-background: repeat url('./assets/image/fond_organique.webp');
 @clear-background: #fffdfc;
 @edit-background: #f5fdfb;
 @editactive-background: #c3d4d0;
@@ -70,6 +71,11 @@
 @diode-bleue: center / contain no-repeat url('./assets/image/diodes/diode_bleue.webp');
 @diode-blanche: center / contain no-repeat url('./assets/image/diodes/diode_blanche.webp');
 @diode-noire: center / contain no-repeat url('./assets/image/diodes/diode_noire.webp');
+@logo_futuretechnologies: center / contain no-repeat url('./assets/image/logo/logo_futuretechnologies.webp');
+@logo_earthshield: center / contain no-repeat url('./assets/image/logo/logo_earthshield.webp');
+@logo_hegemon: center / contain no-repeat url('./assets/image/logo/logo_hegemon.webp');
+@logo_cyberlife: center / contain no-repeat url('./assets/image/logo/logo_cyberlife.webp');
+@logo_prophetiaincorporated: center / contain no-repeat url('./assets/image/logo/logo_prophetiaincorporated.webp');
 
 
 .diode {
@@ -97,95 +103,19 @@
 }
 
 
-
-
-
-/*
-//Playersheet
-//titres: "compétences", "armes", "protections"
-@pc-title-font: 1.1rem "Signika";
-//char name
-@pc-name-font: 1.4rem "Signika";
-//skill names
-@pc-skill-font: 1.2rem "Modesto condensed";
-//description, activity
-@pc-description-font: 1.1rem "Modesto condensed";
-@pc-activity-font: 1rem "Signika";
-//tabs
-@pc-tab-font: 1.1rem "Modesto condensed";
-@pc-tab-font-color: #726e6e;
-//combat
-@combat-trainings-font: 1.1rem "Modesto condensed";
-@combat-bonus-font: 1.1rem "Modesto condensed";
-@combat-table-title-font: 0.9rem "Signika";
-@combat-table-font: normal 0.9rem "Signika";
-//boons
-@boon-name-font: 1.2rem "Modesto condensed";
-@boon-text-font: 0.7rem "Merriweather";
-@boon-extratext-font: 1.2rem "Modesto condensed";
-//equipment
-@equipment-name-font: 0.9rem "Signika";
-//bio
-@bio-title-font: 1rem "Signika";
-@bio-border: 2px  solid black ;
-
-//npc
-@npc-name-font: 2em "Signika";
-@npc-name-color: @title-color;
-@npc-activity-font: 1.1em "Signika";
-@npc-combat-line-font: 1.2rem "Signika";
-@npc-combat-line-font-color: black;
-@npc-skill-font: 1.2rem "Modesto condensed";
-@npc-skill-font-color: black;
-@npc-health-font: 1.2rem "Signika";
-
-@dialog-font: 1rem "Signika";
-@dialog-intro-font: bold 1.2rem "Signika";
-@dialog-formula-font: bold 1.2rem "Signika";
-@dialog-bonus-label-font: 1rem "Signika";
-
-@chat-font: 1rem "Signika";
-@chat-intro-font: 1rem "Signika";
-@chat-title-border-radius: 20px;
-@chat-modifier-font: italic 0.9rem "Signika";
-@chat-formulatext-font: 1rem "Signika";
-@chat-finaltext-font: 1rem "Signika";
-@chat-end-height: 0px;
-
-@h1-font: 1.2rem "Signika";
-@h1-text-transform: uppercase;
-@h1-border: none;
-
-@h2-font: 1rem "Signika";
-
-input {
-    color: @core-main-color;
+.editor {
+  height: 100%;
+  width: 100%;
+  background: @edit-background;
+  box-shadow: inset 0 0 6px black;
+  min-height: 5em;
+  color: black;
+  .editor-content {
+    min-height: 5em;
+    color: black;
+  }
+  .tox.tox-tinymce {
+    min-height: 10em;
+  }
 }
 
-//colors
-@title-color: black;
-@h1-color: black;
-@h2-color: black;
-@font-soft-color: #8e8d8d;
-@core-main-color: #456;
-@boon-color: black;
-@icon-color: rgb(112, 90, 16);
-@font-color-booncard: black;
-@border-color-skill: rgb(146, 142, 142);
-@border-color-combat-bonus: rgb(146, 142, 142);
-@chat-introtext: white;
-@chat-formulatext: black;
-@chat-finaltext: black;
-@chat-modifiertext: rgb(71, 14, 14);
-
-//size
-@editor-height: 5em;
-
-//images
-@playersheet-background: repeat url('../../../ui/parchment.jpg');
-@itemsheet-background: repeat url('../../../ui/parchment-white.jpg');
-@npcsheet-background: repeat url('../../../ui/parchment-white.jpg');
-@chat-background: repeat url('../../../ui/parchment-white.jpg');
-@chat-title-background: repeat url('../../../ui/denim.png');
-@chat-end-background: top/50% repeat url('../../../ui/parchment-white.jpg');
-@booncard-background: url('../../../ui/parchment-white.jpg');*/

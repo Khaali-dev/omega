@@ -1,3 +1,8 @@
 <div class="notes-tab">
-    {{editor notebookhtml target="actorSystem.notebook" button=true owner=owner editable=editable}}
+    {{#if unlocked}}
+    {{editor descriptionhtml target="system.description" button=true owner=owner editable=editable}}
+    {{else}}
+    {{{descriptionhtml}}}
+    {{/if}}
+    {{editor notebook target="system.notebook" button=true owner=owner editable=editable}}
 </div>

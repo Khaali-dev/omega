@@ -1,51 +1,57 @@
 <div class="dialog">
   <div class="intro">
-    {{#if (ne charImg "icons/svg/mystery-man.svg")}}
-    <div class="introImg"><img src="{{charImg}}" title="{{actorname}}" /></div>
+    <table class="introtable">
+      <tbody>
+        <tr>
+          {{#if (ne charImg "icons/svg/mystery-man.svg")}}
+    <td class="introImg"><img src="{{charImg}}" title="{{actorname}}" /></td>
     {{/if}}
-    <div class="introtext">{{introText}}</div>
+    <td {{#ife charImg "icons/svg/mystery-man.svg"}}colspan="2"{{/ife}} class="introtext">{{introText}}{{#if program}}&nbsp;({{program.value}}){{/if}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  {{#if program}}
-  <div class="formula">{{program.value}}</div>
-  <div class="rollmodifier">
-    <label>{{localize "OMEGA.dialog.rollmodifier"}}</label>
-    <select id="rollmodifier">
-      <option value="-2">-2</option>
-      <option value="-1">-1</option>
-      <option value="0" selected>0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
+  <div class="dialog-main">
+    {{#if program}}
+    <div class="difficulty">
+      <label>{{localize "OMEGA.dialog.difficulty"}}</label>
+      <select id="difficulty">
+        <option value="0">0</option>
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+    <div class="rollmodifier">
+      <label>{{localize "OMEGA.dialog.rollmodifier"}}</label>
+      <select id="rollmodifier">
+        <option value="-2">-2</option>
+        <option value="-1">-1</option>
+        <option value="0" selected>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+    {{else}}
+    <div class="nbdiodes">
+      <label>Nombre de Diodes</label>
+      <select id="nbdiodes">
+        <option value="0">0</option>
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+    {{/if}}
   </div>
-
-  <div class="difficulty">
-    <label>{{localize "OMEGA.dialog.difficulty"}}</label>
-    <select id="difficulty">
-      <option value="0">0</option>
-      <option value="1" selected>1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-    </select>
-  </div>
-  {{else}}
-  <div class="nbdiodes">
-    <label>Nombre de Diodes</label>
-    <select id="nbdiodes">
-      <option value="0">0</option>
-      <option value="1" selected>1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-    </select>
-  </div>
-  {{/if}}
 </div>

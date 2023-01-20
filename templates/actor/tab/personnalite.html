@@ -1,0 +1,7 @@
+<div class="personnalite-tab">
+    {{#if unlocked}}
+    {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+    {{else}}
+    {{{descriptionhtml}}}
+    {{/if}}
+</div>

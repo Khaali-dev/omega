@@ -1,0 +1,320 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="main">
+        <table>
+            <tbody>
+                <tr>
+                    <td rowspan="4"><img class="portraitimg" src="{{actor.img}}" data-edit="img"
+                            title="{{actor.name}}" /></td>
+                    <td class="name-text">{{localize "OMEGA.label.name"}}</td>
+                    {{#if unlocked}}
+                    <td><input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+                        {{else}}
+                    <td class="pcname">{{actor.name}}
+                        {{/if}}
+                    </td>
+                    <td rowspan="4">
+                        <div class="chancetable">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">Chance</th>
+                                        <th colspan="2" class="chance-diode-line">
+                                            {{#if unlocked}}
+                                            <input class="aux-input" style="width: 2em;" title="Modificateur" id="chancevalue"
+                                                name="system.systemesauxiliaires.chance.value" type="number"
+                                                value="{{system.systemesauxiliaires.chance.value}}" />
+                                            <a class="chance-roll" data-field="chanceroll">
+                                                <i class="fas fa-dice"></i>
+                                            </a>
+                                            {{else}}
+                                            {{system.systemesauxiliaires.chance.value}}
+                                            {{/if}}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody style="text-align:center;">
+                                    <tr height="10px">
+                                        <td><img class="diode diode-rouge"></td>
+                                        <td><img class="diode diode-verte"></td>
+                                        <td><img class="diode diode-bleue"></td>
+                                        <td><img class="diode diode-blanche"></td>
+                                        <td><img class="diode diode-noire"></td>
+                                    </tr>
+                                    <tr>
+                                        {{#if unlocked}}
+                                        <td><input class="chance-diode-line small-input" title="rouge"
+                                                name="system.chance.rouge" type="number"
+                                                value="{{system.chance.rouge}}" />
+                                        </td>
+                                        <td><input class="chance-diode-line small-input" title="verte"
+                                                name="system.chance.verte" type="number"
+                                                value="{{system.chance.verte}}" />
+                                        </td>
+                                        <td><input class="chance-diode-line small-input" title="bleue"
+                                                name="system.chance.bleue" type="number"
+                                                value="{{system.chance.bleue}}" />
+                                        </td>
+                                        <td><input class="chance-diode-line small-input" title="blanche"
+                                                name="system.chance.blanche" type="number"
+                                                value="{{system.chance.blanche}}" />
+                                        </td>
+                                        <td><input class="chance-diode-line small-input" title="noire"
+                                                name="system.chance.noire" type="number"
+                                                value="{{system.chance.noire}}" />
+                                        </td>
+                                        {{else}}
+                                        <td class="chance-diode-line">{{system.chance.rouge}}</td>
+                                        <td class="chance-diode-line">{{system.chance.verte}}</td>
+                                        <td class="chance-diode-line">{{system.chance.bleue}}</td>
+                                        <td class="chance-diode-line">{{system.chance.blanche}}</td>
+                                        <td class="chance-diode-line">{{system.chance.noire}}</td>
+                                        {{/if}}
+                                    </tr>
+                                    <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
+                                        <td colspan="3">Armure</td>
+                                        <td><input class="aux-input" title="Valeur courante" id="armure"
+                                                name="system.systemesauxiliaires.armure.value" type="number" min="0"
+                                                max="{{system.systemesauxiliaires.armure.base}}"
+                                                value="{{system.systemesauxiliaires.armure.value}}" /></td>
+                                        {{#if unlocked}}
+                                        <td><input class="aux-input" title="Modificateur" id="armurebase"
+                                                name="system.systemesauxiliaires.armure.base" type="number"
+                                                value="{{system.systemesauxiliaires.armure.base}}" /></td>
+                                        {{else}}<td>/ {{system.systemesauxiliaires.armure.base}}</td>
+                                        {{/if}}
+                                    </tr>
+                                    <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
+                                        <td colspan="3">Vie</td>
+                                        <td><input class="aux-input" title="Valeur courante" id="vie"
+                                                name="system.systemesauxiliaires.vie.value" type="number" min="0"
+                                                max="{{system.systemesauxiliaires.vie.base}}"
+                                                value="{{system.systemesauxiliaires.vie.value}}" /></td>
+                                        {{#if unlocked}}
+                                        <td><input class="aux-input" title="Modificateur" id="viebase"
+                                                name="system.systemesauxiliaires.vie.base" type="number"
+                                                value="{{system.systemesauxiliaires.vie.base}}" /></td>
+                                        {{else}}<td>/ {{system.systemesauxiliaires.vie.base}}</td>
+                                        {{/if}}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-text">{{localize "OMEGA.label.race"}}</td>
+                    {{#if unlocked}}
+                    <td><input name="system.race" type="text" value="{{system.race}}" placeholder="Race" />
+                        {{else}}
+                    <td class="pcfirme">{{system.race}}
+                        {{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-text">{{localize "OMEGA.label.occupation"}}</td>
+                    {{#if unlocked}}
+                    <td><input name="system.occupation" type="text" value="{{system.occupation}}"
+                            placeholder="Occupation" />
+                        {{else}}
+                    <td class="pcfirme">{{system.occupation}}
+                        {{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right-icon">
+                        <a class="sheet-change-lock" title="{{localize 'OMEGA.label.unlock_sheet'}}">
+                            {{#if unlocked}}
+                            <i class="fas fa-lock-open"></i>
+                            {{else}}
+                            <i class="fas fa-lock"></i>
+                            {{/if}}
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="central-block">
+            <table class="uniqueprogtable">
+                <tbody>
+                    <tr class="prog-line">
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.connaissance"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.connaissance"}}" data-field="connaissance"
+                                data-group="caracteristiques" name="system.caracteristiques.connaissance.value"
+                                type="number" value="{{system.caracteristiques.connaissance.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="connaissance">{{localize
+                            "OMEGA.label.caracteristiques.connaissance"}}</td>
+                        <td class="caract-text" data-field="connaissance">
+                            {{system.caracteristiques.connaissance.value}}</td>
+                        {{/if}}
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.empathie"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.empathie"}}" data-field="empathie"
+                                data-group="caracteristiques" name="system.caracteristiques.empathie.value"
+                                type="number" value="{{system.caracteristiques.empathie.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="empathie">{{localize
+                            "OMEGA.label.caracteristiques.empathie"}}</td>
+                        <td class="caract-text" data-field="empathie">
+                            {{system.caracteristiques.empathie.value}}</td>
+                        {{/if}}
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.raisonnement"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.raisonnement"}}" data-field="raisonnement"
+                                data-group="caracteristiques" name="system.caracteristiques.raisonnement.value"
+                                type="number" value="{{system.caracteristiques.raisonnement.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="raisonnement">{{localize
+                            "OMEGA.label.caracteristiques.raisonnement"}}</td>
+                        <td class="caract-text" data-field="raisonnement">
+                            {{system.caracteristiques.raisonnement.value}}</td>
+                        {{/if}}
+                    </tr>
+                    <tr class="prog-line">
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.corpsacorps"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.corpsacorps"}}" data-field="corpsacorps"
+                                data-group="caracteristiques" name="system.caracteristiques.corpsacorps.value"
+                                type="number" value="{{system.caracteristiques.corpsacorps.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="corpsacorps">{{localize
+                            "OMEGA.label.caracteristiques.corpsacorps"}}</td>
+                        <td class="caract-text" data-field="corpsacorps">
+                            {{system.caracteristiques.corpsacorps.value}}</td>
+                        {{/if}}
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.initiative"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.initiative"}}" data-field="initiative"
+                                data-group="caracteristiques" name="system.caracteristiques.initiative.value"
+                                type="number" value="{{system.caracteristiques.initiative.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="initiative">{{localize
+                            "OMEGA.label.caracteristiques.initiative"}}</td>
+                        <td class="caract-text" data-field="initiative">
+                            {{system.caracteristiques.initiative.value}}</td>
+                        {{/if}}
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.tir"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.tir"}}" data-field="tir" data-group="caracteristiques"
+                                name="system.caracteristiques.tir.value" type="number"
+                                value="{{system.caracteristiques.tir.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="tir">{{localize "OMEGA.label.caracteristiques.tir"}}
+                        </td>
+                        <td class="caract-text" data-field="tir">{{system.caracteristiques.tir.value}}</td>
+                        {{/if}}
+                    </tr>
+                    <tr class="prog-line">
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.defense"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.defense"}}" data-field="defense"
+                                data-group="caracteristiques" name="system.caracteristiques.defense.value" type="number"
+                                value="{{system.caracteristiques.defense.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="defense">{{localize
+                            "OMEGA.label.caracteristiques.defense"}}</td>
+                        <td class="caract-text" data-field="defense">{{system.caracteristiques.defense.value}}
+                        </td>
+                        {{/if}}
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.rapidite"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.rapidite"}}" data-field="rapidite"
+                                data-group="caracteristiques" name="system.caracteristiques.rapidite.value"
+                                type="number" value="{{system.caracteristiques.rapidite.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="rapidite">{{localize
+                            "OMEGA.label.caracteristiques.rapidite"}}</td>
+                        <td class="caract-text" data-field="rapidite">
+                            {{system.caracteristiques.rapidite.value}}</td>
+                        {{/if}}
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.sens"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.sens"}}" data-field="sens" data-group="caracteristiques"
+                                name="system.caracteristiques.sens.value" type="number"
+                                value="{{system.caracteristiques.sens.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="sens">{{localize "OMEGA.label.caracteristiques.sens"}}
+                        </td>
+                        <td class="caract-text" data-field="sens">{{system.caracteristiques.sens.value}}</td>
+                        {{/if}}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="central-block">
+            <table class="uniqueprogtable">
+                <tbody>
+                    <tr class="prog-line">
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.systemesauxiliaires.defense"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.systemesauxiliaires.defense"}}" data-field="defense"
+                                data-group="systemesauxiliaires" name="system.systemesauxiliaires.defense.value"
+                                type="number" value="{{system.systemesauxiliaires.defense.value}}" /></td>
+                        {{else}}
+                        <td class="aux-text" data-field="defense">{{localize
+                            "OMEGA.label.systemesauxiliaires.defense"}}</td>
+                        <td class="aux-text" data-field="defense">
+                            {{system.systemesauxiliaires.defense.value}}</td>
+                        {{/if}}
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.caracteristiques.vitalite"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.caracteristiques.vitalite"}}" data-field="vitalite"
+                                data-group="caracteristiques" name="system.caracteristiques.vitalite.value"
+                                type="number" value="{{system.caracteristiques.vitalite.value}}" /></td>
+                        {{else}}
+                        <td class="caract-text" data-field="vitalite">{{localize
+                            "OMEGA.label.caracteristiques.vitalite"}}</td>
+                        <td class="caract-text" data-field="vitalite">
+                            {{system.caracteristiques.vitalite.value}}</td>
+                        {{/if}}
+                        {{#if unlocked}}
+                        <td>{{localize "OMEGA.label.systemesauxiliaires.vitesse"}}</td>
+                        <td><input class="stats-input small-input" title="{{localize "
+                                OMEGA.label.systemesauxiliaires.vitesse"}}" data-field="vitesse"
+                                data-group="systemesauxiliaires" name="system.systemesauxiliaires.vitesse.value"
+                                type="number" value="{{system.systemesauxiliaires.vitesse.value}}" /></td>
+                        {{else}}
+                        <td class="aux-text" data-field="vitesse">{{localize
+                            "OMEGA.label.systemesauxiliaires.vitesse"}}</td>
+                        <td class="aux-text" data-field="vitesse">
+                            {{system.systemesauxiliaires.vitesse.value}}</td>
+                        {{/if}}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sheet-tabs tabs" data-group="primary">
+            <b class="tab-name" data-tab="personnalite">Personnalité</b>
+            <b class="tab-name" data-tab="combat">Combat</b>
+            <b class="tab-name" data-tab="avantages">Avantages</b>
+            <b class="tab-name" data-tab="equipement">Équipement</b>
+        </div>
+        {{#if estorganique}}
+        <div class="bloodline"></div>
+        {{else}}
+        <div class="lignejaune"></div>
+        {{/if}}
+        <div class="sheet-body">
+            <div class="tab" data-group="primary" data-tab="personnalite">{{>
+                systems/omega/templates/actor/tab/personnalite.html}}</div>
+            <div class="tab" data-group="primary" data-tab="combat">{{>
+                systems/omega/templates/actor/tab/combat.html}}</div>
+            <div class="tab" data-group="primary" data-tab="avantages">{{>
+                systems/omega/templates/actor/tab/avantages.html}}</div>
+            <div class="tab" data-group="primary" data-tab="equipement">{{>
+                systems/omega/templates/actor/tab/equipement.html}}</div>
+        </div>
+    </div>
+</form>

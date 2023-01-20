@@ -4,15 +4,15 @@ export class Diodes {
   /**
    * Tirage de diodes
    * @param actor The actor which performs the action
-   * @param rolltype the type of roll (program, weapon)
+   * @param rolltype the type of roll (program, arme)
    * @param program  The program (skill) : '{Value , label, group, reference}
    * @param data
-   *        itemId  the id of the weapon used
+   *        itemId  the id of the arme used
    *        mod  modifier to the roll
    */
 
-  constructor(actor, rolltype, program, data) {
-    this.actor = actor;
+  constructor(actorId, rolltype, program, data) {
+    this.actor = actorId ? game.actors.get(actorId) : undefined;
     this.rolltype = rolltype;
     this.program = program;
     this.data = data;
@@ -26,22 +26,23 @@ export class Diodes {
       this.data.introText = "Pioche simple de diodes";
       this.data.actorname = game.users.get(userId)?.name;
       this.data.charImg = "icons/svg/mystery-man.svg";
-      this.data.isPlayer = true;
+      this.data.isAdvancedSynth = true;
     } else {
       let namesForText = { actorname: this.actor.name, program: game.i18n.localize(this.program.label) };
       if (this.data.isAttack) {
         if (!this.data.itemId) {
           return;
         } else {
-          let weapon = this.actor.items.get(this.data.itemId);
-          if (!weapon) return;
-          namesForText.weapon = weapon.name;
+          let arme = this.actor.items.get(this.data.itemId);
+          if (!arme) return;
+          namesForText.arme = arme.name;
         }
       }
-      this.data.introText = game.i18n.format("OMEGA.dialog.introtext." + this.rolltype, namesForText);
+      let prepareintrotext = this.actor.estOrganique ? "organique" : "";
+      this.data.introText = game.i18n.format("OMEGA.dialog.introtext." + this.rolltype + prepareintrotext, namesForText);
       this.actorname = this.actor.name;
       this.data.charImg = this.actor.img;
-      this.data.isPlayer = this.actor.isPlayer();
+      this.data.isAdvancedSynth = this.actor.isAdvancedSynth();
     }
 
     if (this.rolltype === ROLL_TYPE.CHANCE) {
@@ -56,10 +57,10 @@ export class Diodes {
         type: this.rollType,
         action: this.data,
         isAttack: this.data.isAttack,
-        weapon: this.data?.weapon,
+        arme: this.data?.arme,
         introText: this.data.introText,
         charImg: this.data.charImg,
-        isPlayer: this.data.isPlayer,
+        isAdvancedSynth: this.data.isAdvancedSynth,
       });
       await new Dialog({
         title: "Tirage de diode",
@@ -162,9 +163,9 @@ export class Diodes {
     let rerollButton = false;
     this.resultText = "Résultat final.";
     if (this.rolltype === ROLL_TYPE.SIMPLE) {
-      this.resultText = "Résultat.";
+      this.resultText = "";
     } else if (this.rolltype === ROLL_TYPE.CHANCE) {
-      this.resultText = "Résultat.";
+      this.resultText = "";
       let modification = {};
       for (let diodecolor of ["noire", "blanche", "verte", "bleue", "rouge"]) {
         await setProperty(modification, "system.chance." + diodecolor, this.data.diodesParCouleur[diodecolor]);
@@ -183,13 +184,13 @@ export class Diodes {
     } else if (this.data.formulaValue < -1) {
       this.resultText = "La Matrice choisit quelle diode indique le résultat de l'action.";
     }
-    let weapondata;
+    let armedata;
     if (this.rolltype === ROLL_TYPE.ATTACK) {
-      let weapon = this.actor.items.get(this.data.itemId);
-      weapondata = duplicate(weapon.system.weapon.effetdiode);
+      let arme = this.actor.items.get(this.data.itemId);
+      armedata = duplicate(arme.system.effetdiode);
     }
 
-    const html = await renderTemplate("systems/omega/templates/chat/roll-result.html", {
+    const templateData = {
       owner: this.actor?.id,
       introText: this.introtext,
       actingCharName: this.data.actorname,
@@ -197,8 +198,10 @@ export class Diodes {
       data: this.data,
       rerollButton: rerollButton,
       resultText: this.resultText,
-      weapondata:weapondata
-    });
+      armedata: armedata,
+    };
+
+    const html = await renderTemplate("systems/omega/templates/chat/roll-result.html", templateData);
     const chatData = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({
@@ -209,5 +212,32 @@ export class Diodes {
       type: CONST.CHAT_MESSAGE_TYPES.OTHER,
     };
     this.chat = await ChatMessage.create(chatData);
+    if (rerollButton) {
+      if (this.playerCanReroll) this.chat.setFlag("world", "reRollUserId", game.user.id);
+      this.chat.setFlag("world", "reRoll", templateData);
+      this.chat.setFlag("world", "diodeData", { actorId: this.actor.id, rolltype: this.rolltype, program: this.program, data: this.data });
+    }
+  }
+  async reroll(event, message) {
+    this.isReroll = true;
+
+    // Get the message
+    const messageId = message._id;
+    const newMessage = game.messages.get(messageId);
+    // Get the user who has sent the chat message
+    const chatUserId = newMessage._source.user;
+
+    // Get the chat data stored in the message's flag
+    let templateData = newMessage.getFlag("world", "reRoll");
+    templateData.rerollButton = false;
+    if (newMessage.getFlag("world", "reRollUserId")) newMessage.unsetFlag("world", "reRollUserId");
+    newMessage.unsetFlag("world", "reRoll");
+    newMessage.unsetFlag("world", "diodeData");
+    await this.piocher();
+    templateData.data = this.data;
+    templateData.resultText = "Nouvelle pioche effectuée.";
+    const html = await renderTemplate("systems/omega/templates/chat/roll-result.html", templateData);
+    // Update the chat message content
+    await newMessage.update({ content: html });
   }
 }

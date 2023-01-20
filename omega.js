@@ -9,7 +9,8 @@ import registerHooks from './module/common/hooks.js';
 import OmegaBaseActor from "./module/actor/base-actor.js";
 import OmegaBaseItem from "./module/item/base-item.js";
 
-import PlayerSheet from "./module/actor/sheet/player-sheet.js";
+import AdvancedSynthSheet from "./module/actor/sheet/advancedsynth-sheet.js";
+import OrganiqueSheet from "./module/actor/sheet/organique-sheet.js";
 import OmegaBaseItemSheet from "./module/item/sheet/base-sheet.js";
 
 Hooks.once("init", function(){
@@ -21,10 +22,11 @@ Hooks.once("init", function(){
     
     Items.unregisterSheet('core', ItemSheet);
     Items.registerSheet('omega', OmegaBaseItemSheet, {makeDefault: true });
-    /*Items.registerSheet('omega', WeaponSheet, {label: "WeaponSheet", makeDefault: true, types: ['weapon']});*/
+    /*Items.registerSheet('omega', WeaponSheet, {label: "WeaponSheet", makeDefault: true, types: ['arme']});*/
 
     Actors.unregisterSheet('core', ActorSheet);
-    Actors.registerSheet('omega', PlayerSheet, {types: ['player'], makeDefault: true });
+    Actors.registerSheet('omega', AdvancedSynthSheet, {types: ['advancedsynth'], makeDefault: true });
+    Actors.registerSheet('omega', OrganiqueSheet, {types: ['organique'], makeDefault: true });
     //Actors.registerSheet('omega', NpcSheet, {types: ['npc'], makeDefault: true });
     
     game.omega = {
@@ -59,7 +61,7 @@ async function initControlButtons() {
         menu.push({
           name: "piocherdiodes",
           title: "Piocher des diodes",
-          icon: "fas fa-diamond",
+          icon: "fas fa-sack",
           button: true,
           onClick: () => {
             let data = {};

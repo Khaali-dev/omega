@@ -1,75 +1,87 @@
-.chatroll{
-    background: @chat-background;
-    background-color: black;
+.chatroll {
+  background: @chat-background;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  font: @chat-font;
+  color: white;
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    }
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+      font-size: 0.8em;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+  .intro {
+    background: @chat-title-background;
+    border-radius: @chat-title-border-radius;
     display: flex;
-    flex-direction: column;
-    font: @chat-font;
-    color: white;
-    .intro{
-        background: @chat-title-background;
-        border-radius: @chat-title-border-radius;
-        display: flex;
-        flex-direction: row;
-        justify-content:center;
-        .introImg {
-            border: none;
-            padding: 5px;
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            object-position: center;
-            align-self:center;
-        }
-        .introText{
-            width: 210px;
-            min-height: 60px;
-            padding-top: 0.5em;
-            font: "frutiger";
-            text-align: center;
-        }
+    flex-direction: row;
+    justify-content: center;
+    .introImg {
+      border: none;
+      padding: 5px;
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      object-position: center;
+      align-self: center;
     }
-    .resultText{
-      font:"helvetica";
-      padding: 1em 0.5em 0.5em 0.5em;
+    .introText {
+      width: 210px;
+      min-height: 60px;
+      padding-top: 0.5em;
+      font: "frutiger";
+      text-align: center;
+      vertical-align: middle;
     }
-    table {
-        white-space: nowrap;
-        table-layout: fixed;
-        width: 100%;
-        border-collapse: collapse;
-          thead th:nth-child(1) {
-            width: 10%;
-          }
-  
-          thead th:nth-child(2) {
-            width: 20%;
-          }
-  
-          thead th:nth-child(3) {
-            width: 10%;
-          }
-  
-          thead th:nth-child(4) {
-            width: 60%;
-          }
-      }
-      .diode {
-        width: 20px;
-        height: 20px;
-      }
-      .diode-rouge {
-        background: @diode-rouge;
-      }
-      .diode-bleue {
-        background: @diode-bleue;
-      }
-      .diode-verte {
-        background: @diode-verte;
-      }
-      .diode-blanche {
-        background: @diode-blanche;
-      }
-      .diode-noire {
-        background: @diode-noire;
-      }
+  }
+  .resultText {
+    font: "helvetica";
+    padding: 1em 0.5em 0.5em 0.5em;
+    text-align: center;
+  }
+  .difficultyline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1em 0 0.5em 0;
+  }
+  .diodesresult {
+    white-space: nowrap;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    thead th:nth-child(1) {
+      width: 20%;
     }
+
+    thead th:nth-child(2) {
+      width: 20%;
+    }
+
+    thead th:nth-child(3) {
+      width: 60%;
+    }
+  }
+  .rerollicon{
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+}

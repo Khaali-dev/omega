@@ -11,33 +11,23 @@ export class OmegaBaseActorSheet extends ActorSheet {
   /** @override */
   getData(options) {
     const context = super.getData(options);
-    context.actorSystem = context.actor.system;
+    context.system = context.actor.system;
     context.flags = context.actor.flags;
     context.id = context.actor.id;
     context.config = game.omega.config;
     context.editable = this.isEditable;
     context.isGm = game.user.isGM;
+    context.estorganique= this.actor.estOrganique();
     context.extensions = this.actor.items.filter((item) => item.type == "extension");
     context.extensions.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
     });
+    context.descriptionhtml = TextEditor.enrichHTML(this.actor.system.description, { async: false });
     context.equipements = this.actor.items.filter((item) => item.type == "equipement");
     context.equipements.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
     });
-
-    let extWeap = context.extensions.filter((item) => item.system.weapon.isweapon);
-    let eqWeap = context.equipements.filter((item) => item.system.weapon.isweapon);
-    context.weapons=extWeap.concat(eqWeap);
-    context.weapons.forEach((element) => {
-      console.log("element",element);
-      console.log("element.system.weapon.typeprogramme",element.system.weapon.typeprogramme);
-      //element.system.weapon.attackvalue=this.actor.system.programmes[element.system.weapon.typeprogramme].value;
-      //element.system.weapon.attackprogname=game.i18n.localize(this.actor.system.programmes[element.system.weapon.typeprogramme].label);
-    });
-
-    
-    /*context.equipments = context.items.filter((item) => ["equipment", "armor", "weapon"].includes(item.type));
+    /*context.equipments = context.items.filter((item) => ["equipment", "armor", "arme"].includes(item.type));
     for (let item of context.equipments) {
         item.system.descriptionhtml = TextEditor.enrichHTML(item.system.description, { async: false });
     }
@@ -50,10 +40,10 @@ export class OmegaBaseActorSheet extends ActorSheet {
       });*/
 
     context.unlocked = this.actor.getFlag(game.system.id, "SheetUnlocked");
-    context.isPlayer = this.actor.isPlayer();
+    context.isAdvancedSynth= this.actor.isAdvancedSynth();
     context.isNpc = this.actor.isNpc();
     context.descriptionhtml = TextEditor.enrichHTML(this.actor.system.description, { async: false });
-    context.actorSystem = context.actor.system;
+    context.system = context.actor.system;
     context.flags = context.actor.flags;
     context.ssprognonnul = [];
     context.ssprogfull = [];
@@ -79,6 +69,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     html.find(".prog-text").click(this._onProgramRoll.bind(this));
     html.find(".chance-roll").click(this._onChanceRoll.bind(this));
     html.find(".ssprogram-text").click(this._onSsProgramRoll.bind(this));
+    html.find(".aux-text").click(this._onAuxSystRoll.bind(this));
 
     html.find(".item-edit").click((ev) => this._onItemEdit(ev));
     html.find(".item-delete").click((ev) => this._onItemDelete(ev));
@@ -148,6 +139,13 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let group = "sousprogrammes";
     return this.actor.check(group, field);
   }
+  async _onAuxSystRoll(event) {
+    event.preventDefault();
+    let element = event.currentTarget;
+    let field = element.dataset.field;
+    let group = "systemesauxiliaires";
+    return this.actor.check(group, field);
+  }
 
   async _onChanceRoll(event) {
     event.preventDefault();
@@ -159,7 +157,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let element = event.currentTarget;
     let field = element.dataset.field;
     let item = this.actor.items.get(field);
-    if(!item || !item.system.weapon.isweapon) return;
+    if(!item || !item.type === "arme") return;
     return this.actor.shoot(field);
   }
   _onItemEdit(event) {
@@ -224,10 +222,11 @@ export class OmegaBaseActorSheet extends ActorSheet {
   _onDropItem(event, data) {
     Item.fromDropData(data).then((item) => {
       const itemData = duplicate(item);
-      console.log("itemData", itemData);
-      console.log("event.target", event.target.parentElement.dataset);
+      console.log("event.target", event.target);
       switch (itemData.type) {
         case "extension":
+          return this._onDropExtension(event, itemData, data);
+        case "arme":
           return this._onDropExtension(event, itemData, data);
         default:
           return super._onDropItem(event, data);
@@ -238,7 +237,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     event.preventDefault();
 
     // Get the target chassis
-    const id = event.target.parentElement.dataset.chassis;
+    const id = event.target.dataset.chassis;
     const target = this.actor.items.get(id);
     console.log("target", target);
     if (!target || target.type !== "chassis") {
@@ -272,8 +271,8 @@ export class OmegaBaseActorSheet extends ActorSheet {
       case "boon":
         itemData.name = game.i18n.localize("OMEGA.boon.add");
         break;
-      case "weapon":
-        itemData.name = game.i18n.localize("OMEGA.weapon.add");
+      case "arme":
+        itemData.name = game.i18n.localize("OMEGA.arme.add");
         itemData.system = {
           state: "active",
         };

@@ -1,0 +1,192 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="main">
+        <table class="tablename">
+            <tbody>
+                <tr>
+                    <td rowspan="4"><img class="portraitimg" src="{{actor.img}}" data-edit="img"
+                            title="{{actor.name}}" /></td>
+                    {{#if unlocked}}
+                    <td colspan="2"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+                        {{else}}
+                    <td colspan="2" class="pcname">{{actor.name}}
+                        {{/if}}
+                    </td>{{#if unlocked}}
+                    <td style="display: flex; flex-direction: column;">
+                        <select name="system.firme">
+                            {{#select system.firme}}
+                            {{#each config.FIRME as |name type|}}
+                            <option value="{{type}}">{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                        <select name="system.typeSynth">
+                            {{#select system.typeSynth}}
+                            {{#each config.TYPESYNTH as |name type|}}
+                            <option value="{{type}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                        {{else}}
+                    <td style="display: flex; flex-direction: column;"><img class="{{logofirme}}" /><div style="text-align: center; font-size: 1.1em;">{{typeSynth}}</div>
+                        {{/if}}
+                    </td>
+                    <td class="right-icon">
+                        <a class="sheet-change-lock" title="{{localize 'OMEGA.label.unlock_sheet'}}">
+                            {{#if unlocked}}
+                            <i class="fas fa-lock-open"></i>
+                            {{else}}
+                            <i class="fas fa-lock"></i>
+                            {{/if}}
+                    </td>
+                    <td rowspan="4">
+                        <div class="chancetable">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="5">Chance&nbsp;&nbsp;{{system.systemesauxiliaires.chance.value}}
+                                            {{#if unlocked}}
+                                            <a class="chance-roll" data-field="chanceroll">
+                                                <i class="fas fa-dice"></i>
+                                            </a>
+                                            {{/if}}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody style="text-align:center;">
+                                    <tr height="10px">
+                                        <td><img class="diode diode-rouge"></td>
+                                        <td><img class="diode diode-verte"></td>
+                                        <td><img class="diode diode-bleue"></td>
+                                        <td><img class="diode diode-blanche"></td>
+                                        <td><img class="diode diode-noire"></td>
+                                    </tr>
+                                    <tr>
+                                        {{#if unlocked}}
+                                        <td><input class="chance-diode-line small-input" title="rouge"
+                                                name="system.chance.rouge" type="number"
+                                                value="{{system.chance.rouge}}" />
+                                        </td>
+                                        <td><input class="chance-diode-line small-input" title="verte"
+                                                name="system.chance.verte" type="number"
+                                                value="{{system.chance.verte}}" />
+                                        </td>
+                                        <td><input class="chance-diode-line small-input" title="bleue"
+                                                name="system.chance.bleue" type="number"
+                                                value="{{system.chance.bleue}}" />
+                                        </td>
+                                        <td><input class="chance-diode-line small-input" title="blanche"
+                                                name="system.chance.blanche" type="number"
+                                                value="{{system.chance.blanche}}" />
+                                        </td>
+                                        <td><input class="chance-diode-line small-input" title="noire"
+                                                name="system.chance.noire" type="number"
+                                                value="{{system.chance.noire}}" />
+                                        </td>
+                                        {{else}}
+                                        <td class="chance-diode-line">{{system.chance.rouge}}</td>
+                                        <td class="chance-diode-line">{{system.chance.verte}}</td>
+                                        <td class="chance-diode-line">{{system.chance.bleue}}</td>
+                                        <td class="chance-diode-line">{{system.chance.blanche}}</td>
+                                        <td class="chance-diode-line">{{system.chance.noire}}</td>
+                                        {{/if}}
+                                    </tr>
+                                    <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
+                                        <td colspan="3">Mise à jour</td>
+                                        <td colspan="2" class="chance-diode-line">
+                                            {{#if unlocked}}<input class="chance-diode-line small-input"
+                                                title="Mise à jour" name="system.miseajour" type="number"
+                                                value="{{system.miseajour}}" />
+                                            {{else}}{{system.miseajour}}
+                                            {{/if}}
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
+                                        <td colspan="3">Déviance</td>
+                                        <td colspan="2" class="chance-diode-line">
+                                            {{#if unlocked}}<input class="chance-diode-line small-input"
+                                                title="Déviance" name="system.deviance" type="number"
+                                                value="{{system.deviance}}" />
+                                            {{else}}{{system.deviance}}
+                                            {{/if}}
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
+                                        <td colspan="3">Dissidence</td>
+                                        <td colspan="2" class="chance-diode-line">
+                                            {{#if unlocked}}<input class="chance-diode-line small-input"
+                                                title="Dissidence" name="system.dissidence" type="number"
+                                                value="{{system.dissidence}}" />
+                                            {{else}}{{system.dissidence}}
+                                            {{/if}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="pcfirme">Chassis {{system.chassisActif.label}}
+                    </td>
+                    <td class="pcfirme">{{localize "OMEGA.label.programmes.energie"}}</td>
+                    <td><input class="stats-input small-input" style="width: 2em;" title="{{localize "
+                            OMEGA.label.systemesauxiliaires.energiedisponible"}}"
+                            name="system.systemesauxiliaires.energiedisponible.value" type="number"
+                            value="{{system.systemesauxiliaires.energiedisponible.value}}" /> /
+                        {{system.systemesauxiliaires.energiedisponible.max}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pcfirme">Blindage</td>
+                    <td><input class="aux-input" style="width: 2em;" title="Valeur courante" id="blindage"
+                            name="system.systemesauxiliaires.blindage.value" type="number" min="0"
+                            max="{{system.systemesauxiliaires.blindage.max}}"
+                            value="{{system.systemesauxiliaires.blindage.value}}" /> /
+                        {{system.systemesauxiliaires.blindage.max}}</td>
+                    <td class="pcfirme">Rés. moteur</td>
+                    <td><input class="aux-input" style="width: 2em;" title="Valeur courante" id="resistancemoteur"
+                            name="system.systemesauxiliaires.resistancemoteur.value" type="number" min="0"
+                            max="{{system.systemesauxiliaires.resistancemoteur.max}}"
+                            value="{{system.systemesauxiliaires.resistancemoteur.value}}" /> /
+                        {{system.systemesauxiliaires.resistancemoteur.max}}</td>
+                </tr>
+                <tr>
+                    <td class="pcfirme">Blindage IEM</td>
+                    <td><input class="aux-input" style="width: 2em;" title="Valeur courante" id="blindageiem"
+                            name="system.systemesauxiliaires.blindageiem.value" type="number" min="0"
+                            max="{{system.systemesauxiliaires.blindageiem.max}}"
+                            value="{{system.systemesauxiliaires.blindageiem.value}}" /> /
+                        {{system.systemesauxiliaires.blindageiem.max}}
+                    </td>
+                    <td class="pcfirme">Intégrité info.</td>
+                    <td><input class="aux-input" title="Valeur courante" id="integriteinformatique"
+                            name="system.systemesauxiliaires.integriteinformatique.value" style="width: 2em;"
+                            type="number" min="0" max="{{system.systemesauxiliaires.integriteinformatique.max}}"
+                            value="{{system.systemesauxiliaires.integriteinformatique.value}}" /> /
+                        {{system.systemesauxiliaires.integriteinformatique.max}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="lignejaune"></div>
+        <div class="sheet-tabs tabs" data-group="primary">
+            <b class="tab-name" data-tab="programmes">Programmes</b>
+            <b class="tab-name" data-tab="combat">Combat</b>
+            <b class="tab-name" data-tab="chassis">Chassis</b>
+            <b class="tab-name" data-tab="equipement">Équipement</b>
+            <b class="tab-name" data-tab="notes">Description</b>
+        </div>
+        <div class="lignejaune"></div>
+        <div class="sheet-body">
+            <div class="tab" data-group="primary" data-tab="programmes">{{>
+                systems/omega/templates/actor/tab/programmes.html}}</div>
+            <div class="tab" data-group="primary" data-tab="combat">{{>
+                systems/omega/templates/actor/tab/combat.html}}</div>
+            <div class="tab" data-group="primary" data-tab="chassis">{{>
+                systems/omega/templates/actor/tab/chassis.html}}</div>
+            <div class="tab" data-group="primary" data-tab="equipement">{{>
+                systems/omega/templates/actor/tab/equipement.html}}</div>
+            <div class="tab" data-group="primary" data-tab="notes">{{>
+                systems/omega/templates/actor/tab/notes.html}}</div>
+        </div>
+    </div>
+</form>

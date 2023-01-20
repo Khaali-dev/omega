@@ -1,52 +1,56 @@
 <div class="combat-tab">
-    <table>
-        <thead>
-            <tr>
-                <th>Action</th>
-                <th>Programme</th>
-                <th>Valeur</th>
-            </tr>
-        </thead>
+    <table class="combat-actions">
         <tbody>
             <tr>
-                <td>Initiative</td>
-                <td class="prog-text" data-field="dissipateur">{{localize "OMEGA.label.programmes.dissipateur"}}</td>
-                <td class="prog-text" data-field="dissipateur">{{actorSystem.programmes.dissipateur.value}}</td>
+                {{#if estorganique}}
+                <td class="caract-text" data-field="initiative">Initiative</td>
+                <td class="caract-text" data-field="initiative">{{system.caracteristiques.initiative.value}}</td>
+                {{else}}
+                <td class="aux-text" data-field="initiative">Initiative</td>
+                <td class="aux-text" data-field="initiative">{{system.systemesauxiliaires.initiative.value}}</td>
+                {{/if}}
+                <td class="aux-text" data-field="defense">Défense</td>
+                <td class="aux-text" data-field="defense">{{system.systemesauxiliaires.defense.value}}</td>
+                {{#if estorganique}}
+                <td class="tooltip caract-text" data-field="sens">Évasion<span class="tooltiptext">{{localize
+                        "OMEGA.label.caracteristiques.sens"}}</span>
+                </td>
+                <td class="caract-text" data-field="sens">{{system.caracteristiques.sens.value}}</td>
+                {{else}}
+                <td class="tooltip prog-text" data-field="detecteur">Évasion<span class="tooltiptext">{{localize
+                        "OMEGA.label.programmes.detecteur"}}</span>
+                </td>
+                <td class="prog-text" data-field="detecteur">{{system.programmes.detecteur.value}}</td>
+                {{/if}}
             </tr>
+            {{#ifn estorganique}}
             <tr>
-                <td>Hacking</td>
-                <td class="prog-text" data-field="hacking">{{localize "OMEGA.label.programmes.hacking"}}</td>
-                <td class="prog-text" data-field="hacking">{{actorSystem.programmes.hacking.value}}</td>
+                <td class="prog-text" data-field="hacking">Hacking</td>
+                <td class="prog-text" data-field="hacking">{{system.programmes.hacking.value}}</td>
+                <td class="prog-text" data-field="contremesure">Contre-mesures</td>
+                <td class="prog-text" data-field="contremesure">{{system.programmes.contremesure.value}}</td>
+                <td></td>
+                <td></td>
             </tr>
-            <tr>
-                <td>Évasion</td>
-                <td class="prog-text" data-field="detecteur">{{localize "OMEGA.label.programmes.detecteur"}}</td>
-                <td class="prog-text" data-field="detecteur">{{actorSystem.programmes.detecteur.value}}</td>
-            </tr>
-            <tr>
-                <td>Contre-mesures</td>
-                <td class="prog-text" data-field="contremesure">{{localize "OMEGA.label.programmes.contremesure"}}</td>
-                <td class="prog-text" data-field="contremesure">{{actorSystem.programmes.contremesure.value}}</td>
-            </tr>
-            <tr>
-                <td>Défense</td>
-                <td class="prog-text" data-field="defense">{{localize "OMEGA.label.programmes.defense"}}</td>
-                <td class="prog-text" data-field="defense">{{actorSystem.programmes.defense.value}}</td>
-            </tr>
+            {{/ifn}}
         </tbody>
     </table>
-    <h2>Armes</h2>
-    {{#each weapons as |item id|}}
-    <table>
+    <div class="armes-title">Armes</div>
+    {{#each armes as |item id|}}
+    <table class="weapontable">
         <tbody>
-            <tr>
-                <td>{{item.name}}</td>
-                <td class="weapon-attack" data-field={{item.id}}>item.system.weapon.attackprogname</td>
-                <td class="weapon-attack" data-field={{item.id}}>item.system.weapon.attackvalue</td>
+            <tr style="font-size: larger;">
+                <td style="font-weight: bold; color:#f59292;">{{item.name}}</td>
+                <td class="arme-attack" data-field={{item.id}}>
+                    {{item.system.attacklabel}}&nbsp;({{item.system.attackvalue}})</td>
                 <td><a class="item-control item-shoot" data-field="{{item.id}}" data-tooltip="Utiliser"><i
                             class="fas fa-gun"></i></a>
                     <a class="item-control item-edit" data-field="{{item.id}}" data-tooltip="Modifier"><i
                             class="fas fa-cog"></i></a>
+                    {{#if ../unlocked}}
+                    <a class="item-control item-delete" data-field="{{item.id}}" data-tooltip="Supprimer"><i
+                            class="fas fa-trash"></i></a>
+                    {{/if}}
                 </td>
             </tr>
         </tbody>
@@ -63,32 +67,37 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{item.system.weapon.effetdiode.noire.degat}} {{item.system.weapon.effetdiode.noire.label}}</td>
-                <td>{{item.system.weapon.effetdiode.blanche.degat}} {{item.system.weapon.effetdiode.blanche.label}}</td>
-                <td>{{item.system.weapon.effetdiode.bleue.degat}} {{item.system.weapon.effetdiode.bleue.label}}</td>
-                <td>{{item.system.weapon.effetdiode.verte.degat}} {{item.system.weapon.effetdiode.verte.label}}</td>
-                <td>{{item.system.weapon.effetdiode.rouge.degat}} {{item.system.weapon.effetdiode.rouge.label}}</td>
+                <td>{{item.system.effetdiode.noire.label}}</td>
+                <td>{{item.system.effetdiode.blanche.label}}</td>
+                <td>{{item.system.effetdiode.bleue.label}}</td>
+                <td>{{item.system.effetdiode.verte.label}}</td>
+                <td>{{item.system.effetdiode.rouge.label}}</td>
         </tbody>
     </table>
     <table>
         <thead>
-            <th>Type</th>
+            <th>Technologie</th>
+            {{#ifne item.system.portee ""}}<th>Portée</th>{{/ifne}}
             <th>Autonomie</th>
             <th>Cadence</th>
-            <th>Initiative</th>
-            <th>Portée</th>
-            <th>Effet de zone</th>
+            {{#ifne item.system.initiative ""}}<th>Initiative</th>{{/ifne}}
+            {{#ifne item.system.zone ""}}<th>Effet de zone</th>{{/ifne}}
         </thead>
         <tbody>
-            <tr>
-                <td>{{item.system.weapon.type}}</td>
-                <td>{{item.system.weapon.autonomie}}</td>
-                <td>{{item.system.weapon.cadence}}</td>
-                <td>{{item.system.weapon.initiative}}</td>
-                <td>{{item.system.weapon.portee}}</td>
-                <td>{{item.system.weapon.zone}}</td>
+            <tr style="text-align: center;">
+                <td>{{item.system.technologielabel}}</td>
+                {{#ifne item.system.portee ""}}<td>{{item.system.portee}}</td>{{/ifne}}
+                <td>{{item.system.autonomie}}</td>
+                <td>{{item.system.cadence}}</td>
+                {{#ifne item.system.initiative ""}}<td>{{item.system.initiative}}</td>{{/ifne}}
+                {{#ifne item.system.zone ""}}<td>{{item.system.zone}}</td>{{/ifne}}
             </tr>
         </tbody>
     </table>
+    {{#if ../estorganique}}
+    <div class="bloodline"></div>
+    {{else}}
+    <div class="redline"></div>
+    {{/if}}
     {{/each}}
 </div>

@@ -1,9 +1,6 @@
 {
   "Actor": {
-    "types": [
-      "player",
-      "synthetique"
-    ],
+    "types": ["advancedsynth", "synthetique", "organique"],
     "templates": {
       "caracteristiques": {
         "caracteristiques": {
@@ -82,6 +79,38 @@
           "resistance": {
             "value": 2,
             "label": "OMEGA.label.programmes.resistance"
+          },
+          "artillerie": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.artillerie"
+          },
+          "tactique": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.tactique"
+          },
+          "reprogrammation": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.reprogrammation"
+          },
+          "neutralisationcognitive": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.neutralisationcognitive"
+          },
+          "recherche": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.recherche"
+          },
+          "cybernetique": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.cybernetique"
+          },
+          "ingenierie": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.ingenierie"
+          },
+          "chirurgie": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.chirurgie"
           }
         }
       },
@@ -146,55 +175,55 @@
       "systemesauxiliaires": {
         "systemesauxiliaires": {
           "blindage": {
-            "max": 4,
+            "base": 4,
             "value": 0,
             "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.blindage"
           },
           "blindageiem": {
-            "max": 2,
+            "base": 2,
             "value": 0,
             "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.blindageiem"
           },
           "chance": {
-            "max": 2,
+            "base": 2,
             "value": 0,
             "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.initiative"
           },
           "defense": {
-            "max": 2,
+            "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.initiative"
+            "label": "OMEGA.label.systemesauxiliaires.defense"
           },
           "energiedisponible": {
-            "max": 2,
+            "base": 2,
             "value": 0,
             "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.energiedisponible"
           },
           "initiative": {
-            "max": 2,
+            "base": 2,
             "value": 0,
             "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.initiative"
           },
           "integriteinformatique": {
-            "max": 2,
+            "base": 2,
             "value": 0,
             "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.integriteinformatique"
           },
           "resistancemoteur": {
-            "max": 2,
+            "base": 2,
             "value": 0,
             "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.resistancemoteur"
           },
           "vitesse": {
-            "max": 2,
+            "base": 2,
             "value": 0,
             "mod": 0,
             "label": "OMEGA.label.systemesauxiliaires.vitesse"
@@ -202,128 +231,181 @@
         }
       },
       "base": {
-        "chassisId":"",
+        "chassisId": "",
         "description": "",
         "firme": "",
         "traits": "",
-        "typeomega": ""
+        "typeSynth": "omega"
       }
     },
-    "player": {
-      "templates": [
-        "caracteristiques",
-        "programmes",
-        "sousprogrammes",
-        "chance",
-        "evolution",
-        "systemesauxiliaires",
-        "base"
-      ],
+    "advancedsynth": {
+      "templates": ["caracteristiques", "programmes", "sousprogrammes", "chance", "evolution", "systemesauxiliaires", "base"],
       "notebook": "",
-      "miseajour":0,
-      "deviance":0,
-      "dissidence":0,
+      "miseajour": 0,
+      "deviance": 0,
+      "dissidence": 0,
       "modifiers": []
     },
     "synthetique": {
-      "templates": [
-        "caracteristiques",
-        "programmes",
-        "sousprogrammes",
-        "systemesauxiliaires",
-        "base"
-      ],
+      "templates": ["caracteristiques", "programmes", "sousprogrammes", "systemesauxiliaires", "base"],
       "modifiers": []
+    },
+    "organique": {
+      "caracteristiques": {
+        "connaissance": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.connaissance"
+        },
+        "corpsacorps": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.corpsacorps"
+        },
+        "defense": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.defense"
+        },
+        "empathie": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.empathie"
+        },
+        "initiative": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.initiative"
+        },
+        "raisonnement": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.raisonnement"
+        },
+        "rapidite": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.rapidite"
+        },
+        "sens": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.sens"
+        },
+        "tir": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.tir"
+        },
+        "vitalite": {
+          "value": 2,
+          "label": "OMEGA.label.caracteristiques.vitalite"
+        }
+      },
+      "systemesauxiliaires": {
+        "armure": {
+          "base": 2,
+          "value": 0,
+          "mod": 0,
+          "label": "OMEGA.label.systemesauxiliaires.armure"
+        },
+        "defense": {
+          "base": 2,
+          "value": 0,
+          "mod": 0,
+          "label": "OMEGA.label.systemesauxiliaires.defense"
+        },
+        "vie": {
+          "base": 2,
+          "value": 0,
+          "mod": 0,
+          "label": "OMEGA.label.systemesauxiliaires.vie"
+        },
+        "vitesse": {
+          "base": 2,
+          "value": 0,
+          "mod": 0,
+          "label": "OMEGA.label.systemesauxiliaires.vitesse"
+        },
+        "chance": {
+          "base": 0,
+          "value": 0,
+          "mod": 0,
+          "label": "OMEGA.label.systemesauxiliaires.chance"
+        }
+      },
+      "race": "Humain",
+      "occupation": "",
+      "description": "<h3>Personnalité</h3><p>A remplir</p><h4>Secret :</h4><p>A remplir</p><h4>Point faible :</h4><p>A remplir</p><h4>Comment l'aborder :</h4><p>A remplir</p><h4>Objectifs :</h4><p>A remplir</p><h3>Special :</h3>"
     }
   },
   "Item": {
-    "types": [
-      "equipement",
-      "extension",
-      "chassis"
-    ],
+    "types": ["equipement", "extension", "chassis", "arme", "avantage"],
     "templates": {
       "base": {
-        "description": ""
-      },
-      "weapon": {
-        "weapon": {
-          "isweapon": false,
-          "autonomie": "",
-          "cadence": "",
-          "initiative": "",
-          "portee": "",
-          "technologie": "",
-          "typeprogramme": "armeaenergie",
-          "zone":"",
-          "effetdiode": {
-            "noire": {
-              "degat": 0,
-              "label": "Rien",
-              "effet": []
-            },
-            "blanche": {
-              "degat": 0,
-              "label": "Raté",
-              "effet": []
-            },
-            "bleue": {
-              "degat": 1,
-              "label": "1",
-              "effet": []
-            },
-            "verte": {
-              "degat": 2,
-              "label": "2",
-              "effet": []
-            },
-            "rouge": {
-              "degat": 3,
-              "label": "3",
-              "effet": []
-            }
-          },
-          "program": {
-            "group": "",
-            "reference": ""
-          },
-          "effet": []
-        }
+        "description": "",
+        "effet": []
       },
       "etat": {
         "estActif": false
-      }
-    },
+      },
+      
     "extension": {
-      "templates": [
-        "base",
-        "weapon",
-        "etat"
-      ],
-      "chassisId":"",
-      "type": "Application immédiate",
+      "chassisId": "",
+      "type": "app",
       "coutenergie": {
         "label": "Non applicable",
         "value": 0
       },
-      "nbSlots": 0,
-      "effet": []
+      "nbSlots": 0
+    }
+
+    },
+    "extension": {
+      "templates": ["base", "etat", "extension"]
     },
     "chassis": {
-      "templates": [
-        "base",
-        "etat"
-      ],
+      "templates": ["base", "etat"],
       "nbslots": 0,
-      "effet": []
+      "extensionNative": ""
     },
     "equipement": {
-      "templates": [
-        "base",
-        "weapon",
-        "etat"
-      ],
-      "effet": []
+      "templates": ["base", "etat"]
+    },
+    "avantage": {
+      "templates": ["base", "etat"]
+    },
+    "arme": {
+      "templates": ["base", "extension", "etat"],
+      "autonomie": "",
+      "cadence": "",
+      "initiative": "",
+      "portee": "",
+      "technologie": "",
+      "typeprogramme": "armeaenergie",
+      "zone": "",
+      "effetdiode": {
+        "noire": {
+          "degat": 0,
+          "label": "Rien",
+          "effet": []
+        },
+        "blanche": {
+          "degat": 0,
+          "label": "Raté",
+          "effet": []
+        },
+        "bleue": {
+          "degat": 1,
+          "label": "1",
+          "effet": []
+        },
+        "verte": {
+          "degat": 2,
+          "label": "2",
+          "effet": []
+        },
+        "rouge": {
+          "degat": 3,
+          "label": "3",
+          "effet": []
+        }
+      },
+      "program": {
+        "group": "",
+        "reference": ""
+      }
     }
   }
 }

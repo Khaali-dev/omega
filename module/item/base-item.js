@@ -17,6 +17,6 @@ export default class OmegaBaseItem extends Item {
   }
 
   isCaC(){
-    return this.system.weapon.portee >1.6
+    return this.system.portee === ""
   }
 }

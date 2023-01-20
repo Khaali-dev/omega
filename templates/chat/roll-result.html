@@ -7,23 +7,28 @@
         {{/if}}
         <div class="introText">{{data.introText}}</div>
     </div>
-    <table>
+    <div class="difficultyline">{{#if data.difficulty includeZero=true}}<div>Difficulté: {{data.difficulty}}</div>{{/if}}{{#if data.modifier}}<div>Modificateur: {{data.modifier}}</div>{{/if}}</div>
+    <table class="diodesresult">
+        {{#if data.isAttack}}
         <thead>
             <th></th>
             <th></th>
-            {{#if data.isAttack}}
-            <th>Dégats</th>
-            <th>Effet</th>
-            {{/if}}
+            <th style="text-align: center;">Dégats</th>
         </thead>
+        {{else}}
+        <thead>
+            <th></th>
+            <th></th>
+        </thead>
+        {{/if}}
         <tbody style="text-align:center;">
             {{#if data.diodesParCouleur.rouge}}
             <tr height="10px">
                 <td class="chance-diode-line">{{data.diodesParCouleur.rouge}}</td>
                 <td><img class="diode diode-rouge"></td>
                 {{#if data.isAttack}}
-                <td>{{weapondata.rouge.degat}}</td>
-                <td style="text-align: left;">{{weapondata.rouge.label}}</td>
+                <td style="text-align: center;">{{armedata.rouge.label}}</td>
+                {{else}}<td></td>
                 {{/if}}
             </tr>
             {{/if}}
@@ -32,8 +37,7 @@
                 <td class="chance-diode-line">{{data.diodesParCouleur.verte}}</td>
                 <td><img class="diode diode-verte"></td>
                 {{#if data.isAttack}}
-                <td>{{weapondata.verte.degat}}</td>
-                <td style="text-align: left;">{{weapondata.verte.label}}</td>
+                <td style="text-align: center;">{{armedata.verte.label}}</td>
                 {{/if}}
             </tr>
             {{/if}}
@@ -42,8 +46,7 @@
                 <td class="chance-diode-line">{{data.diodesParCouleur.bleue}}</td>
                 <td><img class="diode diode-bleue"></td>
                 {{#if data.isAttack}}
-                <td>{{weapondata.bleue.degat}}</td>
-                <td style="text-align: left;">{{weapondata.bleue.label}}</td>
+                <td style="text-align: center;">{{armedata.bleue.label}}</td>
                 {{/if}}
             </tr>
             {{/if}}
@@ -52,8 +55,7 @@
                 <td class="chance-diode-line">{{data.diodesParCouleur.blanche}}</td>
                 <td><img class="diode diode-blanche"></td>
                 {{#if data.isAttack}}
-                <td>{{weapondata.blanche.degat}}</td>
-                <td style="text-align: left;">{{weapondata.blanche.label}}</td>
+                <td style="text-align: center;">{{armedata.blanche.label}}</td>
                 {{/if}}
             </tr>
             {{/if}}
@@ -62,13 +64,17 @@
                 <td class="chance-diode-line">{{data.diodesParCouleur.noire}}</td>
                 <td><img class="diode diode-noire"></td>
                 {{#if data.isAttack}}
-                <td>{{weapondata.noire.degat}}</td>
-                <td style="text-align: left;">{{weapondata.noire.label}}</td>
+                <td style="text-align: center;">{{armedata.noire.label}}</td>
                 {{/if}}
             </tr>
             {{/if}}
         </tbody>
     </table>
     <div class="resultText">{{resultText}}</div>
+    {{#if rerollButton}}
+    <div class="rerollicon tooltip" style="padding-top: 8px;background-color: black;">
+        <i class="fas fa-sack repiocher"></i><span class="tooltiptext">Piocher à nouveau</span>
+    </div>
+    {{/if}}
     <div class="endimg"></div>
 </div>

@@ -1,0 +1,409 @@
+.omega.sheet {
+  .window-content {
+    background: @playersheet-background;
+    background-color: black;
+    font: @default-font;
+    color: white;
+  }
+  .item-control:hover {
+    text-shadow: 0 0 10px var(--color-active);
+    box-shadow: none;
+  }
+  textarea {
+    resize: none;
+  }
+  table {
+    tr:nth-child(2n) {
+      background-color: inherit;
+    }
+  }
+
+  input {
+    background-color: @edit-background;
+    box-shadow: inset 0 0 3px black;
+  }
+
+  input:focus {
+    background-color: @editactive-background;
+  }
+
+  select {
+    background-color: @edit-background;
+    box-shadow: inset 0 0 3px black;
+    height: 1.5em;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+  }
+  .right-icon {
+    text-align: right;
+    margin-left: auto;
+    padding-right: 1em;
+    font-size: 1.1em;
+    .sheet-change-lock {
+      font: @default-font;
+      font-size: 1.2rem;
+      color: #88c083;
+    }
+  }
+  .portraitimg {
+    align-self: center;
+    width: 110px;
+    height: 129px;
+  }
+  padding: 5px 5px 5px 5px;
+  table {
+    white-space: nowrap;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .diode {
+    width: 20px;
+    height: 20px;
+  }
+  .diode-rouge {
+    background: @diode-rouge;
+  }
+  .diode-verte {
+    background: @diode-verte;
+  }
+  .diode-bleue {
+    background: @diode-bleue;
+  }
+  .diode-blanche {
+    background: @diode-blanche;
+  }
+  .diode-noire {
+    background: @diode-noire;
+  }
+
+  .redline {
+    background: center / contain no-repeat url("./assets/image/lignerouge.webp");
+    height: 16px;
+  }
+  .lignejaune {
+    background: center / contain no-repeat url("./assets/image/lignejaune.webp");
+    height: 28px;
+  }
+  .bloodline {
+    background: center / contain no-repeat url("./assets/image/bloodline.webp");
+    height: 28px;
+  }
+
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    top: 30%;
+    margin-left: -60px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .main {
+    .tablename {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      thead th:nth-child(1) {
+        width: 20%;
+      }
+
+      thead th:nth-child(2) {
+        width: 15%;
+        text-align: center;
+      }
+
+      thead th:nth-child(3) {
+        width: 10%;
+        text-align: right;
+      }
+
+      thead th:nth-child(4) {
+        width: 15%;
+      }
+
+      thead th:nth-child(5) {
+        width: 10%;
+      }
+
+      thead th:nth-child(6) {
+        width: 30%;
+      }
+
+      padding: 3px;
+
+      .pcname {
+        font: 2rem "courier";
+      }
+
+      .name-text {
+        padding: 0 0.5em 0 0.5em;
+        font: 0.9 rem "exo2";
+      }
+      .pcfirme {
+        font: 1em "exo2";
+        padding: 0 0.5em 0 0.5em;
+      }
+      .chancetable {
+        thead th:nth-child(1) {
+          width: 20%;
+        }
+
+        thead th:nth-child(2) {
+          width: 20%;
+        }
+
+        thead th:nth-child(3) {
+          width: 20%;
+        }
+
+        thead th:nth-child(4) {
+          width: 20%;
+        }
+
+        thead th:nth-child(5) {
+          width: 20%;
+        }
+      }
+    }
+    .central-block {
+      display: flex;
+      flex-direction: row;
+      .stats-block {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 1em 0 1em;
+        .stats-block-name {
+          font: @title-font;
+          text-align: center;
+          padding-top: 3px;
+        }
+        .caract-line {
+          text-align: center;
+        }
+        .program-line {
+          cursor: pointer;
+          color: white;
+          padding: 0 1em 0 1em;
+          .prog-value {
+            width: 29px;
+            height: 25px;
+            background-image: url("./assets/image/cadre1.webp");
+            text-align: center;
+          }
+        }
+      }
+    }
+    .aux-block {
+      text-align: center;
+      input {
+        width: 2em;
+      }
+      .stats-block-name {
+        font: @title-font;
+        text-align: center;
+        padding-top: 3px;
+      }
+      table {
+        thead th:nth-child(1) {
+          width: 20%;
+        }
+
+        thead th:nth-child(2) {
+          width: 5%;
+          text-align: center;
+        }
+
+        thead th:nth-child(3) {
+          width: 5%;
+          text-align: center;
+        }
+
+        thead th:nth-child(4) {
+          width: 5%;
+          text-align: center;
+        }
+
+        thead th:nth-child(5) {
+          width: 20%;
+        }
+
+        thead th:nth-child(6) {
+          width: 5%;
+          text-align: center;
+        }
+
+        thead th:nth-child(7) {
+          width: 5%;
+          text-align: center;
+        }
+
+        thead th:nth-child(8) {
+          width: 5%;
+          text-align: center;
+        }
+
+        thead th:nth-child(9) {
+          width: 20%;
+          text-align: center;
+        }
+
+        thead th:nth-child(10) {
+          width: 5%;
+          text-align: center;
+        }
+
+        thead th:nth-child(11) {
+          width: 5%;
+          text-align: center;
+        }
+      }
+    }
+    .diodesarmes {
+      text-align: center;
+    }
+    .combat-tab {
+      .armes-title {
+        font: 1.5em "frutiger";
+        text-align: center;
+        padding: 2px;
+      }
+      .weapontable {
+        thead th:nth-child(1) {
+          width: 50%;
+        }
+
+        thead th:nth-child(2) {
+          width: 40%;
+        }
+
+        thead th:nth-child(3) {
+          width: 10%;
+        }
+        td {
+          text-align: center;
+        }
+      }
+      .combat-actions {
+        table {
+          thead th:nth-child(1) {
+            width: 24%;
+          }
+
+          thead th:nth-child(2) {
+            width: 10%;
+          }
+
+          thead th:nth-child(3) {
+            width: 23%;
+          }
+
+          thead th:nth-child(4) {
+            width: 10%;
+          }
+
+          thead th:nth-child(5) {
+            width: 23%;
+          }
+          thead th:nth-child(6) {
+            width: 10%;
+          }
+          td {
+            text-align: center;
+          }
+        }
+      }
+      table {
+        margin: 0;
+      }
+    }
+    .chassis-tab {
+      .chassis-block-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font: @title-font;
+        text-align: center;
+        padding-top: 3px;
+      }
+      .chassisname {
+        font-weight: bold;
+        color: #448f41;
+      }
+      .chassis-title {
+        font: 1.5em "frutiger";
+        text-align: center;
+        padding: 2px;
+      }
+      .zonededrop {
+        font: @title-font;
+        width: 100%;
+        text-align: center;
+        color: #e0d7ab;
+        padding: 1em 0 1em 0;
+      }
+      .extensioncontenu {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 3px solid rgba(226, 19, 19, 0.76);
+        border-style: dashed;
+        margin-top: 0.5em;
+        .nameline {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font: 1rem "courier";
+          padding: 1em 0 0.5em 1em;
+        }
+        details > summary {
+          cursor: pointer;
+          list-style: none;
+        }
+      }
+    }
+  }
+  .sheet-tabs {
+    display: flex;
+    flex-direction: row;
+    font-size: 1, 5em;
+  }
+
+  .tab-name {
+    padding: 0.5em 0.5em 0.3em 0.5em;
+  }
+  .tab-name.active {
+    border: 1px solid black;
+    color: rgb(238, 240, 153);
+    border-bottom-width: 0;
+  }
+  .equipementcontenu {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(21, 121, 29, 0.76);
+    margin-top: 0.5em;
+    .nameline {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font: 1rem "helvetica";
+      padding: 1em 0 0.5em 1em;
+    }
+    details > summary {
+      cursor: pointer;
+      list-style: none;
+    }
+  }
+}

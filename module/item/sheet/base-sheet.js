@@ -47,6 +47,9 @@ export default class OmegaBaseItemSheet extends ItemSheet {
         degats3: 3,
         degats4: 4,
         degats5: 5,
+        degats6: 6,
+        degats7: 7,
+        degats8: 8
       },
     };
 
