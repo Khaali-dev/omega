@@ -1,4 +1,4 @@
-.omega.sheet.advancedsynth {
+.omega.sheet.synthetique {
   .logo_futuretechnologies {
     background: @logo_futuretechnologies;
     width: 95px;
@@ -24,7 +24,7 @@
     width: 95px;
     height: 57px;
   }
-  .ssprogtable {
+  .synthprogtable {
     font: 0.9em "frutiger";
     text-transform: uppercase;
     td:nth-child(1) {
@@ -38,31 +38,32 @@
     input {
       width: 2em;
     }
-    .caract-line {
-      background-color: #143c42;
-      font-size: 1em;
-      font-weight: bold;
-      padding-right: 2em;
-      cursor: pointer;
-      .caract-value {
-        padding-left: 1rem;
-      }
-    }
   }
-  .notes-tab{
-    .editor {
-      height: 100%;
-      width: 100%;
-      background: @edit-background;
-      box-shadow: inset 0 0 6px black;
-      min-height: 5em;
-      color: black;
-      .editor-content {
-        min-height: 5em;
-        color: black;
-      }
-      .tox.tox-tinymce {
-        min-height: 10em;
-      }
+  .extensions-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  .extensioncontenu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 45%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(226, 19, 19, 0.76);
+    border-style: dashed;
+    margin-top: 0.3em;
+    margin-right: 0.3em;
+    .nameline {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: center;
+      font: 1rem "courier";
+      padding: 0.5em 0 0.2em 1em;
+    }
+    details > summary {
+      cursor: pointer;
+      list-style: none;
     }}
+  }
 }

@@ -37,6 +37,9 @@
     display: flex;
     flex-direction: row;
   }
+  .pointer{
+    cursor: pointer;
+  }
   .right-icon {
     text-align: right;
     margin-left: auto;
@@ -357,21 +360,39 @@
         color: #e0d7ab;
         padding: 1em 0 1em 0;
       }
-      .extensioncontenu {
-        background-color: rgba(0, 0, 0, 0.3);
-        border: 3px solid rgba(226, 19, 19, 0.76);
-        border-style: dashed;
-        margin-top: 0.5em;
-        .nameline {
+
+      .extensions-block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .extensioncontenu {
           display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          font: 1rem "courier";
-          padding: 1em 0 0.5em 1em;
-        }
-        details > summary {
-          cursor: pointer;
-          list-style: none;
+          flex-direction: column;
+          flex-grow: 1;
+          flex-basis: 45%;
+          background-color: rgba(0, 0, 0, 0.3);
+          border: 3px solid rgba(226, 19, 19, 0.76);
+          border-style: dashed;
+          margin-top: 0.3em;
+          margin-right: 0.5em;
+          .nameline {
+      display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            text-align: center;
+            justify-content: space-between;
+            flex-grow: 1;
+            font: 1rem "courier";
+            padding: 0.7em 0 0.5em 1em;
+            .icon-group{
+              width: 40px;
+              text-align: right;
+            }
+          }
+          details > summary {
+            cursor: pointer;
+            list-style: none;
+          }
         }
       }
     }

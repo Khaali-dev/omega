@@ -10,6 +10,7 @@ import OmegaBaseActor from "./module/actor/base-actor.js";
 import OmegaBaseItem from "./module/item/base-item.js";
 
 import AdvancedSynthSheet from "./module/actor/sheet/advancedsynth-sheet.js";
+import SynthetiqueSheet from "./module/actor/sheet/synthetique-sheet.js";
 import OrganiqueSheet from "./module/actor/sheet/organique-sheet.js";
 import OmegaBaseItemSheet from "./module/item/sheet/base-sheet.js";
 
@@ -27,6 +28,7 @@ Hooks.once("init", function(){
     Actors.unregisterSheet('core', ActorSheet);
     Actors.registerSheet('omega', AdvancedSynthSheet, {types: ['advancedsynth'], makeDefault: true });
     Actors.registerSheet('omega', OrganiqueSheet, {types: ['organique'], makeDefault: true });
+    Actors.registerSheet('omega', SynthetiqueSheet, {types: ['synthetique'], makeDefault: true });
     //Actors.registerSheet('omega', NpcSheet, {types: ['npc'], makeDefault: true });
     
     game.omega = {

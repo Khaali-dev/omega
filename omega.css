@@ -124,6 +124,9 @@
   display: flex;
   flex-direction: row;
 }
+.omega.sheet .pointer {
+  cursor: pointer;
+}
 .omega.sheet .right-icon {
   text-align: right;
   margin-left: auto;
@@ -395,20 +398,37 @@
   color: #e0d7ab;
   padding: 1em 0 1em 0;
 }
-.omega.sheet .main .chassis-tab .extensioncontenu {
+.omega.sheet .main .chassis-tab .extensions-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.omega.sheet .main .chassis-tab .extensions-block .extensioncontenu {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 45%;
   background-color: rgba(0, 0, 0, 0.3);
   border: 3px solid rgba(226, 19, 19, 0.76);
   border-style: dashed;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
+  margin-right: 0.5em;
 }
-.omega.sheet .main .chassis-tab .extensioncontenu .nameline {
+.omega.sheet .main .chassis-tab .extensions-block .extensioncontenu .nameline {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
   justify-content: space-between;
+  flex-grow: 1;
   font: 1rem "courier";
-  padding: 1em 0 0.5em 1em;
+  padding: 0.7em 0 0.5em 1em;
 }
-.omega.sheet .main .chassis-tab .extensioncontenu details > summary {
+.omega.sheet .main .chassis-tab .extensions-block .extensioncontenu .nameline .icon-group {
+  width: 40px;
+  text-align: right;
+}
+.omega.sheet .main .chassis-tab .extensions-block .extensioncontenu details > summary {
   cursor: pointer;
   list-style: none;
 }
@@ -490,6 +510,89 @@
 }
 .omega.sheet.advancedsynth .ssprogtable .caract-line .caract-value {
   padding-left: 1rem;
+}
+.omega.sheet.advancedsynth .notes-tab .editor {
+  height: 100%;
+  width: 100%;
+  background: #f5fdfb;
+  box-shadow: inset 0 0 6px black;
+  min-height: 5em;
+  color: black;
+}
+.omega.sheet.advancedsynth .notes-tab .editor .editor-content {
+  min-height: 5em;
+  color: black;
+}
+.omega.sheet.advancedsynth .notes-tab .editor .tox.tox-tinymce {
+  min-height: 10em;
+}
+.omega.sheet.synthetique .logo_futuretechnologies {
+  background: center / contain no-repeat url('./assets/image/logo/logo_futuretechnologies.webp');
+  width: 95px;
+  height: 57px;
+}
+.omega.sheet.synthetique .logo_earthshield {
+  background: center / contain no-repeat url('./assets/image/logo/logo_earthshield.webp');
+  width: 95px;
+  height: 57px;
+}
+.omega.sheet.synthetique .logo_hegemon {
+  background: center / contain no-repeat url('./assets/image/logo/logo_hegemon.webp');
+  width: 95px;
+  height: 57px;
+}
+.omega.sheet.synthetique .logo_cyberlife {
+  background: center / contain no-repeat url('./assets/image/logo/logo_cyberlife.webp');
+  width: 95px;
+  height: 57px;
+}
+.omega.sheet.synthetique .logo_prophetiaincorporated {
+  background: center / contain no-repeat url('./assets/image/logo/logo_prophetiaincorporated.webp');
+  width: 95px;
+  height: 57px;
+}
+.omega.sheet.synthetique .synthprogtable {
+  font: 0.9em "frutiger";
+  text-transform: uppercase;
+}
+.omega.sheet.synthetique .synthprogtable td:nth-child(1) {
+  width: 90%;
+  cursor: pointer;
+}
+.omega.sheet.synthetique .synthprogtable td:nth-child(2) {
+  width: 10%;
+  text-align: center;
+}
+.omega.sheet.synthetique .synthprogtable input {
+  width: 2em;
+}
+.omega.sheet.synthetique .extensions-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.omega.sheet.synthetique .extensions-block .extensioncontenu {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 45%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(226, 19, 19, 0.76);
+  border-style: dashed;
+  margin-top: 0.3em;
+  margin-right: 0.3em;
+}
+.omega.sheet.synthetique .extensions-block .extensioncontenu .nameline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  font: 1rem "courier";
+  padding: 0.5em 0 0.2em 1em;
+}
+.omega.sheet.synthetique .extensions-block .extensioncontenu details > summary {
+  cursor: pointer;
+  list-style: none;
 }
 .omega.sheet.organique .window-content {
   background: repeat url('./assets/image/fond_organique.webp');

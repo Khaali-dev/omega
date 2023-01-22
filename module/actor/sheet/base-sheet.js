@@ -17,7 +17,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     context.config = game.omega.config;
     context.editable = this.isEditable;
     context.isGm = game.user.isGM;
-    context.estorganique= this.actor.estOrganique();
+    context.estorganique = this.actor.estOrganique();
     context.extensions = this.actor.items.filter((item) => item.type == "extension");
     context.extensions.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
@@ -40,8 +40,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
       });*/
 
     context.unlocked = this.actor.getFlag(game.system.id, "SheetUnlocked");
-    context.isAdvancedSynth= this.actor.isAdvancedSynth();
-    context.isNpc = this.actor.isNpc();
+    context.estAdvancedSynth = this.actor.estAdvancedSynth();
     context.descriptionhtml = TextEditor.enrichHTML(this.actor.system.description, { async: false });
     context.system = context.actor.system;
     context.flags = context.actor.flags;
@@ -76,9 +75,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     html.find(".item-activer").click((ev) => this._onChassisActivate(ev));
     html.find(".item-remove").click((ev) => this._onExtensionRemove(ev));
 
-    
     html.find(".item-shoot").click((ev) => this._onItemRoll(ev));
-    
   }
 
   /**
@@ -157,7 +154,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let element = event.currentTarget;
     let field = element.dataset.field;
     let item = this.actor.items.get(field);
-    if(!item || !item.type === "arme") return;
+    if (!item || !item.type === "arme") return;
     return this.actor.shoot(field);
   }
   _onItemEdit(event) {
@@ -220,14 +217,22 @@ export class OmegaBaseActorSheet extends ActorSheet {
     }
   }
   _onDropItem(event, data) {
+    event.preventDefault();
     Item.fromDropData(data).then((item) => {
       const itemData = duplicate(item);
-      console.log("event.target", event.target);
       switch (itemData.type) {
         case "extension":
           return this._onDropExtension(event, itemData, data);
         case "arme":
           return this._onDropExtension(event, itemData, data);
+        case "chassis":
+          if (this.actor.estOrganique()) {
+            return false;
+          } else return super._onDropItem(event, data);
+        case "avantage":
+          if (this.actor.estOrganique()) {
+            return super._onDropItem(event, data);
+          } else return false;
         default:
           return super._onDropItem(event, data);
       }
@@ -237,23 +242,25 @@ export class OmegaBaseActorSheet extends ActorSheet {
     event.preventDefault();
 
     // Get the target chassis
-    const id = event.target.dataset.chassis;
-    const target = this.actor.items.get(id);
-    console.log("target", target);
-    if (!target || target.type !== "chassis") {
-      return super._onDropItem(event, data);
-    } else {
-      console.log("itemData2", itemData);
-      const moveditem = this.actor.items.get(itemData._id);
-      console.log("moveditem", moveditem);
-      if (!moveditem) {
-        console.log("data", data);
+    if (this.actor.estAdvancedSynth()) {
+      const id = event.target.dataset.chassis;
+      const target = this.actor.items.get(id);
+      console.log("target", target);
+      if (!target || target.type !== "chassis") {
         return super._onDropItem(event, data);
+      } else {
+        console.log("itemData2", itemData);
+        const moveditem = this.actor.items.get(itemData._id);
+        console.log("moveditem", moveditem);
+        if (!moveditem) {
+          console.log("data", data);
+          return super._onDropItem(event, data);
+        }
+        itemData.system.chassisId = id;
+        await this.actor.updateEmbeddedDocuments("Item", [itemData]);
+        console.log(this.actor.items);
       }
-      itemData.system.chassisId = id;
-      await this.actor.updateEmbeddedDocuments("Item", [itemData]);
-      console.log(this.actor.items);
-    }
+    } else return super._onDropItem(event, data);
   }
 
   /**

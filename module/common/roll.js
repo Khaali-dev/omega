@@ -26,7 +26,7 @@ export class Diodes {
       this.data.introText = "Pioche simple de diodes";
       this.data.actorname = game.users.get(userId)?.name;
       this.data.charImg = "icons/svg/mystery-man.svg";
-      this.data.isAdvancedSynth = true;
+      this.data.estAdvancedSynth = true;
     } else {
       let namesForText = { actorname: this.actor.name, program: game.i18n.localize(this.program.label) };
       if (this.data.isAttack) {
@@ -38,11 +38,11 @@ export class Diodes {
           namesForText.arme = arme.name;
         }
       }
-      let prepareintrotext = this.actor.estOrganique ? "organique" : "";
+      let prepareintrotext = this.actor.estOrganique() ? "organique" : "";
       this.data.introText = game.i18n.format("OMEGA.dialog.introtext." + this.rolltype + prepareintrotext, namesForText);
       this.actorname = this.actor.name;
       this.data.charImg = this.actor.img;
-      this.data.isAdvancedSynth = this.actor.isAdvancedSynth();
+      this.data.estAdvancedSynth = this.actor.estAdvancedSynth();
     }
 
     if (this.rolltype === ROLL_TYPE.CHANCE) {
@@ -60,7 +60,7 @@ export class Diodes {
         arme: this.data?.arme,
         introText: this.data.introText,
         charImg: this.data.charImg,
-        isAdvancedSynth: this.data.isAdvancedSynth,
+        estAdvancedSynth: this.data.estAdvancedSynth,
       });
       await new Dialog({
         title: "Tirage de diode",

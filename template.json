@@ -6,27 +6,27 @@
         "caracteristiques": {
           "ia": {
             "value": 2,
-            "label": "OMEGA.label.caracteristiques.ia"
+            "label": "OMEGA.label.programmes.ia"
           },
           "cpu": {
             "value": 2,
-            "label": "OMEGA.label.caracteristiques.cpu"
+            "label": "OMEGA.label.programmes.cpu"
           },
           "interface": {
             "value": 2,
-            "label": "OMEGA.label.caracteristiques.interface"
+            "label": "OMEGA.label.programmes.interface"
           },
           "ossature": {
             "value": 2,
-            "label": "OMEGA.label.caracteristiques.ossature"
+            "label": "OMEGA.label.programmes.ossature"
           },
           "moteur": {
             "value": 2,
-            "label": "OMEGA.label.caracteristiques.moteur"
+            "label": "OMEGA.label.programmes.moteur"
           },
           "balise": {
             "value": 2,
-            "label": "OMEGA.label.caracteristiques.balise"
+            "label": "OMEGA.label.programmes.balise"
           }
         }
       },
@@ -178,62 +178,62 @@
             "base": 4,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.blindage"
+            "label": "OMEGA.label.programmes.blindage"
           },
           "blindageiem": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.blindageiem"
+            "label": "OMEGA.label.programmes.blindageiem"
           },
           "chance": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.initiative"
+            "label": "OMEGA.label.programmes.chance"
           },
           "defense": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.defense"
+            "label": "OMEGA.label.programmes.defense"
           },
           "energiedisponible": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.energiedisponible"
+            "label": "OMEGA.label.programmes.energiedisponible"
           },
           "initiative": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.initiative"
+            "label": "OMEGA.label.programmes.initiative"
           },
           "integriteinformatique": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.integriteinformatique"
+            "label": "OMEGA.label.programmes.integriteinformatique"
           },
           "resistancemoteur": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.resistancemoteur"
+            "label": "OMEGA.label.programmes.resistancemoteur"
           },
           "vitesse": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.systemesauxiliaires.vitesse"
+            "label": "OMEGA.label.programmes.vitesse"
           }
         }
       },
       "base": {
         "chassisId": "",
         "description": "",
-        "firme": "",
+        "firme": "futuretechnologies",
         "traits": "",
         "typeSynth": "omega"
       }
@@ -247,50 +247,138 @@
       "modifiers": []
     },
     "synthetique": {
-      "templates": ["caracteristiques", "programmes", "sousprogrammes", "systemesauxiliaires", "base"],
+      "templates": ["sousprogrammes", "systemesauxiliaires", "base"],
+      "caracteristiques": {
+        "attaque": {
+          "value": 2,
+          "label": "OMEGA.label.programmes.attaque"
+        },
+        "defense": {
+          "value": 2,
+          "label": "OMEGA.label.programmes.defense"
+        },
+        "initiative": {
+          "value": 2,
+          "label": "OMEGA.label.programmes.initiative"
+        },
+        "vitesse": {
+          "value": 2,
+          "label": "OMEGA.label.programmes.vitesse"
+        }
+      },
+        "programmes": {
+          "basededonnees": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.basededonnees"
+          },
+          "connexion": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.connexion"
+          },
+          "contremesure": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.contremesure"
+          },
+          "dissipateur": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.dissipateur"
+          },
+          "hacking": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.hacking"
+          },
+          "armesaenergie": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.armesaenergie"
+          },
+          "detecteur": {
+            "value": 2,
+            "label": "OMEGA.label.programmes.detecteur"
+          },
+          "exterminateur": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.exterminateur"
+          },
+          "resistance": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.resistance"
+          },
+          "artillerie": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.artillerie"
+          },
+          "tactique": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.tactique"
+          },
+          "reprogrammation": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.reprogrammation"
+          },
+          "neutralisationcognitive": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.neutralisationcognitive"
+          },
+          "recherche": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.recherche"
+          },
+          "cybernetique": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.cybernetique"
+          },
+          "ingenierie": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.ingenierie"
+          },
+          "chirurgie": {
+            "value": 0,
+            "label": "OMEGA.label.programmes.chirurgie"
+          }
+      },
       "modifiers": []
     },
     "organique": {
       "caracteristiques": {
         "connaissance": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.connaissance"
+          "label": "OMEGA.label.programmes.connaissance"
         },
         "corpsacorps": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.corpsacorps"
+          "label": "OMEGA.label.programmes.corpsacorps"
         },
         "defense": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.defense"
+          "label": "OMEGA.label.programmes.defense"
         },
         "empathie": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.empathie"
+          "label": "OMEGA.label.programmes.empathie"
         },
         "initiative": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.initiative"
+          "label": "OMEGA.label.programmes.initiative"
         },
         "raisonnement": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.raisonnement"
+          "label": "OMEGA.label.programmes.raisonnement"
         },
         "rapidite": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.rapidite"
+          "label": "OMEGA.label.programmes.rapidite"
         },
         "sens": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.sens"
+          "label": "OMEGA.label.programmes.sens"
         },
         "tir": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.tir"
+          "label": "OMEGA.label.programmes.tir"
         },
         "vitalite": {
           "value": 2,
-          "label": "OMEGA.label.caracteristiques.vitalite"
+          "label": "OMEGA.label.programmes.vitalite"
         }
       },
       "systemesauxiliaires": {
@@ -298,31 +386,31 @@
           "base": 2,
           "value": 0,
           "mod": 0,
-          "label": "OMEGA.label.systemesauxiliaires.armure"
+          "label": "OMEGA.label.programmes.armure"
         },
         "defense": {
           "base": 2,
           "value": 0,
           "mod": 0,
-          "label": "OMEGA.label.systemesauxiliaires.defense"
+          "label": "OMEGA.label.programmes.defense"
         },
         "vie": {
           "base": 2,
           "value": 0,
           "mod": 0,
-          "label": "OMEGA.label.systemesauxiliaires.vie"
+          "label": "OMEGA.label.programmes.vie"
         },
         "vitesse": {
           "base": 2,
           "value": 0,
           "mod": 0,
-          "label": "OMEGA.label.systemesauxiliaires.vitesse"
+          "label": "OMEGA.label.programmes.vitesse"
         },
         "chance": {
           "base": 0,
           "value": 0,
           "mod": 0,
-          "label": "OMEGA.label.systemesauxiliaires.chance"
+          "label": "OMEGA.label.programmes.chance"
         }
       },
       "race": "Humain",

@@ -1,0 +1,329 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="main droppable">
+        <table class="tablename">
+            <tbody>
+                <tr>
+                    <td rowspan="4"><img class="portraitimg" src="{{actor.img}}" data-edit="img"
+                            title="{{actor.name}}" /></td>
+                    {{#if unlocked}}
+                    <td colspan="2"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+                        {{else}}
+                    <td colspan="2" class="pcname">{{actor.name}}
+                        {{/if}}
+                    </td>
+                    <td class="right-icon">
+                        <a class="sheet-change-lock" title="{{localize 'OMEGA.label.unlock_sheet'}}">
+                            {{#if unlocked}}
+                            <i class="fas fa-lock-open"></i>
+                            {{else}}
+                            <i class="fas fa-lock"></i>
+                            {{/if}}
+                    </td>{{#if unlocked}}
+                    <td style="display: flex; flex-direction: column;">
+                        <select name="system.firme">
+                            {{#select system.firme}}
+                            {{#each config.FIRME as |name type|}}
+                            <option value="{{type}}">{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                        {{else}}
+                    <td style="display: flex; flex-direction: column;"><img class="{{logofirme}}" />
+                        {{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="pcfirme">Chassis {{system.chassisActif.label}}
+                    </td>
+                    <td class="pcfirme">{{localize "OMEGA.label.programmes.energie"}}</td>
+                    <td><input class="stats-input small-input" style="width: 2em;" title="{{localize "
+                            OMEGA.label.programmes.energiedisponible"}}"
+                            name="system.systemesauxiliaires.energiedisponible.value" type="number"
+                            value="{{system.systemesauxiliaires.energiedisponible.value}}" />
+                        {{#if unlocked}}
+                        <input class="stats-input small-input" style="width: 2em;" title="{{localize "
+                            OMEGA.label.programmes.energiedisponible"}}"
+                            name="system.systemesauxiliaires.energiedisponible.base" type="number"
+                            value="{{system.systemesauxiliaires.energiedisponible.base}}" />
+                        {{else}} /
+                        {{system.systemesauxiliaires.energiedisponible.base}}
+                        {{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pcfirme">Blindage</td>
+                    <td><input class="aux-input" style="width: 2em;" title="Valeur courante" id="blindage"
+                            name="system.systemesauxiliaires.blindage.value" type="number" min="0"
+                            max="{{system.systemesauxiliaires.blindage.base}}"
+                            value="{{system.systemesauxiliaires.blindage.value}}" />
+                        {{#if unlocked}}
+                        <input class="stats-input small-input" style="width: 2em;" title="{{localize "
+                            OMEGA.label.programmes.blindage"}}" name="system.systemesauxiliaires.blindage.base"
+                            type="number" value="{{system.systemesauxiliaires.blindage.base}}" />
+                        {{else}} /
+                        {{system.systemesauxiliaires.blindage.base}}
+                        {{/if}}
+                    </td>
+                    <td class="pcfirme">Rés. moteur</td>
+                    <td><input class="aux-input" style="width: 2em;" title="Valeur courante" id="resistancemoteur"
+                            name="system.systemesauxiliaires.resistancemoteur.value" type="number" min="0"
+                            max="{{system.systemesauxiliaires.resistancemoteur.base}}"
+                            value="{{system.systemesauxiliaires.resistancemoteur.value}}" />
+                        {{#if unlocked}}
+                        <input class="stats-input small-input" style="width: 2em;" title="{{localize "
+                            OMEGA.label.programmes.resistancemoteur"}}"
+                            name="system.systemesauxiliaires.resistancemoteur.base" type="number"
+                            value="{{system.systemesauxiliaires.resistancemoteur.base}}" />
+                        {{else}} /
+                        {{system.systemesauxiliaires.resistancemoteur.base}}
+                        {{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pcfirme">Blindage IEM</td>
+                    <td><input class="aux-input" style="width: 2em;" title="Valeur courante" id="blindageiem"
+                            name="system.systemesauxiliaires.blindageiem.value" type="number" min="0"
+                            max="{{system.systemesauxiliaires.blindageiem.base}}"
+                            value="{{system.systemesauxiliaires.blindageiem.value}}" />
+                        {{#if unlocked}}
+                        <input class="stats-input small-input" style="width: 2em;" title="{{localize "
+                            OMEGA.label.programmes.blindageiem"}}" name="system.systemesauxiliaires.blindageiem.base"
+                            type="number" value="{{system.systemesauxiliaires.blindageiem.base}}" />
+                        {{else}} /
+                        {{system.systemesauxiliaires.blindageiem.base}}
+                        {{/if}}
+                    </td>
+                    <td class="pcfirme">Intégrité info.</td>
+                    <td><input class="aux-input" title="Valeur courante" id="integriteinformatique"
+                            name="system.systemesauxiliaires.integriteinformatique.value" style="width: 2em;"
+                            type="number" min="0" max="{{system.systemesauxiliaires.integriteinformatique.base}}"
+                            value="{{system.systemesauxiliaires.integriteinformatique.value}}" />
+                        {{#if unlocked}}
+                        <input class="stats-input small-input" style="width: 2em;" title="{{localize "
+                            OMEGA.label.programmes.integriteinformatique"}}"
+                            name="system.systemesauxiliaires.integriteinformatique.base" type="number"
+                            value="{{system.systemesauxiliaires.integriteinformatique.base}}" />
+                        {{else}} /
+                        {{system.systemesauxiliaires.integriteinformatique.base}}
+                        {{/if}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="central-block">
+            <div class="stats-block">
+                <table class="synthprogtable">
+                    <tbody>
+                        <tr class="prog-line">
+                            {{#if unlocked}}
+                            <td>{{localize "OMEGA.label.programmes.attaque"}}</td>
+                            <td><input class="stats-input small-input" title="{{localize "
+                                    OMEGA.label.programmes.attaque"}}" data-field="attaque"
+                                    data-group="caracteristiques" name="system.caracteristiques.attaque.value"
+                                    type="number" value="{{system.caracteristiques.attaque.value}}" /></td>
+                            {{else}}
+                            <td class="caract-text" data-field="attaque">{{localize
+                                "OMEGA.label.programmes.attaque"}}</td>
+                            <td class="caract-text" data-field="attaque">
+                                {{system.caracteristiques.attaque.value}}</td>
+                            {{/if}}
+                        </tr>
+                        <tr class="prog-line">
+                            {{#if unlocked}}
+                            <td>{{localize "OMEGA.label.programmes.defense"}}</td>
+                            <td><input class="stats-input small-input" title="{{localize "
+                                    OMEGA.label.programmes.defense"}}" data-field="defense"
+                                    data-group="caracteristiques" name="system.caracteristiques.defense.value"
+                                    type="number" value="{{system.caracteristiques.defense.value}}" /></td>
+                            {{else}}
+                            <td class="caract-text" data-field="defense">{{localize
+                                "OMEGA.label.programmes.defense"}}</td>
+                            <td class="caract-text" data-field="defense">{{system.caracteristiques.defense.value}}
+                            </td>
+                            {{/if}}
+                        </tr>
+                        <tr class="prog-line">
+                            {{#if unlocked}}
+                            <td>{{localize "OMEGA.label.programmes.initiative"}}</td>
+                            <td><input class="stats-input small-input" title="{{localize "
+                                    OMEGA.label.programmes.initiative"}}" data-field="initiative"
+                                    data-group="caracteristiques" name="system.caracteristiques.initiative.value"
+                                    type="number" value="{{system.caracteristiques.initiative.value}}" /></td>
+                            {{else}}
+                            <td class="caract-text" data-field="initiative">{{localize
+                                "OMEGA.label.programmes.initiative"}}</td>
+                            <td class="caract-text" data-field="initiative">
+                                {{system.caracteristiques.initiative.value}}</td>
+                            {{/if}}
+                        </tr>
+                        <tr class="prog-line">
+                            {{#if unlocked}}
+                            <td>{{localize "OMEGA.label.programmes.vitesse"}}</td>
+                            <td><input class="stats-input small-input" title="{{localize "
+                                    OMEGA.label.programmes.vitesse"}}" data-field="vitesse"
+                                    data-group="caracteristiques" name="system.caracteristiques.vitesse.value"
+                                    type="number" value="{{system.caracteristiques.vitesse.value}}" /></td>
+                            {{else}}
+                            <td class="caract-text" data-field="vitesse">{{localize
+                                "OMEGA.label.programmes.vitesse"}}</td>
+                            <td class="caract-text" data-field="vitesse">
+                                {{system.caracteristiques.vitesse.value}}</td>
+                            {{/if}}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="stats-block">
+                <table class="synthprogtable">
+                    <tbody>
+                        {{#if unlocked}}
+                        {{#each progfull as |prog index|}}
+                        <tr class="program-line">
+                            <td class="prog-text" data-field="{{prog.reference}}">{{prog.label}}</td>
+                            <td><input class="prog-input small-input" title="{{prog.label}}"
+                                    data-field="{{prog.reference}}" data-group="index" name="index" type="number"
+                                    value="{{prog.value}}" /></td>
+                        </tr>
+                        {{/each}}
+                        {{else}}
+                        {{#each prognonnul as |prog index|}}
+                        <tr>
+                            <td class="program-text" data-field="{{prog.reference}}">{{prog.label}}</td>
+                            <td class="program-text" data-field="{{prog.reference}}">{{prog.value}}</td>
+                        </tr>
+                        {{/each}}
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="stats-block">
+                <table class="synthprogtable">
+                    <tbody>
+                        {{#if unlocked}}
+                        {{#each ssprogfull as |ssprog index|}}
+                        <tr class="ssprogram-line">
+                            <td class="ssprogram-text" data-field="{{ssprog.reference}}">{{ssprog.label}}</td>
+                            <td><input class="ssprog-input small-input" title="{{ssprog.label}}"
+                                    data-field="{{ssprog.reference}}" data-group="index" name="index" type="number"
+                                    value="{{ssprog.value}}" /></td>
+                        </tr>
+                        {{/each}}
+                        {{else}}
+                        {{#each ssprognonnul as |ssprog index|}}
+                        <tr>
+                            <td class="ssprogram-text" data-field="{{ssprog.reference}}">{{ssprog.label}}</td>
+                            <td class="ssprogram-text" data-field="{{ssprog.reference}}">{{ssprog.value}}</td>
+                        </tr>
+                        {{/each}}
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="lignejaune"></div>
+        {{#each armes as |item id|}}
+        <table class="weapontable">
+            <tbody>
+                <tr style="font-size: larger;">
+                    <td style="font-weight: bold; color:#f59292;">{{item.name}}</td>
+                    <td class="arme-attack" data-field={{item.id}}>
+                        {{item.system.attacklabel}}&nbsp;({{item.system.attackvalue}})</td>
+                    <td><a class="item-control item-shoot" data-field="{{item.id}}" data-tooltip="Utiliser"><i
+                                class="fas fa-gun"></i></a>
+                        <a class="item-control item-edit" data-field="{{item.id}}" data-tooltip="Modifier"><i
+                                class="fas fa-cog"></i></a>
+                        {{#if ../unlocked}}
+                        <a class="item-control item-delete" data-field="{{item.id}}" data-tooltip="Supprimer"><i
+                                class="fas fa-trash"></i></a>
+                        {{/if}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="diodesarmes">
+            <thead>
+                <tr>
+                    <th><img class="diode diode-noire"></th>
+                    <th><img class="diode diode-blanche"></th>
+                    <th><img class="diode diode-verte"></th>
+                    <th><img class="diode diode-bleue"></th>
+                    <th><img class="diode diode-rouge"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{item.system.effetdiode.noire.label}}</td>
+                    <td>{{item.system.effetdiode.blanche.label}}</td>
+                    <td>{{item.system.effetdiode.bleue.label}}</td>
+                    <td>{{item.system.effetdiode.verte.label}}</td>
+                    <td>{{item.system.effetdiode.rouge.label}}</td>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <th>Technologie</th>
+                {{#ifne item.system.portee ""}}<th>Portée</th>{{/ifne}}
+                <th>Autonomie</th>
+                <th>Cadence</th>
+                {{#ifne item.system.initiative ""}}<th>Initiative</th>{{/ifne}}
+                {{#ifne item.system.zone ""}}<th>Effet de zone</th>{{/ifne}}
+            </thead>
+            <tbody>
+                <tr style="text-align: center;">
+                    <td>{{item.system.technologielabel}}</td>
+                    {{#ifne item.system.portee ""}}<td>{{item.system.portee}}</td>{{/ifne}}
+                    <td>{{item.system.autonomie}}</td>
+                    <td>{{item.system.cadence}}</td>
+                    {{#ifne item.system.initiative ""}}<td>{{item.system.initiative}}</td>{{/ifne}}
+                    {{#ifne item.system.zone ""}}<td>{{item.system.zone}}</td>{{/ifne}}
+                </tr>
+            </tbody>
+        </table>
+        <div class="redline"></div>
+        {{/each}}<div class="extensions-block">
+            {{#each extensions as |extension id|}}
+            <div class="extensioncontenu">
+                <div class="nameline">
+                    <div>{{extension.name}}</div>
+                    <div class="icon-group">
+                        <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i
+                                class="fas fa-cog"></i></a>
+                        {{#if ../unlocked}}
+                        <a class="item-control item-delete" data-field="{{extension.id}}" data-tooltip="Supprimer"><i
+                                class="fas fa-trash"></i></a>
+                        {{/if}}
+                    </div>
+                </div>
+                <details>
+                    <summary style="text-align:center;">Description</summary>
+                    <p>Déclenchement : <span style="font-style: italic;">{{extension.system.type}}</span> - Coût en
+                        énergie:
+                        <span style="font-style: italic;">{{extension.system.coutenergie.label}}</span>
+                    </p>{{{extension.system.descriptionhtml}}}
+                </details>
+            </div>
+            {{/each}}
+        </div>
+        <div class="equipement-column">
+            {{#each equipements as |equipement id|}}
+            <div class="equipementcontenu">
+                <div class="nameline">
+                    <div>{{equipement.name}}</div>
+                    <div class="icon-group">
+                        <a class="item-control item-edit" data-field="{{equipement._id}}" data-tooltip="Modifier"><i
+                                class="fas fa-cog"></i></a>
+                        {{#if ../unlocked}}
+                        <a class="item-control item-delete" data-field="{{equipement._id}}"
+                            data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+                        {{/if}}
+                    </div>
+                </div>
+                <details>
+                    <summary style="text-align:center;">Description</summary>
+                    {{{equipement.system.descriptionhtml}}}
+                </details>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</form>

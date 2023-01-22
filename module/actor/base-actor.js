@@ -4,37 +4,40 @@ import { ROLL_TYPE } from "../common/config.js";
 export default class OmegaBaseActor extends Actor {
   /** @override */
   prepareData() {
+    console.log("demarrage Acteurs");
     super.prepareData();
-    if (this.isAdvancedSynth()) this._prepareDataAdvancedSynth();
-    if (this.isNpc()) this._prepareDataNpc();
+    if (this.estAdvancedSynth()) this._prepareDataAdvancedSynth();
+    if (this.estSynthetique()) this._prepareDataSynthetique();
   }
 
+  async _prepareDataSynthetique() {}
   /**
    * @private
    */
   async _prepareDataAdvancedSynth() {
-    console.log("demarrage Acteurs");
     // Evaluation des systèmes auxiliaires
-    this.system.systemesauxiliaires.blindage.base= this.system.typeSynth==="alpha" ? this.system.programmes.resistance.value * 3 : this.system.programmes.resistance.value * 2;
-    this.system.systemesauxiliaires.blindage.max= this.system.systemesauxiliaires.blindage.base+ this.system.systemesauxiliaires.blindage.mod;
-    this.system.systemesauxiliaires.resistancemoteur.base= this.system.programmes.energie.value;
-    this.system.systemesauxiliaires.resistancemoteur.max=this.system.systemesauxiliaires.resistancemoteur.base + this.system.systemesauxiliaires.resistancemoteur.mod;
-    this.system.systemesauxiliaires.blindageiem.base= this.system.typeSynth==="sigma" ? this.system.caracteristiques.balise.value * 2 : this.system.caracteristiques.balise.value;
-    this.system.systemesauxiliaires.blindageiem.max=this.system.systemesauxiliaires.blindageiem.base + this.system.systemesauxiliaires.blindageiem.mod;
-    this.system.systemesauxiliaires.integriteinformatique.base= this.system.caracteristiques.cpu.value;
-    this.system.systemesauxiliaires.integriteinformatique.max=this.system.systemesauxiliaires.integriteinformatique.base + this.system.systemesauxiliaires.integriteinformatique.mod;
-    this.system.systemesauxiliaires.energiedisponible.base= (this.system.programmes.energie.value * 3);
-    this.system.systemesauxiliaires.energiedisponible.max=this.system.systemesauxiliaires.energiedisponible.base + this.system.systemesauxiliaires.energiedisponible.mod;
+    this.system.systemesauxiliaires.blindage.base = this.system.typeSynth === "alpha" ? this.system.programmes.resistance.value * 3 : this.system.programmes.resistance.value * 2;
+    this.system.systemesauxiliaires.blindage.max = this.system.systemesauxiliaires.blindage.base + this.system.systemesauxiliaires.blindage.mod;
+    this.system.systemesauxiliaires.resistancemoteur.base = this.system.programmes.energie.value;
+    this.system.systemesauxiliaires.resistancemoteur.max = this.system.systemesauxiliaires.resistancemoteur.base + this.system.systemesauxiliaires.resistancemoteur.mod;
+    this.system.systemesauxiliaires.blindageiem.base =
+      this.system.typeSynth === "sigma" ? this.system.caracteristiques.balise.value * 2 : this.system.caracteristiques.balise.value;
+    this.system.systemesauxiliaires.blindageiem.max = this.system.systemesauxiliaires.blindageiem.base + this.system.systemesauxiliaires.blindageiem.mod;
+    this.system.systemesauxiliaires.integriteinformatique.base = this.system.caracteristiques.cpu.value;
+    this.system.systemesauxiliaires.integriteinformatique.max =
+      this.system.systemesauxiliaires.integriteinformatique.base + this.system.systemesauxiliaires.integriteinformatique.mod;
+    this.system.systemesauxiliaires.energiedisponible.base = this.system.programmes.energie.value * 3;
+    this.system.systemesauxiliaires.energiedisponible.max = this.system.systemesauxiliaires.energiedisponible.base + this.system.systemesauxiliaires.energiedisponible.mod;
 
-    this.system.systemesauxiliaires.chance.base= this.system.caracteristiques.interface.value;
-    this.system.systemesauxiliaires.chance.value=this.system.systemesauxiliaires.chance.base + this.system.systemesauxiliaires.chance.mod;
-    this.system.systemesauxiliaires.vitesse.base= this.system.caracteristiques.moteur.value;
-    this.system.systemesauxiliaires.vitesse.value= this.system.systemesauxiliaires.vitesse.base+ this.system.systemesauxiliaires.vitesse.mod;
-    this.system.systemesauxiliaires.defense.base= this.system.programmes.defense.value;
-    this.system.systemesauxiliaires.defense.value= this.system.systemesauxiliaires.defense.base + this.system.systemesauxiliaires.defense.mod;
-    this.system.systemesauxiliaires.initiative.base= this.system.programmes.dissipateur.value;
+    this.system.systemesauxiliaires.chance.base = this.system.caracteristiques.interface.value;
+    this.system.systemesauxiliaires.chance.value = this.system.systemesauxiliaires.chance.base + this.system.systemesauxiliaires.chance.mod;
+    this.system.systemesauxiliaires.vitesse.base = this.system.caracteristiques.moteur.value;
+    this.system.systemesauxiliaires.vitesse.value = this.system.systemesauxiliaires.vitesse.base + this.system.systemesauxiliaires.vitesse.mod;
+    this.system.systemesauxiliaires.defense.base = this.system.programmes.defense.value;
+    this.system.systemesauxiliaires.defense.value = this.system.systemesauxiliaires.defense.base + this.system.systemesauxiliaires.defense.mod;
+    this.system.systemesauxiliaires.initiative.base = this.system.programmes.dissipateur.value;
     this.system.systemesauxiliaires.initiative.value = this.system.systemesauxiliaires.initiative.base + this.system.systemesauxiliaires.initiative.mod;
-    
+
     //traitement du chassis
 
     this.system.chassis = {};
@@ -63,7 +66,7 @@ export default class OmegaBaseActor extends Actor {
     let item = this.items.get(chassisId);
     if (item) {
       this.system.chassisActif.label = item.name;
-      this.system.chassisActif.id= chassisId;
+      this.system.chassisActif.id = chassisId;
       let itemDup = duplicate(item);
       itemDup.system.estActif = true;
       chassisArray.push(itemDup);
@@ -100,9 +103,9 @@ export default class OmegaBaseActor extends Actor {
           } else {
             itemDup.system.chassisId = "";
             itemDup.system.estActif = false;
-            extensionArray.push(itemDup);
           }
         }
+        extensionArray.push(itemDup);
       }
     }
     this.updateEmbeddedDocuments("Item", extensionArray);
@@ -112,17 +115,16 @@ export default class OmegaBaseActor extends Actor {
     this.system.chassis[chassisId].nbslotslibres = this.system.chassis[chassisId].nbslotslibres - nbSlots;
   }
 
-  isAdvancedSynth() {
+  estAdvancedSynth() {
     return this.type === "advancedsynth";
   }
   estOrganique() {
     return this.type === "organique";
   }
-
-  isNpc() {
-    return this.type === "npc";
+  estSynthetique() {
+    return this.type === "synthetique";
   }
-  
+
   /* Get the Players owning an actor, that is not a GM and that is connected */
   async getOwnerPlayer() {
     let permissions = Object.entries(this.ownership);
@@ -136,7 +138,7 @@ export default class OmegaBaseActor extends Actor {
     return owningPlayers;
   }
   async check(group, field) {
-    let value= this.system[group][field].value;
+    let value = this.system[group][field].value;
     if (!value) return;
     let program = {
       value: value,
@@ -144,28 +146,33 @@ export default class OmegaBaseActor extends Actor {
       group: group,
       reference: field,
     };
-;    let data = {};
+    let data = {};
     let diodes = new Diodes(this.id, ROLL_TYPE.PROGRAM, program, data);
     diodes.openDialog();
   }
-  async shoot(armeId){
+  async shoot(armeId) {
     let arme = this.items.get(armeId);
     let group = this.estOrganique() ? "caracteristiques" : "programmes";
-    let field = this.getEquivalentOrga(arme.system.typeprogramme);
+    let field = arme.system.typeprogramme;
+    if (this.estOrganique()) {
+      field = this.getEquivalentOrga(arme.system.typeprogramme);
+    } else if (this.estSynthetique() && this.system.programmes[arme.system.typeprogramme].value < this.system.caracteristiques.attaque.value) {
+      group = "caracteristiques";
+      field = "attaque";
+    }
     let program = {
       value: this.system[group][field].value,
       label: game.i18n.localize(this.system[group][field].label),
       group: group,
       reference: field,
     };
-    let data = {itemId: armeId};
+    let data = { itemId: armeId };
     let diodes = new Diodes(this.id, ROLL_TYPE.ATTACK, program, data);
     diodes.openDialog();
-
   }
-  async chanceRoll(){
+  async chanceRoll() {
     let program = {
-      value: this.system.systemesauxiliaires.chance.max,
+      value: this.system.systemesauxiliaires.chance.value,
       label: "Chance",
       group: "systemesauxiliaires",
       reference: "chance",
@@ -173,10 +180,9 @@ export default class OmegaBaseActor extends Actor {
     let data = {};
     let diodes = new Diodes(this.id, ROLL_TYPE.CHANCE, program, data);
     diodes.openDialog();
-
   }
-  getEquivalentOrga(programme){
-    if(this.estOrganique()) return(game.omega.config.ORGANIQUE.EQUIVALENCE[programme]);
-    else return(programme);
+  getEquivalentOrga(programme) {
+    if (this.estOrganique()) return game.omega.config.ORGANIQUE.EQUIVALENCE[programme];
+    else return programme;
   }
 }

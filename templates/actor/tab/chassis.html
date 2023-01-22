@@ -1,9 +1,8 @@
 <div class="chassis-tab">
-    <div class="main droppable">
+    <div class="main">
         {{#each stockchassis as |chassis index|}}
         {{#if chassis.estActif}}
         <div class="chassisbloc" data-chassis="{{chassis.id}}">
-
             <div class="chassis-block-name">
                 <div>Chassis équipé : <span class="chassisname">{{chassis.name}}</span></div>
                 <div>Slots libres: {{chassis.nbslotslibres}} /

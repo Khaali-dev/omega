@@ -29,12 +29,11 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
     const context = super.getData(options);
     context.armes = this.actor.items.filter((item) => item.type === "arme");
     context.armes.forEach((element) => {
-      console.log("element",element);
-      console.log("element.system.typeprogramme",element.system.typeprogramme);
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
       element.system.attacklabel=game.omega.config.ARME.TYPEPROGRAMME[this.actor.getEquivalentOrga(element.system.typeprogramme)];
       element.system.attackvalue=this.actor.system.caracteristiques[this.actor.getEquivalentOrga(element.system.typeprogramme)].value;
       element.system.technologielabel=game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
+      element.system.estActif=true;
     });
     context.avantages = this.actor.items.filter((item) => item.type === "avantage");
     context.avantages.forEach((element) => {

@@ -11,12 +11,19 @@ export default function registerHooks() {
       mergeObject(createChanges, {
         "token.disposition": CONST.TOKEN_DISPOSITIONS.NEUTRAL,
       });
-      // Player
+      // advancedsynth (uniqueness)
       if (document.type === "advancedsynth") {
         createChanges.token.vision = true;
         createChanges.token.actorLink = true;
+        if (document.img === 'icons/svg/mystery-man.svg') {
+          createChanges.img = 'systems/omega/assets/image/robot.svg';
+        }
       }
-
+      else if (document.type === "synthetique") {
+        if (document.img === 'icons/svg/mystery-man.svg') {
+          createChanges.img = 'systems/omega/assets/image/robot.svg';
+        }
+      }
       document.update(createChanges);
     }
   });

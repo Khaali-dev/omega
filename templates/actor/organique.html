@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <div class="main">
+    <div class="main droppable">
         <table>
             <tbody>
                 <tr>
@@ -138,112 +138,112 @@
                 <tbody>
                     <tr class="prog-line">
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.connaissance"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.connaissance"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.connaissance"}}" data-field="connaissance"
+                                OMEGA.label.programmes.connaissance"}}" data-field="connaissance"
                                 data-group="caracteristiques" name="system.caracteristiques.connaissance.value"
                                 type="number" value="{{system.caracteristiques.connaissance.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="connaissance">{{localize
-                            "OMEGA.label.caracteristiques.connaissance"}}</td>
+                            "OMEGA.label.programmes.connaissance"}}</td>
                         <td class="caract-text" data-field="connaissance">
                             {{system.caracteristiques.connaissance.value}}</td>
                         {{/if}}
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.empathie"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.empathie"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.empathie"}}" data-field="empathie"
+                                OMEGA.label.programmes.empathie"}}" data-field="empathie"
                                 data-group="caracteristiques" name="system.caracteristiques.empathie.value"
                                 type="number" value="{{system.caracteristiques.empathie.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="empathie">{{localize
-                            "OMEGA.label.caracteristiques.empathie"}}</td>
+                            "OMEGA.label.programmes.empathie"}}</td>
                         <td class="caract-text" data-field="empathie">
                             {{system.caracteristiques.empathie.value}}</td>
                         {{/if}}
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.raisonnement"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.raisonnement"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.raisonnement"}}" data-field="raisonnement"
+                                OMEGA.label.programmes.raisonnement"}}" data-field="raisonnement"
                                 data-group="caracteristiques" name="system.caracteristiques.raisonnement.value"
                                 type="number" value="{{system.caracteristiques.raisonnement.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="raisonnement">{{localize
-                            "OMEGA.label.caracteristiques.raisonnement"}}</td>
+                            "OMEGA.label.programmes.raisonnement"}}</td>
                         <td class="caract-text" data-field="raisonnement">
                             {{system.caracteristiques.raisonnement.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="prog-line">
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.corpsacorps"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.corpsacorps"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.corpsacorps"}}" data-field="corpsacorps"
+                                OMEGA.label.programmes.corpsacorps"}}" data-field="corpsacorps"
                                 data-group="caracteristiques" name="system.caracteristiques.corpsacorps.value"
                                 type="number" value="{{system.caracteristiques.corpsacorps.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="corpsacorps">{{localize
-                            "OMEGA.label.caracteristiques.corpsacorps"}}</td>
+                            "OMEGA.label.programmes.corpsacorps"}}</td>
                         <td class="caract-text" data-field="corpsacorps">
                             {{system.caracteristiques.corpsacorps.value}}</td>
                         {{/if}}
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.initiative"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.initiative"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.initiative"}}" data-field="initiative"
+                                OMEGA.label.programmes.initiative"}}" data-field="initiative"
                                 data-group="caracteristiques" name="system.caracteristiques.initiative.value"
                                 type="number" value="{{system.caracteristiques.initiative.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="initiative">{{localize
-                            "OMEGA.label.caracteristiques.initiative"}}</td>
+                            "OMEGA.label.programmes.initiative"}}</td>
                         <td class="caract-text" data-field="initiative">
                             {{system.caracteristiques.initiative.value}}</td>
                         {{/if}}
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.tir"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.tir"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.tir"}}" data-field="tir" data-group="caracteristiques"
+                                OMEGA.label.programmes.tir"}}" data-field="tir" data-group="caracteristiques"
                                 name="system.caracteristiques.tir.value" type="number"
                                 value="{{system.caracteristiques.tir.value}}" /></td>
                         {{else}}
-                        <td class="caract-text" data-field="tir">{{localize "OMEGA.label.caracteristiques.tir"}}
+                        <td class="caract-text" data-field="tir">{{localize "OMEGA.label.programmes.tir"}}
                         </td>
                         <td class="caract-text" data-field="tir">{{system.caracteristiques.tir.value}}</td>
                         {{/if}}
                     </tr>
                     <tr class="prog-line">
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.defense"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.defense"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.defense"}}" data-field="defense"
+                                OMEGA.label.programmes.defense"}}" data-field="defense"
                                 data-group="caracteristiques" name="system.caracteristiques.defense.value" type="number"
                                 value="{{system.caracteristiques.defense.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="defense">{{localize
-                            "OMEGA.label.caracteristiques.defense"}}</td>
+                            "OMEGA.label.programmes.defense"}}</td>
                         <td class="caract-text" data-field="defense">{{system.caracteristiques.defense.value}}
                         </td>
                         {{/if}}
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.rapidite"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.rapidite"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.rapidite"}}" data-field="rapidite"
+                                OMEGA.label.programmes.rapidite"}}" data-field="rapidite"
                                 data-group="caracteristiques" name="system.caracteristiques.rapidite.value"
                                 type="number" value="{{system.caracteristiques.rapidite.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="rapidite">{{localize
-                            "OMEGA.label.caracteristiques.rapidite"}}</td>
+                            "OMEGA.label.programmes.rapidite"}}</td>
                         <td class="caract-text" data-field="rapidite">
                             {{system.caracteristiques.rapidite.value}}</td>
                         {{/if}}
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.sens"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.sens"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.sens"}}" data-field="sens" data-group="caracteristiques"
+                                OMEGA.label.programmes.sens"}}" data-field="sens" data-group="caracteristiques"
                                 name="system.caracteristiques.sens.value" type="number"
                                 value="{{system.caracteristiques.sens.value}}" /></td>
                         {{else}}
-                        <td class="caract-text" data-field="sens">{{localize "OMEGA.label.caracteristiques.sens"}}
+                        <td class="caract-text" data-field="sens">{{localize "OMEGA.label.programmes.sens"}}
                         </td>
                         <td class="caract-text" data-field="sens">{{system.caracteristiques.sens.value}}</td>
                         {{/if}}
@@ -256,38 +256,38 @@
                 <tbody>
                     <tr class="prog-line">
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.systemesauxiliaires.defense"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.defense"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.systemesauxiliaires.defense"}}" data-field="defense"
+                                OMEGA.label.programmes.defense"}}" data-field="defense"
                                 data-group="systemesauxiliaires" name="system.systemesauxiliaires.defense.value"
                                 type="number" value="{{system.systemesauxiliaires.defense.value}}" /></td>
                         {{else}}
                         <td class="aux-text" data-field="defense">{{localize
-                            "OMEGA.label.systemesauxiliaires.defense"}}</td>
+                            "OMEGA.label.programmes.defense"}}</td>
                         <td class="aux-text" data-field="defense">
                             {{system.systemesauxiliaires.defense.value}}</td>
                         {{/if}}
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.caracteristiques.vitalite"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.vitalite"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.caracteristiques.vitalite"}}" data-field="vitalite"
+                                OMEGA.label.programmes.vitalite"}}" data-field="vitalite"
                                 data-group="caracteristiques" name="system.caracteristiques.vitalite.value"
                                 type="number" value="{{system.caracteristiques.vitalite.value}}" /></td>
                         {{else}}
                         <td class="caract-text" data-field="vitalite">{{localize
-                            "OMEGA.label.caracteristiques.vitalite"}}</td>
+                            "OMEGA.label.programmes.vitalite"}}</td>
                         <td class="caract-text" data-field="vitalite">
                             {{system.caracteristiques.vitalite.value}}</td>
                         {{/if}}
                         {{#if unlocked}}
-                        <td>{{localize "OMEGA.label.systemesauxiliaires.vitesse"}}</td>
+                        <td>{{localize "OMEGA.label.programmes.vitesse"}}</td>
                         <td><input class="stats-input small-input" title="{{localize "
-                                OMEGA.label.systemesauxiliaires.vitesse"}}" data-field="vitesse"
+                                OMEGA.label.programmes.vitesse"}}" data-field="vitesse"
                                 data-group="systemesauxiliaires" name="system.systemesauxiliaires.vitesse.value"
                                 type="number" value="{{system.systemesauxiliaires.vitesse.value}}" /></td>
                         {{else}}
                         <td class="aux-text" data-field="vitesse">{{localize
-                            "OMEGA.label.systemesauxiliaires.vitesse"}}</td>
+                            "OMEGA.label.programmes.vitesse"}}</td>
                         <td class="aux-text" data-field="vitesse">
                             {{system.systemesauxiliaires.vitesse.value}}</td>
                         {{/if}}

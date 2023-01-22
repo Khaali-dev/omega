@@ -9,6 +9,7 @@
         //Actors
         "systems/omega/templates/actor/organique.html",
         "systems/omega/templates/actor/advancedsynth.html",
+        "systems/omega/templates/actor/synthetique.html",
         "systems/omega/templates/actor/tab/chassis.html",
         "systems/omega/templates/actor/tab/combat.html",
         "systems/omega/templates/actor/tab/equipement.html",

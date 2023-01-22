@@ -41,7 +41,6 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
       element.system.attacklabel=game.omega.config.ARME.TYPEPROGRAMME[element.system.typeprogramme];
       element.system.attackvalue=this.actor.system.programmes[element.system.typeprogramme].value;
       element.system.technologielabel=game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
-      
     });
 
     return context;
@@ -50,6 +49,8 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
   /** @override */
   activateListeners(html){
     super.activateListeners(html);
+    
+    html.find(".ssprog-input").change(this._onssprogChange.bind(this));
   }
 
 }
