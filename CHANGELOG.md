@@ -1,5 +1,5 @@
 
-# Version 1.0.0
+# Version 0.0.1
 Release du système
 
 ## Fonctionnalités
@@ -15,7 +15,9 @@ Release du système
     - bouton re-piocher la diode (pour les +/-1)
 # Inventaire
 - Gestion de multiples chassis et extensions
-- Automatisation des bonus d'extension aux systèmes auxiliaires
 # Combat
-- Gestion de l'initiative
 - Affichage des dégâts selon l'arme et le tirage
+
+## Reste à faire
+- Gestion de l'initiative
+- Automatisation des bonus d'extension aux systèmes auxiliaires

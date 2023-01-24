@@ -77,7 +77,8 @@ export const SYSTEM_DESCRIPTION = "Oméga";
 export const LOG_HEAD = "Omega | ";
 export const ROLL_TYPE = {
   ATTACK: "attack",
+  CHANCE: "chance",
+  INITIATIVE: "initiative",
   PROGRAM: "program",
   SIMPLE: "simple",
-  CHANCE: "chance",
 };

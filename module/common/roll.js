@@ -45,11 +45,11 @@ export class Diodes {
       this.data.estAdvancedSynth = this.actor.estAdvancedSynth();
     }
 
-    if (this.rolltype === ROLL_TYPE.CHANCE) {
+    if ([ROLL_TYPE.CHANCE, ROLL_TYPE.INITIATIVE].includes(this.rolltype)) {
       this.data.formula = this.program.value.toString();
       this.data.formulaValue = this.program.value;
       await this.piocher();
-      await this.showResult();
+      return(await this.showResult());
     } else {
       const html = await renderTemplate("systems/omega/templates/chat/roll-dialog.html", {
         actorname: this.data.actorname,
@@ -62,7 +62,7 @@ export class Diodes {
         charImg: this.data.charImg,
         estAdvancedSynth: this.data.estAdvancedSynth,
       });
-      await new Dialog({
+      return(await new Dialog({
         title: "Tirage de diode",
         content: html,
         buttons: {
@@ -107,7 +107,7 @@ export class Diodes {
               }
               // Process to the roll
               await this.piocher();
-              await this.showResult();
+              return(await this.showResult());
             },
           },
           cancel: {
@@ -118,7 +118,7 @@ export class Diodes {
         },
         default: "roll",
         close: () => {},
-      }).render(true);
+      }).render(true));
     }
   }
   async piocher() {
@@ -162,7 +162,7 @@ export class Diodes {
   async showResult() {
     let rerollButton = false;
     this.resultText = "Résultat final.";
-    if (this.rolltype === ROLL_TYPE.SIMPLE) {
+    if ([ROLL_TYPE.SIMPLE, ROLL_TYPE.INITIATIVE].includes(this.rolltype)) {
       this.resultText = "";
     } else if (this.rolltype === ROLL_TYPE.CHANCE) {
       this.resultText = "";
@@ -217,6 +217,8 @@ export class Diodes {
       this.chat.setFlag("world", "reRoll", templateData);
       this.chat.setFlag("world", "diodeData", { actorId: this.actor.id, rolltype: this.rolltype, program: this.program, data: this.data });
     }
+    if (this.rolltype === ROLL_TYPE.INITIATIVE) {
+      return(this.data);}
   }
   async reroll(event, message) {
     this.isReroll = true;

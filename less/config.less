@@ -66,11 +66,13 @@
 @chat-title-border-radius: 20px;
 @chat-font: "exo2";
 
+@diode-rougeplus: center / contain no-repeat url('./assets/image/diodes/diode_rouge_plus.webp');
 @diode-rouge: center / contain no-repeat url('./assets/image/diodes/diode_rouge.webp');
 @diode-verte: center / contain no-repeat url('./assets/image/diodes/diode_verte.webp');
 @diode-bleue: center / contain no-repeat url('./assets/image/diodes/diode_bleue.webp');
 @diode-blanche: center / contain no-repeat url('./assets/image/diodes/diode_blanche.webp');
 @diode-noire: center / contain no-repeat url('./assets/image/diodes/diode_noire.webp');
+@diode-noiremoins: center / contain no-repeat url('./assets/image/diodes/diode_noire_moins.webp');
 @logo_futuretechnologies: center / contain no-repeat url('./assets/image/logo/logo_futuretechnologies.webp');
 @logo_earthshield: center / contain no-repeat url('./assets/image/logo/logo_earthshield.webp');
 @logo_hegemon: center / contain no-repeat url('./assets/image/logo/logo_hegemon.webp');
@@ -81,6 +83,10 @@
 .diode {
     width: 20px;
     height: 20px;
+    border: 1px solid var(--color-border-dark);
+  }
+  .diode-rougeplus {
+    background: @diode-rougeplus;
   }
   .diode-rouge {
     background: @diode-rouge;
@@ -96,6 +102,9 @@
   }
   .diode-noire {
     background: @diode-noire;
+  }
+  .diode-noiremoins {
+    background: @diode-noiremoins;
   }
 
   .small-input {

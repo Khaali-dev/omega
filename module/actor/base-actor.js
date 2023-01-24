@@ -185,4 +185,33 @@ export default class OmegaBaseActor extends Actor {
     if (this.estOrganique()) return game.omega.config.ORGANIQUE.EQUIVALENCE[programme];
     else return programme;
   }
+
+  async piocherInitiative(){
+    let program = {
+      value: 0,
+      label: "Initiative",
+      group: "",
+      reference: "initiative",
+    };
+    if(this.estAdvancedSynth()){
+      program.value = this.system.systemesauxiliaires.initiative.value;
+      program.group = "systemesauxiliaires";
+    }
+    else {
+      program.value = this.system.caracteristiques.initiative.value;
+      program.group = "caracteristiques";
+    }
+    
+    let data = {};
+    let diodes = new Diodes(this.id, ROLL_TYPE.INITIATIVE, program, data);
+    return(diodes.openDialog());
+  }
+  valeurVitesse(){
+    if(this.estSynthetique()){
+      return(this.system.caracteristiques.vitesse.value);
+    }
+    else {
+      return(this.system.systemesauxiliaires.vitesse.value);
+    }
+  }
 }

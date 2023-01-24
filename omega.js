@@ -9,6 +9,10 @@ import registerHooks from './module/common/hooks.js';
 import OmegaBaseActor from "./module/actor/base-actor.js";
 import OmegaBaseItem from "./module/item/base-item.js";
 
+import OmegaCombat from "./module/combat/combat.js"
+import OmegaCombatTracker from "./module/combat/combat-tracker.js"
+import OmegaCombatant from "./module/combat/combatant.js"
+
 import AdvancedSynthSheet from "./module/actor/sheet/advancedsynth-sheet.js";
 import SynthetiqueSheet from "./module/actor/sheet/synthetique-sheet.js";
 import OrganiqueSheet from "./module/actor/sheet/organique-sheet.js";
@@ -20,6 +24,9 @@ Hooks.once("init", function(){
 
     CONFIG.Item.documentClass = OmegaBaseItem;
     CONFIG.Actor.documentClass = OmegaBaseActor;
+    CONFIG.Combat.documentClass = OmegaCombat;
+    CONFIG.ui.combat = OmegaCombatTracker;
+    CONFIG.Combatant.documentClass = OmegaCombatant;
     
     Items.unregisterSheet('core', ItemSheet);
     Items.registerSheet('omega', OmegaBaseItemSheet, {makeDefault: true });
