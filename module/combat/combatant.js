@@ -1,7 +1,7 @@
 export default class OmegaCombatant extends Combatant {
   _onCreate(data, options, userID) {
     super._onCreate(data, options, userID);
-    this.setFlag("omega", "initdiodes", {
+    if (game.user.isGM) this.setFlag("omega", "initdiodes", {
       rougeplus:0,
       rouge: 0,
       rouge: 0,
@@ -35,7 +35,7 @@ export default class OmegaCombatant extends Combatant {
    * @description le personnage dépense une action et donc la meilleure diode est supprimée, l'initiative est recalculée
    * 
    */
-  async spendAction() {
+  async depenserDiode() {
     let initdiodes = this.getFlag("omega", "initdiodes");
     if (initdiodes.rougeplus > 0) {
       initdiodes.rougeplus = initdiodes.rougeplus - 1;
@@ -56,6 +56,11 @@ export default class OmegaCombatant extends Combatant {
     initdiodes.initEval = await this.calculerInitEval(initdiodes);
     return await this.update({ "flags.omega.initdiodes": initdiodes, "initiative":  initdiodes.initEval});
   }
+  
+  /**
+   * @description Améliorer (sens=1) ou diminuer (sens=0) la diode d'action
+   * 
+   */
   async changerDiode(sens){
     let initdiodes = this.getFlag("omega", "initdiodes");
     if (initdiodes.rougeplus > 0) {
@@ -107,4 +112,21 @@ export default class OmegaCombatant extends Combatant {
     initdiodes.initEval = await this.calculerInitEval(initdiodes);
     return await this.update({ "flags.omega.initdiodes": initdiodes, "initiative":  initdiodes.initEval});
   }
+
+
+  async setState(data) {
+    return await this.update({
+      initiative: data.initiative,
+      ["flags.omega.initdiodes"]: data.initdiodes
+    });
+  }
+
+  getState() {
+    return {
+      id: this.id,
+      initiative: this.initiative,
+      initdiodes: this.getFlag("omega", "initdiodes")
+    };
+  }
+
 }

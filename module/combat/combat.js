@@ -23,11 +23,10 @@ export default class OmegaCombat extends Combat {
     return a.tokenId - b.tokenId;
   }
 
-
   _onUpdateEmbeddedDocuments(embeddedName, documents, result, options, userId) {
     this.setupTurns();
     if (game.user.id === userId) this.update({ turn: 0 });
-    else this.update({ turn: 0 });
+    else this.updateSource({ turn: 0 });
 
     if (this.active && (options.render !== false)) this.collection.render();
   }
@@ -35,11 +34,8 @@ export default class OmegaCombat extends Combat {
 
   async rollInitiative(ids, { formula = null, updateTurn = true, messageOptions = {} } = {}) {
     ids = typeof ids === "string" ? [ids] : ids;
-    console.log("this", this);
-    console.log("ids", ids);
 
     for (let combatantId of ids) {
-      console.log("combatantId", combatantId);
       // Get Combatant data
       const c = this.combatants.get(combatantId);
       if (!c) return;
@@ -47,7 +43,7 @@ export default class OmegaCombat extends Combat {
       if (!actor) return;
       let diodesResult = await actor.piocherInitiative();
       let vitesse = await actor.valeurVitesse();
-      console.log("Initiative tirée pour le combattant " + c.name + " : " + diodesResult);
+      console.log("Initiative tirée pour le combattant " + c.name + " : ", diodesResult);
 
       let initDiodes = {
         rougeplus: 0,
@@ -62,19 +58,21 @@ export default class OmegaCombat extends Combat {
         initEval: 0,
       };
       initDiodes.initEval = await c.calculerInitEval(initDiodes);
-      console.log("calcul de Initiative : ", initDiodes.initEval);
       c.update({ "flags.omega.initdiodes": initDiodes, initiative: initDiodes.initEval });
     }
     return this;
   }
 
   async startCombat() {
-    await this.setupTurns();
+    //await this.setupTurns();
+//flag to register turn history (for allowing going back to previous turn)
+    if(game.user.isGM) {await this.setFlag("omega", "turnHistory", []);}
     return super.startCombat();
   }
 
   async nextTurn() {
-    await this.combatant.spendAction();
+    await this._pushHistory(this.combatant.getState());
+    await this.combatant.depenserDiode();
     if (this.combatant.initiative <= 0) {
         return this.nextRound();
       }
@@ -83,13 +81,56 @@ export default class OmegaCombat extends Combat {
   }
 
   async nextRound() {
-    //await this._pushHistory(this.combatants.map(c => c.getState()));
-    //await this._pushHistory("newRound");
-
+    await this._pushHistory(this.combatants.map(c => c.getState()));
+    await this._pushHistory("newRound");
 
     await this.resetAll();
-
     return this.update({ round: this.round + 1, turn: 0 }, { advanceTime: CONFIG.time.roundTime });
+  }
+
+
+  async previousTurn() {
+    let data = await this._popHistory();
+
+    if (data == null || data === "newRound") {
+      return this.previousRound();
+    }
+
+    const combatant = this.getEmbeddedDocument("Combatant", data.id);
+    await combatant.setState(data);
+
+    return this.update({ turn: 0 });
+  }
+
+  async previousRound() {
+    const round = Math.max(this.round - 1, 0);
+
+    if (round > 0) {
+      let turnHistory = this.getFlag("omega", "turnHistory").slice();
+      let data = turnHistory.pop();
+
+      let roundState;
+
+      if (Array.isArray(data)) {
+        roundState = data;
+      }
+      else if (data==="newRound") {
+        roundState = turnHistory.pop();
+      }
+      else {
+        let index = turnHistory.lastIndexOf("newRound");
+        turnHistory.splice(index);
+        roundState = turnHistory.pop();
+      }
+      await this.setFlag("omega", "turnHistory", turnHistory);
+
+      for (let c of roundState) {
+        const combatant = this.getEmbeddedDocument("Combatant", c.id);
+        await combatant.setState(c);
+      }
+
+      return this.update({ round: round, turn: 0 }, { advanceTime: -CONFIG.time.roundTime });
+    }
   }
 
 
@@ -112,4 +153,26 @@ export default class OmegaCombat extends Combat {
     }
     return this.update({ turn: 0, combatants: this.combatants.toObject() }, { diff: false });
   }
+
+  /**
+   * @description sauvegarder les données des tours passés depuis le flag
+   * 
+   */
+  async _pushHistory(data) {
+    let turnHistory = this.getFlag("omega", "turnHistory").slice();
+    turnHistory.push(data);
+    return this.setFlag("omega", "turnHistory", turnHistory);
+  }
+
+  /**
+   * @description Recuperer les données des tours passés depuis le flag
+   * 
+   */
+  async _popHistory() {
+    let turnHistory = this.getFlag("omega", "turnHistory").slice();
+    let result = turnHistory.pop();
+    await this.setFlag("omega", "turnHistory", turnHistory);
+    return result;
+  }
+
 }

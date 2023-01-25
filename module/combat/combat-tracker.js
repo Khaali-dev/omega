@@ -5,15 +5,13 @@ export default class OmegaCombatTracker extends CombatTracker {
 
   async getData(options) {
     const context = await super.getData(options);
-    //console.log("context", context);
 
     if (!context.hasCombat) {
       return context;
     }
 
     for (let [i, combatant] of context.combat.turns.entries()) {
-      console.log("combatant", combatant);
-      console.log("i", i);
+      //console.log("combatant", combatant);
       let initdiodes = combatant.getFlag("omega", "initdiodes");
       context.turns[i].initdiodes = initdiodes;
     }
