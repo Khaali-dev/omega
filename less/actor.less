@@ -37,7 +37,7 @@
     display: flex;
     flex-direction: row;
   }
-  .pointer{
+  .pointer {
     cursor: pointer;
   }
   .right-icon {
@@ -63,26 +63,6 @@
     width: 100%;
     border-collapse: collapse;
     background-color: rgba(0, 0, 0, 0.3);
-  }
-  .diode {
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--color-border-dark);
-  }
-  .diode-rouge {
-    background: @diode-rouge;
-  }
-  .diode-verte {
-    background: @diode-verte;
-  }
-  .diode-bleue {
-    background: @diode-bleue;
-  }
-  .diode-blanche {
-    background: @diode-blanche;
-  }
-  .diode-noire {
-    background: @diode-noire;
   }
 
   .redline {
@@ -192,6 +172,17 @@
         display: flex;
         flex-direction: column;
         padding: 0 1em 0 1em;
+
+        .ssprogram-text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal;
+        }
+        .prog-text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal;
+        }
         .stats-block-name {
           font: @title-font;
           text-align: center;
@@ -377,7 +368,7 @@
           margin-top: 0.3em;
           margin-right: 0.5em;
           .nameline {
-      display: flex;
+            display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
             text-align: center;
@@ -385,7 +376,7 @@
             flex-grow: 1;
             font: 1rem "courier";
             padding: 0.7em 0 0.5em 1em;
-            .icon-group{
+            .icon-group {
               width: 40px;
               text-align: right;
             }

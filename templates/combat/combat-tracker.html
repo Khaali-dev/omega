@@ -97,28 +97,36 @@
             </div>
             {{/if}}
 
-            <div class="token-initiative" style="flex-basis:80px">
+            <div class="token-initiative"
+                style="flex-basis:80px; display: flex; flex-direction: row; justify-content: center;">
                 {{#if this.hasRolled}}
                 {{#times this.initdiodes.rougeplus}}
-                <img class="diode diode-rougeplus" style="width: 10px;height: 10px; border: 1px solid var(--color-border-dark);">
+                <img style="margin: 10px 3px 1px 3px; width: 0px; height: 0px;flex-basis:0px;"
+                    class="diode-small diode-rougeplus">
                 {{/times}}
                 {{#times this.initdiodes.rouge}}
-                <img class="diode diode-rouge" style="width: 10px;height: 10px; border: 1px solid var(--color-border-dark);">
+                <img style="margin: 10px 3px 1px 3px; width: 0px; height: 0px;flex-basis:0px;"
+                    class="diode-small diode-rouge">
                 {{/times}}
                 {{#times this.initdiodes.verte}}
-                <img class="diode diode-verte" style="width: 10px;height: 10px;border: 1px solid var(--color-border-dark);">
+                <img style="margin: 10px 3px 1px 3px; width: 0px; height: 0px;flex-basis:0px;"
+                    class="diode-small diode-verte">
                 {{/times}}
                 {{#times this.initdiodes.bleue}}
-                <img class="diode diode-bleue" style="width: 10px;height: 10px;border: 1px solid var(--color-border-dark);">
+                <img style="margin: 10px 3px 1px 3px; width: 0px; height: 0px;flex-basis:0px;"
+                    class="diode-small diode-bleue">
                 {{/times}}
                 {{#times this.initdiodes.blanche}}
-                <img class="diode diode-blanche" style="width: 10px;height: 10px;border: 1px solid var(--color-border-dark);">
+                <img style="margin: 10px 3px 1px 3px; width: 0px; height: 0px;flex-basis:0px;"
+                    class="diode-small diode-blanche">
                 {{/times}}
                 {{#times this.initdiodes.noire}}
-                <img class="diode diode-noire" style="width: 10px;height: 10px;border: 1px solid var(--color-border-dark);">
+                <img style="margin: 10px 3px 1px 3px; width: 0px; height: 0px;flex-basis:0px;"
+                    class="diode-small diode-noire">
                 {{/times}}
                 {{#times this.initdiodes.noiremoins}}
-                <img class="diode diode-noiremoins" style="width: 10px;height: 10px;border: 1px solid var(--color-border-dark);">
+                <img style="margin: 10px 3px 1px 3px; width: 0px; height: 0px;flex-basis:0px;"
+                    class="diode-small diode-noiremoins">
                 {{/times}}
                 {{else if this.owner}}
                 <a class="combatant-control roll" data-tooltip="COMBAT.InitiativeRoll"
@@ -127,7 +135,13 @@
             </div>
             {{#if this.owner}}
             {{#if this.initdiodes.nbActions}}
-            <div class="token-resource" style="display: grid;"><div class="diodeup" data-field="1" data-tooltip="COMBAT.augmentercouleur" data-combatant-id="{{this.id}}" style="height: 24px;"><i class="fa-solid fa-plus"></i></div><div class="diodeup"  data-tooltip="COMBAT.diminuercouleur" data-combatant-id="{{this.id}}" data-field="0" style="height: 24px;"><i class="fa-solid fa-minus"></i></div></div>
+            <div class="token-resource" style="display: grid;">
+                <div class="diodeup" style="vertical-align: middle; max-height: 24px; margin:-10px 0px 3px 0px;" data-field="1" data-tooltip="COMBAT.augmentercouleur"
+                    data-combatant-id="{{this.id}}"><i class="fa-solid fa-plus"></i></div>
+                <div style="vertical-align: middle; max-height: 24px; margin:-10px 0px 3px 0px;" class="diodeup"
+                    data-tooltip="COMBAT.diminuercouleur" data-combatant-id="{{this.id}}" data-field="0"
+                    style="height: 10px;"><i class="fa-solid fa-minus"></i></div>
+            </div>
             {{/if}}{{/if}}
         </li>
         {{/each}}

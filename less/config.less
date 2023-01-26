@@ -52,9 +52,9 @@
     font-weight: bold;
 }
 
-@default-font: 0.8rem "helvetica";
+@default-font: 1em "helvetica";
 @title-font: 1.5rem "exo2";
-@long-text-font: 0.7rem "helvetica";
+@long-text-font: 1em "helvetica";
 @playersheet-background: repeat url('./assets/image/feuilleperso.webp');
 @organiquesheet-background: repeat url('./assets/image/fond_organique.webp');
 @clear-background: #fffdfc;
@@ -81,10 +81,25 @@
 
 
 .diode {
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--color-border-dark);
-  }
+      display:block;
+      width:0px;
+      height:0px;
+      outline:none;
+      padding:10px 10px 10px 10px;
+      background-repeat:no-repeat;
+      margin-left: auto;
+      margin-right: auto
+    }
+    .diode-small {
+          display:block;
+          width:0px;
+          height:0px;
+          outline:none;
+          padding:8px 8px 8px 8px;
+          background-repeat:no-repeat;
+          margin-left: auto;
+          margin-right: auto
+        }
   .diode-rougeplus {
     background: @diode-rougeplus;
   }
@@ -109,6 +124,29 @@
 
   .small-input {
     width: 2em;
+}
+.logo_firme {
+  display:block;
+  width:0px;
+  height:0px;
+  outline:none;
+  padding:29px 48px 28px 47px;
+  background-repeat:no-repeat;
+}
+.logo_futuretechnologies {
+  background: @logo_futuretechnologies;
+}
+.logo_earthshield {
+  background: @logo_earthshield;
+}
+.logo_hegemon {
+  background: @logo_hegemon;
+}
+.logo_cyberlife {
+  background: @logo_cyberlife;
+}
+.logo_prophetiaincorporated {
+  background: @logo_prophetiaincorporated;
 }
 
 

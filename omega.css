@@ -52,9 +52,24 @@
   font-weight: bold;
 }
 .diode {
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--color-border-dark);
+  display: block;
+  width: 0px;
+  height: 0px;
+  outline: none;
+  padding: 10px 10px 10px 10px;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+}
+.diode-small {
+  display: block;
+  width: 0px;
+  height: 0px;
+  outline: none;
+  padding: 8px 8px 8px 8px;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
 }
 .diode-rougeplus {
   background: center / contain no-repeat url('./assets/image/diodes/diode_rouge_plus.webp');
@@ -80,6 +95,29 @@
 .small-input {
   width: 2em;
 }
+.logo_firme {
+  display: block;
+  width: 0px;
+  height: 0px;
+  outline: none;
+  padding: 29px 48px 28px 47px;
+  background-repeat: no-repeat;
+}
+.logo_futuretechnologies {
+  background: center / contain no-repeat url('./assets/image/logo/logo_futuretechnologies.webp');
+}
+.logo_earthshield {
+  background: center / contain no-repeat url('./assets/image/logo/logo_earthshield.webp');
+}
+.logo_hegemon {
+  background: center / contain no-repeat url('./assets/image/logo/logo_hegemon.webp');
+}
+.logo_cyberlife {
+  background: center / contain no-repeat url('./assets/image/logo/logo_cyberlife.webp');
+}
+.logo_prophetiaincorporated {
+  background: center / contain no-repeat url('./assets/image/logo/logo_prophetiaincorporated.webp');
+}
 .editor {
   height: 100%;
   width: 100%;
@@ -102,7 +140,7 @@
 .omega.sheet .window-content {
   background: repeat url('./assets/image/feuilleperso.webp');
   background-color: black;
-  font: 0.8rem "helvetica";
+  font: 1em "helvetica";
   color: white;
 }
 .omega.sheet .item-control:hover {
@@ -141,7 +179,7 @@
   font-size: 1.1em;
 }
 .omega.sheet .right-icon .sheet-change-lock {
-  font: 0.8rem "helvetica";
+  font: 1em "helvetica";
   font-size: 1.2rem;
   color: #88c083;
 }
@@ -156,26 +194,6 @@
   width: 100%;
   border-collapse: collapse;
   background-color: rgba(0, 0, 0, 0.3);
-}
-.omega.sheet .diode {
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--color-border-dark);
-}
-.omega.sheet .diode-rouge {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_rouge.webp');
-}
-.omega.sheet .diode-verte {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_verte.webp');
-}
-.omega.sheet .diode-bleue {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_bleue.webp');
-}
-.omega.sheet .diode-blanche {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_blanche.webp');
-}
-.omega.sheet .diode-noire {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_noire.webp');
 }
 .omega.sheet .redline {
   background: center / contain no-repeat url("./assets/image/lignerouge.webp");
@@ -265,6 +283,16 @@
   display: flex;
   flex-direction: column;
   padding: 0 1em 0 1em;
+}
+.omega.sheet .main .central-block .stats-block .ssprogram-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.omega.sheet .main .central-block .stats-block .prog-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .omega.sheet .main .central-block .stats-block .stats-block-name {
   font: 1.5rem "exo2";
@@ -469,33 +497,8 @@
   cursor: pointer;
   list-style: none;
 }
-.omega.sheet.advancedsynth .logo_futuretechnologies {
-  background: center / contain no-repeat url('./assets/image/logo/logo_futuretechnologies.webp');
-  width: 95px;
-  height: 57px;
-}
-.omega.sheet.advancedsynth .logo_earthshield {
-  background: center / contain no-repeat url('./assets/image/logo/logo_earthshield.webp');
-  width: 95px;
-  height: 57px;
-}
-.omega.sheet.advancedsynth .logo_hegemon {
-  background: center / contain no-repeat url('./assets/image/logo/logo_hegemon.webp');
-  width: 95px;
-  height: 57px;
-}
-.omega.sheet.advancedsynth .logo_cyberlife {
-  background: center / contain no-repeat url('./assets/image/logo/logo_cyberlife.webp');
-  width: 95px;
-  height: 57px;
-}
-.omega.sheet.advancedsynth .logo_prophetiaincorporated {
-  background: center / contain no-repeat url('./assets/image/logo/logo_prophetiaincorporated.webp');
-  width: 95px;
-  height: 57px;
-}
 .omega.sheet.advancedsynth .ssprogtable {
-  font: 0.9em "frutiger";
+  font: 1.1em "frutiger";
   text-transform: uppercase;
 }
 .omega.sheet.advancedsynth .ssprogtable td:nth-child(1) {
@@ -511,7 +514,7 @@
 }
 .omega.sheet.advancedsynth .ssprogtable .caract-line {
   background-color: #143c42;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: bold;
   padding-right: 2em;
   cursor: pointer;
@@ -534,33 +537,8 @@
 .omega.sheet.advancedsynth .notes-tab .editor .tox.tox-tinymce {
   min-height: 10em;
 }
-.omega.sheet.synthetique .logo_futuretechnologies {
-  background: center / contain no-repeat url('./assets/image/logo/logo_futuretechnologies.webp');
-  width: 95px;
-  height: 57px;
-}
-.omega.sheet.synthetique .logo_earthshield {
-  background: center / contain no-repeat url('./assets/image/logo/logo_earthshield.webp');
-  width: 95px;
-  height: 57px;
-}
-.omega.sheet.synthetique .logo_hegemon {
-  background: center / contain no-repeat url('./assets/image/logo/logo_hegemon.webp');
-  width: 95px;
-  height: 57px;
-}
-.omega.sheet.synthetique .logo_cyberlife {
-  background: center / contain no-repeat url('./assets/image/logo/logo_cyberlife.webp');
-  width: 95px;
-  height: 57px;
-}
-.omega.sheet.synthetique .logo_prophetiaincorporated {
-  background: center / contain no-repeat url('./assets/image/logo/logo_prophetiaincorporated.webp');
-  width: 95px;
-  height: 57px;
-}
 .omega.sheet.synthetique .synthprogtable {
-  font: 0.9em "frutiger";
+  font: 1.1em "frutiger";
   text-transform: uppercase;
 }
 .omega.sheet.synthetique .synthprogtable td:nth-child(1) {
@@ -605,11 +583,11 @@
 .omega.sheet.organique .window-content {
   background: repeat url('./assets/image/fond_organique.webp');
   background-color: black;
-  font: 0.8rem "helvetica";
+  font: 1em "helvetica";
   color: white;
 }
 .omega.sheet.organique .uniqueprogtable {
-  font: 0.9em "frutiger";
+  font: 1.1em "frutiger";
   text-transform: uppercase;
 }
 .omega.sheet.organique .uniqueprogtable td:nth-child(1) {
@@ -708,7 +686,7 @@
 .omega.sheet.item .window-content {
   background: none;
   background-color: black;
-  font: 0.8rem "helvetica";
+  font: 1em "helvetica";
   color: white;
 }
 .omega.sheet.item textarea {
@@ -732,7 +710,7 @@
 }
 .omega.sheet.item .right-icon {
   margin-left: auto;
-  font: 0.8rem "helvetica";
+  font: 1em "helvetica";
   font-size: 1.2rem;
   color: #e84d0e;
 }
@@ -771,7 +749,7 @@
   background-color: #fffdfc;
   display: flex;
   flex-direction: column;
-  font: 0.8rem "helvetica";
+  font: 1em "helvetica";
 }
 .dialog .intro {
   display: flex;
@@ -791,7 +769,7 @@
   display: inline;
 }
 .dialog .intro .introtext {
-  font: 0.8rem "helvetica";
+  font: 1em "helvetica";
   margin: 0.5em;
   padding-top: 1.5em;
   text-align: center;
@@ -818,7 +796,7 @@
   display: inline;
 }
 .dialog .intro .introtable .introtext {
-  font: 0.8rem "helvetica";
+  font: 1em "helvetica";
   padding: 2em;
   text-align: center;
 }

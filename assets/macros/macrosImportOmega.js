@@ -236,7 +236,7 @@ async function extractAllData(npcRawName, npcRawData, npcType, extensionRaw, des
         },
         biologieorganiques: {
           value: 0,
-          label: "Biologie / Organiques",
+          label: "Bio./Organiques",
         },
         conduitedetir: {
           value: 0,

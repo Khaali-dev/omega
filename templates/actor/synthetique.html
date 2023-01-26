@@ -28,7 +28,7 @@
                             {{/select}}
                         </select>
                         {{else}}
-                    <td style="display: flex; flex-direction: column;"><img class="{{logofirme}}" />
+                    <td style="display: flex; flex-direction: column;"><img class="logo_firme {{logofirme}}" />
                         {{/if}}
                     </td>
                 </tr>
@@ -180,16 +180,16 @@
                         {{#each progfull as |prog index|}}
                         <tr class="program-line">
                             <td class="prog-text" data-field="{{prog.reference}}">{{prog.label}}</td>
-                            <td><input class="prog-input small-input" title="{{prog.label}}"
-                                    data-field="{{prog.reference}}" data-group="index" name="index" type="number"
+                            <td><input class="prog-input small-input" title="{{prog.label}}" data-group="programmes"
+                                    data-field="{{prog.reference}}" name="index" type="number"
                                     value="{{prog.value}}" /></td>
                         </tr>
                         {{/each}}
                         {{else}}
                         {{#each prognonnul as |prog index|}}
                         <tr>
-                            <td class="program-text" data-field="{{prog.reference}}">{{prog.label}}</td>
-                            <td class="program-text" data-field="{{prog.reference}}">{{prog.value}}</td>
+                            <td class="prog-text" data-group="programmes" data-field="{{prog.reference}}">{{prog.label}}</td>
+                            <td class="prog-text" data-group="programmes" data-field="{{prog.reference}}">{{prog.value}}</td>
                         </tr>
                         {{/each}}
                         {{/if}}

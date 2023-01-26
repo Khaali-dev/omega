@@ -2,8 +2,7 @@
   "ACTOR": {
     "TypeAdvancedsynth": "Synthetique avancé",
     "TypeSynthetique": "Synthetique asservi",
-    "TypeOrganique": "Organique",
-    "piocherchance": "Piocher les diodes de chance"
+    "TypeOrganique": "Organique"
   },
   "COMBAT":{
     "augmentercouleur": "Augmenter d'une couleur",
@@ -43,7 +42,7 @@
         "armesaenergie": "Armes à énergie",
         "armesetdestruction": "Armes et destruction",
         "basededonnees": "Base de données",
-        "biologieorganiques": "Biologie / organiques",
+        "biologieorganiques": "Bio./Organiques",
         "blindage": "Blindage",
         "blindageiem": "Blindage IEM",
         "conduitedetir": "Conduite de tir",
@@ -64,7 +63,7 @@
         "cybernetique": "Cybernétique",
         "ingenierie": "Ingénierie",
         "integriteinformatique": "Intégrité informatique",
-        "neutralisationcognitive": "Neutralisation cognitive",
+        "neutralisationcognitive": "Neut. cognitive",
         "mecanique": "Mécanique",
         "medecine": "Médecine",
         "opsar": "Opsar",
@@ -107,6 +106,9 @@
         "programorganique": "{actorname} utilise sa compétence {program} "
       },
       "rollmodifier": "Modificateur : "
+    },
+    "tooltip": {
+      "piocherchance": "Piocher les diodes de chance"
     }
   }
 }
