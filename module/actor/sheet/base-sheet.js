@@ -95,10 +95,9 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let element = event.currentTarget;
     let ssprog = element.dataset.field;
     let value = element.valueAsNumber;
-    if (value) {
       let linkMod = "system.sousprogrammes." + ssprog + ".value";
       await this.actor.update({ [linkMod]: value });
-    }
+    
     return;
   }
   async _onChassisChange(event) {
@@ -116,8 +115,6 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let element = event.currentTarget;
     let field = element.dataset.field;
     let group = "caracteristiques";
-    console.log("group", group);
-    console.log("field", field);
     return this.actor.check(group, field);
   }
 

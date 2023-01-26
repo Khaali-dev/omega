@@ -28,6 +28,42 @@
       "type": "JournalEntry",
       "private": false,
       "flags": {}
+    },
+    {
+      "name": "omegachassisfr",
+      "label": "Châssis",
+      "system": "omega",
+      "path": "packs/chassis.db",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "omegaextensionsfr",
+      "label": "Extensions",
+      "system": "omega",
+      "path": "packs/extensions.db",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "omegaarmesfr",
+      "label": "Armes",
+      "system": "omega",
+      "path": "packs/armes.db",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "personnages",
+      "label": "personnages",
+      "system": "omega",
+      "path": "packs/personnages.db",
+      "type": "Actor",
+      "private": false,
+      "flags": {}
     }
   ],
   "languages": [

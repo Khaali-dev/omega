@@ -49,8 +49,6 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
   /** @override */
   activateListeners(html){
     super.activateListeners(html);
-    
-    html.find(".ssprog-input").change(this._onssprogChange.bind(this));
   }
 
 }
