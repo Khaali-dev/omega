@@ -1,0 +1,152 @@
+<div class="equipage-tab">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Pilote</th>
+                <th colspan="3">Cannonier</th>
+                <th colspan="3">Tacticien</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {{#if unlocked}}
+                <td rowspan="4" class="zonededrop" data-equipage="pilote">Glissez-déposez le pilote ici.</td>
+                {{else}}
+                <td rowspan="4"><img class="portraitimg" src="{{equipage.pilote.img}}" data-edit="img"
+                        title="{{equipage.pilote.name}}" /></td>
+                {{/if}}
+                <td class="caract-text">Nom : </td>
+                <td class="caract-text">{{system.equipage.pilote.name}}</td>
+                {{#if unlocked}}
+                <td rowspan="4" class="zonededrop" data-equipage="cannonier">Glissez-déposez le cannonier ici.</td>
+                {{else}}
+                <td rowspan="4"><img class="portraitimg" src="{{equipage.cannonier.img}}" data-edit="img"
+                        title="{{equipage.cannonier.name}}" /></td>
+                {{/if}}
+                <td class="caract-text">Nom : </td>
+                <td class="caract-text">{{system.equipage.cannonier.name}}</td>
+                {{#if unlocked}}
+                <td rowspan="4" class="zonededrop" data-equipage="tacticien">Glissez-déposez le tacticien ici.</td>
+                {{else}}
+                <td rowspan="4"><img class="portraitimg" src="{{equipage.tacticien.img}}" data-edit="img"
+                        title="{{equipage.tacticien.name}}" /></td>
+                {{/if}}
+                <td class="caract-text">Nom : </td>
+                <td class="caract-text">{{system.equipage.tacticien.name}}</td>
+            </tr>
+            <tr>
+                <td class="caract-text">Valeur : </td>
+                <td class="caract-text">{{system.equipage.pilote.value}}</td>
+                <td class="caract-text">Valeur : </td>
+                <td class="caract-text">{{system.equipage.cannonier.value}}</td>
+                <td class="caract-text">Valeur : </td>
+                <td class="caract-text">{{system.equipage.tacticien.value}}</td>
+
+            </tr>
+            <tr>
+                <td class="caract-text">Automatique : </td>
+                {{#if unlocked}}
+                <td><input class="aux-input" title="Valeur courante" id="equipage.pilote.autovalue" name="system.equipage.pilote.autovalue"
+                        type="number" value="{{system.equipage.pilote.autovalue}}" /></td>
+                {{else}}
+                <td class="caract-text">{{system.equipage.pilote.autovalue}}</td>
+                {{/if}}
+                <td class="caract-text">Automatique : </td>
+                {{#if unlocked}}
+                <td><input class="aux-input" title="Valeur courante" id="equipage.cannonier.autovalue" name="system.equipage.cannonier.autovalue"
+                        type="number" value="{{system.equipage.cannonier.autovalue}}" /></td>
+                {{else}}
+                <td class="caract-text">{{system.equipage.cannonier.autovalue}}</td>
+                {{/if}}
+                <td class="caract-text">Automatique : </td>
+                {{#if unlocked}}
+                <td><input class="aux-input" title="Valeur courante" id="equipage.tacticien.autovalue" name="system.equipage.tacticien.autovalue"
+                        type="number" value="{{system.equipage.tacticien.autovalue}}" /></td>
+                {{else}}
+                <td class="caract-text">{{system.equipage.tacticien.autovalue}}</td>
+                {{/if}}
+            </tr>
+            <tr>
+                <td>
+                </a>{{#ifne system.equipage.pilote.actorid ""}}<a class="change_equipage" data-tooltip="OMEGA.tooltip.changeequipage" data-field="pilote">
+                    <i class="fas fa-sign-out"></i>
+                </a>{{/ifne}}</td>
+                <td><a class="piocheequipage" data-tooltip="OMEGA.tooltip.piocheequipage" data-field="pilote">
+                    <i class="fas fa-sack"></i></td>
+                    <td>{{#ifne system.equipage.cannonier.actorid ""}}<a class="change_equipage" data-tooltip="OMEGA.tooltip.changeequipage" data-field="cannonier">
+                        <i class="fas fa-sign-out"></i>
+                    </a>{{/ifne}}</td>
+                    <td><a class="piocheequipage" data-tooltip="OMEGA.tooltip.piocheequipage" data-field="cannonier">
+                        <i class="fas fa-sack"></i>
+                    </a></td>
+                    <td>{{#ifne system.equipage.tacticien.actorid ""}}<a class="change_equipage" data-tooltip="OMEGA.tooltip.changeequipage" data-field="tacticien">
+                        <i class="fas fa-sign-out"></i>
+                    </a>{{/ifne}}</td>
+                    <td><a class="piocheequipage" data-tooltip="OMEGA.tooltip.piocheequipage" data-field="tacticien">
+                        <i class="fas fa-sack"></i>
+                    </a></td>
+            </tr>
+            <thead>
+                <tr>
+                    <th colspan="3">OPSAR</th>
+                    <th colspan="3">Mécanicien</th>
+                </tr>
+            </thead>
+            <tr>
+                {{#if unlocked}}
+                <td rowspan="4" class="zonededrop" data-equipage="opsar">Glissez-déposez l'OPSAR ici.</td>
+                {{else}}
+                <td rowspan="4"><img class="portraitimg" src="{{equipage.opsar.img}}" data-edit="img"
+                        title="{{equipage.opsar.name}}" /></td>
+                {{/if}}
+                <td class="caract-text">Nom : </td>
+                <td class="caract-text">{{system.equipage.mecanicien.name}}</td>
+                {{#if unlocked}}
+                <td rowspan="4" class="zonededrop" data-equipage="opsar">Glissez-déposez le Mécanicien ici.</td>
+                {{else}}
+                <td rowspan="4"><img class="portraitimg" src="{{equipage.mecanicien.img}}" data-edit="img"
+                        title="{{equipage.mecanicien.name}}" /></td>
+                {{/if}}
+                <td class="caract-text">Nom : </td>
+                <td class="caract-text">{{system.equipage.mecanicien.name}}</td>
+            </tr>
+            <tr>
+                <td class="caract-text">Valeur : </td>
+                <td class="caract-text">{{system.equipage.opsar.value}}</td>
+                <td class="caract-text">Valeur : </td>
+                <td class="caract-text">{{system.equipage.mecanicien.value}}</td>
+
+            </tr>
+            <tr>
+                <td class="caract-text">Automatique : </td>
+                {{#if unlocked}}
+                <td><input class="aux-input" title="Valeur courante" id="equipage.opsar.autovalue" name="system.equipage.opsar.autovalue"
+                        type="number" value="{{system.equipage.opsar.autovalue}}" /></td>
+                {{else}}
+                <td class="caract-text">{{system.equipage.opsar.autovalue}}</td>
+                {{/if}}
+                <td class="caract-text">Automatique : </td>
+                {{#if unlocked}}
+                <td><input class="aux-input" title="Valeur courante" id="equipage.mecanicien.autovalue" name="system.equipage.mecanicien.autovalue"
+                        type="number" value="{{system.equipage.mecanicien.autovalue}}" /></td>
+                {{else}}
+                <td class="caract-text">{{system.equipage.mecanicien.autovalue}}</td>
+                {{/if}}
+            </tr>
+            <tr>
+                <td>
+                </a>{{#ifne system.equipage.opsar.actorid ""}}<a class="change_equipage" data-tooltip="OMEGA.tooltip.changeequipage" data-field="opsar">
+                    <i class="fas fa-sign-out"></i>
+                </a>{{/ifne}}</td>
+                <td><a class="piocheequipage" data-tooltip="OMEGA.tooltip.piocheequipage" data-field="opsar">
+                    <i class="fas fa-sack"></i></td>
+                <td>{{#ifne system.equipage.mecanicien.actorid ""}}<a class="change_equipage" data-tooltip="OMEGA.tooltip.changeequipage" data-field="mecanicien">
+                    <i class="fas fa-sign-out"></i>
+                </a>{{/ifne}}</td>
+                <td><a class="piocheequipage" data-tooltip="OMEGA.tooltip.piocheequipage" data-field="mecanicien">
+                    <i class="fas fa-sack"></i>
+                </a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

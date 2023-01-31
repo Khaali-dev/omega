@@ -2,17 +2,21 @@
   "ACTOR": {
     "TypeAdvancedsynth": "Synthetique avancé",
     "TypeSynthetique": "Synthetique asservi",
-    "TypeOrganique": "Organique"
+    "TypeOrganique": "Organique",
+    "TypeVaisseau": "Vaisseau"
   },
-  "COMBAT":{
+  "COMBAT": {
     "augmentercouleur": "Augmenter d'une couleur",
     "diminuercouleur": "Diminuer d'une couleur"
   },
   "ITEM": {
     "TypeArme": "Arme",
-    "TypeEquipement": "Équipement",
+    "TypeAvantage": "Avantage",
     "TypeChassis": "Chassis",
-    "TypeExtension": "Extension"
+    "TypeEquipement": "Équipement",
+    "TypeExtension": "Extension",
+    "TypeRegroupement": "Regroupement d'armes",
+    "TypeUpgrade": "Upgrade"
   },
 
   "OMEGA": {
@@ -82,11 +86,21 @@
       "traits": "Traits de personnalité",
       "type": "Type",
       "typeomega": "Type d'Oméga",
-      "unlock_sheet": "Verrouiller/Déverrouiller la feuille"
+      "unlock_sheet": "Verrouiller/Déverrouiller la feuille",
+      "vaisseau": {
+        "classe": "Classe",
+        "coque": "Coque",
+        "compartimentsinternes": "Compartiments internes",
+        "evolution": "Évolution",
+        "origine": "Origine",
+        "vitesse": "Vitesse",
+        "defense": "Défense"
+      }
     },
     "chatmessage": {
-        "custommodifier": "Modificateur libre ajouté : ({rollModifier})",
-        "difficulty": "Difficulté : ({difficulty})"
+      "custommodifier": "Modificateur libre ajouté : ({rollModifier})",
+      "difficulty": "Difficulté : ({difficulty})",
+      "malusDegatsSubis": "Malus Dégâts Subis : {{malusDegatsSubis}}"
     },
     "dialog": {
       "button": {
@@ -97,18 +111,28 @@
       "difficulty": "Difficulté : ",
       "introtext": {
         "attack": "{actorname} utilise l'arme {arme} avec le programme {program} ",
+        "attackequipage": {"cannonier":"Tir du vaisseau"},
         "attackorganique": "{actorname} utilise l'arme {arme} avec sa compétence {program} ",
         "chance": "{actorname} tente sa chance.",
         "initiative": "{actorname} pioche son initiative.",
         "initiativeorganique": "{actorname} pioche son initiative.",
         "chanceorganique": "{actorname} tente sa chance.",
         "program": "{actorname} utilise son programme {program} ",
-        "programorganique": "{actorname} utilise sa compétence {program} "
+        "programorganique": "{actorname} utilise sa compétence {program} ",
+        "programequipage": {
+          "pilote": "Le pilote {equipagename} du vaisseau {actorname} agit.",
+          "cannonier": "Le pilote {equipagename} du vaisseau {actorname} tire.",
+          "tacticien": "Le pilote {equipagename} du vaisseau {actorname} agit.",
+          "OPSAR": "L'OPSAR du vaisseau {actorname} agit."
+        }
       },
+      "malustext": "Malus de {malus} dû aux dégâts subis.",
       "rollmodifier": "Modificateur : "
     },
     "tooltip": {
-      "piocherchance": "Piocher les diodes de chance"
+      "piocherchance": "Piocher les diodes de chance",
+      "piocheequipage": "Piocher des diodes",
+      "changeequipage": "Quitter ce poste"
     }
   }
 }

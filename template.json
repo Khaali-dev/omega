@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["advancedsynth", "synthetique", "organique"],
+    "types": ["advancedsynth", "synthetique", "organique", "vaisseau"],
     "templates": {
       "caracteristiques": {
         "caracteristiques": {
@@ -163,15 +163,6 @@
           "noire": 0
         }
       },
-      "evolution": {
-        "evolution": {
-          "rouge": 0,
-          "verte": 0,
-          "bleue": 0,
-          "blanche": 0,
-          "noire": 0
-        }
-      },
       "systemesauxiliaires": {
         "systemesauxiliaires": {
           "blindage": {
@@ -266,75 +257,75 @@
           "label": "OMEGA.label.programmes.vitesse"
         }
       },
-        "programmes": {
-          "basededonnees": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.basededonnees"
-          },
-          "connexion": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.connexion"
-          },
-          "contremesure": {
-            "value": 2,
-            "label": "OMEGA.label.programmes.contremesure"
-          },
-          "dissipateur": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.dissipateur"
-          },
-          "hacking": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.hacking"
-          },
-          "armesaenergie": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.armesaenergie"
-          },
-          "detecteur": {
-            "value": 2,
-            "label": "OMEGA.label.programmes.detecteur"
-          },
-          "exterminateur": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.exterminateur"
-          },
-          "resistance": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.resistance"
-          },
-          "artillerie": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.artillerie"
-          },
-          "tactique": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.tactique"
-          },
-          "reprogrammation": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.reprogrammation"
-          },
-          "neutralisationcognitive": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.neutralisationcognitive"
-          },
-          "recherche": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.recherche"
-          },
-          "cybernetique": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.cybernetique"
-          },
-          "ingenierie": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.ingenierie"
-          },
-          "chirurgie": {
-            "value": 0,
-            "label": "OMEGA.label.programmes.chirurgie"
-          }
+      "programmes": {
+        "basededonnees": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.basededonnees"
+        },
+        "connexion": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.connexion"
+        },
+        "contremesure": {
+          "value": 2,
+          "label": "OMEGA.label.programmes.contremesure"
+        },
+        "dissipateur": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.dissipateur"
+        },
+        "hacking": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.hacking"
+        },
+        "armesaenergie": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.armesaenergie"
+        },
+        "detecteur": {
+          "value": 2,
+          "label": "OMEGA.label.programmes.detecteur"
+        },
+        "exterminateur": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.exterminateur"
+        },
+        "resistance": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.resistance"
+        },
+        "artillerie": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.artillerie"
+        },
+        "tactique": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.tactique"
+        },
+        "reprogrammation": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.reprogrammation"
+        },
+        "neutralisationcognitive": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.neutralisationcognitive"
+        },
+        "recherche": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.recherche"
+        },
+        "cybernetique": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.cybernetique"
+        },
+        "ingenierie": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.ingenierie"
+        },
+        "chirurgie": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.chirurgie"
+        }
       },
       "modifiers": []
     },
@@ -416,10 +407,70 @@
       "race": "Humain",
       "occupation": "",
       "description": "<h3>Personnalité</h3><p>A remplir</p><h4>Secret :</h4><p>A remplir</p><h4>Point faible :</h4><p>A remplir</p><h4>Comment l'aborder :</h4><p>A remplir</p><h4>Objectifs :</h4><p>A remplir</p><h3>Special :</h3>"
+    },
+    "vaisseau": {
+      "typevaisseau": "fregate",
+      "classe": 3,
+      "description": "",
+      "evolution": 2,
+      "defense": 3,
+      "origine": "",
+      "vitesse": 4,
+      "compartimentsinternes": {
+        "base": 9,
+        "value": 9
+      },
+      "coque": {
+        "base": 9,
+        "value": 9
+      },
+      "equipage": {
+        "cannonier": {
+          "actorid": "",
+          "img": "systems/omega/assets/image/robot.svg",
+          "name": "Automatique",
+          "value": 0,
+          "autovalue": 3
+        },
+        "mecanicien": {
+          "actorid": "",
+          "img": "systems/omega/assets/image/robot.svg",
+          "name": "Automatique",
+          "value": 0,
+          "autovalue": 3
+        },
+        "opsar": {
+          "actorid": "",
+          "img": "systems/omega/assets/image/robot.svg",
+          "name": "Automatique",
+          "value": 0,
+          "autovalue": 2
+        },
+        "pilote": {
+          "actorid": "",
+          "img": "systems/omega/assets/image/robot.svg",
+          "name": "Automatique",
+          "value": 0,
+          "autovalue": 3
+        },
+        "tacticien": {
+          "actorid": "",
+          "img": "systems/omega/assets/image/robot.svg",
+          "name": "Automatique",
+          "value": 0,
+          "autovalue": 0
+        }
+      },
+      "systemesauxiliaires": {
+        "initiative": {
+          "value": 0,
+          "label": "OMEGA.label.programmes.initiative"
+        }
+      }
     }
   },
   "Item": {
-    "types": ["equipement", "extension", "chassis", "arme", "avantage"],
+    "types": ["equipement", "extension", "chassis", "arme", "avantage", "regroupement", "upgrade"],
     "templates": {
       "base": {
         "description": "",
@@ -428,17 +479,16 @@
       "etat": {
         "estActif": false
       },
-      
-    "extension": {
-      "chassisId": "",
-      "type": "app",
-      "coutenergie": {
-        "label": "Non applicable",
-        "value": 0
-      },
-      "nbSlots": 0
-    }
 
+      "extension": {
+        "chassisId": "",
+        "type": "app",
+        "coutenergie": {
+          "label": "Non applicable",
+          "value": 0
+        },
+        "nbSlots": 0
+      }
     },
     "extension": {
       "templates": ["base", "etat", "extension"]
@@ -452,6 +502,9 @@
       "templates": ["base", "etat"]
     },
     "avantage": {
+      "templates": ["base", "etat"]
+    },
+    "upgrade": {
       "templates": ["base", "etat"]
     },
     "arme": {
@@ -493,6 +546,41 @@
       "program": {
         "group": "",
         "reference": ""
+      }
+    },
+    "regroupement": {
+      "templates": ["base"],
+      "technologie": "",
+      "typera": "moyen",
+      "modificateurtir": "",
+      "degats":1,
+      "effetcritique":"",
+      "effetdiode": {
+        "noire": {
+          "degat": 0,
+          "label": "Inutilisable pour le prochain tour de combat",
+          "effet": []
+        },
+        "blanche": {
+          "degat": 0,
+          "label": "Totalement raté",
+          "effet": []
+        },
+        "bleue": {
+          "degat": 1,
+          "label": "1",
+          "effet": []
+        },
+        "verte": {
+          "degat": 2,
+          "label": "2",
+          "effet": []
+        },
+        "rouge": {
+          "degat": 3,
+          "label": "3",
+          "effet": []
+        }
       }
     }
   }

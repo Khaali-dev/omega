@@ -48,5 +48,27 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
     super.activateListeners(html);
   }
 
+  _onDropItem(event, data) {
+    event.preventDefault();
+    Item.fromDropData(data).then((item) => {
+      const itemData = duplicate(item);
+      switch (itemData.type) {
+        case "extension":
+          return this._onDropExtension(event, itemData, data);
+        case "arme":
+          return this._onDropExtension(event, itemData, data);
+        case "chassis":
+            return false;
+        case "avantage":
+            return super._onDropItem(event, data);
+            case "regroupement":
+               return false;
+               case "upgrade":
+                  return false;
+        default:
+          return super._onDropItem(event, data);
+      }
+    });
+  }
 }
 

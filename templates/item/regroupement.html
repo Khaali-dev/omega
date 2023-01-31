@@ -1,0 +1,78 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
+        <h1><input name="name" type="text" value="{{item.name}}" /></h1>
+    </header>
+    <div class="main">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:20%">Technologie</th>
+                    <th style="width: 15%">Type R.A.</th>
+                    <th style="width:15%">Dégâts</th>
+                    <th style="width:15%">Modificateur de Tir</th>
+                    <th style="width:35%">Effet crtitique</th>
+                </tr>
+            </thead>
+            <tbody style="text-align: center">
+                <tr>
+                    <td><select name="system.technologie">
+                            {{#select system.technologie}}
+                            {{#each config.ARME.TECHNOLOGIE as |name type|}}
+                            <option value="{{type}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
+                    <td><select name="system.typera">
+                            {{#select system.typera}}
+                            {{#each config.ARME.TYPERA as |name type|}}
+                            <option value="{{type}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td>
+                        <input class="small-input" name="system.degats" type="number" value="{{system.degats}}" />
+                    </td>
+                    <td>
+                        <input name="system.modificateurtir" type="number" value="{{system.modificateurtir}}" />
+                    </td>
+                    <td>
+                        <input name="system.effetcritique" type="text" value="{{system.effetcritique}}" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="diodesarmes">
+            <thead>
+                <tr>
+                    <th><img class="diode diode-noire"></th>
+                    <th><img class="diode diode-blanche"></th>
+                    <th><img class="diode diode-bleue"></th>
+                    <th><img class="diode diode-verte"></th>
+                    <th><img class="diode diode-rouge"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{system.effetdiode.noire.label}}
+                    </td>
+                    <td>
+                        {{system.effetdiode.blanche.label}}
+                    </td>
+                    <td>
+                        {{system.effetdiode.bleue.label}}
+                    </td>
+                    <td>
+                        {{system.effetdiode.verte.label}}
+                    </td>
+                    <td>
+                        {{system.effetdiode.rouge.label}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

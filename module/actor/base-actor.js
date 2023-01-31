@@ -8,9 +8,10 @@ export default class OmegaBaseActor extends Actor {
     super.prepareData();
     if (this.estAdvancedSynth()) this._prepareDataAdvancedSynth();
     if (this.estSynthetique()) this._prepareDataSynthetique();
+    if (this.estOrganique()) this._prepareDataOrganique();
+    if (this.estVaisseau()) this._prepareDataVaisseau();
   }
 
-  async _prepareDataSynthetique() {}
   /**
    * @private
    */
@@ -37,6 +38,9 @@ export default class OmegaBaseActor extends Actor {
     this.system.systemesauxiliaires.defense.value = this.system.systemesauxiliaires.defense.base + this.system.systemesauxiliaires.defense.mod;
     this.system.systemesauxiliaires.initiative.base = this.system.programmes.dissipateur.value;
     this.system.systemesauxiliaires.initiative.value = this.system.systemesauxiliaires.initiative.base + this.system.systemesauxiliaires.initiative.mod;
+
+    //Malus dégâts subis
+    this.system.malusDegatsSubis = Math.min(3, this.system.systemesauxiliaires.resistancemoteur.max - this.system.systemesauxiliaires.resistancemoteur.value);
 
     //traitement du chassis
 
@@ -84,7 +88,59 @@ export default class OmegaBaseActor extends Actor {
     }
   }
 
-  _prepareDataNpc() {}
+  async _prepareDataOrganique() {
+    this.system.malusDegatsSubis = Math.min(3, this.system.systemesauxiliaires.vie.base - this.system.systemesauxiliaires.vie.value);
+  }
+
+  async _prepareDataSynthetique() {
+    this.system.malusDegatsSubis = Math.min(3, this.system.systemesauxiliaires.resistancemoteur.base - this.system.systemesauxiliaires.resistancemoteur.value);
+  }
+
+  async _prepareDataVaisseau() {
+    this.system.systemesauxiliaires.initiative.value = Math.max(this.system.classe, 6);
+    for (let membreEquipage in this.system.equipage) {
+      let actorEquipage = game.actors.get(this.system.equipage[membreEquipage].actorid);
+      if (actorEquipage) {
+        this.system.equipage[membreEquipage].img = actorEquipage.img;
+        this.system.equipage[membreEquipage].name = actorEquipage.name;
+        if (typeof actorEquipage["programme_" + membreEquipage] == "function") {
+          this.system.equipage[membreEquipage].value = actorEquipage["programme_" + membreEquipage]();
+        } else {
+          console.log("pas de fonction");
+        }
+      } else {
+        this.system.equipage[membreEquipage].img = "systems/omega/assets/image/robot.svg";
+        this.system.equipage[membreEquipage].name = "Automatique";
+        this.system.equipage[membreEquipage].value = this.system.equipage[membreEquipage].autovalue;
+      }
+    }
+    let regroupements = this.items.filter((item) => item.type === "regroupement");
+    const updateRa = [];
+    regroupements.forEach((element) => {
+      updateRa.push({"_id": element.id, "system.attackvalue" : this.system.equipage.cannonier.value+element.system.modificateurtir});
+    });
+    this.updateEmbeddedDocuments('Item', updateRa);
+  }
+
+  programme_tacticien() {
+    return this.system.sousprogrammes?.tactique?.value;
+  }
+
+  programme_cannonier() {
+    return this.system.sousprogrammes?.conduitedetir?.value;
+  }
+
+  programme_opsar() {
+    return this.system.sousprogrammes?.opsar?.value;
+  }
+
+  programme_mecanicien() {
+    return this.system.sousprogrammes?.mecanique?.value;
+  }
+
+  programme_pilote() {
+    return this.system.sousprogrammes?.pilotage?.value;
+  }
 
   async initialiserExtensions() {
     let extensionArray = [];
@@ -124,6 +180,9 @@ export default class OmegaBaseActor extends Actor {
   estSynthetique() {
     return this.type === "synthetique";
   }
+  estVaisseau() {
+    return this.type === "vaisseau";
+  }
 
   /* Get the Players owning an actor, that is not a GM and that is connected */
   async getOwnerPlayer() {
@@ -139,46 +198,62 @@ export default class OmegaBaseActor extends Actor {
   }
   async check(group, field) {
     let value = this.system[group][field].value;
-    if (!value) return;
+    if (typeof value === "undefined") return;
     let program = {
       value: value,
       label: this.system[group][field].label,
       group: group,
       reference: field,
     };
-    let data = {};
-    let diodes = new Diodes(this.id, ROLL_TYPE.PROGRAM, program, data);
+    let data = {
+      malusDegatsSubis: this.system.malusDegatsSubis,
+    };
+    let diodes = new Diodes(this, ROLL_TYPE.PROGRAM, program, data);
+    console.log("piocher5", this);
     diodes.openDialog();
   }
+
   async shoot(armeId) {
     let arme = this.items.get(armeId);
     let group = this.estOrganique() ? "caracteristiques" : "programmes";
-    let field = arme.system.typeprogramme;
+    let field = arme.system?.typeprogramme;
+    let program = {};
     if (this.estOrganique()) {
       field = this.getEquivalentOrga(arme.system.typeprogramme);
     } else if (this.estSynthetique() && this.system.programmes[arme.system.typeprogramme].value < this.system.caracteristiques.attaque.value) {
       group = "caracteristiques";
       field = "attaque";
     }
-    let program = {
-      value: this.system[group][field].value,
-      label: game.i18n.localize(this.system[group][field].label),
-      group: group,
-      reference: field,
+    if(this.estVaisseau()){
+      program = {
+        value: arme.system.attackvalue,
+        label: game.i18n.localize("OMEGA.label.programmes.conduitedetir"),
+        reference: "cannonier",
+      };
+    } else{
+      program = {
+        value: this.system[group][field].value,
+        label: game.i18n.localize(this.system[group][field].label),
+        reference: field,
+      };
+    }
+    let data = {
+      itemId: armeId,
+      malusDegatsSubis: this.system.malusDegatsSubis,
     };
-    let data = { itemId: armeId };
-    let diodes = new Diodes(this.id, ROLL_TYPE.ATTACK, program, data);
+    let diodes = new Diodes(this, ROLL_TYPE.ATTACK, program, data);
     diodes.openDialog();
   }
   async chanceRoll() {
     let program = {
       value: this.system.systemesauxiliaires.chance.value,
       label: "Chance",
-      group: "systemesauxiliaires",
       reference: "chance",
     };
-    let data = {};
-    let diodes = new Diodes(this.id, ROLL_TYPE.CHANCE, program, data);
+    let data = {
+      malusDegatsSubis: 0,
+    };
+    let diodes = new Diodes(this, ROLL_TYPE.CHANCE, program, data);
     diodes.openDialog();
   }
   getEquivalentOrga(programme) {
@@ -186,32 +261,73 @@ export default class OmegaBaseActor extends Actor {
     else return programme;
   }
 
-  async piocherInitiative(){
+  async piocherInitiative() {
     let program = {
       value: 0,
       label: "Initiative",
       group: "",
       reference: "initiative",
     };
-    if(this.estAdvancedSynth()){
+    if (this.estAdvancedSynth()) {
       program.value = this.system.systemesauxiliaires.initiative.value;
       program.group = "systemesauxiliaires";
-    }
-    else {
+    } else {
       program.value = this.system.caracteristiques.initiative.value;
       program.group = "caracteristiques";
     }
-    
-    let data = {};
-    let diodes = new Diodes(this.id, ROLL_TYPE.INITIATIVE, program, data);
-    return(diodes.openDialog());
+
+    let data = {
+      malusDegatsSubis: this.system.malusDegatsSubis,
+    };
+    let diodes = new Diodes(this, ROLL_TYPE.INITIATIVE, program, data);
+    return diodes.openDialog();
   }
-  valeurVitesse(){
-    if(this.estSynthetique()){
-      return(this.system.caracteristiques.vitesse.value);
+
+  valeurVitesse() {
+    if (this.estSynthetique()) {
+      return this.system.caracteristiques.vitesse.value;
+    } else {
+      return this.system.systemesauxiliaires.vitesse.value;
     }
-    else {
-      return(this.system.systemesauxiliaires.vitesse.value);
+  }
+
+  async changerEquipage(actorId, posteEquipage) {
+    let updateData = duplicate(this);
+    let actorEquipage = game.actors.get(actorId);
+    console.log("actorEquipage", actorEquipage);
+    if (actorEquipage) {
+      updateData.system.equipage[posteEquipage].actorid = actorId;
+      updateData.system.equipage[posteEquipage].img = actorEquipage.img;
+      updateData.system.equipage[posteEquipage].name = actorEquipage.name;
+      if (typeof actorEquipage["programme_" + posteEquipage] == "function") {
+        updateData.system.equipage[posteEquipage].value = actorEquipage["programme_" + posteEquipage]();
+      } else {
+        console.log("pas de fonction");
+      }
+    } else {
+      updateData.system.equipage[posteEquipage].value = this.system.equipage[posteEquipage].autovalue;
+      updateData.system.equipage[posteEquipage].actorid = "";
+      updateData.system.equipage[posteEquipage].img = "systems/omega/assets/image/robot.svg";
+      updateData.system.equipage[posteEquipage].name = "Automatique";
     }
+    console.log("updateData", updateData);
+    return await this.update(updateData);
+    /*let actorEquipage = game.actors.get(actorId);
+      console.log("actorEquipage",actorEquipage);
+      if (actorEquipage) {
+        this.system.equipage[posteEquipage].actorid = actorId;
+        this.system.equipage[posteEquipage].img = actorEquipage.img;
+        this.system.equipage[posteEquipage].name = actorEquipage.name;
+        if (typeof actorEquipage["programme_" + posteEquipage] == "function") {
+          this.system.equipage[posteEquipage].value = actorEquipage["programme_" + posteEquipage]();
+        } else {
+          console.log("pas de fonction");
+        }
+      } else {
+        this.system.equipage[posteEquipage].value = this.system.equipage[posteEquipage].autovalue;
+        this.system.equipage[posteEquipage].actorid = "";
+        this.system.equipage[posteEquipage].img = "systems/omega/assets/image/robot.svg";
+        this.system.equipage[posteEquipage].name = "Automatique";
+      }*/
   }
 }

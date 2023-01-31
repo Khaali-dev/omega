@@ -1,0 +1,84 @@
+<div class="regroupements-tab">
+    {{#each regroupements as |item id|}}
+
+    <table class="weapontable">
+        <tbody>
+            <tr style="font-size: larger;">
+                <td style="font-weight: bold; color:#f59292;">{{item.name}}</td>
+                <td class="arme-attack" data-field={{item.id}}>
+                    {{item.system.attacklabel}}&nbsp;({{item.system.attackvalue}})</td>
+                <td><a class="item-control item-shoot" data-field="{{item.id}}" data-tooltip="Utiliser"><i
+                            class="fas fa-gun"></i></a>
+                    <a class="item-control item-edit" data-field="{{item.id}}" data-tooltip="Modifier"><i
+                            class="fas fa-cog"></i></a>
+                    {{#if ../unlocked}}
+                    <a class="item-control item-delete" data-field="{{item.id}}" data-tooltip="Supprimer"><i
+                            class="fas fa-trash"></i></a>
+                    {{/if}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th style="width:20%">Technologie</th>
+                <th style="width: 15%">Type R.A.</th>
+                <th style="width:15%">Dégâts</th>
+                <th style="width:15%">Modificateur de Tir</th>
+                <th style="width:35%">Effet crtitique</th>
+            </tr>
+        </thead>
+        <tbody style="text-align: center">
+            <tr style="overflow: hidden; text-overflow: ellipsis; white-space: normal;">
+                <td>
+                    {{system.technologie}}</td>
+                <td>
+                    {{system.typera}}
+                </td>
+                <td>
+                    {{system.degats}}
+                </td>
+                <td>
+                    {{system.modificateurtir}}
+                </td>
+                <td>
+                    {{system.effetcritique}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="diodesarmes">
+        <thead>
+            <tr>
+                <th><img class="diode diode-noire"></th>
+                <th><img class="diode diode-blanche"></th>
+                <th><img class="diode diode-bleue"></th>
+                <th><img class="diode diode-verte"></th>
+                <th><img class="diode diode-rouge"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: normal;">
+                <td>
+                    {{system.effetdiode.noire.label}}
+                </td>
+                <td>
+                    {{system.effetdiode.blanche.label}}
+                </td>
+                <td>
+                    {{system.effetdiode.bleue.label}}
+                </td>
+                <td>
+                    {{system.effetdiode.verte.label}}
+                </td>
+                <td>
+                    {{system.effetdiode.rouge.label}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+    <div class="redline"></div>
+    {{/each}}
+</div>

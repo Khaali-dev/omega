@@ -58,7 +58,7 @@
     },
     {
       "name": "personnages",
-      "label": "personnages",
+      "label": "Personnages",
       "system": "omega",
       "path": "packs/personnages.db",
       "type": "Actor",

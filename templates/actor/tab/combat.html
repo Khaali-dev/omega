@@ -56,7 +56,7 @@
                 </tr>
             </tbody>
         </table>
-        <table class="diodesarmes">
+        <table class="diodesarmes noover">
             <thead>
                 <tr>
                     <th><img class="diode diode-noire"></th>
@@ -75,7 +75,7 @@
                     <td>{{item.system.effetdiode.rouge.label}}</td>
             </tbody>
         </table>
-        <table>
+        <table class="noover">
             <thead>
                 <th>Technologie</th>
                 {{#ifne item.system.portee ""}}<th>Portée</th>{{/ifne}}
@@ -85,7 +85,7 @@
                 {{#ifne item.system.zone ""}}<th>Effet de zone</th>{{/ifne}}
             </thead>
             <tbody>
-                <tr style="text-align: center;">
+                <tr style="text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: normal;">
                     <td>{{item.system.technologielabel}}</td>
                     {{#ifne item.system.portee ""}}<td>{{item.system.portee}}</td>{{/ifne}}
                     <td>{{item.system.autonomie}}</td>

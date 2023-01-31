@@ -22,6 +22,11 @@ export const OMEGA = {
       tir: "Tir",
       corpsacorps: "Corps à corps"
     },
+    TYPERA:{
+      leger:"Léger",
+      moyen: "Moyen",
+    lourd: "Lourd"
+  }
   },
   EXTENSION:{
     TYPE:{
@@ -69,6 +74,23 @@ export const OMEGA = {
     psy:"Psy",
     alpha:"Alpha",
     sigma: "Sigma"
+  },
+  EQUIPAGE:{
+    cannonier:{
+      reference: "consuitedetir"
+    },
+    tacticien:{
+      reference: "tactique"
+    },
+    opsar:{
+      reference: "opsar"
+    },
+    mecanicien:{
+      reference: "mecanique"
+    },
+    pilote:{
+      reference: "pilotage"
+    }
   }
 };
 

@@ -1,0 +1,115 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="main droppable">
+        <table class="vaisseauheadtable">
+            <tbody>
+                <tr>
+                    <td rowspan="5"><img class="portraitimg" src="{{actor.img}}" data-edit="img"
+                            title="{{actor.name}}" /></td>
+                    <td class="name-text">{{localize "OMEGA.label.name"}}</td>
+                    {{#if unlocked}}
+                    <td colspan="2"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+                        {{else}}
+                    <td colspan="2" class="pcname">{{actor.name}}
+                        {{/if}}
+                    </td>
+                    <td class="caract-text">{{localize "OMEGA.label.vaisseau.evolution"}}</td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input" title="Valeur courante" id="evolution" name="system.evolution"
+                            type="number" value="{{system.evolution}}" /></td>
+                    {{else}}
+                    <td class="caract-text">{{system.evolution}}</td>
+                    {{/if}}
+                </tr>
+                <tr>
+                    <td class="name-text">{{localize "OMEGA.label.vaisseau.origine"}}</td>
+                    {{#if unlocked}}
+                    <td colspan="2"><input name="system.origine" type="text" value="{{system.origine}}" placeholder="Origine" />
+                        {{else}}
+                    <td colspan="2" class="pcfirme">{{system.origine}}
+                        {{/if}}
+                    </td>
+                    <td class="caract-text" data-field="classe">{{localize "OMEGA.label.vaisseau.defense"}}</td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input" title="Valeur courante" id="defense" name="system.defense"
+                            type="number" value="{{system.defense}}" /></td>
+                    {{else}}
+                    <td class="caract-text">{{system.defense}}</td>
+                    {{/if}}
+                </tr>
+                <tr>
+                    <td class="name-text">{{localize "OMEGA.label.type"}}</td>
+                    {{#if unlocked}}
+                    <td colspan="2"><input name="system.typevaisseau" type="text" value="{{system.typevaisseau}}" placeholder="Type" />
+                        {{else}}
+                    <td colspan="2" class="pcfirme">{{system.typevaisseau}}
+                        {{/if}}
+                    </td>
+                    <td class="caract-text" data-field="classe">{{localize "OMEGA.label.vaisseau.vitesse"}}</td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input" title="Valeur courante" id="vitesse" name="system.vitesse"
+                            type="number" value="{{system.vitesse}}" /></td>
+                    {{else}}
+                    <td class="caract-text">{{system.vitesse}}</td>
+                    {{/if}}
+                </tr>
+                <tr>
+                    <td class="name-text">{{localize "OMEGA.label.vaisseau.classe"}}</td>
+                    {{#if unlocked}}
+                    <td colspan="2"><input class="small-input" name="system.classe" type="number" value="{{system.classe}}" placeholder="classe" />
+                        {{else}}
+                    <td colspan="2" class="pcfirme">{{system.classe}}
+                        {{/if}}
+                    </td>
+                    <td>Coque</td>
+                    <td><input class="aux-input small-input" title="Valeur courante" id="coque" name="system.coque.value"
+                            type="number" min="0" max="{{system.coque.base}}" value="{{system.coque.value}}" /></td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input small-input" title="Maximum" id="coquebase" name="system.coque.base"
+                            type="number" value="{{system.coque.base}}" /></td>
+                    {{else}}<td>/ {{system.coque.base}}</td>
+                    {{/if}}
+                </tr>
+                <tr><td></td><td>
+                    <a class="right-icon sheet-change-lock" title="{{localize 'OMEGA.label.unlock_sheet'}}">
+                        {{#if unlocked}}
+                        <i class="fas fa-lock-open"></i>
+                        {{else}}
+                        <i class="fas fa-lock"></i>
+                        {{/if}}</a>
+                    </td><td></td>
+                        <td>Compartiments internes</td>
+                        <td><input class="aux-input small-input" title="Valeur courante" id="compartimentsinternes"
+                                name="system.compartimentsinternes.value" type="number" min="0"
+                                max="{{system.compartimentsinternes.base}}"
+                                value="{{system.compartimentsinternes.value}}" /></td>
+                        {{#if unlocked}}
+                        <td><input class="aux-input small-input" title="Maximum" id="compartimentsinternesbase"
+                                name="system.compartimentsinternes.base" type="number"
+                                value="{{system.compartimentsinternes.base}}" /></td>
+                        {{else}}<td>/ {{system.compartimentsinternes.base}}</td>
+                        {{/if}}
+                </tr>
+            </tbody>
+        </table>
+        <div class="sheet-tabs tabs" data-group="primary">
+            <b class="tab-name" data-tab="vaisseau-pont">Pont principal</b>
+            <b class="tab-name" data-tab="equipage">Équipage</b>
+            <b class="tab-name" data-tab="regroupements">Armement</b>
+            <b class="tab-name" data-tab="upgrades">Upgrades</b>
+            <b class="tab-name" data-tab="notes">Description</b>
+        </div>
+        <div class="lignejaune"></div>
+        <div class="sheet-body">
+            <div class="tab" data-group="primary" data-tab="vaisseau-pont">{{>
+                systems/omega/templates/actor/tab/vaisseau-pont.html}}</div>
+            <div class="tab" data-group="primary" data-tab="equipage">{{>
+                systems/omega/templates/actor/tab/equipage.html}}</div>
+            <div class="tab" data-group="primary" data-tab="regroupements">{{>
+                systems/omega/templates/actor/tab/regroupements.html}}</div>
+            <div class="tab" data-group="primary" data-tab="upgrades">{{>
+                systems/omega/templates/actor/tab/upgrades.html}}</div>
+            <div class="tab" data-group="primary" data-tab="notes">{{>
+                systems/omega/templates/actor/tab/notes.html}}</div>
+        </div>
+    </div>
+</form>

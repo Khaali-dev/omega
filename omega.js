@@ -16,6 +16,7 @@ import OmegaCombatant from "./module/combat/combatant.js"
 import AdvancedSynthSheet from "./module/actor/sheet/advancedsynth-sheet.js";
 import SynthetiqueSheet from "./module/actor/sheet/synthetique-sheet.js";
 import OrganiqueSheet from "./module/actor/sheet/organique-sheet.js";
+import VaisseauSheet from "./module/actor/sheet/vaisseau-sheet.js";
 import OmegaBaseItemSheet from "./module/item/sheet/base-sheet.js";
 
 Hooks.once("init", function(){
@@ -36,7 +37,7 @@ Hooks.once("init", function(){
     Actors.registerSheet('omega', AdvancedSynthSheet, {types: ['advancedsynth'], makeDefault: true });
     Actors.registerSheet('omega', OrganiqueSheet, {types: ['organique'], makeDefault: true });
     Actors.registerSheet('omega', SynthetiqueSheet, {types: ['synthetique'], makeDefault: true });
-    //Actors.registerSheet('omega', NpcSheet, {types: ['npc'], makeDefault: true });
+    Actors.registerSheet('omega', VaisseauSheet, {types: ['vaisseau'], makeDefault: true });
     
     game.omega = {
         config: OMEGA

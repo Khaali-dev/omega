@@ -20,21 +20,21 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
       template: "systems/omega/templates/actor/synthetique.html",
       classes: ["omega", "sheet", "actor", "synthetique"],
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "programmes" }],
-      dragDrop: [{ dragSelector: ".draggable", dropSelector: ".droppable" }]
+      dragDrop: [{ dragSelector: ".draggable", dropSelector: ".droppable" }],
     });
   }
 
   /** @override */
   getData(options) {
     const context = super.getData(options);
-    context.logofirme=game.omega.config.FIRME[this.actor.system.firme].logoclass;
+    context.logofirme = game.omega.config.FIRME[this.actor.system.firme].logoclass;
     context.armes = this.actor.items.filter((item) => item.type == "arme");
     context.armes.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
-      element.system.attacklabel="Attaque";
-      element.system.attackvalue=this.actor.system.caracteristiques.attaque.value;
-      element.system.technologielabel=game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
-      element.system.estActif=true;
+      element.system.attacklabel = "Attaque";
+      element.system.attackvalue = this.actor.system.caracteristiques.attaque.value;
+      element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
+      element.system.estActif = true;
     });
     context.prognonnul = [];
     context.progfull = [];
@@ -47,15 +47,36 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
 
     context.equipements = context.items.filter((item) => ["equipement", "chassis"].includes(item.type));
     for (let item of context.equipements) {
-        item.system.descriptionhtml = TextEditor.enrichHTML(item.system.description, { async: false });
+      item.system.descriptionhtml = TextEditor.enrichHTML(item.system.description, { async: false });
     }
-    console.log("eq",context.equipements);
+    console.log("eq", context.equipements);
     return context;
   }
 
   /** @override */
-  activateListeners(html){
+  activateListeners(html) {
     super.activateListeners(html);
   }
+  _onDropItem(event, data) {
+    event.preventDefault();
+    Item.fromDropData(data).then((item) => {
+      const itemData = duplicate(item);
+      switch (itemData.type) {
+        case "extension":
+          return this._onDropExtension(event, itemData, data);
+        case "arme":
+          return this._onDropExtension(event, itemData, data);
+        case "chassis":
+          return super._onDropItem(event, data);
+        case "avantage":
+          return false;
+        case "regroupement":
+          return false;
+        case "upgrade":
+          return false;
+        default:
+          return super._onDropItem(event, data);
+      }
+    });
+  }
 }
-

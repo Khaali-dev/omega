@@ -151,7 +151,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let element = event.currentTarget;
     let field = element.dataset.field;
     let item = this.actor.items.get(field);
-    if (!item || !item.type === "arme") return;
+    if (!item || !(["arme", "regroupement"].includes(item.type))) return;
     return this.actor.shoot(field);
   }
   _onItemEdit(event) {
@@ -210,31 +210,18 @@ export class OmegaBaseActorSheet extends ActorSheet {
     }
     // Case 2 - Dropped Actor
     if (data.type === "Actor") {
+      if(this.actor.estVaisseau()){
+        return this._onDropActor(event, data);
+      }
       return false;
     }
   }
+
   _onDropItem(event, data) {
     event.preventDefault();
-    Item.fromDropData(data).then((item) => {
-      const itemData = duplicate(item);
-      switch (itemData.type) {
-        case "extension":
-          return this._onDropExtension(event, itemData, data);
-        case "arme":
-          return this._onDropExtension(event, itemData, data);
-        case "chassis":
-          if (this.actor.estOrganique()) {
-            return false;
-          } else return super._onDropItem(event, data);
-        case "avantage":
-          if (this.actor.estOrganique()) {
-            return super._onDropItem(event, data);
-          } else return false;
-        default:
           return super._onDropItem(event, data);
-      }
-    });
   }
+
   async _onDropExtension(event, itemData, data) {
     event.preventDefault();
 
@@ -242,15 +229,11 @@ export class OmegaBaseActorSheet extends ActorSheet {
     if (this.actor.estAdvancedSynth()) {
       const id = event.target.dataset.chassis;
       const target = this.actor.items.get(id);
-      console.log("target", target);
       if (!target || target.type !== "chassis") {
         return super._onDropItem(event, data);
       } else {
-        console.log("itemData2", itemData);
         const moveditem = this.actor.items.get(itemData._id);
-        console.log("moveditem", moveditem);
         if (!moveditem) {
-          console.log("data", data);
           return super._onDropItem(event, data);
         }
         itemData.system.chassisId = id;
@@ -258,43 +241,5 @@ export class OmegaBaseActorSheet extends ActorSheet {
         console.log(this.actor.items);
       }
     } else return super._onDropItem(event, data);
-  }
-
-  /**
-   *
-   * @param {*} event
-   * @returns
-   */
-  _onItemCreate(event) {
-    event.preventDefault();
-    let element = event.currentTarget;
-    let itemData = {
-      type: element.dataset.type,
-    };
-    switch (element.dataset.type) {
-      case "boon":
-        itemData.name = game.i18n.localize("OMEGA.boon.add");
-        break;
-      case "arme":
-        itemData.name = game.i18n.localize("OMEGA.arme.add");
-        itemData.system = {
-          state: "active",
-        };
-        break;
-      case "skill":
-        itemData.name = game.i18n.localize("OMEGA.skill.add");
-        break;
-      case "armor":
-        itemData.name = game.i18n.localize("OMEGA.armor.add");
-        itemData.system = {
-          state: "active",
-        };
-        break;
-      case "equipment":
-        itemData.name = game.i18n.localize("OMEGA.equipment.add");
-        break;
-    }
-
-    return this.actor.createEmbeddedDocuments("Item", [itemData]);
   }
 }

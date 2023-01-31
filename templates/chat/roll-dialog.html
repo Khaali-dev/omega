@@ -4,9 +4,10 @@
       <tbody>
         <tr>
           {{#if (ne charImg "icons/svg/mystery-man.svg")}}
-    <td class="introImg"><img src="{{charImg}}" title="{{actorname}}" /></td>
-    {{/if}}
-    <td {{#ife charImg "icons/svg/mystery-man.svg"}}colspan="2"{{/ife}} class="introtext">{{introText}}{{#if program}}&nbsp;({{program.value}}){{/if}}</td>
+          <td class="introImg"><img src="{{charImg}}" title="{{actorname}}" /></td>
+          {{/if}}
+          <td {{#ife charImg "icons/svg/mystery-man.svg" }}colspan="2" {{/ife}} class="introtext">{{introText}}{{#if
+            program}}&nbsp;({{program.value}}){{/if}}<br />{{#if action.malusDegatsSubis}}{{malusText}}{{/if}}</td>
         </tr>
       </tbody>
     </table>

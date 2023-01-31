@@ -3,16 +3,17 @@ import { ROLL_TYPE } from "./config.js";
 export class Diodes {
   /**
    * Tirage de diodes
-   * @param actor The actor which performs the action
-   * @param rolltype the type of roll (program, arme)
-   * @param program  The program (skill) : '{Value , label, group, reference}
+   * @param actor L'acteur qui agit
+   * @param rolltype le type de tirage  (ROLL_TYPE)
+   * @param program  Le programme utilisé : '{Value , label, reference}
    * @param data
-   *        itemId  the id of the arme used
-   *        mod  modifier to the roll
+   *        itemId  L'id de l'arme si attaque
+   *        malusDegatsSubis  le malus au actions du aux dégâts subis
+   *        mod  modificateur au jet
    */
 
-  constructor(actorId, rolltype, program, data) {
-    this.actor = actorId ? game.actors.get(actorId) : undefined;
+  constructor(actor, rolltype, program, data) {
+    this.actor = actor;
     this.rolltype = rolltype;
     this.program = program;
     this.data = data;
@@ -20,6 +21,7 @@ export class Diodes {
   }
 
   async openDialog() {
+    console.log("piocher", this);
     this.data.isAttack = this.rolltype === ROLL_TYPE.ATTACK ? true : false;
     if (this.rolltype === ROLL_TYPE.SIMPLE) {
       let userId = game.userId;
@@ -39,7 +41,15 @@ export class Diodes {
         }
       }
       let prepareintrotext = this.actor.estOrganique() ? "organique" : "";
+      if(this.actor.estVaisseau()){
+        console.log("piocher1", this.actor.system.equipage);
+        console.log("equipagename", this.actor.system.equipage[this.program.reference].name);
+        prepareintrotext = "equipage.".concat(this.program.reference);
+        namesForText.equipagename = this.actor.system.equipage[this.program.reference].name;
+      }
       this.data.introText = game.i18n.format("OMEGA.dialog.introtext." + this.rolltype + prepareintrotext, namesForText);
+      console.log("piocher3", "OMEGA.dialog.introtext." + this.rolltype + prepareintrotext, namesForText);
+      this.data.malusText = this.data.malusDegatsSubis ? game.i18n.format("OMEGA.dialog.malustext", { malus: this.data.malusDegatsSubis.toString() }) : "";
       this.actorname = this.actor.name;
       this.data.charImg = this.actor.img;
       this.data.estAdvancedSynth = this.actor.estAdvancedSynth();
@@ -49,7 +59,7 @@ export class Diodes {
       this.data.formula = this.program.value.toString();
       this.data.formulaValue = this.program.value;
       await this.piocher();
-      return(await this.showResult());
+      return await this.showResult();
     } else {
       const html = await renderTemplate("systems/omega/templates/chat/roll-dialog.html", {
         actorname: this.data.actorname,
@@ -59,10 +69,11 @@ export class Diodes {
         isAttack: this.data.isAttack,
         arme: this.data?.arme,
         introText: this.data.introText,
+        malusText: this.data.malusText,
         charImg: this.data.charImg,
         estAdvancedSynth: this.data.estAdvancedSynth,
       });
-      return(await new Dialog({
+      return await new Dialog({
         title: "Tirage de diode",
         content: html,
         buttons: {
@@ -83,7 +94,15 @@ export class Diodes {
               } else {
                 this.data.formula = this.program.value.toString();
                 this.data.formulaValue = this.program.value;
-                // The optional modifier
+
+                // Modificateur dégâts subis
+                if (this.data.malusDegatsSubis) {
+                  this.data.formula = this.data.formula.concat(" - ", this.data.malusDegatsSubis.toString());
+                  this.data.formulaValue = this.data.formulaValue - this.data.malusDegatsSubis;
+                  this.data.applyModifiers.push(game.i18n.format("OMEGA.chatmessage.malusDegatsSubis", { malusDegatsSubis: this.data.malusDegatsSubis.toString() }));
+                }
+                
+                // Modificateur libre
                 const modifier = html.find("#rollmodifier")[0].value;
                 this.data.modifier = parseInt(modifier);
 
@@ -95,7 +114,8 @@ export class Diodes {
                   this.data.formulaValue = this.data.formulaValue + this.data.modifier;
                   this.data.applyModifiers.push(game.i18n.format("OMEGA.chatmessage.custommodifier", { rollModifier: this.data.modifier }));
                 }
-                // Difficulte
+
+                // Difficulté
                 const difficulty = html.find("#difficulty")[0].value;
                 this.data.difficulty = parseInt(difficulty);
                 this.data.difficultyText = game.i18n.format("OMEGA.chatmessage.difficulty", { difficulty: this.data.difficulty });
@@ -105,9 +125,10 @@ export class Diodes {
                   this.data.applyModifiers.push(this.data.difficultyText);
                 }
               }
-              // Process to the roll
+              // Piocher les diodes
               await this.piocher();
-              return(await this.showResult());
+              // afficher le résultat
+              return await this.showResult();
             },
           },
           cancel: {
@@ -118,7 +139,7 @@ export class Diodes {
         },
         default: "roll",
         close: () => {},
-      }).render(true));
+      }).render(true);
     }
   }
   async piocher() {
@@ -215,10 +236,11 @@ export class Diodes {
     if (rerollButton) {
       if (this.playerCanReroll) this.chat.setFlag("world", "reRollUserId", game.user.id);
       this.chat.setFlag("world", "reRoll", templateData);
-      this.chat.setFlag("world", "diodeData", { actorId: this.actor.id, rolltype: this.rolltype, program: this.program, data: this.data });
+      this.chat.setFlag("world", "diodeData", { actor: this.actor, rolltype: this.rolltype, program: this.program, data: this.data });
     }
     if (this.rolltype === ROLL_TYPE.INITIATIVE) {
-      return(this.data);}
+      return this.data;
+    }
   }
   async reroll(event, message) {
     this.isReroll = true;

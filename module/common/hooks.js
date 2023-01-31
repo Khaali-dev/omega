@@ -11,7 +11,6 @@ export default function registerHooks() {
       mergeObject(createChanges, {
         "token.disposition": CONST.TOKEN_DISPOSITIONS.NEUTRAL,
       });
-      // advancedsynth (uniqueness)
       if (document.type === "advancedsynth") {
         createChanges.token.vision = true;
         createChanges.token.actorLink = true;
@@ -22,6 +21,11 @@ export default function registerHooks() {
       else if (document.type === "synthetique") {
         if (document.img === 'icons/svg/mystery-man.svg') {
           createChanges.img = 'systems/omega/assets/image/robot.svg';
+        }
+      }
+      else if (document.type === "vaisseau") {
+        if (document.img === 'icons/svg/mystery-man.svg') {
+          createChanges.img = 'systems/omega/assets/image/spaceship.svg';
         }
       }
       document.update(createChanges);
@@ -41,7 +45,7 @@ export default function registerHooks() {
     if (!game.user.isGM && game.user._id !== userId) return;
 
     let flagData = newMessage.getFlag("world", "diodeData");
-    let diode = new Diodes(flagData.actorId, flagData.rolltype, flagData.program, flagData.data);
+    let diode = new Diodes(flagData.actor, flagData.rolltype, flagData.program, flagData.data);
     diode.reroll(eventData, message);
   }
 

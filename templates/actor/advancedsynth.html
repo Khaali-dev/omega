@@ -10,7 +10,8 @@
                         {{else}}
                     <td colspan="2" class="pcname">{{actor.name}}
                         {{/if}}
-                    </td>{{#if unlocked}}
+                    </td>
+                    {{#if unlocked}}
                     <td style="display: flex; flex-direction: column;">
                         <select name="system.firme">
                             {{#select system.firme}}
@@ -46,7 +47,7 @@
                                         <th colspan="5">Chance&nbsp;&nbsp;{{system.systemesauxiliaires.chance.value}}
                                             {{#if unlocked}}
                                             <a class="chance-roll" data-tooltip="OMEGA.tooltip.piocherchance" data-field="chanceroll">
-                                                <i class="fas fa-dice"></i>
+                                                <i class="fas fa-sack"></i>
                                             </a>
                                             {{/if}}
                                         </th>

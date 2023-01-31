@@ -118,6 +118,11 @@
 .logo_prophetiaincorporated {
   background: center / contain no-repeat url('./assets/image/logo/logo_prophetiaincorporated.webp');
 }
+.noover {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
 .editor {
   height: 100%;
   width: 100%;
@@ -683,6 +688,40 @@
 .omega.sheet.organique .tab-personnalite .editor .tox.tox-tinymce {
   min-height: 10em;
 }
+.omega.sheet.vaisseau .window-content {
+  background: repeat url('./assets/image/fond_fdp_vaisseau.webp');
+  background-color: black;
+  font: 1em "helvetica";
+  color: white;
+}
+.omega.sheet.vaisseau .uniqueprogtable {
+  font: 1.1em "frutiger";
+  text-transform: uppercase;
+}
+.omega.sheet.vaisseau .small-input {
+  width: 2em;
+}
+.omega.sheet.vaisseau .vaisseauheadtable tbody td:nth-child(1) {
+  width: 20%;
+}
+.omega.sheet.vaisseau .vaisseauheadtable tbody td:nth-child(2) {
+  width: 15%;
+}
+.omega.sheet.vaisseau .vaisseauheadtable tbody td:nth-child(3) {
+  width: 20%;
+}
+.omega.sheet.vaisseau .vaisseauheadtable tbody td:nth-child(4) {
+  width: 20%;
+}
+.omega.sheet.vaisseau .vaisseauheadtable tbody td:nth-child(5) {
+  width: 10%;
+}
+.omega.sheet.vaisseau .vaisseauheadtable tbody td:nth-child(6) {
+  width: 10%;
+}
+.omega.sheet.vaisseau .vaisseauheadtable tbody td:nth-child(7) {
+  width: 5%;
+}
 .omega.sheet.item .window-content {
   background: none;
   background-color: black;
@@ -729,6 +768,9 @@
   border: 1px solid;
   border-collapse: collapse;
   border-color: #7e2424;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .omega.sheet.item .main table .diode-rouge {
   background: center / contain no-repeat url('./assets/image/diodes/diode_rouge.webp');
