@@ -13,9 +13,14 @@
     width: 2em;
   }
   
+  .vaisseauimg {
+    align-self: center;
+    width: 220px;
+    height: 129px;
+  }
   .vaisseauheadtable {
     tbody td:nth-child(1) {
-      width: 20%;
+      width: 30%;
     }
 
     tbody td:nth-child(2) {
@@ -40,6 +45,53 @@
     tbody td:nth-child(7) {
       width: 5%;
     }
-
   }
+  .pont-tab{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    table{
+      border: none;
+      margin: none;
+    }
+    .bordrouge{
+      border: 3px solid rgba(226, 19, 19, 0.76);
+    }
+    .bordvert{
+      border: 3px solid rgba(14, 104, 67, 0.76);
+    }
+    .bordjaune{
+      border: 3px solid burlywood;
+    }
+    .regroupement-bloc{
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-basis: 45%;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-style: dashed;
+      margin-top: 0.3em;
+      margin-right: 0.5em;
+      .nameline {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font: 1rem "helvetica";
+        padding: 0.2em 0 0.5em 0.5em;
+      }
+    }
+  }
+  .equipage-tab{
+    table{
+      border: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    .equipagedrop{
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 3px solid rgba(167, 146, 228, 0.76);
+      border-style: dashed;
+      margin-top: 0.3em;
+      margin-right: 0.5em;}
+  }}
 }

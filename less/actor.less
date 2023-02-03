@@ -77,7 +77,11 @@
     background: center / contain no-repeat url("./assets/image/bloodline.webp");
     height: 28px;
   }
-
+  .spaceline {
+    background: center / contain no-repeat url("./assets/image/ligne-space.webp");
+    height: 28px;
+  }
+  
   /* Tooltip text */
   .tooltip .tooltiptext {
     visibility: hidden;
@@ -349,7 +353,7 @@
         font: @title-font;
         width: 100%;
         text-align: center;
-        color: #e0d7ab;
+        color: #9be2c4;
         padding: 1em 0 1em 0;
       }
 
@@ -357,13 +361,18 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        .bordrouge{
+          border: 3px solid rgba(226, 19, 19, 0.76);
+        }
+        .bordvert{
+          border: 3px solid rgba(14, 104, 67, 0.76);
+        }
         .extensioncontenu {
           display: flex;
           flex-direction: column;
           flex-grow: 1;
           flex-basis: 45%;
           background-color: rgba(0, 0, 0, 0.3);
-          border: 3px solid rgba(226, 19, 19, 0.76);
           border-style: dashed;
           margin-top: 0.3em;
           margin-right: 0.5em;

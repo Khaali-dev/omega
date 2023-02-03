@@ -18,14 +18,14 @@
                 <tr>
                     <td><select name="system.technologie">
                             {{#select system.technologie}}
-                            {{#each config.ARME.TECHNOLOGIE as |name type|}}
+                            {{#each config.REGROUPEMENT_ARMES.TECHNOLOGIE as |name type|}}
                             <option value="{{type}}">{{name}}</option>
                             {{/each}}
                             {{/select}}
                         </select></td>
                     <td><select name="system.typera">
                             {{#select system.typera}}
-                            {{#each config.ARME.TYPERA as |name type|}}
+                            {{#each config.REGROUPEMENT_ARMES.TYPERA as |name type|}}
                             <option value="{{type}}">{{name}}</option>
                             {{/each}}
                             {{/select}}
@@ -62,13 +62,13 @@
                         {{system.effetdiode.blanche.label}}
                     </td>
                     <td>
-                        {{system.effetdiode.bleue.label}}
+                        {{system.effetdiode.noire.degat}} {{system.effetdiode.bleue.effetcritique}}
                     </td>
                     <td>
-                        {{system.effetdiode.verte.label}}
+                        {{system.effetdiode.noire.degat}} {{system.effetdiode.verte.effetcritique}}
                     </td>
                     <td>
-                        {{system.effetdiode.rouge.label}}
+                        {{system.effetdiode.noire.degat}} {{system.effetdiode.rouge.effetcritique}}
                     </td>
                 </tr>
             </tbody>

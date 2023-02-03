@@ -1,24 +1,24 @@
 <div class="equipage-tab">
-    <table>
+    <table class="tabletest">
         <thead>
             <tr>
-                <th colspan="3">Pilote</th>
-                <th colspan="3">Cannonier</th>
-                <th colspan="3">Tacticien</th>
+                <th colspan="3" style="color:rgb(231, 129, 129);">Pilote</th>
+                <th colspan="3" style="color:rgb(231, 129, 129);">Cannonier</th>
+                <th colspan="3" style="color:rgb(231, 129, 129);">Tacticien</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop" data-equipage="pilote">Glissez-déposez le pilote ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="pilote">Glissez-déposez le pilote ici.</td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.pilote.img}}" data-edit="img"
                         title="{{equipage.pilote.name}}" /></td>
                 {{/if}}
-                <td class="caract-text">Nom : </td>
+                <td class="caract-text" style="width: 5%;">Nom : </td>
                 <td class="caract-text">{{system.equipage.pilote.name}}</td>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop" data-equipage="cannonier">Glissez-déposez le cannonier ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="cannonier">Glissez-déposez le cannonier ici.</td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.cannonier.img}}" data-edit="img"
                         title="{{equipage.cannonier.name}}" /></td>
@@ -26,7 +26,7 @@
                 <td class="caract-text">Nom : </td>
                 <td class="caract-text">{{system.equipage.cannonier.name}}</td>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop" data-equipage="tacticien">Glissez-déposez le tacticien ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="tacticien">Glissez-déposez le tacticien ici.</td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.tacticien.img}}" data-edit="img"
                         title="{{equipage.tacticien.name}}" /></td>
@@ -44,21 +44,21 @@
 
             </tr>
             <tr>
-                <td class="caract-text">Automatique : </td>
+                <td class="caract-text">Auto :</td>
                 {{#if unlocked}}
                 <td><input class="aux-input" title="Valeur courante" id="equipage.pilote.autovalue" name="system.equipage.pilote.autovalue"
                         type="number" value="{{system.equipage.pilote.autovalue}}" /></td>
                 {{else}}
                 <td class="caract-text">{{system.equipage.pilote.autovalue}}</td>
                 {{/if}}
-                <td class="caract-text">Automatique : </td>
+                <td class="caract-text">Auto :</td>
                 {{#if unlocked}}
                 <td><input class="aux-input" title="Valeur courante" id="equipage.cannonier.autovalue" name="system.equipage.cannonier.autovalue"
                         type="number" value="{{system.equipage.cannonier.autovalue}}" /></td>
                 {{else}}
                 <td class="caract-text">{{system.equipage.cannonier.autovalue}}</td>
                 {{/if}}
-                <td class="caract-text">Automatique : </td>
+                <td class="caract-text">Auto :</td>
                 {{#if unlocked}}
                 <td><input class="aux-input" title="Valeur courante" id="equipage.tacticien.autovalue" name="system.equipage.tacticien.autovalue"
                         type="number" value="{{system.equipage.tacticien.autovalue}}" /></td>
@@ -88,13 +88,13 @@
             </tr>
             <thead>
                 <tr>
-                    <th colspan="3">OPSAR</th>
-                    <th colspan="3">Mécanicien</th>
+                    <th colspan="3" style="color:rgb(231, 129, 129);">OPSAR</th>
+                    <th colspan="3" style="color:rgb(231, 129, 129);">Mécanicien</th>
                 </tr>
             </thead>
             <tr>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop" data-equipage="opsar">Glissez-déposez l'OPSAR ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="opsar">Glissez-déposez l'OPSAR ici.</td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.opsar.img}}" data-edit="img"
                         title="{{equipage.opsar.name}}" /></td>
@@ -102,7 +102,7 @@
                 <td class="caract-text">Nom : </td>
                 <td class="caract-text">{{system.equipage.mecanicien.name}}</td>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop" data-equipage="opsar">Glissez-déposez le Mécanicien ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="mecanicien">Glissez-déposez le Mécanicien ici.</td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.mecanicien.img}}" data-edit="img"
                         title="{{equipage.mecanicien.name}}" /></td>
@@ -118,14 +118,14 @@
 
             </tr>
             <tr>
-                <td class="caract-text">Automatique : </td>
+                <td class="caract-text">Auto :</td>
                 {{#if unlocked}}
                 <td><input class="aux-input" title="Valeur courante" id="equipage.opsar.autovalue" name="system.equipage.opsar.autovalue"
                         type="number" value="{{system.equipage.opsar.autovalue}}" /></td>
                 {{else}}
                 <td class="caract-text">{{system.equipage.opsar.autovalue}}</td>
                 {{/if}}
-                <td class="caract-text">Automatique : </td>
+                <td class="caract-text">Auto :</td>
                 {{#if unlocked}}
                 <td><input class="aux-input" title="Valeur courante" id="equipage.mecanicien.autovalue" name="system.equipage.mecanicien.autovalue"
                         type="number" value="{{system.equipage.mecanicien.autovalue}}" /></td>

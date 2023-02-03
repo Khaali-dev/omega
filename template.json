@@ -409,7 +409,7 @@
       "description": "<h3>Personnalité</h3><p>A remplir</p><h4>Secret :</h4><p>A remplir</p><h4>Point faible :</h4><p>A remplir</p><h4>Comment l'aborder :</h4><p>A remplir</p><h4>Objectifs :</h4><p>A remplir</p><h3>Special :</h3>"
     },
     "vaisseau": {
-      "typevaisseau": "fregate",
+      "typevaisseau": "Frégate",
       "classe": 3,
       "description": "",
       "evolution": 2,
@@ -417,8 +417,8 @@
       "origine": "",
       "vitesse": 4,
       "compartimentsinternes": {
-        "base": 9,
-        "value": 9
+        "base": 3,
+        "value": 3
       },
       "coque": {
         "base": 9,
@@ -519,27 +519,27 @@
       "effetdiode": {
         "noire": {
           "degat": 0,
-          "label": "Rien",
+          "effetcritique": "aucun",
           "effet": []
         },
         "blanche": {
           "degat": 0,
-          "label": "Raté",
+          "effetcritique": "rate",
           "effet": []
         },
         "bleue": {
           "degat": 1,
-          "label": "1",
+          "effetcritique": "aucun",
           "effet": []
         },
         "verte": {
           "degat": 2,
-          "label": "2",
+          "effetcritique": "aucun",
           "effet": []
         },
         "rouge": {
           "degat": 3,
-          "label": "3",
+          "effetcritique": "aucun",
           "effet": []
         }
       },
@@ -550,35 +550,35 @@
     },
     "regroupement": {
       "templates": ["base"],
-      "technologie": "",
+      "tireffectue": false,
+      "technologie": "energetique",
       "typera": "moyen",
       "modificateurtir": "",
       "degats":1,
-      "effetcritique":"",
       "effetdiode": {
         "noire": {
           "degat": 0,
-          "label": "Inutilisable pour le prochain tour de combat",
+          "effetcritique": "echec_ra",
           "effet": []
         },
         "blanche": {
           "degat": 0,
-          "label": "Totalement raté",
+          "effetcritique": "rate",
           "effet": []
         },
         "bleue": {
           "degat": 1,
-          "label": "1",
+          "effetcritique": "aucun",
           "effet": []
         },
         "verte": {
           "degat": 2,
-          "label": "2",
+          "effetcritique": "aucun",
           "effet": []
         },
         "rouge": {
           "degat": 3,
-          "label": "3",
+          "effetcritique": "aucun",
           "effet": []
         }
       }

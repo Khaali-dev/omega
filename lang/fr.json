@@ -87,6 +87,7 @@
       "type": "Type",
       "typeomega": "Type d'Oméga",
       "unlock_sheet": "Verrouiller/Déverrouiller la feuille",
+      "recharger": "Recharger les regroupements d'armes",
       "vaisseau": {
         "classe": "Classe",
         "coque": "Coque",
@@ -100,7 +101,8 @@
     "chatmessage": {
       "custommodifier": "Modificateur libre ajouté : ({rollModifier})",
       "difficulty": "Difficulté : ({difficulty})",
-      "malusDegatsSubis": "Malus Dégâts Subis : {{malusDegatsSubis}}"
+      "malusDegatsSubis": "Malus Dégâts Subis : {{malusDegatsSubis}}",
+      "vaisseauExtraInitText": "Le vaisseau peut améliorer {bonus} diodes de son initiative."
     },
     "dialog": {
       "button": {
@@ -111,10 +113,11 @@
       "difficulty": "Difficulté : ",
       "introtext": {
         "attack": "{actorname} utilise l'arme {arme} avec le programme {program} ",
-        "attackequipage": {"cannonier":"Tir du vaisseau"},
+        "attackequipage": {"cannonier":"Tir du vaisseau {actorname} ({arme})"},
         "attackorganique": "{actorname} utilise l'arme {arme} avec sa compétence {program} ",
         "chance": "{actorname} tente sa chance.",
         "initiative": "{actorname} pioche son initiative.",
+        "initiativevaisseau": "{actorname} pioche son initiative.",
         "initiativeorganique": "{actorname} pioche son initiative.",
         "chanceorganique": "{actorname} tente sa chance.",
         "program": "{actorname} utilise son programme {program} ",

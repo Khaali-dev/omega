@@ -80,5 +80,8 @@
         <i class="fas fa-sack repiocher"></i><span class="tooltiptext">Piocher à nouveau</span>
     </div>
     {{/if}}
+    {{#ifne data.extraText ""}}
+    <div class="resultText">{{data.extraText}}</div>
+    {{/ifne}}
     <div class="endimg"></div>
 </div>

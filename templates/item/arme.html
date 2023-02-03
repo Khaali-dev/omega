@@ -1,6 +1,6 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
         <h1><input name="name" type="text" value="{{item.name}}" /></h1>
     </header>
     <div class="main">
@@ -14,15 +14,15 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input name="system.nbSlots" type="number" value="{{system.nbSlots}}"/></td>
+                    <td><input name="system.nbSlots" type="number" value="{{system.nbSlots}}" /></td>
                     <td><select name="system.type">
-                        {{#select system.type}}
-                        {{#each config.EXTENSION.TYPE as |name type|}}
-                        <option value="{{type}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
-                    </select></td>
-                    <td><input name="system.coutenergie.label" type="text" value="{{system.coutenergie.label}}"/></td>
+                            {{#select system.type}}
+                            {{#each config.EXTENSION.TYPE as |name type|}}
+                            <option value="{{type}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
+                    <td><input name="system.coutenergie.label" type="text" value="{{system.coutenergie.label}}" /></td>
                     </td>
                 </tr>
             </tbody>
@@ -42,19 +42,19 @@
             <tbody>
                 <tr>
                     <td><select name="system.technologie">
-                        {{#select system.technologie}}
-                        {{#each config.ARME.TECHNOLOGIE as |name type|}}
-                        <option value="{{type}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
-                    </select></td>
+                            {{#select system.technologie}}
+                            {{#each config.ARME.TECHNOLOGIE as |name type|}}
+                            <option value="{{type}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
                     <td><select name="system.typeprogramme">
-                        {{#select system.typeprogramme}}
-                        {{#each config.ARME.TYPEPROGRAMME as |name type|}}
-                        <option value="{{type}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
-                    </select></td>
+                            {{#select system.typeprogramme}}
+                            {{#each config.ARME.TYPEPROGRAMME as |name type|}}
+                            <option value="{{type}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
                     <td><input name="system.portee" type="text" value="{{system.portee}}" /></td>
                     <td><input name="system.autonomie" type="text" value="{{system.autonomie}}" /></td>
                     <td><input name="system.cadence" type="text" value="{{system.cadence}}" /></td>
@@ -84,8 +84,13 @@
                             {{/select}}
                         </select>
                     </td>
-                    <td><input name="system.effetdiode.noire.label" type="text"
-                            value="{{system.effetdiode.noire.label}}" /></td>
+                    <td><select name="system.effetdiode.noire.effetcritique">
+                            {{#select system.effetdiode.noire.effetcritique}}
+                            {{#each config.EFFET_NEGATIF as |name type|}}
+                            <option value="{{type}}">{{name.label}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
                     <td>
                         <select name="system.effetdiode.blanche.degat">
                             {{#select system.effetdiode.blanche.degat}}
@@ -95,8 +100,13 @@
                             {{/select}}
                         </select>
                     </td>
-                    <td><input name="system.effetdiode.blanche.label" type="text"
-                            value="{{system.effetdiode.blanche.label}}" /></td>
+                    <td><select name="system.effetdiode.blanche.effetcritique">
+                            {{#select system.effetdiode.blanche.effetcritique}}
+                            {{#each config.EFFET_NEGATIF as |name type|}}
+                            <option value="{{type}}">{{name.label}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
                     <td>
                         <select name="system.effetdiode.bleue.degat">
                             {{#select system.effetdiode.bleue.degat}}
@@ -106,8 +116,13 @@
                             {{/select}}
                         </select>
                     </td>
-                    <td><input name="system.effetdiode.bleue.label" type="text"
-                            value="{{system.effetdiode.bleue.label}}" /></td>
+                    <td><select name="system.effetdiode.bleue.effetcritique">
+                            {{#select system.effetdiode.bleue.effetcritique}}
+                            {{#each config.EFFET_CRITIQUE as |name type|}}
+                            <option value="{{type}}">{{name.label}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
                     <td>
                         <select name="system.effetdiode.verte.degat">
                             {{#select system.effetdiode.verte.degat}}
@@ -117,8 +132,13 @@
                             {{/select}}
                         </select>
                     </td>
-                    <td><input name="system.effetdiode.verte.label" type="text"
-                            value="{{system.effetdiode.verte.label}}" /></td>
+                    <td><select name="system.effetdiode.verte.effetcritique">
+                            {{#select system.effetdiode.verte.effetcritique}}
+                            {{#each config.EFFET_CRITIQUE as |name type|}}
+                            <option value="{{type}}">{{name.label}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
                     <td>
                         <select name="system.effetdiode.rouge.degat">
                             {{#select system.effetdiode.rouge.degat}}
@@ -128,8 +148,13 @@
                             {{/select}}
                         </select>
                     </td>
-                    <td><input name="system.effetdiode.rouge.label" type="text"
-                            value="{{system.effetdiode.rouge.label}}" /></td>
+                    <td><select name="system.effetdiode.rouge.effetcritique">
+                            {{#select system.effetdiode.rouge.effetcritique}}
+                            {{#each config.EFFET_CRITIQUE as |name type|}}
+                            <option value="{{type}}">{{name.label}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
                 </tr>
             </tbody>
         </table>

@@ -21,7 +21,6 @@ export class Diodes {
   }
 
   async openDialog() {
-    console.log("piocher", this);
     this.data.isAttack = this.rolltype === ROLL_TYPE.ATTACK ? true : false;
     if (this.rolltype === ROLL_TYPE.SIMPLE) {
       let userId = game.userId;
@@ -41,14 +40,12 @@ export class Diodes {
         }
       }
       let prepareintrotext = this.actor.estOrganique() ? "organique" : "";
-      if(this.actor.estVaisseau()){
-        console.log("piocher1", this.actor.system.equipage);
-        console.log("equipagename", this.actor.system.equipage[this.program.reference].name);
+      if(this.actor.estVaisseau()){prepareintrotext="vaisseau"};
+      if(this.actor.estVaisseau() && (this.rolltype!==ROLL_TYPE.INITIATIVE)){
         prepareintrotext = "equipage.".concat(this.program.reference);
         namesForText.equipagename = this.actor.system.equipage[this.program.reference].name;
       }
       this.data.introText = game.i18n.format("OMEGA.dialog.introtext." + this.rolltype + prepareintrotext, namesForText);
-      console.log("piocher3", "OMEGA.dialog.introtext." + this.rolltype + prepareintrotext, namesForText);
       this.data.malusText = this.data.malusDegatsSubis ? game.i18n.format("OMEGA.dialog.malustext", { malus: this.data.malusDegatsSubis.toString() }) : "";
       this.actorname = this.actor.name;
       this.data.charImg = this.actor.img;
@@ -209,6 +206,19 @@ export class Diodes {
     if (this.rolltype === ROLL_TYPE.ATTACK) {
       let arme = this.actor.items.get(this.data.itemId);
       armedata = duplicate(arme.system.effetdiode);
+      let listeEffets = {
+        ...duplicate(game.omega.config.EFFET_NEGATIF),
+        ...duplicate(game.omega.config.EFFET_CRITIQUE),
+        ...duplicate(game.omega.config.REGROUPEMENT_ARMES.EFFET_CRITIQUE)
+      }
+      for(let diode in armedata){
+        armedata[diode].label = armedata[diode].degat.toString();
+        if (armedata[diode].effetcritique !== "aucun") armedata[diode].label += " - " + listeEffets[armedata[diode].effetcritique].label;
+      }
+      if(arme.type === "regroupement"){
+        const updates = {"_id": this.data.itemId, "system.tireffectue" : true};
+        this.actor.updateEmbeddedDocuments('Item', [updates]);
+      }
     }
 
     const templateData = {

@@ -1,7 +1,69 @@
-<div class="notes-tab">
-    {{#if unlocked}}
-    {{editor descriptionhtml target="system.description" button=true owner=owner editable=editable}}
+<div class="pont-tab">
+    {{#each regroupements as |item id|}}
+    {{#if item.system.tireffectue}}
+    <div class="regroupement-bloc bordrouge">
     {{else}}
-    {{{descriptionhtml}}}
-    {{/if}}
+    <div class="regroupement-bloc bordvert">
+        {{/if}}
+    <table class="weapontable">
+        <tbody>
+            <tr style="font-size: larger;">
+                <td style="width:70% ;font-weight: bold; color:#f59292;">{{item.name}}</td>
+                <td class="arme-attack" style="width:10%" data-field={{item.id}}>
+                    {{item.system.attacklabel}}&nbsp;({{item.system.attackvalue}})</td>
+                <td style="width:20%"><a class="item-control item-shoot" data-field="{{item.id}}" data-tooltip="Utiliser"><i
+                            class="fas fa-gun"></i></a>
+                    <a class="item-control item-edit" data-field="{{item.id}}" data-tooltip="Modifier"><i
+                            class="fas fa-cog"></i></a>
+                    {{#if ../unlocked}}
+                    <a class="item-control item-delete" data-field="{{item.id}}" data-tooltip="Supprimer"><i
+                            class="fas fa-trash"></i></a>
+                    {{/if}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th style="width:20%">Dégâts</th>
+                <th style="width:20%">Mod. Tir</th>
+                <th style="width:60%">Effet crtitique</th>
+            </tr>
+        </thead>
+        <tbody style="text-align: center">
+            <tr style="overflow: hidden; text-overflow: ellipsis; white-space: normal;">
+                <td>
+                    {{system.degats}}
+                </td>
+                <td>
+                    {{system.modificateurtir}}
+                </td>
+                <td>
+                    {{system.effetcritique}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    {{/each}}
+    {{#each upgrades as |upgrade id|}}
+    <div class="regroupement-bloc bordjaune">
+        <div class="nameline">
+            <div>{{upgrade.name}}</div>
+            <div class="icon-group">
+                <a class="item-control item-edit" data-field="{{upgrade.id}}" data-tooltip="Modifier"><i
+                        class="fas fa-cog"></i></a>
+                {{#if ../unlocked}}
+                <a class="item-control item-delete" data-field="{{upgrade.id}}" data-tooltip="Supprimer"><i
+                        class="fas fa-trash"></i></a>
+                {{/if}}
+            </div>
+        </div>
+        <details>
+            <summary style="text-align:center;">Description</summary>
+            {{{upgrade.system.descriptionhtml}}}
+        </details>
+    </div>
+    {{/each}}
 </div>

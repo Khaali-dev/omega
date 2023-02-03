@@ -20,8 +20,6 @@
         "systems/omega/templates/actor/tab/programmes.html",
         "systems/omega/templates/actor/tab/vaisseau-pont.html",
         "systems/omega/templates/actor/tab/equipage.html",
-        "systems/omega/templates/actor/tab/regroupements.html",
-        "systems/omega/templates/actor/tab/upgrades.html",
         //Items
         "systems/omega/templates/item/chassis.html",
         "systems/omega/templates/item/extension.html",

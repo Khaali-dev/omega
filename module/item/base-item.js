@@ -2,7 +2,6 @@ export default class OmegaBaseItem extends Item {
   /** @override */
   prepareData() {
     super.prepareData();
-    console.log("thisitem", this);
     if (this.estRegroupement()) this._prepareRegroupement();
   }
 
@@ -26,13 +25,11 @@ export default class OmegaBaseItem extends Item {
     return this.type === "regroupement";
   }
   _prepareRegroupement(){
-    console.log("this2.type", this.system.degats);
     let baseDegats = this.system.degats;
     this.system.effetdiode.bleue.degat = baseDegats;
-    this.system.effetdiode.bleue.label = baseDegats.toString();
     this.system.effetdiode.verte.degat = baseDegats+1;
-    this.system.effetdiode.verte.label = (baseDegats+1).toString();
     this.system.effetdiode.rouge.degat = baseDegats+2;
-    this.system.effetdiode.rouge.label = (baseDegats+2).toString().concat(" et effet critique");
+    this.system.effetdiode.rouge.degat = baseDegats+2;
+    this.system.effetdiode.rouge.effetcritique = this.system.technologie;
   }
 }

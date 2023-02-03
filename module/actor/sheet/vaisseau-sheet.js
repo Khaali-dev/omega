@@ -45,6 +45,7 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
     super.activateListeners(html);
     html.find(".piocheequipage").click(this._onEquipageRoll.bind(this));
     html.find(".change_equipage").click(this._onEquipageChange.bind(this));
+    html.find(".sheet-reload").click(this._onRechargerRegroupement.bind(this));
   }
   _onDropItem(event, data) {
     event.preventDefault();
@@ -101,7 +102,6 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
   async changerEquipage(actorId, posteEquipage) {
     let updateData = duplicate(this.actor);
     let actorEquipage = game.actors.get(actorId);
-    console.log("actorEquipage", actorEquipage);
     if (actorEquipage) {
       updateData.system.equipage[posteEquipage].actorid = actorId;
       updateData.system.equipage[posteEquipage].img = actorEquipage.img;
@@ -118,5 +118,10 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
       updateData.system.equipage[posteEquipage].name = "Automatique";
     }
     return await this.actor.update(updateData);
+  }
+
+  _onRechargerRegroupement(event, data) {
+    event.preventDefault();
+    return this.actor.rechargerRegroupements();
   }
 }

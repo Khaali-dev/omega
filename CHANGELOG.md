@@ -1,4 +1,7 @@
 
+# Version 1.1.0
+- Vaisseaux spatiaux (nouveau type d'acteur)
+- modification dans la gestion des effets critiques des armes
 # Version 1.0.0
 Release du système
 

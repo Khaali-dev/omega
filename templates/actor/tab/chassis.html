@@ -19,7 +19,7 @@
             <div class="extensions-block" data-chassis="{{chassis.id}}">
                 {{#each ../extensions as |extension id|}}
                 {{#ife extension.system.chassisId chassis.id}}
-                <div class="extensioncontenu" data-chassis="{{../chassis.id}}">
+                <div class="extensioncontenu bordvert" data-chassis="{{../chassis.id}}">
                     <div class="nameline">
                         <div>{{extension.name}}</div>
                         <div class="icon-group">
@@ -45,7 +45,7 @@
                 {{/each}}
                 {{#each ../armes as |extension id|}}
                 {{#ife extension.system.chassisId chassis.id}}
-                <div class="extensioncontenu" data-chassis="{{../chassis.id}}">
+                <div class="extensioncontenu bordrouge" data-chassis="{{../chassis.id}}">
                     <div class="nameline">
                         <div>{{extension.name}}</div>
                         <div class="icon-group">
@@ -101,7 +101,7 @@
             <div class="extensions-block" data-chassis="{{chassis.id}}">
                 {{#each ../extensions as |extension id|}}
                 {{#ife extension.system.chassisId chassis.id}}
-                <div class="extensioncontenu" data-chassis="{{../chassis.id}}">
+                <div class="extensioncontenu bordvert" data-chassis="{{../chassis.id}}">
                     <div class="nameline">
                         <div>{{extension.name}}</div>
                         <div class="icon-group">
@@ -125,7 +125,7 @@
                 {{/each}}
                 {{#each ../armes as |extension id|}}
                 {{#ife extension.system.chassisId chassis.id}}
-                <div class="extensioncontenu" data-chassis="{{../chassis.id}}">
+                <div class="extensioncontenu bordrouge" data-chassis="{{../chassis.id}}">
                     <div class="nameline">
                         <div>{{extension.name}}</div>
                         <div class="icon-group">
@@ -161,7 +161,7 @@
             <div class="extensions-block">
                 {{#each extensions as |extension id|}}
                 {{#ife extension.system.chassisId ""}}
-                <div class="extensioncontenu draggable item" data-item-id="{{_id}}">
+                <div class="extensioncontenu bordvert draggable item" data-item-id="{{_id}}">
                     <div class="nameline">
                         <div>{{extension.name}}</div>
                         <div class="icon-group">
@@ -183,7 +183,7 @@
                 {{/each}}
                 {{#each armes as |extension id|}}
                 {{#ife extension.system.chassisId ""}}
-                <div class="extensioncontenu draggable item" data-item-id="{{_id}}">
+                <div class="extensioncontenu bordrouge draggable item" data-item-id="{{_id}}">
                     <div class="nameline">
                         <div>{{extension.name}}</div>
                         <div class="icon-group">

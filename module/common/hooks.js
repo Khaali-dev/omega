@@ -31,6 +31,32 @@ export default function registerHooks() {
       document.update(createChanges);
     }
   });
+  Hooks.on("createItem", async (document, options, userId) => {
+    if (game.user.isGM) {
+      let createChanges = {};
+      if (document.type === "regroupement") {
+        if (document.img === 'icons/svg/item-bag.svg') {
+          createChanges.img = 'systems/omega/assets/image/ra.svg';
+        }
+      }
+      else if (document.type === "arme") {
+        if (document.img === 'icons/svg/item-bag.svg') {
+          createChanges.img = 'systems/omega/assets/image/arme.svg';
+        }
+      }
+      else if (document.type === "extension") {
+        if (document.img === 'icons/svg/item-bag.svg') {
+          createChanges.img = 'systems/omega/assets/image/extension.svg';
+        }
+      }
+      else if (document.type === "upgrade") {
+        if (document.img === 'icons/svg/item-bag.svg') {
+          createChanges.img = 'systems/omega/assets/image/upgrade.svg';
+        }
+      }
+      document.update(createChanges);
+    }
+  });
 
   Hooks.on("renderChatMessage", (message, html, data) => {
     html.find(".repiocher").click((ev) => reroll(ev, data.message));

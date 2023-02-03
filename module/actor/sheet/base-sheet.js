@@ -27,17 +27,6 @@ export class OmegaBaseActorSheet extends ActorSheet {
     context.equipements.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
     });
-    /*context.equipments = context.items.filter((item) => ["equipment", "armor", "arme"].includes(item.type));
-    for (let item of context.equipments) {
-        item.system.descriptionhtml = TextEditor.enrichHTML(item.system.description, { async: false });
-    }
-
-    // Alphabetic order for skills
-    context.skills = context.items
-      .filter((item) => item.type == "skill")
-      .sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-      });*/
 
     context.unlocked = this.actor.getFlag(game.system.id, "SheetUnlocked");
     context.estAdvancedSynth = this.actor.estAdvancedSynth();
@@ -238,7 +227,6 @@ export class OmegaBaseActorSheet extends ActorSheet {
         }
         itemData.system.chassisId = id;
         await this.actor.updateEmbeddedDocuments("Item", [itemData]);
-        console.log(this.actor.items);
       }
     } else return super._onDropItem(event, data);
   }
