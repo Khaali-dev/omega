@@ -20,6 +20,132 @@
   },
 
   "OMEGA": {
+    "EFFET_CRITIQUE": {
+        "aucun": {
+          "label": "Aucun",
+          "description": ""
+        },
+        "breche": {
+          "label": "Brèche",
+          "description": "Le synthétique voit sa défense baisser de 1 jusqu'à la fin du tour de combat."
+        },
+        "chargeur": {
+          "label": "Chargeur vide",
+          "description": "Doit être rechargé dans un dépôt."
+        },
+        "contamination": {
+          "label": "Contamination",
+          "description": "L'attaquant subit 1 dégât directement en Résistance moteur."
+        },
+        "destruction": {
+          "label": "Destruction",
+          "description": ""
+        },
+        "enraye": {
+          "label": "Arme enrayée",
+          "description": "Arme inutilisable. Nécessite un test d’Armes et destruction difficulté 1 et une action pour réparer."
+        },
+        "erreur": {
+          "label": "Erreur système",
+          "description": "Le synthétique perd sa prochaine action."
+        },
+        "explosion_munition": {
+          "label": "Explosion de munitions",
+          "description": "Le personnage subit 1 dégât directement en Résistance moteur. L'arme doit être réparée."
+        },
+        "perte": {
+          "label": "Perte de l'arme",
+          "description": "L’arme tombe au sol, 1 action pour la récupérer."
+        },
+        "rate": {
+          "label": "Raté",
+          "description": ""
+        },
+        "reprogrammation": {
+          "label": "Reprogrammation",
+          "description": "Dysfonctionnement logiciel, le synthétique doit changer de programme d'attaque et donc d'arme jusqu'à la fin du combat."
+        },
+        "surchauffe_echec": {
+          "label": "Surchauffe",
+          "description": "Initiative -1 au prochain tour; cumulatif."
+        },
+      "accelerateur": {
+        "label": "Accelérateur de dégâts",
+        "description": "Les prochaines dégâts infligés à la cible sont sont majorés d'une couleur."
+      },
+      "arrachement": {
+        "label": "Arrachement",
+        "description": "L’assaillant arrache une partie du défenseur, il choisit la fonction ou l’extension supprimée."
+      },
+      "assomme1": {
+        "label": "Assommé pour 1mn",
+        "description": "Assommé pour 1mn"
+      },
+      "assomme10": {
+        "label": "Assommé pour 10mn",
+        "description": "Assommé pour 10mn"
+      },
+      "degradation": {
+        "label": "Dégradation polymérique",
+        "description": "Pioche d'une nouvelle diode de dégâts, qui s'ajoutent aux précédents."
+      },
+      "dereglement": {
+        "label": "Dérèglement",
+        "description": "Armes à énergie ou Exterminateur (au choix de l’assaillant) est à 0 pour un tour de combat."
+      },
+      "deregulation": {
+        "label": "Dérégulation",
+        "description": "La cible perd 2 actions au prochain tour de combat."
+      },
+      "disrupteur1": {
+        "label": "Disrupteur 1",
+        "description": "La cible perd immédiatement sa prochaine action."
+      },
+      "disrupteur2": {
+        "label": "Disrupteur 2",
+        "description": "La cible perd immédiatement ses 2 prochaines actions."
+      },
+      "entrave": {
+        "label": "Entrave",
+        "description": "Immobilisation pour le reste du tour, la cible doit résussir Ossature contre Ossature au prochain tour pour se libérer."
+      },
+      "etourdi": {
+        "label": "Etourdi pour 1 tour",
+        "description": ""
+      },
+      "explosion": {
+        "label": "Explosion",
+        "description": "Le personnage subit 1 dégât directement en Résistance moteur."
+      },
+      "iem1": {
+        "label": "IEM 1",
+        "description": ""
+      },
+      "iem2": {
+        "label": "IEM 2",
+        "description": ""
+      },
+      "mort": {
+        "label": "Mort subite",
+        "description": "Irradié, mutation rapide. Un organique meurt après 2 rounds."
+      },
+      "renversement": {
+        "label": "Renversement",
+        "description": "Vitesse tombe à 0 et défense -1."
+      },
+      "resonnance": {
+        "label": "Résonnance",
+        "description": "Le défenseur perd immédiatement sa prochaine action."
+      },
+      "surchauffe": {
+        "label": "Surchauffe",
+        "description": "Le synthétique touché voit son initiative diminuée de 1 au prochain tour. Cumulatif."
+      },
+      "trouble": {
+        "label": "Trouble sensoriel",
+        "description": "Les programmes Balise, Détecteur, Armes à énergie (ou equiv. organiques) sont réduits de 2 pour la prochaine action."
+      }
+    },
     "label": {
       "diode": {
         "rouge": "Rouge",

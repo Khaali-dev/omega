@@ -27,7 +27,7 @@
                 <td class="chance-diode-line">{{data.diodesParCouleur.rouge}}</td>
                 <td><img class="diode diode-rouge"></td>
                 {{#if data.isAttack}}
-                <td style="text-align: center;">{{armedata.rouge.label}}</td>
+                <td style="text-align: center;"{{#if armedata.rouge.tooltip}} data-tooltip={{armedata.rouge.description}}{{/if}}>{{armedata.rouge.label}}</td>
                 {{else}}<td></td>
                 {{/if}}
             </tr>
@@ -37,7 +37,7 @@
                 <td class="chance-diode-line">{{data.diodesParCouleur.verte}}</td>
                 <td><img class="diode diode-verte"></td>
                 {{#if data.isAttack}}
-                <td style="text-align: center;">{{armedata.verte.label}}</td>
+                <td style="text-align: center;"{{#if armedata.rouge.tooltip}} data-tooltip={{armedata.verte.description}}{{/if}}>{{armedata.verte.label}}</td>
                 {{else}}<td></td>
                 {{/if}}
             </tr>
@@ -47,7 +47,7 @@
                 <td class="chance-diode-line">{{data.diodesParCouleur.bleue}}</td>
                 <td><img class="diode diode-bleue"></td>
                 {{#if data.isAttack}}
-                <td style="text-align: center;">{{armedata.bleue.label}}</td>
+                <td style="text-align: center;"{{#if armedata.rouge.tooltip}} data-tooltip={{armedata.bleue.description}}{{/if}}>{{armedata.bleue.label}}</td>
                 {{else}}<td></td>
                 {{/if}}
             </tr>
@@ -67,7 +67,7 @@
                 <td class="chance-diode-line">{{data.diodesParCouleur.noire}}</td>
                 <td><img class="diode diode-noire"></td>
                 {{#if data.isAttack}}
-                <td style="text-align: center;">{{armedata.noire.label}}</td>
+                <td style="text-align: center;"{{#if armedata.noire.tooltip}} data-tooltip={{armedata.noire.description}}{{/if}}>{{armedata.noire.label}}</td>
                 {{else}}<td></td>
                 {{/if}}
             </tr>

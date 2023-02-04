@@ -41,7 +41,7 @@
                     </td>
                     <td rowspan="4">
                         <div class="chancetable">
-                            <table>
+                            <table style="border-top: 0px;border-bottom: 0px; margin: 0px;">
                                 <thead>
                                     <tr>
                                         <th colspan="5">Chance&nbsp;&nbsp;{{system.systemesauxiliaires.chance.value}}
@@ -92,8 +92,8 @@
                                         {{/if}}
                                     </tr>
                                     <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
-                                        <td colspan="3">Mise à jour</td>
-                                        <td colspan="2" class="chance-diode-line">
+                                        <td colspan="4">Mise à jour</td>
+                                        <td colspan="1" class="chance-diode-line">
                                             {{#if unlocked}}<input class="chance-diode-line small-input"
                                                 title="Mise à jour" name="system.miseajour" type="number"
                                                 value="{{system.miseajour}}" />
@@ -102,8 +102,8 @@
                                         </td>
                                     </tr>
                                     <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
-                                        <td colspan="3">Déviance</td>
-                                        <td colspan="2" class="chance-diode-line">
+                                        <td colspan="4">Déviance</td>
+                                        <td colspan="1" class="chance-diode-line">
                                             {{#if unlocked}}<input class="chance-diode-line small-input"
                                                 title="Déviance" name="system.deviance" type="number"
                                                 value="{{system.deviance}}" />
@@ -112,12 +112,22 @@
                                         </td>
                                     </tr>
                                     <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
-                                        <td colspan="3">Dissidence</td>
-                                        <td colspan="2" class="chance-diode-line">
+                                        <td colspan="4">Dissidence</td>
+                                        <td colspan="1" class="chance-diode-line">
                                             {{#if unlocked}}<input class="chance-diode-line small-input"
                                                 title="Dissidence" name="system.dissidence" type="number"
                                                 value="{{system.dissidence}}" />
                                             {{else}}{{system.dissidence}}
+                                            {{/if}}
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top: solid 2px white; padding: 2px 0px 2px 0px; ">
+                                        <td colspan="4">Grade</td>
+                                        <td colspan="1" class="chance-diode-line">
+                                            {{#if unlocked}}<input class="chance-diode-line small-input"
+                                                title="grade" name="system.grade" type="number"
+                                                value="{{system.grade}}" />
+                                            {{else}}{{system.grade}}
                                             {{/if}}
                                         </td>
                                     </tr>

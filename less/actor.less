@@ -147,6 +147,7 @@
         padding: 0 0.5em 0 0.5em;
       }
       .chancetable {
+        
         thead th:nth-child(1) {
           width: 20%;
         }
@@ -277,11 +278,6 @@
       text-align: center;
     }
     .combat-tab {
-      .armes-title {
-        font: 1.5em "frutiger";
-        text-align: center;
-        padding: 2px;
-      }
       .weapontable {
         thead th:nth-child(1) {
           width: 50%;
@@ -299,6 +295,9 @@
         }
       }
       .combat-actions {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
         table {
           thead th:nth-child(1) {
             width: 24%;

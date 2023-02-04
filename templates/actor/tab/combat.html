@@ -1,5 +1,5 @@
 <div class="combat-tab">
-    <table class="combat-actions">
+    <table class="combat-actions" style="border-top: 0px;border-bottom: 0px; margin: 0px;">
         <tbody>
             <tr>
                 {{#if estorganique}}
@@ -35,10 +35,14 @@
             {{/ifn}}
         </tbody>
     </table>
-    <div class="armes-title">Armes</div>
+    {{#if ../estorganique}}
+    <div class="bloodline"></div>
+    {{else}}
+    <div class="redline"></div>
+    {{/if}}
     {{#each armes as |item id|}}
         {{#if item.system.estActif}}
-        <table class="weapontable">
+        <table class="weapontable" style="border-top: 0px;border-bottom: 0px; margin: 0px;">
             <tbody>
                 <tr style="font-size: larger;">
                     <td style="font-weight: bold; color:#f59292;">{{item.name}}</td>
@@ -75,7 +79,7 @@
                     <td>{{item.system.effetdiode.rouge.label}}</td>
             </tbody>
         </table>
-        <table class="noover">
+        <table class="noover" style="border-top: 0px;border-bottom: 0px; margin: 0px;">
             <thead>
                 <th>Technologie</th>
                 {{#ifne item.system.portee ""}}<th>Portée</th>{{/ifne}}

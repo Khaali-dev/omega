@@ -213,7 +213,11 @@ export class Diodes {
       }
       for(let diode in armedata){
         armedata[diode].label = armedata[diode].degat.toString();
-        if (armedata[diode].effetcritique !== "aucun") armedata[diode].label += " - " + listeEffets[armedata[diode].effetcritique].label;
+        if (armedata[diode].effetcritique !== "aucun") {
+          armedata[diode].label += " - " + listeEffets[armedata[diode].effetcritique].label;
+          armedata[diode].tooltip = true;
+          armedata[diode].description = "OMEGA.EFFET_CRITIQUE." + armedata[diode].effetcritique +".description";
+        }
       }
       if(arme.type === "regroupement"){
         const updates = {"_id": this.data.itemId, "system.tireffectue" : true};

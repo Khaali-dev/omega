@@ -14,13 +14,13 @@ export const OMEGA = {
       percussionsynt: "Percussion Synthétique",
       plasma: "Plasma",
       sales: "Sales",
-      sonique: "Sonique",
+      sonique: "Sonique"
     },
     TYPEPROGRAMME: {
       armesaenergie: "AAE",
       exterminateur: "Exterminateur",
       tir: "Tir",
-      corpsacorps: "Corps à corps",
+      corpsacorps: "Corps à corps"
     },
   },
   REGROUPEMENT_ARMES: {
@@ -32,7 +32,7 @@ export const OMEGA = {
       missiles: "Missiles",
       torpille: "Torpille",
       moleculaire: "Moléculaire",
-      railguns: "RailGuns",
+      railguns: "RailGuns"
     },
     EFFET_CRITIQUE: {
       echec_ra: {label:"Inutilisable pour le prochain tour de combat"},
@@ -42,161 +42,129 @@ export const OMEGA = {
       gravitationnelles: {label:"Immobilisation (perte des actions restantes)"},
       missiles: {label:"Annule les activités OPSAR"},
       torpille: {label:"Explosion (Tirage d'une diode supplémentaire de dégâts)"},
-      railguns: {label:"Dégâts appliqués 2 fois"},
+      railguns: {label:"Dégâts appliqués 2 fois"}
     },
     TYPERA: {
       leger: "Léger",
       moyen: "Moyen",
-      lourd: "Lourd",
+      lourd: "Lourd"
     },
   },
   EQUIPAGE: {
     cannonier: {
-      reference: "consuitedetir",
+      reference: "consuitedetir"
     },
     tacticien: {
-      reference: "tactique",
+      reference: "tactique"
     },
     opsar: {
-      reference: "opsar",
+      reference: "opsar"
     },
     mecanicien: {
-      reference: "mecanique",
+      reference: "mecanique"
     },
     pilote: {
-      reference: "pilotage",
+      reference: "pilotage"
     },
   },
   EFFET_CRITIQUE: {
     aucun: {
-      label: "Aucun",
-      description: "",
+      label: "Aucun"
     },
     accelerateur: {
-      label: "Accelérateur de dégâts",
-      description: "Les prochaines dégâts infligés à la cible sont sont majorés d'une couleur.",
+      label: "Accelérateur de dégâts"
     },
     arrachement: {
-      label: "Arrachement",
-      description: "",
+      label: "Arrachement"
     },
     assomme1: {
-      label: "Assommé pour 1mn",
-      description: "",
+      label: "Assommé pour 1mn"
     },
     assomme10: {
-      label: "Assommé pour 10mn",
-      description: "",
+      label: "Assommé pour 10mn"
     },
     degradation: {
-      label: "Dégradation polymérique",
-      description: "",
+      label: "Dégradation polymérique"
     },
     deregulation: {
-      label: "Dérégulation",
-      description: "",
+      label: "Dérégulation"
     },
     dereglement: {
-      label: "Dérèglement",
-      description: "",
+      label: "Dérèglement"
     },
     disrupteur1: {
-      label: "Disrupteur 1",
-      description: "",
+      label: "Disrupteur 1"
     },
     disrupteur2: {
-      label: "Disrupteur 2",
-      description: "",
+      label: "Disrupteur 2"
     },
     entrave: {
-      label: "Entrave",
-      description: "",
+      label: "Entrave"
     },
     etourdi: {
-      label: "Etourdi pour 1 tour",
-      description: "",
+      label: "Etourdi pour 1 tour"
     },
     explosion: {
-      label: "Explosion",
-      description: "",
+      label: "Explosion"
     },
     iem1: {
-      label: "IEM 1",
-      description: "",
+      label: "IEM 1"
     },
     iem2: {
-      label: "IEM 2",
-      description: "",
+      label: "IEM 2"
     },
     mort: {
-      label: "Mort subite",
-      description: "",
+      label: "Mort subite"
     },
     renversement: {
-      label: "Renversement",
-      description: "",
+      label: "Renversement"
     },
     resonnance: {
-      label: "Résonnance",
-      description: "",
+      label: "Résonnance"
     },
     surchauffe: {
-      label: "Surchauffe",
-      description: "",
+      label: "Surchauffe"
     },
     trouble: {
-      label: "Trouble sensoriel",
-      description: "",
+      label: "Trouble sensoriel"
     },
   },
   EFFET_NEGATIF: {
     aucun: {
-      label: "Aucun",
-      description: "",
+      label: "Aucun"
     },
     breche: {
-      label: "Brèche",
-      description: "Le synthétique voit sa défense baisser de 1 jusqu'à la fin du tour de combat.",
+      label: "Brèche"
     },
     chargeur: {
-      label: "Chargeur vide",
-      description: "",
+      label: "Chargeur vide"
     },
     contamination: {
-      label: "Contamination",
-      description: "",
+      label: "Contamination"
     },
     destruction: {
-      label: "Destruction",
-      description: "",
+      label: "Destruction"
     },
     enraye: {
-      label: "Arme enrayée",
-      description: "",
+      label: "Arme enrayée"
     },
     erreur: {
-      label: "Erreur système",
-      description: "Le synthétique perd sa prochaine action.",
+      label: "Erreur système"
     },
-    explosion: {
-      label: "Explosion de l'arme",
-      description: "",
+    explosion_munition: {
+      label: "Explosion de l'arme"
     },
     perte: {
-      label: "Perte de l'arme",
-      description: "",
+      label: "Perte de l'arme"
     },
     rate: {
-      label: "Raté",
-      description: "",
+      label: "Raté"
     },
     reprogrammation: {
-      label: "Reprogrammation",
-      description: "",
+      label: "Reprogrammation"
     },
-    surchauffe: {
-      label: "Surchauffe",
-      description: "",
+    surchauffe_echec: {
+      label: "Surchauffe"
     },
   },
   EXTENSION: {
@@ -204,40 +172,40 @@ export const OMEGA = {
       app: "Application immédiate",
       action: "Action",
       declenchement: "Déclenchement",
-      reaction: "Réaction",
+      reaction: "Réaction"
     },
   },
   FIRME: {
     futuretechnologies: {
       name: "Future Technologies",
       logoclass: "logo_futuretechnologies",
-      logoimg: "./assets/image/logo/logo_futuretechnologies.webp",
+      logoimg: "./assets/image/logo/logo_futuretechnologies.webp"
     },
     earthshield: {
       name: "Earthshield",
       logoclass: "logo_earthshield",
-      logoimg: "./assets/image/logo/logo_earthshield.webp",
+      logoimg: "./assets/image/logo/logo_earthshield.webp"
     },
     hegemon: {
       name: "Hegemon",
       logoclass: "logo_hegemon",
-      logoimg: "./assets/image/logo/logo_hegemon.webp",
+      logoimg: "./assets/image/logo/logo_hegemon.webp"
     },
     cyberlife: {
       name: "Cyberlife",
       logoclass: "logo_cyberlife",
-      logoimg: "./assets/image/logo/logo_cyberlife.webp",
+      logoimg: "./assets/image/logo/logo_cyberlife.webp"
     },
     prophetiaincorporated: {
       name: "Prophetia, inc.",
       logoclass: "logo_prophetiaincorporated",
-      logoimg: "./assets/image/logo/logo_prophetiaincorporated.webp",
+      logoimg: "./assets/image/logo/logo_prophetiaincorporated.webp"
     },
   },
   ORGANIQUE: {
     EQUIVALENCE: {
       armesaenergie: "tir",
-      exterminateur: "corpsacorps",
+      exterminateur: "corpsacorps"
     },
   },
   TYPESYNTH: {

@@ -20,7 +20,7 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
       template: "systems/omega/templates/actor/organique.html",
       classes: ["omega", "sheet", "actor", "organique"],
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "personnalite" }],
-      dragDrop: [{ dragSelector: ".draggable", dropSelector: ".droppable" }]
+      dragDrop: [{ dragSelector: ".draggable", dropSelector: ".droppable" }],
     });
   }
 
@@ -30,10 +30,10 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
     context.armes = this.actor.items.filter((item) => item.type === "arme");
     context.armes.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
-      element.system.attacklabel=game.omega.config.ARME.TYPEPROGRAMME[this.actor.getEquivalentOrga(element.system.typeprogramme)];
-      element.system.attackvalue=this.actor.system.caracteristiques[this.actor.getEquivalentOrga(element.system.typeprogramme)].value;
-      element.system.technologielabel=game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
-      element.system.estActif=true;
+      element.system.attacklabel = game.omega.config.ARME.TYPEPROGRAMME[this.actor.getEquivalentOrga(element.system.typeprogramme)];
+      element.system.attackvalue = this.actor.system.caracteristiques[this.actor.getEquivalentOrga(element.system.typeprogramme)].value;
+      element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
+      element.system.estActif = true;
     });
     context.avantages = this.actor.items.filter((item) => item.type === "avantage");
     context.avantages.forEach((element) => {
@@ -44,7 +44,7 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
   }
 
   /** @override */
-  activateListeners(html){
+  activateListeners(html) {
     super.activateListeners(html);
   }
 
@@ -58,17 +58,16 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
         case "arme":
           return this._onDropExtension(event, itemData, data);
         case "chassis":
-            return false;
+          return false;
         case "avantage":
-            return super._onDropItem(event, data);
-            case "regroupement":
-               return false;
-               case "upgrade":
-                  return false;
+          return super._onDropItem(event, data);
+        case "regroupement":
+          return false;
+        case "upgrade":
+          return false;
         default:
           return super._onDropItem(event, data);
       }
     });
   }
 }
-

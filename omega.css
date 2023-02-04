@@ -378,11 +378,6 @@
 .omega.sheet .main .diodesarmes {
   text-align: center;
 }
-.omega.sheet .main .combat-tab .armes-title {
-  font: 1.5em "frutiger";
-  text-align: center;
-  padding: 2px;
-}
 .omega.sheet .main .combat-tab .weapontable thead th:nth-child(1) {
   width: 50%;
 }
@@ -394,6 +389,11 @@
 }
 .omega.sheet .main .combat-tab .weapontable td {
   text-align: center;
+}
+.omega.sheet .main .combat-tab .combat-actions {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .omega.sheet .main .combat-tab .combat-actions table thead th:nth-child(1) {
   width: 24%;
