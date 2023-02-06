@@ -37,6 +37,9 @@ export class Diodes {
           let arme = this.actor.items.get(this.data.itemId);
           if (!arme) return;
           namesForText.arme = arme.name;
+          if(arme.system.precision !=="0"){
+            this.program.value += parseInt(arme.system.precision, 10);
+          }
         }
       }
       let prepareintrotext = this.actor.estOrganique() ? "organique" : "";

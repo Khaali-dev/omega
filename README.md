@@ -11,7 +11,7 @@
 <h2>Disclaimer</h2>
 <p>Oméga est un jeu de rôle écrit par Cyril Berger, Sébastien Ciccia et Florent Moragas, et publié par Odonata éditions.</p>
 <p>Les illustrations, textes et logo sont Copyright ©Odonata éditions, 4, rue des Capucines, 66350 Toulouges, SIREN : 847 567 971 RCS Perpignan.</p>
-
+<p>Some images included in the system are copyrights ©Odonata éditions and are used with their permission.</p>
 <h2>Contributeurs</h2>
 <p>Ce système est développé par Khaali, et publié avec l'accord de l'éditeur Odonata.</p>
 ​<h2>Fonctionnalités</h2>

@@ -1,4 +1,6 @@
 
+# Version 1.2.1
+- paramètre "Précision" sur les armes (pris en compte dans les tirages de diode)
 # Version 1.2.0
 - Aventure avec les objets de base
 # Version 1.1.0

@@ -7,36 +7,11 @@
         <table>
             <thead>
                 <tr>
+                    <th>Technologie</th>
+                    <th>Programme</th>
                     <th>Slots</th>
                     <th>Type</th>
                     <th>Coût énergie</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input name="system.nbSlots" type="number" value="{{system.nbSlots}}" /></td>
-                    <td><select name="system.type">
-                            {{#select system.type}}
-                            {{#each config.EXTENSION.TYPE as |name type|}}
-                            <option value="{{type}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
-                        </select></td>
-                    <td><input name="system.coutenergie.label" type="text" value="{{system.coutenergie.label}}" /></td>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <th>Technologie</th>
-                    <th>Programme</th>
-                    <th>Portée</th>
-                    <th>Autonomie</th>
-                    <th>Cadence</th>
-                    <th>Initiative</th>
-                    <th>Effet de zone</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,10 +30,45 @@
                             {{/each}}
                             {{/select}}
                         </select></td>
+                    <td><input name="system.nbSlots" type="number" value="{{system.nbSlots}}" /></td>
+                    <td><select name="system.type">
+                            {{#select system.type}}
+                            {{#each config.EXTENSION.TYPE as |name type|}}
+                            <option value="{{type}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
+                    <td><input name="system.coutenergie.label" type="text" value="{{system.coutenergie.label}}" /></td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Portée</th>
+                    <th>Autonomie</th>
+                    <th>Cadence</th>
+                    <th>Initiative</th>
+                    <th>Précision</th>
+                    <th>Effet de zone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     <td><input name="system.portee" type="text" value="{{system.portee}}" /></td>
                     <td><input name="system.autonomie" type="text" value="{{system.autonomie}}" /></td>
                     <td><input name="system.cadence" type="text" value="{{system.cadence}}" /></td>
-                    <td><input name="system.initiative" type="text" value="{{system.initiative}}" /></td>
+                    <td><input name="system.initiative" type="text" value="{{system.initiative}}" </td>
+                    <td><select name="system.precision">
+                            {{#select system.precision}}
+                            <option value="-2">-2</option>
+                            <option value="-1">-1</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            {{/select}}
+                        </select></td>
                     <td><input name="system.zone" type="text" value="{{system.zone}}" /></td>
                 </tr>
             </tbody>
