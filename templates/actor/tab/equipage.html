@@ -10,7 +10,8 @@
         <tbody>
             <tr>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="pilote">Glissez-déposez le pilote ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="pilote">Glissez-déposez le pilote ici.<img class="portraitimg" src="{{equipage.pilote.img}}" data-edit="img"
+                    title="{{equipage.pilote.name}}" /></td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.pilote.img}}" data-edit="img"
                         title="{{equipage.pilote.name}}" /></td>
@@ -18,7 +19,8 @@
                 <td class="caract-text" style="width: 5%;">Nom : </td>
                 <td class="caract-text">{{system.equipage.pilote.name}}</td>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="cannonier">Glissez-déposez le cannonier ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="cannonier">Glissez-déposez le cannonier ici.<img class="portraitimg" src="{{equipage.cannonier.img}}" data-edit="img"
+                    title="{{equipage.cannonier.name}}" /></td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.cannonier.img}}" data-edit="img"
                         title="{{equipage.cannonier.name}}" /></td>
@@ -26,7 +28,8 @@
                 <td class="caract-text">Nom : </td>
                 <td class="caract-text">{{system.equipage.cannonier.name}}</td>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="tacticien">Glissez-déposez le tacticien ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="tacticien">Glissez-déposez le tacticien ici.<img class="portraitimg" src="{{equipage.tacticien.img}}" data-edit="img"
+                    title="{{equipage.tacticien.name}}" /></td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.tacticien.img}}" data-edit="img"
                         title="{{equipage.tacticien.name}}" /></td>
@@ -94,15 +97,17 @@
             </thead>
             <tr>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="opsar">Glissez-déposez l'OPSAR ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="opsar">Glissez-déposez l'OPSAR ici.<img class="portraitimg" src="{{equipage.opsar.img}}" data-edit="img"
+                    title="{{equipage.opsar.name}}" /></td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.opsar.img}}" data-edit="img"
                         title="{{equipage.opsar.name}}" /></td>
                 {{/if}}
                 <td class="caract-text">Nom : </td>
-                <td class="caract-text">{{system.equipage.mecanicien.name}}</td>
+                <td class="caract-text">{{system.equipage.opsar.name}}</td>
                 {{#if unlocked}}
-                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="mecanicien">Glissez-déposez le Mécanicien ici.</td>
+                <td rowspan="4" class="zonededrop equipagedrop" data-equipage="mecanicien">Glissez-déposez le Mécanicien ici.<img class="portraitimg" src="{{equipage.mecanicien.img}}" data-edit="img"
+                    title="{{equipage.mecanicien.name}}" /></td>
                 {{else}}
                 <td rowspan="4"><img class="portraitimg" src="{{equipage.mecanicien.img}}" data-edit="img"
                         title="{{equipage.mecanicien.name}}" /></td>

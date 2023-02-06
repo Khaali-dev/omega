@@ -206,19 +206,6 @@ export class Diodes {
     if (this.rolltype === ROLL_TYPE.ATTACK) {
       let arme = this.actor.items.get(this.data.itemId);
       armedata = duplicate(arme.system.effetdiode);
-      let listeEffets = {
-        ...duplicate(game.omega.config.EFFET_NEGATIF),
-        ...duplicate(game.omega.config.EFFET_CRITIQUE),
-        ...duplicate(game.omega.config.REGROUPEMENT_ARMES.EFFET_CRITIQUE)
-      }
-      for(let diode in armedata){
-        armedata[diode].label = armedata[diode].degat.toString();
-        if (armedata[diode].effetcritique !== "aucun") {
-          armedata[diode].label += " - " + listeEffets[armedata[diode].effetcritique].label;
-          armedata[diode].tooltip = true;
-          armedata[diode].description = "OMEGA.EFFET_CRITIQUE." + armedata[diode].effetcritique +".description";
-        }
-      }
       if(arme.type === "regroupement"){
         const updates = {"_id": this.data.itemId, "system.tireffectue" : true};
         this.actor.updateEmbeddedDocuments('Item', [updates]);

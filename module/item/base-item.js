@@ -3,6 +3,7 @@ export default class OmegaBaseItem extends Item {
   prepareData() {
     super.prepareData();
     if (this.estRegroupement()) this._prepareRegroupement();
+    if (this.estArme()) this._prepareArme();
   }
 
   /** @override */
@@ -17,10 +18,9 @@ export default class OmegaBaseItem extends Item {
     return eval(`this.system.${field}`);
   }
 
-  isCaC(){
-    return this.system.portee === ""
+  estArme(){
+    return this.type === "arme";
   }
-
   estRegroupement(){
     return this.type === "regroupement";
   }
@@ -31,5 +31,28 @@ export default class OmegaBaseItem extends Item {
     this.system.effetdiode.rouge.degat = baseDegats+2;
     this.system.effetdiode.rouge.degat = baseDegats+2;
     this.system.effetdiode.rouge.effetcritique = this.system.technologie;
+    this._prepareLabelDiodes();
+  }
+  _prepareArme(){
+    this._prepareLabelDiodes();
+  }
+
+  _prepareLabelDiodes(){
+    let listeEffets = {
+      ...duplicate(game.omega.config.EFFET_NEGATIF),
+      ...duplicate(game.omega.config.EFFET_CRITIQUE),
+      ...duplicate(game.omega.config.REGROUPEMENT_ARMES.EFFET_CRITIQUE)
+    }
+    for(let diode in this.system.effetdiode){
+      this.system.effetdiode[diode].label = this.system.effetdiode[diode].degat.toString();
+      if((this.system.technologie==="iem") && (this.system.effetdiode[diode].degat!=="0")){
+        this.system.effetdiode[diode].label += " IEM "
+      }
+      if (this.system.effetdiode[diode].effetcritique !== "aucun") {
+        this.system.effetdiode[diode].label += " - " + listeEffets[this.system.effetdiode[diode].effetcritique].label;
+        this.system.effetdiode[diode].tooltip = true;
+        this.system.effetdiode[diode].description = "OMEGA.EFFET_CRITIQUE." + this.system.effetdiode[diode].effetcritique +".description";
+      }
+    }
   }
 }
