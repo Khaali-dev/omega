@@ -17,14 +17,16 @@
 ​<h2>Fonctionnalités</h2>
 <h3>Feuilles de personnages</h3>
 <ul><li>Feuilles de personnages Omega et autres synthétiques avancés, synthetiques standards et organiques</li>
-<li>Calcul automatique et suivi des systèmes auxiliaires</li></ul>
+<li>Calcul automatique et suivi des systèmes auxiliaires</li>
+<li>Feuilles de vaisseaux, gestion de l'équipage</li></ul>
 <h3>Pioche de Diode</h3>
 <ul><li>Utilisation des programmes / sous-programmes depuis la feuille</li>
 <li>Piocher des Diodes sans remise dans le sachet</li>
 <li>prise en compte de la difficulté et des modificateurs</li>
 <li>bouton re-piocher la diode (pour les +/-1)</li></ul>
 <h3>Inventaire</h3>
-<ul><li>Gestion de multiples chassis et extensions</li></ul>
+<ul><li>Gestion de multiples chassis et extensions</li>
+<li>Adventure compendium contenant les éléments techniques des objets de base (armes, chassis, etc.)</li></ul>
 <h3>Combat</h3>
 <ul><li>Affichage des dégâts selon l'arme et le tirage</li>
 <li>Gestion de l'initiative et des actions</li></ul>

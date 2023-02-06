@@ -1,4 +1,6 @@
 
+# Version 1.2.0
+- Aventure avec les objets de base
 # Version 1.1.0
 - Vaisseaux spatiaux (nouveau type d'acteur)
 - modification dans la gestion des effets critiques des armes

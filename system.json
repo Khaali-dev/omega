@@ -2,7 +2,7 @@
   "id": "omega",
   "title": "Omega",
   "description": "Le système Omega pour FoundryVTT.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291"
@@ -30,38 +30,11 @@
       "flags": {}
     },
     {
-      "name": "omegachassisfr",
-      "label": "Châssis",
+      "name": "omegabasefr",
+      "label": "Eléments Oméga de base",
       "system": "omega",
-      "path": "packs/chassis.db",
-      "type": "Item",
-      "private": false,
-      "flags": {}
-    },
-    {
-      "name": "omegaextensionsfr",
-      "label": "Extensions",
-      "system": "omega",
-      "path": "packs/extensions.db",
-      "type": "Item",
-      "private": false,
-      "flags": {}
-    },
-    {
-      "name": "omegaarmesfr",
-      "label": "Armes",
-      "system": "omega",
-      "path": "packs/armes.db",
-      "type": "Item",
-      "private": false,
-      "flags": {}
-    },
-    {
-      "name": "personnages",
-      "label": "Personnages",
-      "system": "omega",
-      "path": "packs/personnages.db",
-      "type": "Actor",
+      "path": "packs/omega_base.db",
+      "type": "Adventure",
       "private": false,
       "flags": {}
     }
@@ -86,6 +59,6 @@
   "initiative": "",
   "url": "https://github.com/khaali-dev/omega",
   "manifest": "https://github.com/khaali-dev/omega/releases/latest/download/system.json",
-  "download": "https://github.com/khaali-dev/omega/releases/download/1.1.0/system.zip",
+  "download": "https://github.com/khaali-dev/omega/releases/download/1.2.0/system.zip",
   "license": "LICENSE"
 }
