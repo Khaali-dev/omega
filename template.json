@@ -496,8 +496,7 @@
     },
     "chassis": {
       "templates": ["base", "etat"],
-      "nbslots": 0,
-      "extensionNative": ""
+      "nbslots": 0
     },
     "equipement": {
       "templates": ["base", "etat"]

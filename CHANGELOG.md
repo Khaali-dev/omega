@@ -1,4 +1,7 @@
 
+# Version 1.2.2
+- bug affichage regroupements d'armes
+- ajout des extensions du LdB dans l'aventure.
 # Version 1.2.1
 - paramètre "Précision" sur les armes (pris en compte dans les tirages de diode)
 # Version 1.2.0

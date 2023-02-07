@@ -21,54 +21,54 @@
 
   "OMEGA": {
     "EFFET_CRITIQUE": {
-        "aucun": {
-          "label": "Aucun",
-          "description": ""
-        },
-        "breche": {
-          "label": "Brèche",
-          "description": "Le synthétique voit sa défense baisser de 1 jusqu'à la fin du tour de combat."
-        },
-        "chargeur": {
-          "label": "Chargeur vide",
-          "description": "Doit être rechargé dans un dépôt."
-        },
-        "contamination": {
-          "label": "Contamination",
-          "description": "L'attaquant subit 1 dégât directement en Résistance moteur."
-        },
-        "destruction": {
-          "label": "Destruction",
-          "description": ""
-        },
-        "enraye": {
-          "label": "Arme enrayée",
-          "description": "Arme inutilisable. Nécessite un test d’Armes et destruction difficulté 1 et une action pour réparer."
-        },
-        "erreur": {
-          "label": "Erreur système",
-          "description": "Le synthétique perd sa prochaine action."
-        },
-        "explosion_munition": {
-          "label": "Explosion de munitions",
-          "description": "Le personnage subit 1 dégât directement en Résistance moteur. L'arme doit être réparée."
-        },
-        "perte": {
-          "label": "Perte de l'arme",
-          "description": "L’arme tombe au sol, 1 action pour la récupérer."
-        },
-        "rate": {
-          "label": "Raté",
-          "description": ""
-        },
-        "reprogrammation": {
-          "label": "Reprogrammation",
-          "description": "Dysfonctionnement logiciel, le synthétique doit changer de programme d'attaque et donc d'arme jusqu'à la fin du combat."
-        },
-        "surchauffe_echec": {
-          "label": "Surchauffe",
-          "description": "Initiative -1 au prochain tour; cumulatif."
-        },
+      "aucun": {
+        "label": "Aucun",
+        "description": ""
+      },
+      "breche": {
+        "label": "Brèche",
+        "description": "Le synthétique voit sa défense baisser de 1 jusqu'à la fin du tour de combat."
+      },
+      "chargeur": {
+        "label": "Chargeur vide",
+        "description": "Doit être rechargé dans un dépôt."
+      },
+      "contamination": {
+        "label": "Contamination",
+        "description": "L'attaquant subit 1 dégât directement en Résistance moteur."
+      },
+      "destruction": {
+        "label": "Destruction",
+        "description": ""
+      },
+      "enraye": {
+        "label": "Arme enrayée",
+        "description": "Arme inutilisable. Nécessite un test d’Armes et destruction difficulté 1 et une action pour réparer."
+      },
+      "erreur": {
+        "label": "Erreur système",
+        "description": "Le synthétique perd sa prochaine action."
+      },
+      "explosion_munition": {
+        "label": "Explosion de munitions",
+        "description": "Le personnage subit 1 dégât directement en Résistance moteur. L'arme doit être réparée."
+      },
+      "perte": {
+        "label": "Perte de l'arme",
+        "description": "L’arme tombe au sol, 1 action pour la récupérer."
+      },
+      "rate": {
+        "label": "Raté",
+        "description": ""
+      },
+      "reprogrammation": {
+        "label": "Reprogrammation",
+        "description": "Dysfonctionnement logiciel, le synthétique doit changer de programme d'attaque et donc d'arme jusqu'à la fin du combat."
+      },
+      "surchauffe_echec": {
+        "label": "Surchauffe",
+        "description": "Initiative -1 au prochain tour; cumulatif."
+      },
       "accelerateur": {
         "label": "Accelérateur de dégâts",
         "description": "Les prochaines dégâts infligés à la cible sont sont majorés d'une couleur."
@@ -230,6 +230,38 @@
       "malusDegatsSubis": "Malus Dégâts Subis : {{malusDegatsSubis}}",
       "vaisseauExtraInitText": "Le vaisseau peut améliorer {bonus} diodes de son initiative."
     },
+    "description": {
+      "ia": {
+        "ia":"L’IA (pour Intelligence Artificielle) permet de faire fonctionner les différents programmes et sous-programmes sans que l’un d’eux n’ait une défaillance majeure. Cette caractéristique représente la capacité d’analyse et de logique du synthétique ainsi que ses bases de données.",
+        "basededonnees": "Chaque Oméga possède une vaste base de données contenant tous les éléments connus des différentes Firmes. Cela peut aller de la connaissance d’une structure, d’un bâtiment, de l’histoire d’une peuplade de la planète de la constellation d’Orion ou d’un écosystème particulier.",
+        "connexion": "Ce Programme permet d’avoir une idée de la « position » de l’Oméga dans la hiérarchie de sa Firme. Grâce à Connexion, le synthétique peut faire appel à différentes ressources que sa Firme pourra mettre à disposition (vaisseau, armement, robots de combat ou autre, etc.). Connexion est aussi utilisée pour commander à d’autres Robots, issus de sa Firme ou non."
+      },
+      "cpu": {
+        "cpu":"La valeur de CPU mesure la grande capacité de calcul que l’Oméga peut exécuter sur la plupart de ses actions. Elle représente également ses facultés à résister aux énergies dévastatrices, comme les IEM, ainsi que son potentiel pour contrer les hackings et sa capacité d’action en combat.",
+        "contremesure": "Pour éviter de se faire hacker, un Oméga possède plusieurs types de sous-réseaux fictifs, de firewalls et boucles. Tous ces éléments sont regroupés dans un programme géré par une puce quantique qui permet d’ériger des contre-mesures efficaces. Ce Programme est aussi utilisé pour se camoufler.",
+        "dissipateur": "De minuscules espaces d’aération, commandés par un processeur central, gèrent la charge calorifique d’un Oméga. Plus la valeur de Dissipateur est haute, plus le personnage pourra effectuer d’action avant d’atteindre un stade de chaleur critique."
+      },
+      "interface": {
+        "interface":"Véritable lien avec son environnement informatique, Interface permet de gérer les différentes interactions avec les êtres organiques ainsi que les synthétiques. Il permet aussi d’effectuer du hacking sur tout appareillage électronique ou informatique en combat ou hors combat.",
+        "hacking": "Ce programme permet d’envoyer des instructions d’entrave à distance. Il est utilisé principalement contre d’autres Omégas, Robots ou machines qui pourraient devenir une sérieuse menace.",
+        "omega": "Ensemble de jeux d’instructions de reconnaissances d’émotions, de logiciels cognitifs et de logiciels décodeurs d’expressions verbales ou non verbales, OmegΩ permet de donner une définition précise de l’état d’esprit d’un être organique, de ses sentiments ou sa façon de penser. Grâce à ce Programme les joueurs peuvent manipuler les organiques."
+      },
+      "balise": {
+        "balise": "Un Oméga est bardé de différentes balises sensorielles, signalisations et géolocalisations encapsulés dans un logiciel quantique. Ces balises permettent à l’Oméga d’avoir une image informatique de son environnement physique.",
+        "aae": "Ordinateur de visée et calibrage des armes à distance, AAE (pour Arme à Énergie) est le programme qui gère uniquement les armes à distance.",
+        "detecteur": "Le synthétique dispose d'une astucieuse combinaison de détecteurs optiques, IR, UV, sismiques et environnementaux. Ils permettent de recueillir des informations précises : par exemple le nombre de sources de chaleur dans une pièce, un rayonnement de particules ou l’instabilité d’un édifice."
+      },
+      "moteur": {
+        "moteur": "De nombreux composants d’un Oméga nécessitent une puissance électrique considérable. Non seulement Moteur permet de connaître la vitesse d’un Oméga, mais elle définit aussi la Défense et l’Energie disponible pour le fonctionnement des Extensions.",
+        "defense": "Le programme Défense donne la capacité de l’Oméga à esquiver une attaque à distance, parer une attaque de corps à corps ou tout simplement se mettre hors de portée du danger.",
+        "energie": "Le mini réacteur à fission de l’Oméga fournit une formidable source d’énergie. Mais il s’avère que des Extensions demandent une part plus importante. Énergie permet de moduler l’afflux électrique pour le bon fonctionnement de l’Oméga et des pics énergétiques demandés pour l’activation des Extensions."
+      },
+      "ossature": {
+        "ossature": "Superstructure du futur châssis, Ossature donne une idée de la puissance musculaire robotique, de la durabilité que l’Oméga possédera ainsi que de la manière d’utiliser cette force.",
+        "exterminateur": "Ce programme incorpore d’innombrables techniques de combat de corps à corps pour maximiser les dégâts. Exterminateur est uniquement utilisé lors du combat au corps à corps.",
+        "resistance": "Surveille en permanence l’intégrité matérielle d’un Oméga. Elle permet de connaître les défaillances structurelles. C’est grâce à la combinaison de ce programme et des matériaux utilisés qu’un Oméga bénéficie d'un blindage conséquent."
+      }
+    },
     "dialog": {
       "button": {
         "cancel": "Annuler",
@@ -239,7 +271,7 @@
       "difficulty": "Difficulté : ",
       "introtext": {
         "attack": "{actorname} utilise l'arme {arme} avec le programme {program} ",
-        "attackequipage": {"cannonier":"Tir du vaisseau {actorname} ({arme})"},
+        "attackequipage": { "cannonier": "Tir du vaisseau {actorname} ({arme})" },
         "attackorganique": "{actorname} utilise l'arme {arme} avec sa compétence {program} ",
         "chance": "{actorname} tente sa chance.",
         "initiative": "{actorname} pioche son initiative.",
