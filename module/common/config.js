@@ -7,7 +7,7 @@ export const OMEGA = {
       energétique: "Energétique",
       gravitationnelles: "Gravitationnelles",
       iem: "IEM",
-      indirect: "Indirect",
+      indirect: "Tir indirect",
       moleculaire: "Moléculaire",
       neutrons: "Neutrons",
       percussion: "Percussion",
