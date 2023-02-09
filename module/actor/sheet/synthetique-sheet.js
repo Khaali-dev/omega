@@ -49,7 +49,6 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
     for (let item of context.equipements) {
       item.system.descriptionhtml = TextEditor.enrichHTML(item.system.description, { async: false });
     }
-    console.log("eq", context.equipements);
     return context;
   }
 

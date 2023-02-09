@@ -1,4 +1,7 @@
 
+# Version 1.2.3
+- tous les synthétiques avancés (alpha, psy, sigmas...) ont désormais accès aux sous-programmes
+- les armes et extensions sur les fdp sont classées dans l'ordre alphabétique
 # Version 1.2.2
 - bug affichage regroupements d'armes
 - ajout des extensions du LdB dans l'aventure.

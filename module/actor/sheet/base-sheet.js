@@ -18,7 +18,12 @@ export class OmegaBaseActorSheet extends ActorSheet {
     context.editable = this.isEditable;
     context.isGm = game.user.isGM;
     context.estorganique = this.actor.estOrganique();
-    context.extensions = this.actor.items.filter((item) => item.type == "extension");
+    //Ordre alphabetique
+    context.extensions = this.actor.items
+      .filter((item) => item.type == "extension")
+      .sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
     context.extensions.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
     });

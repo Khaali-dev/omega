@@ -35,7 +35,12 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
     context.typeSynth = game.omega.config.TYPESYNTH[this.actor.system.typeSynth];
     context.stockchassis = stockchassis;
     context.logofirme = game.omega.config.FIRME[this.actor.system.firme].logoclass;
-    context.armes = this.actor.items.filter((item) => item.type == "arme");
+    // Ordre alphabetique
+    context.armes = this.actor.items
+      .filter((item) => item.type == "arme")
+      .sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
     context.armes.forEach((element) => {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
       element.system.attacklabel = game.omega.config.ARME.TYPEPROGRAMME[element.system.typeprogramme];

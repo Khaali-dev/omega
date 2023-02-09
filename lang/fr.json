@@ -39,7 +39,7 @@
       },
       "destruction": {
         "label": "Destruction",
-        "description": ""
+        "description": "Supprime l'arme du châssis."
       },
       "enraye": {
         "label": "Arme enrayée",
@@ -232,17 +232,17 @@
     },
     "description": {
       "ia": {
-        "ia":"L’IA (pour Intelligence Artificielle) permet de faire fonctionner les différents programmes et sous-programmes sans que l’un d’eux n’ait une défaillance majeure. Cette caractéristique représente la capacité d’analyse et de logique du synthétique ainsi que ses bases de données.",
+        "ia": "L’IA (pour Intelligence Artificielle) permet de faire fonctionner les différents programmes et sous-programmes sans que l’un d’eux n’ait une défaillance majeure. Cette caractéristique représente la capacité d’analyse et de logique du synthétique ainsi que ses bases de données.",
         "basededonnees": "Chaque Oméga possède une vaste base de données contenant tous les éléments connus des différentes Firmes. Cela peut aller de la connaissance d’une structure, d’un bâtiment, de l’histoire d’une peuplade de la planète de la constellation d’Orion ou d’un écosystème particulier.",
         "connexion": "Ce Programme permet d’avoir une idée de la « position » de l’Oméga dans la hiérarchie de sa Firme. Grâce à Connexion, le synthétique peut faire appel à différentes ressources que sa Firme pourra mettre à disposition (vaisseau, armement, robots de combat ou autre, etc.). Connexion est aussi utilisée pour commander à d’autres Robots, issus de sa Firme ou non."
       },
       "cpu": {
-        "cpu":"La valeur de CPU mesure la grande capacité de calcul que l’Oméga peut exécuter sur la plupart de ses actions. Elle représente également ses facultés à résister aux énergies dévastatrices, comme les IEM, ainsi que son potentiel pour contrer les hackings et sa capacité d’action en combat.",
+        "cpu": "La valeur de CPU mesure la grande capacité de calcul que l’Oméga peut exécuter sur la plupart de ses actions. Elle représente également ses facultés à résister aux énergies dévastatrices, comme les IEM, ainsi que son potentiel pour contrer les hackings et sa capacité d’action en combat.",
         "contremesure": "Pour éviter de se faire hacker, un Oméga possède plusieurs types de sous-réseaux fictifs, de firewalls et boucles. Tous ces éléments sont regroupés dans un programme géré par une puce quantique qui permet d’ériger des contre-mesures efficaces. Ce Programme est aussi utilisé pour se camoufler.",
         "dissipateur": "De minuscules espaces d’aération, commandés par un processeur central, gèrent la charge calorifique d’un Oméga. Plus la valeur de Dissipateur est haute, plus le personnage pourra effectuer d’action avant d’atteindre un stade de chaleur critique."
       },
       "interface": {
-        "interface":"Véritable lien avec son environnement informatique, Interface permet de gérer les différentes interactions avec les êtres organiques ainsi que les synthétiques. Il permet aussi d’effectuer du hacking sur tout appareillage électronique ou informatique en combat ou hors combat.",
+        "interface": "Véritable lien avec son environnement informatique, Interface permet de gérer les différentes interactions avec les êtres organiques ainsi que les synthétiques. Il permet aussi d’effectuer du hacking sur tout appareillage électronique ou informatique en combat ou hors combat.",
         "hacking": "Ce programme permet d’envoyer des instructions d’entrave à distance. Il est utilisé principalement contre d’autres Omégas, Robots ou machines qui pourraient devenir une sérieuse menace.",
         "omega": "Ensemble de jeux d’instructions de reconnaissances d’émotions, de logiciels cognitifs et de logiciels décodeurs d’expressions verbales ou non verbales, OmegΩ permet de donner une définition précise de l’état d’esprit d’un être organique, de ses sentiments ou sa façon de penser. Grâce à ce Programme les joueurs peuvent manipuler les organiques."
       },
