@@ -55,6 +55,7 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
+    html.find(".prog-input").change(this._onprogChange.bind(this));
   }
   _onDropItem(event, data) {
     event.preventDefault();
@@ -77,5 +78,14 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
           return super._onDropItem(event, data);
       }
     });
+  }
+  async _onprogChange(event) {
+    event.preventDefault();
+    let element = event.currentTarget;
+    let prog = element.dataset.field;
+    let value = element.valueAsNumber;
+      let linkMod = "system.programmes." + prog + ".value";
+      await this.actor.update({ [linkMod]: value });
+    return;
   }
 }

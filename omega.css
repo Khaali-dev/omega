@@ -183,7 +183,7 @@
   padding-right: 1em;
   font-size: 1.1em;
 }
-.omega.sheet .right-icon .sheet-change-lock {
+.omega.sheet .sheet-change-lock {
   font: 1em "helvetica";
   font-size: 1.2rem;
   color: #88c083;
@@ -259,10 +259,13 @@
 }
 .omega.sheet .main .tablename .pcname {
   font: 2rem "courier";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .omega.sheet .main .tablename .name-text {
   padding: 0 0.5em 0 0.5em;
-  font: 0.9 rem "exo2";
+  font: 0.9rem "exo2";
 }
 .omega.sheet .main .tablename .pcfirme {
   font: 1em "exo2";
@@ -848,6 +851,102 @@
 }
 .omega.sheet.item .main table .diode-noire {
   background: center / contain no-repeat url('./assets/image/diodes/diode_noire.webp');
+}
+.omega-journal {
+  background-color: #f8fcfc;
+  font: 1em "frutiger";
+  color: black;
+  padding: 0.5em;
+}
+.omega-journal p {
+  text-align: justify;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.omega-journal .noire {
+  color: black;
+  font-size: 0.9rem;
+}
+.omega-journal .liste-blanche {
+  list-style-type: circle;
+  font-size: 1.5rem;
+  margin-left: 2em;
+}
+.omega-journal .liste-noire {
+  font-size: 1.5rem;
+  margin-left: 2em;
+}
+.omega-journal .liste-bleue {
+  color: #0873b9;
+  font-size: 1.5rem;
+  margin-left: 2em;
+}
+.omega-journal .liste-verte {
+  color: #00974a;
+  font-size: 1.5rem;
+  margin-left: 2em;
+}
+.omega-journal .liste-rouge {
+  color: #c6161b;
+  font-size: 1.5rem;
+  margin-left: 2em;
+}
+.omega-journal h1 {
+  font: 3em "exo2";
+  color: #194c7a;
+  text-align: center;
+}
+.omega-journal h2 {
+  font: 2em "exo2";
+  color: #194c7a;
+  text-align: center;
+  font-weight: bold;
+}
+.omega-journal h3 {
+  font: 1.5em "exo2";
+  color: white;
+  background-color: #f15923;
+  border-bottom: 2px solid #FCC451;
+  border-top-right-radius: 20px 20px;
+}
+.omega-journal h4 {
+  font: 1.2em "exo2";
+  font-weight: bold;
+  color: #f15923;
+}
+.omega-journal .smalltitle {
+  font: 1em "exo2";
+  font-weight: bold;
+  color: #EC6B05;
+  padding-top: 2px;
+}
+.omega-journal .insert {
+  background-color: #829FA8;
+  margin: 3em;
+  padding: 1em;
+  border: 2px solid #422a1e;
+  box-shadow: 0 0 12px #aaa;
+  border-radius: 15px 15px 15px 15px;
+}
+.omega-journal .insert p {
+  font-size: 1em;
+  text-indent: 0;
+  text-align: justify;
+  border-left: 1em;
+  border-right: 1em;
+}
+.omega-journal .insert h4 {
+  color: black;
+}
+.omega-journal .insert .smalltitle {
+  font: 1em "exo2";
+  font-weight: bold;
+  color: white;
+  padding-top: 2px;
+}
+.omega-journal .appui {
+  font-weight: bold;
+  color: #194c7a;
 }
 .dialog {
   background-color: #fffdfc;

@@ -1,4 +1,6 @@
-
+# Version 1.2.4
+- Aspect journaux
+- bug modification programmes synthetiques asservis
 # Version 1.2.3
 - tous les synthétiques avancés (alpha, psy, sigmas...) ont désormais accès aux sous-programmes
 - les armes et extensions sur les fdp sont classées dans l'ordre alphabétique
