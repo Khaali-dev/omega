@@ -45,11 +45,11 @@
     margin-left: auto;
     padding-right: 1em;
     font-size: 1.1em;
-    .sheet-change-lock {
-      font: @default-font;
-      font-size: 1.2rem;
-      color: #88c083;
-    }
+  }
+  .sheet-change-lock {
+    font: @default-font;
+    font-size: 1.2rem;
+    color: #88c083;
   }
   .portraitimg {
     align-self: center;
@@ -136,11 +136,14 @@
 
       .pcname {
         font: 2rem "courier";
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
       }
 
       .name-text {
         padding: 0 0.5em 0 0.5em;
-        font: 0.9 rem "exo2";
+        font: 0.9rem "exo2";
       }
       .pcfirme {
         font: 1em "exo2";
