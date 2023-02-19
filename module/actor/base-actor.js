@@ -19,25 +19,33 @@ export default class OmegaBaseActor extends Actor {
     // Evaluation des systèmes auxiliaires
     this.system.systemesauxiliaires.blindage.base = this.system.typeSynth === "alpha" ? this.system.programmes.resistance.value * 3 : this.system.programmes.resistance.value * 2;
     this.system.systemesauxiliaires.blindage.max = this.system.systemesauxiliaires.blindage.base + this.system.systemesauxiliaires.blindage.mod;
+    this.system.systemesauxiliaires.blindage.tooltip=this.system.systemesauxiliaires.blindage.base.toString() + (this.system.systemesauxiliaires.blindage.mod ? "+" + this.system.systemesauxiliaires.blindage.mod.toString() + "[Mod]": "");
     this.system.systemesauxiliaires.resistancemoteur.base = this.system.programmes.energie.value;
     this.system.systemesauxiliaires.resistancemoteur.max = this.system.systemesauxiliaires.resistancemoteur.base + this.system.systemesauxiliaires.resistancemoteur.mod;
     this.system.systemesauxiliaires.blindageiem.base =
       this.system.typeSynth === "sigma" ? this.system.caracteristiques.balise.value * 2 : this.system.caracteristiques.balise.value;
     this.system.systemesauxiliaires.blindageiem.max = this.system.systemesauxiliaires.blindageiem.base + this.system.systemesauxiliaires.blindageiem.mod;
+    this.system.systemesauxiliaires.blindageiem.tooltip=this.system.systemesauxiliaires.blindageiem.base+ (this.system.systemesauxiliaires.blindageiem.mod? "+" + this.system.systemesauxiliaires.blindageiem.mod + "[Mod]": "");
     this.system.systemesauxiliaires.integriteinformatique.base = this.system.caracteristiques.cpu.value;
     this.system.systemesauxiliaires.integriteinformatique.max =
       this.system.systemesauxiliaires.integriteinformatique.base + this.system.systemesauxiliaires.integriteinformatique.mod;
+      this.system.systemesauxiliaires.blindage.integriteinformatique=this.system.systemesauxiliaires.integriteinformatique.base.toString() + (this.system.systemesauxiliaires.integriteinformatique.mod ? "+" + this.system.systemesauxiliaires.integriteinformatique.mod.toString() + "[Mod]": "");
     this.system.systemesauxiliaires.energiedisponible.base = this.system.programmes.energie.value * 3;
     this.system.systemesauxiliaires.energiedisponible.max = this.system.systemesauxiliaires.energiedisponible.base + this.system.systemesauxiliaires.energiedisponible.mod;
+    this.system.systemesauxiliaires.blindage.energiedisponible=this.system.systemesauxiliaires.energiedisponible.base.toString() + (this.system.systemesauxiliaires.energiedisponible.mod ? "+" + this.system.systemesauxiliaires.energiedisponible.mod.toString() + "[Mod]": "");
 
     this.system.systemesauxiliaires.chance.base = this.system.caracteristiques.interface.value;
     this.system.systemesauxiliaires.chance.value = this.system.systemesauxiliaires.chance.base + this.system.systemesauxiliaires.chance.mod;
+    this.system.systemesauxiliaires.chance.tooltip=this.system.systemesauxiliaires.chance.base.toString() + (this.system.systemesauxiliaires.chance.mod ? "+" + this.system.systemesauxiliaires.chance.mod.toString() + "[Mod]": "");
     this.system.systemesauxiliaires.vitesse.base = this.system.caracteristiques.moteur.value;
     this.system.systemesauxiliaires.vitesse.value = this.system.systemesauxiliaires.vitesse.base + this.system.systemesauxiliaires.vitesse.mod;
+    this.system.systemesauxiliaires.vitesse.tooltip=this.system.systemesauxiliaires.vitesse.base.toString() + (this.system.systemesauxiliaires.vitesse.mod ? "+" + this.system.systemesauxiliaires.vitesse.mod.toString() + "[Mod]": "");
     this.system.systemesauxiliaires.defense.base = this.system.programmes.defense.value;
     this.system.systemesauxiliaires.defense.value = this.system.systemesauxiliaires.defense.base + this.system.systemesauxiliaires.defense.mod;
+    this.system.systemesauxiliaires.defense.tooltip=this.system.systemesauxiliaires.defense.base.toString() + (this.system.systemesauxiliaires.defense.mod ? "+" + this.system.systemesauxiliaires.defense.mod.toString() + "[Mod]": "");
     this.system.systemesauxiliaires.initiative.base = this.system.programmes.dissipateur.value;
     this.system.systemesauxiliaires.initiative.value = this.system.systemesauxiliaires.initiative.base + this.system.systemesauxiliaires.initiative.mod;
+    this.system.systemesauxiliaires.initiative.tooltip=this.system.systemesauxiliaires.initiative.base.toString() + (this.system.systemesauxiliaires.initiative.mod ? "+" + this.system.systemesauxiliaires.initiative.mod.toString() + "[Mod]": "");
 
     //Malus dégâts subis
     this.system.malusDegatsSubis = Math.min(3, this.system.systemesauxiliaires.resistancemoteur.max - this.system.systemesauxiliaires.resistancemoteur.value);
@@ -74,7 +82,7 @@ export default class OmegaBaseActor extends Actor {
       let itemDup = duplicate(item);
       itemDup.system.estActif = true;
       chassisArray.push(itemDup);
-      //Ajouter la prise en compte des différents bonus des extensions du chassis
+      this._bonusEffets(itemDup);
 
       //desactive tous les autres chassis
       for (const [key, item2] of this.items.entries()) {
@@ -156,6 +164,7 @@ export default class OmegaBaseActor extends Actor {
               itemDup.system.estActif = false;
             }
             this.utiliserSlots(item.system.chassisId, item.system.nbSlots);
+            this._bonusEffets(itemDup);
           } else {
             itemDup.system.chassisId = "";
             itemDup.system.estActif = false;
@@ -207,7 +216,7 @@ export default class OmegaBaseActor extends Actor {
     };
     let data = {
       malusDegatsSubis: this.system.malusDegatsSubis,
-      extraText: ""
+      extraText: "",
     };
     let diodes = new Diodes(this, ROLL_TYPE.PROGRAM, program, data);
     diodes.openDialog();
@@ -253,7 +262,7 @@ export default class OmegaBaseActor extends Actor {
     };
     let data = {
       malusDegatsSubis: 0,
-      extraText: ""
+      extraText: "",
     };
     let diodes = new Diodes(this, ROLL_TYPE.CHANCE, program, data);
     diodes.openDialog();
@@ -267,11 +276,11 @@ export default class OmegaBaseActor extends Actor {
     let program = {
       value: 0,
       label: "Initiative",
-      reference: "initiative"
+      reference: "initiative",
     };
     let data = {
       malusDegatsSubis: this.system.malusDegatsSubis,
-      extraText: ""
+      extraText: "",
     };
     if (this.estAdvancedSynth()) {
       program.value = this.system.systemesauxiliaires.initiative.value;
@@ -291,9 +300,9 @@ export default class OmegaBaseActor extends Actor {
   valeurVitesse() {
     if (this.estSynthetique()) {
       return this.system.caracteristiques.vitesse.value;
-    } else if (this.estVaisseau()){
+    } else if (this.estVaisseau()) {
       return this.system.vitesse;
-    }else {
+    } else {
       return this.system.systemesauxiliaires.vitesse.value;
     }
   }
@@ -319,12 +328,30 @@ export default class OmegaBaseActor extends Actor {
     return await this.update(updateData);
   }
 
-  rechargerRegroupements(){
-    const updates =[];
+  rechargerRegroupements() {
+    const updates = [];
     const regroupements = this.items.filter((item) => item.type === "regroupement");
     regroupements.forEach((element) => {
-      updates.push({"_id": element.id, "system.tireffectue" : false})
+      updates.push({ _id: element.id, "system.tireffectue": false });
     });
-    this.updateEmbeddedDocuments('Item', updates);
+    this.updateEmbeddedDocuments("Item", updates);
+  }
+
+  _bonusEffets(extension) {
+    for (let effetExtension of extension.system.effet) {
+      if (typeof this["effetExtension_" + effetExtension.name] == "function") {
+        this["effetExtension_" + effetExtension.name](effetExtension.options, extension.name, extension._id);
+      }
+    }
+  }
+  effetExtension_systemesauxiliaires_bonus(options, extensionName, extensionId){
+      if(!options?.reference || !options?.value) return;
+      if(!this.system.systemesauxiliaires[options.reference]) return;
+      this.system.systemesauxiliaires[options.reference].max += options.value;
+      if(["vitesse", "initiative", "defense", "chance"].includes(options.reference)){
+        this.system.systemesauxiliaires[options.reference].value += options.value;
+      }
+      this.system.systemesauxiliaires[options.reference].tooltip+= "+" + options.value.toString() + "["+extensionName+"]";
+      return;
   }
 }

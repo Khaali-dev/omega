@@ -169,55 +169,64 @@
             "base": 4,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.blindage"
+            "label": "OMEGA.label.programmes.blindage",
+            "tooltip":""
           },
           "blindageiem": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.blindageiem"
+            "label": "OMEGA.label.programmes.blindageiem",
+            "tooltip":""
           },
           "chance": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.chance"
+            "label": "OMEGA.label.programmes.chance",
+            "tooltip":""
           },
           "defense": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.defense"
+            "label": "OMEGA.label.programmes.defense",
+            "tooltip":""
           },
           "energiedisponible": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.energiedisponible"
+            "label": "OMEGA.label.programmes.energiedisponible",
+            "tooltip":""
           },
           "initiative": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.initiative"
+            "label": "OMEGA.label.programmes.initiative",
+            "tooltip":""
           },
           "integriteinformatique": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.integriteinformatique"
+            "label": "OMEGA.label.programmes.integriteinformatique",
+            "tooltip":""
           },
           "resistancemoteur": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.resistancemoteur"
+            "label": "OMEGA.label.programmes.resistancemoteur",
+            "tooltip":""
           },
           "vitesse": {
             "base": 2,
             "value": 0,
             "mod": 0,
-            "label": "OMEGA.label.programmes.vitesse"
+            "label": "OMEGA.label.programmes.vitesse",
+            "tooltip":""
           }
         }
       },
