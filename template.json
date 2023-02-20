@@ -221,6 +221,13 @@
             "label": "OMEGA.label.programmes.resistancemoteur",
             "tooltip":""
           },
+          "slots": {
+            "base": 2,
+            "value": 0,
+            "mod": 0,
+            "label": "OMEGA.label.programmes.slots",
+            "tooltip":""
+          },
           "vitesse": {
             "base": 2,
             "value": 0,

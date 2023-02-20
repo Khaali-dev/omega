@@ -506,6 +506,16 @@
                     </td>
                     {{/if}}
                 </tr>
+                <tr>
+                    <td class="aux-text pointer" data-field="chance" {{#ifn unlocked}}colspan="3" {{else}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.slots.tooltip}}>Slots (+châssis)</td>
+                    <td>{{system.systemesauxiliaires.slots.value}}</td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input" title="Modificateur" id="slotsmod"
+                            name="system.systemesauxiliaires.slots.mod" type="number"
+                            value="{{system.systemesauxiliaires.slots.mod}}" />
+                    </td>
+                    {{/if}}
+                </tr>
             </tbody>
         </table>
     </div>

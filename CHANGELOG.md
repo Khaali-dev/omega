@@ -1,5 +1,6 @@
 # Version 1.3.0
 - les bonus des châssis drone et droïde, et des extensions Blindage Alpha, Piles énergétiques, et Moteur à fission sont automatiquement ajoutés au personnage quand le châssis est actif.
+- ajout des Slots bonus approtés par les mises à jour.
 - Typo Psy -> Psi.
 # Version 1.2.4
 - Aspect journaux

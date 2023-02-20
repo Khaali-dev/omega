@@ -46,6 +46,9 @@ export default class OmegaBaseActor extends Actor {
     this.system.systemesauxiliaires.initiative.base = this.system.programmes.dissipateur.value;
     this.system.systemesauxiliaires.initiative.value = this.system.systemesauxiliaires.initiative.base + this.system.systemesauxiliaires.initiative.mod;
     this.system.systemesauxiliaires.initiative.tooltip=this.system.systemesauxiliaires.initiative.base.toString() + (this.system.systemesauxiliaires.initiative.mod ? "+" + this.system.systemesauxiliaires.initiative.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.slots.base = this.system.caracteristiques.ossature.value;
+    this.system.systemesauxiliaires.slots.value = this.system.systemesauxiliaires.slots.base + this.system.systemesauxiliaires.slots.mod;
+    this.system.systemesauxiliaires.slots.tooltip=this.system.systemesauxiliaires.slots.base.toString() + (this.system.systemesauxiliaires.slots.mod ? "+" + this.system.systemesauxiliaires.slots.mod.toString() + "[Mod]": "");
 
     //Malus dégâts subis
     this.system.malusDegatsSubis = Math.min(3, this.system.systemesauxiliaires.resistancemoteur.max - this.system.systemesauxiliaires.resistancemoteur.value);
@@ -65,8 +68,8 @@ export default class OmegaBaseActor extends Actor {
         id: chassis.id,
         descriptionhtml: TextEditor.enrichHTML(chassis.description, { async: false }),
         estActif: chassis.system.estActif,
-        nbslotstotal: chassis.system.nbslots + this.system.caracteristiques.ossature.value,
-        nbslotslibres: chassis.system.nbslots + this.system.caracteristiques.ossature.value,
+        nbslotstotal: chassis.system.nbslots + this.system.systemesauxiliaires.slots.value,
+        nbslotslibres: chassis.system.nbslots + this.system.systemesauxiliaires.slots.value,
       };
     }
 
