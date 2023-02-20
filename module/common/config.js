@@ -210,7 +210,7 @@ export const OMEGA = {
   },
   TYPESYNTH: {
     omega: "Omega",
-    psy: "Psy",
+    psi: "Psi",
     alpha: "Alpha",
     sigma: "Sigma",
   },

@@ -270,7 +270,7 @@
                 {{#ifne item.system.zone ""}}<th>Effet de zone</th>{{/ifne}}
             </thead>
             <tbody>
-                <tr style="text-align: center;">
+                <tr style="text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: normal;">
                     <td>{{item.system.technologielabel}}</td>
                     {{#ifne item.system.portee ""}}<td>{{item.system.portee}}</td>{{/ifne}}
                     <td>{{item.system.autonomie}}</td>

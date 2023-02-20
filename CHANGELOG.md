@@ -1,8 +1,12 @@
+# Version 1.3.0
+- les bonus des châssis drone et droïde, et des extensions Blindage Alpha, Piles énergétiques, et Moteur à fission sont automatiquement ajoutés au personnage quand le châssis est actif.
+- ajout des Slots bonus approtés par les mises à jour.
+- Typo Psy -> Psi.
 # Version 1.2.4
 - Aspect journaux
 - bug modification programmes synthetiques asservis
 # Version 1.2.3
-- tous les synthétiques avancés (alpha, psy, sigmas...) ont désormais accès aux sous-programmes
+- tous les synthétiques avancés (alpha, psi, sigmas...) ont désormais accès aux sous-programmes
 - les armes et extensions sur les fdp sont classées dans l'ordre alphabétique
 # Version 1.2.2
 - bug affichage regroupements d'armes

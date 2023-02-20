@@ -93,7 +93,7 @@
                         {{/if}}
                     </tr>
                     {{/ife}}
-                    {{#ife system.typeSynth "psy"}}
+                    {{#ife system.typeSynth "psi"}}
                     <tr class="program-line">
                         {{#if unlocked}}
                         <td class="prog-text" data-field="neutralisationcognitive">{{localize
@@ -195,7 +195,7 @@
                         {{/if}}
                     </tr>
                     {{/ife}}
-                    {{#ife system.typeSynth "psy"}}
+                    {{#ife system.typeSynth "psi"}}
                     <tr class="program-line">
                         {{#if unlocked}}
                         <td class="prog-text" data-field="reprogrammation">{{localize "OMEGA.label.programmes.reprogrammation"}}</td>
@@ -430,7 +430,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Blindage</td>
+                    <td {{#ifn unlocked}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.blindage.tooltip}}>Blindage</td>
                     <td>{{system.systemesauxiliaires.blindage.value}}</td>
                     <td>{{system.systemesauxiliaires.blindage.max}}</td>
                     {{#if unlocked}}
@@ -438,7 +438,7 @@
                             name="system.systemesauxiliaires.blindage.mod" type="number"
                             value="{{system.systemesauxiliaires.blindage.mod}}" /></td>
                     {{/if}}
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Résistance moteur</td>
+                    <td {{#ifn unlocked}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.resistancemoteur.tooltip}}>Résistance moteur</td>
                     <td>{{system.systemesauxiliaires.resistancemoteur.value}}</td>
                     <td>{{system.systemesauxiliaires.resistancemoteur.max}}</td>
                     {{#if unlocked}}
@@ -446,7 +446,7 @@
                             name="system.systemesauxiliaires.resistancemoteur.mod" type="number"
                             value="{{system.systemesauxiliaires.resistancemoteur.mod}}" /></td>
                     {{/if}}
-                    <td  class="aux-text pointer" data-field="vitesse" {{#ifn unlocked}}colspan="2" {{/ifn}}>Vitesse</td>
+                    <td  class="aux-text pointer" data-field="vitesse" {{#ifn unlocked}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.vitesse.tooltip}}>Vitesse</td>
                     <td>{{system.systemesauxiliaires.vitesse.value}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="vitessemod"
@@ -455,7 +455,7 @@
                     {{/if}}
                 </tr>
                 <tr>
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Blindage IEM</td>
+                    <td {{#ifn unlocked}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.blindageiem.tooltip}}>Blindage IEM</td>
                     <td>{{system.systemesauxiliaires.blindageiem.value}}</td>
                     <td>{{system.systemesauxiliaires.blindageiem.max}}</td>
                     {{#if unlocked}}
@@ -464,7 +464,7 @@
                             value="{{system.systemesauxiliaires.blindageiem.mod}}" />
                     </td>
                     {{/if}}
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Intégrité informatique</td>
+                    <td {{#ifn unlocked}}colspan="2"{{/ifn}} data-tooltip={{system.systemesauxiliaires.integriteinformatique.tooltip}}>Intégrité informatique</td>
                     <td>{{system.systemesauxiliaires.integriteinformatique.value}}</td>
                     <td>{{system.systemesauxiliaires.integriteinformatique.max}}</td>
                     {{#if unlocked}}
@@ -473,7 +473,7 @@
                             value="{{system.systemesauxiliaires.integriteinformatique.mod}}" />
                     </td>
                     {{/if}}
-                    <td class="aux-text pointer" data-field="initiative" {{#ifn unlocked}}colspan="2" {{/ifn}}>Initiative</td>
+                    <td class="aux-text pointer" data-field="initiative" {{#ifn unlocked}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.initiative.tooltip}}>Initiative</td>
                     <td>{{system.systemesauxiliaires.initiative.value}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="initiativemod"
@@ -482,7 +482,7 @@
                     {{/if}}
                 </tr>
                 <tr>
-                    <td {{#ifn unlocked}}colspan="2" {{/ifn}}>Énergie disponible</td>
+                    <td {{#ifn unlocked}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.energiedisponible.tooltip}}>Énergie disponible</td>
                     <td>{{system.systemesauxiliaires.energiedisponible.value}}</td>
                     <td>{{system.systemesauxiliaires.energiedisponible.max}}</td>
                     {{#if unlocked}}
@@ -491,18 +491,28 @@
                             value="{{system.systemesauxiliaires.energiedisponible.mod}}" />
                     </td>
                     {{/if}}
-                    <td class="aux-text pointer" data-field="chance" {{#ifn unlocked}}colspan="3" {{else}}colspan="2" {{/ifn}}>Chance</td>
+                    <td class="aux-text pointer" data-field="chance" {{#ifn unlocked}}colspan="3" {{else}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.chance.tooltip}}>Chance</td>
                     <td>{{system.systemesauxiliaires.chance.value}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="chancemod"
                             name="system.systemesauxiliaires.chance.mod" type="number"
                             value="{{system.systemesauxiliaires.chance.mod}}" /></td>{{/if}}
-                    <td class="aux-text pointer" data-field="defense" {{#ifn unlocked}}colspan="2" {{/ifn}}>Défense</td>
+                    <td class="aux-text pointer" data-field="defense" {{#ifn unlocked}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.defense.tooltip}}>Défense</td>
                     <td>{{system.systemesauxiliaires.defense.value}}</td>
                     {{#if unlocked}}
                     <td><input class="aux-input" title="Modificateur" id="defensemod"
                             name="system.systemesauxiliaires.defense.mod" type="number"
                             value="{{system.systemesauxiliaires.defense.mod}}" />
+                    </td>
+                    {{/if}}
+                </tr>
+                <tr>
+                    <td class="aux-text pointer" data-field="chance" {{#ifn unlocked}}colspan="3" {{else}}colspan="2" {{/ifn}} data-tooltip={{system.systemesauxiliaires.slots.tooltip}}>Slots (+châssis)</td>
+                    <td>{{system.systemesauxiliaires.slots.value}}</td>
+                    {{#if unlocked}}
+                    <td><input class="aux-input" title="Modificateur" id="slotsmod"
+                            name="system.systemesauxiliaires.slots.mod" type="number"
+                            value="{{system.systemesauxiliaires.slots.mod}}" />
                     </td>
                     {{/if}}
                 </tr>
