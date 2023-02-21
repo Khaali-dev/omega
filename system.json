@@ -31,7 +31,7 @@
     },
     {
       "name": "omegabasefr",
-      "label": "Eléments Oméga de base",
+      "label": "Oméga - armes, extensions et personnages",
       "system": "omega",
       "path": "packs/omega_base.db",
       "type": "Adventure",

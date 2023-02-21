@@ -19,36 +19,53 @@ export default class OmegaBaseActor extends Actor {
     // Evaluation des systèmes auxiliaires
     this.system.systemesauxiliaires.blindage.base = this.system.typeSynth === "alpha" ? this.system.programmes.resistance.value * 3 : this.system.programmes.resistance.value * 2;
     this.system.systemesauxiliaires.blindage.max = this.system.systemesauxiliaires.blindage.base + this.system.systemesauxiliaires.blindage.mod;
-    this.system.systemesauxiliaires.blindage.tooltip=this.system.systemesauxiliaires.blindage.base.toString() + (this.system.systemesauxiliaires.blindage.mod ? "+" + this.system.systemesauxiliaires.blindage.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.blindage.tooltip =
+      this.system.systemesauxiliaires.blindage.base.toString() +
+      (this.system.systemesauxiliaires.blindage.mod ? "+" + this.system.systemesauxiliaires.blindage.mod.toString() + "[Mod]" : "");
     this.system.systemesauxiliaires.resistancemoteur.base = this.system.programmes.energie.value;
     this.system.systemesauxiliaires.resistancemoteur.max = this.system.systemesauxiliaires.resistancemoteur.base + this.system.systemesauxiliaires.resistancemoteur.mod;
     this.system.systemesauxiliaires.blindageiem.base =
       this.system.typeSynth === "sigma" ? this.system.caracteristiques.balise.value * 2 : this.system.caracteristiques.balise.value;
     this.system.systemesauxiliaires.blindageiem.max = this.system.systemesauxiliaires.blindageiem.base + this.system.systemesauxiliaires.blindageiem.mod;
-    this.system.systemesauxiliaires.blindageiem.tooltip=this.system.systemesauxiliaires.blindageiem.base+ (this.system.systemesauxiliaires.blindageiem.mod? "+" + this.system.systemesauxiliaires.blindageiem.mod + "[Mod]": "");
+    this.system.systemesauxiliaires.blindageiem.tooltip =
+      this.system.systemesauxiliaires.blindageiem.base + (this.system.systemesauxiliaires.blindageiem.mod ? "+" + this.system.systemesauxiliaires.blindageiem.mod + "[Mod]" : "");
     this.system.systemesauxiliaires.integriteinformatique.base = this.system.caracteristiques.cpu.value;
     this.system.systemesauxiliaires.integriteinformatique.max =
       this.system.systemesauxiliaires.integriteinformatique.base + this.system.systemesauxiliaires.integriteinformatique.mod;
-      this.system.systemesauxiliaires.blindage.integriteinformatique=this.system.systemesauxiliaires.integriteinformatique.base.toString() + (this.system.systemesauxiliaires.integriteinformatique.mod ? "+" + this.system.systemesauxiliaires.integriteinformatique.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.blindage.integriteinformatique =
+      this.system.systemesauxiliaires.integriteinformatique.base.toString() +
+      (this.system.systemesauxiliaires.integriteinformatique.mod ? "+" + this.system.systemesauxiliaires.integriteinformatique.mod.toString() + "[Mod]" : "");
     this.system.systemesauxiliaires.energiedisponible.base = this.system.programmes.energie.value * 3;
     this.system.systemesauxiliaires.energiedisponible.max = this.system.systemesauxiliaires.energiedisponible.base + this.system.systemesauxiliaires.energiedisponible.mod;
-    this.system.systemesauxiliaires.blindage.energiedisponible=this.system.systemesauxiliaires.energiedisponible.base.toString() + (this.system.systemesauxiliaires.energiedisponible.mod ? "+" + this.system.systemesauxiliaires.energiedisponible.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.blindage.energiedisponible =
+      this.system.systemesauxiliaires.energiedisponible.base.toString() +
+      (this.system.systemesauxiliaires.energiedisponible.mod ? "+" + this.system.systemesauxiliaires.energiedisponible.mod.toString() + "[Mod]" : "");
 
     this.system.systemesauxiliaires.chance.base = this.system.caracteristiques.interface.value;
     this.system.systemesauxiliaires.chance.value = this.system.systemesauxiliaires.chance.base + this.system.systemesauxiliaires.chance.mod;
-    this.system.systemesauxiliaires.chance.tooltip=this.system.systemesauxiliaires.chance.base.toString() + (this.system.systemesauxiliaires.chance.mod ? "+" + this.system.systemesauxiliaires.chance.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.chance.tooltip =
+      this.system.systemesauxiliaires.chance.base.toString() +
+      (this.system.systemesauxiliaires.chance.mod ? "+" + this.system.systemesauxiliaires.chance.mod.toString() + "[Mod]" : "");
     this.system.systemesauxiliaires.vitesse.base = this.system.caracteristiques.moteur.value;
     this.system.systemesauxiliaires.vitesse.value = this.system.systemesauxiliaires.vitesse.base + this.system.systemesauxiliaires.vitesse.mod;
-    this.system.systemesauxiliaires.vitesse.tooltip=this.system.systemesauxiliaires.vitesse.base.toString() + (this.system.systemesauxiliaires.vitesse.mod ? "+" + this.system.systemesauxiliaires.vitesse.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.vitesse.tooltip =
+      this.system.systemesauxiliaires.vitesse.base.toString() +
+      (this.system.systemesauxiliaires.vitesse.mod ? "+" + this.system.systemesauxiliaires.vitesse.mod.toString() + "[Mod]" : "");
     this.system.systemesauxiliaires.defense.base = this.system.programmes.defense.value;
     this.system.systemesauxiliaires.defense.value = this.system.systemesauxiliaires.defense.base + this.system.systemesauxiliaires.defense.mod;
-    this.system.systemesauxiliaires.defense.tooltip=this.system.systemesauxiliaires.defense.base.toString() + (this.system.systemesauxiliaires.defense.mod ? "+" + this.system.systemesauxiliaires.defense.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.defense.tooltip =
+      this.system.systemesauxiliaires.defense.base.toString() +
+      (this.system.systemesauxiliaires.defense.mod ? "+" + this.system.systemesauxiliaires.defense.mod.toString() + "[Mod]" : "");
     this.system.systemesauxiliaires.initiative.base = this.system.programmes.dissipateur.value;
     this.system.systemesauxiliaires.initiative.value = this.system.systemesauxiliaires.initiative.base + this.system.systemesauxiliaires.initiative.mod;
-    this.system.systemesauxiliaires.initiative.tooltip=this.system.systemesauxiliaires.initiative.base.toString() + (this.system.systemesauxiliaires.initiative.mod ? "+" + this.system.systemesauxiliaires.initiative.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.initiative.tooltip =
+      this.system.systemesauxiliaires.initiative.base.toString() +
+      (this.system.systemesauxiliaires.initiative.mod ? "+" + this.system.systemesauxiliaires.initiative.mod.toString() + "[Mod]" : "");
     this.system.systemesauxiliaires.slots.base = this.system.caracteristiques.ossature.value;
     this.system.systemesauxiliaires.slots.value = this.system.systemesauxiliaires.slots.base + this.system.systemesauxiliaires.slots.mod;
-    this.system.systemesauxiliaires.slots.tooltip=this.system.systemesauxiliaires.slots.base.toString() + (this.system.systemesauxiliaires.slots.mod ? "+" + this.system.systemesauxiliaires.slots.mod.toString() + "[Mod]": "");
+    this.system.systemesauxiliaires.slots.tooltip =
+      this.system.systemesauxiliaires.slots.base.toString() +
+      (this.system.systemesauxiliaires.slots.mod ? "+" + this.system.systemesauxiliaires.slots.mod.toString() + "[Mod]" : "");
 
     //Malus dégâts subis
     this.system.malusDegatsSubis = Math.min(3, this.system.systemesauxiliaires.resistancemoteur.max - this.system.systemesauxiliaires.resistancemoteur.value);
@@ -194,6 +211,28 @@ export default class OmegaBaseActor extends Actor {
   }
   estVaisseau() {
     return this.type === "vaisseau";
+  }
+
+  mettre_programmes_auxiliaires_au_maximum() {
+    if (this.estAdvancedSynth()) {
+      this.system.systemesauxiliaires.blindage.value = this.system.systemesauxiliaires.blindage.max;
+      this.system.systemesauxiliaires.resistancemoteur.value = this.system.systemesauxiliaires.resistancemoteur.max;
+      this.system.systemesauxiliaires.blindageiem.value = this.system.systemesauxiliaires.blindageiem.max;
+      this.system.systemesauxiliaires.integriteinformatique.value = this.system.systemesauxiliaires.integriteinformatique.max;
+      this.system.systemesauxiliaires.energiedisponible.value = this.system.systemesauxiliaires.energiedisponible.max;
+    } else if (this.estSynthetique()) {
+      this.system.systemesauxiliaires.blindage.value = this.system.systemesauxiliaires.blindage.base;
+      this.system.systemesauxiliaires.resistancemoteur.value = this.system.systemesauxiliaires.resistancemoteur.base;
+      this.system.systemesauxiliaires.blindageiem.value = this.system.systemesauxiliaires.blindageiem.base;
+      this.system.systemesauxiliaires.integriteinformatique.value = this.system.systemesauxiliaires.integriteinformatique.base;
+      this.system.systemesauxiliaires.energiedisponible.value = this.system.systemesauxiliaires.energiedisponible.base;
+    } else if (this.estOrganique()) {
+      this.system.systemesauxiliaires.armure.value = this.system.systemesauxiliaires.armure.base;
+      this.system.systemesauxiliaires.vie.value = this.system.systemesauxiliaires.vie.base;
+    } else if (this.estVaisseau()) {
+      this.system.compartimentsinternes.value = this.system.compartimentsinternes.base;
+      this.system.coque.value = this.system.coque.base;
+    }
   }
 
   /* Get the Players owning an actor, that is not a GM and that is connected */
@@ -347,14 +386,14 @@ export default class OmegaBaseActor extends Actor {
       }
     }
   }
-  effetExtension_systemesauxiliaires_bonus(options, extensionName, extensionId){
-      if(!options?.reference || !options?.value) return;
-      if(!this.system.systemesauxiliaires[options.reference]) return;
-      this.system.systemesauxiliaires[options.reference].max += options.value;
-      if(["vitesse", "initiative", "defense", "chance"].includes(options.reference)){
-        this.system.systemesauxiliaires[options.reference].value += options.value;
-      }
-      this.system.systemesauxiliaires[options.reference].tooltip+= "+" + options.value.toString() + "["+extensionName+"]";
-      return;
+  effetExtension_systemesauxiliaires_bonus(options, extensionName, extensionId) {
+    if (!options?.reference || !options?.value) return;
+    if (!this.system.systemesauxiliaires[options.reference]) return;
+    this.system.systemesauxiliaires[options.reference].max += options.value;
+    if (["vitesse", "initiative", "defense", "chance"].includes(options.reference)) {
+      this.system.systemesauxiliaires[options.reference].value += options.value;
+    }
+    this.system.systemesauxiliaires[options.reference].tooltip += "+" + options.value.toString() + "[" + extensionName + "]";
+    return;
   }
 }
