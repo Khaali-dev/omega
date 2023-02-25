@@ -1,5 +1,5 @@
 # Version 1.4.0
-- Ajout d'un journal "Rappels de regles" et d'une icone dans le menu de droite pour l'ouvrir
+- Ajout d'un journal "Rappels de regles" et d'une icone dans le menu de droite pour l'ouvrir.
 - Description des effets critiques des armes par un tooltip dans l'onglet combat des feuilles de perso.
 # Version 1.3.0
 - les bonus des châssis drone et droïde, et des extensions Blindage Alpha, Piles énergétiques, et Moteur à fission sont automatiquement ajoutés au personnage quand le châssis est actif.

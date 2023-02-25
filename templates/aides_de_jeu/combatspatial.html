@@ -1,0 +1,145 @@
+<div class="omega-journal">
+    <h3>Tour de combat</h3>
+    <p>Un tour de combat dure 15mn.</p>
+    <h4>Tir de barrage</h4>
+    <p>Optionnel + uniquement à longue portée.<br />
+        Attaque contre Défense +2 / si réussite dégâts diminués d'une couleur.<br />
+        Que le tir de barrage ait touché ou non, la cible voit sa défense diminuée de 1 point jusqu’à la fin du tour.
+    </p>
+    <h4>Initiative</h4>
+    <p>Initiative = classe du navire (max 6 - au-dessus les points supplémentaires sont convertis en amélioration de
+        tirage)</p>
+    <h4>Attribution des rôles</h4>
+    <h4>Renforcement des ordres</h4>
+    <p>Le tacticien renforce de futures actions (= son niveau en <span class="appui">Tactique</span>).<br />
+        Ou alors améliorer une diode d'intiative par 2pts en <span class="appui">Tactique</span></p>
+
+    <p><em><strong>Note : </strong>les bonus / malus sont toujours au max cumulé de +3/-3</em></p>
+    <h4>Actions</h4>
+    <h4>Fin du tour</h4>
+    <h3>Actions</h3>
+    <h4>Pilotage</h4>
+    <ul>
+        <li><span class="appui">Poursuite\décrochage</span> - Difficulté : Évolution - 1</li>
+        <li><span class="appui">Déplacement tactique</span> - Difficulté : Évolution</li>
+        <li><span class="appui">Déplacement défensif ou esquive</span> - Difficulté : Évolution + 2</li>
+        <li><span class="appui">Abordage</span> - Difficulté : Évolution</li>
+        <li><span class="appui">Éperonner</span> - Difficulté : Évolution + 3</li>
+        <li><span class="appui">Contre-manœuvre</span> - Difficulté : Évolution + 3</li>
+    </ul>
+    <h4>Tir</h4>
+    <ul>
+        <li><span class="appui">Tir simple</span> - Difficulté : Défense</li>
+        <li><span class="appui">Tir ajusté</span> - Difficulté : Défense + 2.
+            Si réussite: dégâts dégradés de 2 couleurs - le regroupement d'armes ou upgrade ciblé est désormais inactif.
+        </li>
+    </ul>
+    <p><em><strong>Note : </strong>Un regroupement d'armes ne peut être utilisé qu'une fois par tour de combat. Le cadre
+            des RA utilisés passe rouge, pour tout recharger cliquez sur <span class="fas fa-redo">&nbsp;</span>.</em></p>
+    <h4>Guerre électronique</h4>
+    <ul>
+        <li><span class="appui">Acquisition</span> - Difficulté : OPSAR</li>
+        <li><span class="appui">Contre-Mesures</span> - Difficulté : OPSAR</li>
+        <li><span class="appui">Hacking</span> - Difficulté : OPSAR - Vise Réacteur FEG, Evolution ou Supra-Luminique
+        </li>
+    </ul>
+    <p>L’OPSAR ne peut fonctionner qu’en Mode Acquisition ou en Mode Contre-Mesures. Les deux modes ne peuvent pas se
+        cohabiter.</p>
+    <h4>Réparations</h4>
+    <p class="smalltitle">OPSAR</p>
+    <p>Pour réparer l'OPSAR.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Type de Coque</th>
+                <th style="text-align: center;">Difficulté</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Coque basse technologie</td>
+                <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+                <td>Coque de technologie ordinaire</td>
+                <td style="text-align: center;">2</td>
+            </tr>
+            <tr>
+                <td>Coque de haute technologie</td>
+                <td style="text-align: center;">3</td>
+            </tr>
+            <tr>
+                <td>Coque de très haute technologie</td>
+                <td style="text-align: center;">4</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="smalltitle">Réacteur</p>
+    <p>Pour surplus de puissance.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Type de réacteur FEG</th>
+                <th style="text-align: center;">Difficulté</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MK V</td>
+                <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+                <td>MK IV</td>
+                <td style="text-align: center;">2</td>
+            </tr>
+            <tr>
+                <td>MK III</td>
+                <td style="text-align: center;">3</td>
+            </tr>
+            <tr>
+                <td>MK II</td>
+                <td style="text-align: center;">4</td>
+            </tr>
+            <tr>
+                <td>MK I</td>
+                <td style="text-align: center;">5</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="smalltitle">Coque et Compartiments internes</p>
+    <p>Pour chaque point perdu dans les Compartiments Internes, l’ensemble de l’équipage subit des malus de 1 dans
+        toutes les actions qu’ils entreprennent jusqu’à un maximum de -3</p>
+    <p>Réparation de la <span class="appui">Coque</span> : Mécanique difficulté 2.</p>
+    <ul>
+        <li class="liste-noire"><span class="noire">Un compartiment prend feu, un ordinateur sensible est détruit. Le
+                vaisseau perd directement un point de </span><span class="appui">Compartiments Internes</span>.</li>
+        <li class="liste-blanche"><span class="noire"> La réparation n’a eu aucun effet.</span></li>
+        <li class="liste-bleue"><span class="noire">Le vaisseau récupère 1 point de </span><span
+                class="appui">Coque</span>.</li>
+        <li class="liste-verte"><span class="noire">Le vaisseau récupère 2 points de </span><span
+                class="appui">Coque</span>.</li>
+        <li class="liste-rouge"><span class="noire">Le vaisseau récupère 3 points de </span><span
+                class="appui">Coque</span>.</li>
+    </ul>
+    <p><em><strong>Note : </strong>Avec une réparation, il n’est pas possible de
+            revenir au maximum, même si le mécanicien
+            effectue un tirage rouge. Le blindage est
+            toujours diminué de 1 en attendant d’être mis
+            en cale sèche ou placé sur un dock spatial pour
+            réparation complète.</em></p>
+    <p>Réparation des <span class="appui">Compartiments Internes</span> : Mécanique difficulté 3.</p>
+    <ul>
+        <li class="liste-noire"><span class="noire">La tentative de réparation a non seulement
+                échoué, mais elle a mis à jour une faiblesse dans
+                la structure du vaisseau. Le vaisseau perd un
+                point de </span><span class="appui">Compartiments Internes</span>.</li>
+        <li class="liste-blanche"><span class="noire"> La réparation n’a eu aucun effet.</span></li>
+        <li class="liste-bleue"><span class="noire">Le vaisseau récupère 1 point de </span><span
+                class="appui">Compartiments Internes</span>.</li>
+        <li class="liste-verte"><span class="noire">Le vaisseau récupère 2 points de </span><span
+                class="appui">Compartiments Internes</span>.</li>
+        <li class="liste-rouge"><span class="noire">Le vaisseau récupère 2 points de </span><span
+                class="appui">Compartiments Internes</span><span class="noire"> et 1 point de </span><span
+                class="appui">Coque</span>.</li>
+    </ul>
+</div>
