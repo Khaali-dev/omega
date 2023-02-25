@@ -43,15 +43,15 @@
       },
       "enraye": {
         "label": "Arme enrayée",
-        "description": "Arme inutilisable. Nécessite un test d’Armes et destruction difficulté 1 et une action pour réparer."
+        "description": "Arme inutilisable. Nécessite un test d’Armes et destruction difficulté 1 hors combat."
       },
       "erreur": {
         "label": "Erreur système",
         "description": "Le synthétique perd sa prochaine action."
       },
       "explosion_munition": {
-        "label": "Explosion de munitions",
-        "description": "Le personnage subit 1 dégât directement en Résistance moteur. L'arme doit être réparée."
+        "label": "Explosion",
+        "description": "Le personnage subit 1 dégât directement en Résistance moteur. L'arme doit être réparée (test d’Armes et destruction difficulté 3 hors combat)."
       },
       "perte": {
         "label": "Perte de l'arme",

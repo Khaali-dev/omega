@@ -71,12 +71,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr style="text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: normal;"">
-                    <td>{{item.system.effetdiode.noire.label}}</td>
+                <tr>
+                    <td {{#if item.system.effetdiode.noire.tooltip}} data-tooltip={{item.system.effetdiode.noire.description}}{{/if}}>{{item.system.effetdiode.noire.label}}</td>
                     <td>{{item.system.effetdiode.blanche.label}}</td>
-                    <td>{{item.system.effetdiode.bleue.label}}</td>
-                    <td>{{item.system.effetdiode.verte.label}}</td>
-                    <td>{{item.system.effetdiode.rouge.label}}</td>
+                    <td {{#if item.system.effetdiode.bleue.tooltip}} data-tooltip={{item.system.effetdiode.bleue.description}}{{/if}}>{{item.system.effetdiode.bleue.label}}</td>
+                    <td {{#if item.system.effetdiode.verte.tooltip}} data-tooltip={{item.system.effetdiode.verte.description}}{{/if}}>{{item.system.effetdiode.verte.label}}</td>
+                    <td {{#if item.system.effetdiode.rouge.tooltip}} data-tooltip={{item.system.effetdiode.rouge.description}}{{/if}}>{{item.system.effetdiode.rouge.label}}</td>
             </tbody>
         </table>
         <table class="noover" style="border-top: 0px;border-bottom: 0px; margin: 0px;">
