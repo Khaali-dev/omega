@@ -152,7 +152,7 @@ export const OMEGA = {
       label: "Erreur système"
     },
     explosion_munition: {
-      label: "Explosion de l'arme"
+      label: "Explosion"
     },
     perte: {
       label: "Perte de l'arme"

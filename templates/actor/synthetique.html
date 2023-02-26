@@ -253,11 +253,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{item.system.effetdiode.noire.label}}</td>
+                    <td {{#if item.system.effetdiode.noire.tooltip}} data-tooltip={{item.system.effetdiode.noire.description}}{{/if}}>{{item.system.effetdiode.noire.label}}</td>
                     <td>{{item.system.effetdiode.blanche.label}}</td>
-                    <td>{{item.system.effetdiode.bleue.label}}</td>
-                    <td>{{item.system.effetdiode.verte.label}}</td>
-                    <td>{{item.system.effetdiode.rouge.label}}</td>
+                    <td {{#if item.system.effetdiode.bleue.tooltip}} data-tooltip={{item.system.effetdiode.bleue.description}}{{/if}}>{{item.system.effetdiode.bleue.label}}</td>
+                    <td {{#if item.system.effetdiode.verte.tooltip}} data-tooltip={{item.system.effetdiode.verte.description}}{{/if}}>{{item.system.effetdiode.verte.label}}</td>
+                    <td {{#if item.system.effetdiode.rouge.tooltip}} data-tooltip={{item.system.effetdiode.rouge.description}}{{/if}}>{{item.system.effetdiode.rouge.label}}</td>
             </tbody>
         </table>
         <table>

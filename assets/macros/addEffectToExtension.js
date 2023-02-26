@@ -6,8 +6,15 @@ async function main(){
         {
             name: "systemesauxiliaires_bonus",
             options: {
-                reference: "blindage",
-                value:2
+                reference: "resistancemoteur",
+                value:1
+            }
+        },
+        {
+            name: "systemesauxiliaires_bonus",
+            options: {
+                reference: "integriteinformatique",
+                value:1
             }
         }
     ]

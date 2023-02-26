@@ -380,6 +380,12 @@
 }
 .omega.sheet .main .diodesarmes {
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
 }
 .omega.sheet .main .combat-tab .weapontable thead th:nth-child(1) {
   width: 50%;
@@ -872,24 +878,49 @@
   font-size: 1.5rem;
   margin-left: 2em;
 }
+.omega-journal .liste-blanche .appui {
+  font-weight: bold;
+  color: #194c7a;
+  font-size: 0.9rem;
+}
 .omega-journal .liste-noire {
   font-size: 1.5rem;
   margin-left: 2em;
+}
+.omega-journal .liste-noire .appui {
+  font-weight: bold;
+  color: #194c7a;
+  font-size: 0.9rem;
 }
 .omega-journal .liste-bleue {
   color: #0873b9;
   font-size: 1.5rem;
   margin-left: 2em;
 }
+.omega-journal .liste-bleue .appui {
+  font-weight: bold;
+  color: #194c7a;
+  font-size: 0.9rem;
+}
 .omega-journal .liste-verte {
   color: #00974a;
   font-size: 1.5rem;
   margin-left: 2em;
 }
+.omega-journal .liste-verte .appui {
+  font-weight: bold;
+  color: #194c7a;
+  font-size: 0.9rem;
+}
 .omega-journal .liste-rouge {
   color: #c6161b;
   font-size: 1.5rem;
   margin-left: 2em;
+}
+.omega-journal .liste-rouge .appui {
+  font-weight: bold;
+  color: #194c7a;
+  font-size: 0.9rem;
 }
 .omega-journal h1 {
   font: 3em "exo2";
@@ -906,8 +937,9 @@
   font: 1.5em "exo2";
   color: white;
   background-color: #f15923;
-  border-bottom: 2px solid #FCC451;
+  border-bottom: 2px solid #fcc451;
   border-top-right-radius: 20px 20px;
+  text-transform: uppercase;
 }
 .omega-journal h4 {
   font: 1.2em "exo2";
@@ -917,11 +949,45 @@
 .omega-journal .smalltitle {
   font: 1em "exo2";
   font-weight: bold;
-  color: #EC6B05;
+  color: #ec6b05;
   padding-top: 2px;
 }
+.omega-journal .NPC-titre {
+  font: 1.2em "helvetica";
+  font-weight: bold;
+  padding: 4px 0 4px 0;
+  color: white;
+  background-color: #f15923;
+  border-top-right-radius: 20px 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.omega-journal .confrontation {
+  background-color: #c0ccd1;
+  font: 1em "exo2";
+  text-align: justify;
+  color: #214676;
+  padding-bottom: 4px;
+}
+.omega-journal .confrontation .title {
+  font: 1.2em "helvetica";
+  font-weight: bold;
+  color: white;
+  background-color: #214676;
+  text-transform: uppercase;
+}
+.omega-journal table th {
+  background-color: #214676;
+  color: #fff;
+}
+.omega-journal table tr:nth-child(even) {
+  background: #ccc;
+}
+.omega-journal table tr:nth-child(odd) {
+  background: #fff;
+}
 .omega-journal .insert {
-  background-color: #829FA8;
+  background-color: #829fa8;
   margin: 3em;
   padding: 1em;
   border: 2px solid #422a1e;
@@ -948,8 +1014,8 @@
   background-color: black;
   margin: 4em;
   padding: 1em;
-  color: #008B3B;
-  border: 2px solid #008B3B;
+  color: #008b3b;
+  border: 2px solid #008b3b;
   border-radius: 20px 20px 20px 20px;
 }
 .omega-journal .appui {
