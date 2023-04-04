@@ -11,7 +11,15 @@
 <h2>Disclaimer</h2>
 <p>Oméga est un jeu de rôle écrit par Cyril Berger, Sébastien Ciccia et Florent Moragas, et publié par Odonata éditions.</p>
 <p>Les illustrations, textes et logo sont Copyright ©Odonata éditions, 4, rue des Capucines, 66350 Toulouges, SIREN : 847 567 971 RCS Perpignan.</p>
-<p>Some images included in the system are copyrights ©Odonata éditions and are used with their permission.</p>
+<h2>Project Licensing</h2>
+<p>All HTML, CSS and Javascript in this project is licensed under GNU General Public License v3.0<br />
+Le code HTML, CSS et Javascript de ce projet est placé sous licence GNU General Public License v3.0</p>
+
+<h2>Content Usage and Licensing</2>
+<p>Any Oméga content is used with permission from ©Odonata éditions.<br />
+    Le contenu lié à Oméga est utilisé avec la permission de ©Odonata éditions.</p>
+<h2>Virtual Table Top Platform Licenses</h2>
+<p>This Game System for Foundry Virtual Tabletop is licensed under the Limited License Agreement for module development 09/02/2020.</p>
 <h2>Contributeurs</h2>
 <p>Ce système est développé par Khaali, et publié avec l'accord de l'éditeur Odonata.</p>
 ​<h2>Fonctionnalités</h2>

@@ -25,7 +25,7 @@ export const OMEGA = {
   },
   REGROUPEMENT_ARMES: {
     TECHNOLOGIE: {
-      energetique: "Energétique",
+      energetique: "Énergétique",
       particules: "Particules",
       plasma: "Plasma",
       gravitationnelles: "Gravitationnelles",
@@ -102,7 +102,7 @@ export const OMEGA = {
       label: "Entrave"
     },
     etourdi: {
-      label: "Etourdi pour 1 tour"
+      label: "Étourdi pour 1 tour"
     },
     explosion: {
       label: "Explosion"
