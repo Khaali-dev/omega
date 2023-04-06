@@ -110,7 +110,7 @@
         "description": "Immobilisation pour le reste du tour, la cible doit résussir Ossature contre Ossature au prochain tour pour se libérer."
       },
       "etourdi": {
-        "label": "Etourdi pour 1 tour",
+        "label": "Étourdi pour 1 tour",
         "description": ""
       },
       "explosion": {

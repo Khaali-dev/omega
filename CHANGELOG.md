@@ -1,3 +1,6 @@
+# Version 1.5.0
+- Mise en forme, typos
+- Nouvelle icone pour les avantages organiques
 # Version 1.4.0
 - Ajout d'un journal "Rappels de regles" et d'une icone dans le menu de droite pour l'ouvrir.
 - Description des effets critiques des armes par un tooltip dans l'onglet combat des feuilles de perso.

@@ -54,6 +54,11 @@ export default function registerHooks() {
           createChanges.img = 'systems/omega/assets/image/upgrade.svg';
         }
       }
+      else if (document.type === "avantage") {
+        if (document.img === 'icons/svg/item-bag.svg') {
+          createChanges.img = 'systems/omega/assets/svg/avantages.svg';
+        }
+      }
       document.update(createChanges);
     }
   });

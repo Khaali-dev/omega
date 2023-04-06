@@ -16,7 +16,7 @@ export default class OmegaBaseActor extends Actor {
    * @private
    */
   async _prepareDataAdvancedSynth() {
-    // Evaluation des systèmes auxiliaires
+    // Évaluation des systèmes auxiliaires
     this.system.systemesauxiliaires.blindage.base = this.system.typeSynth === "alpha" ? this.system.programmes.resistance.value * 3 : this.system.programmes.resistance.value * 2;
     this.system.systemesauxiliaires.blindage.max = this.system.systemesauxiliaires.blindage.base + this.system.systemesauxiliaires.blindage.mod;
     this.system.systemesauxiliaires.blindage.tooltip =
