@@ -1,3 +1,6 @@
+# Version 1.6.0
+- Ajout des types de réacteurs et de coques dans les fiches de vaisseaux
+- correction d'un bug dans les tirs des regroupements d'armes
 # Version 1.5.0
 - Mise en forme, typos
 - Nouvelle icone pour les avantages organiques

@@ -14,13 +14,13 @@ export const OMEGA = {
       percussionsynt: "Percussion Synthétique",
       plasma: "Plasma",
       sales: "Sales",
-      sonique: "Sonique"
+      sonique: "Sonique",
     },
     TYPEPROGRAMME: {
       armesaenergie: "AAE",
       exterminateur: "Exterminateur",
       tir: "Tir",
-      corpsacorps: "Corps à corps"
+      corpsacorps: "Corps à corps",
     },
   },
   REGROUPEMENT_ARMES: {
@@ -32,139 +32,139 @@ export const OMEGA = {
       missiles: "Missiles",
       torpille: "Torpille",
       moleculaire: "Moléculaire",
-      railguns: "RailGuns"
+      railguns: "RailGuns",
     },
     EFFET_CRITIQUE: {
-      echec_ra: {label:"Inutilisable pour le prochain tour de combat"},
-      energetique: {label:"Perturbations électriques (Défense -1 pendant 1 tour)"},
-      particules: {label:"Dégâts persistants bleus supplémentaires pour les 2 prochains segments de combat"},
-      plasma: {label:"Surchauffe (-2 en Évolution jusqu'à la fin du tour de combat)"},
-      gravitationnelles: {label:"Immobilisation (perte des actions restantes)"},
-      missiles: {label:"Annule les activités OPSAR"},
-      torpille: {label:"Explosion (Tirage d'une diode supplémentaire de dégâts)"},
-      railguns: {label:"Dégâts appliqués 2 fois"}
+      echec_ra: { label: "Inutilisable pour le prochain tour de combat" },
+      energetique: { label: "Perturbations électriques (Défense -1 pendant 1 tour)" },
+      particules: { label: "Dégâts persistants bleus supplémentaires pour les 2 prochains segments de combat" },
+      plasma: { label: "Surchauffe (-2 en Évolution jusqu'à la fin du tour de combat)" },
+      gravitationnelles: { label: "Immobilisation (perte des actions restantes)" },
+      missiles: { label: "Annule les activités OPSAR" },
+      torpille: { label: "Explosion (Tirage d'une diode supplémentaire de dégâts)" },
+      railguns: { label: "Dégâts appliqués 2 fois" },
     },
     TYPERA: {
       leger: "Léger",
       moyen: "Moyen",
-      lourd: "Lourd"
+      lourd: "Lourd",
     },
   },
   EQUIPAGE: {
     cannonier: {
-      reference: "consuitedetir"
+      reference: "consuitedetir",
     },
     tacticien: {
-      reference: "tactique"
+      reference: "tactique",
     },
     opsar: {
-      reference: "opsar"
+      reference: "opsar",
     },
     mecanicien: {
-      reference: "mecanique"
+      reference: "mecanique",
     },
     pilote: {
-      reference: "pilotage"
+      reference: "pilotage",
     },
   },
   EFFET_CRITIQUE: {
     aucun: {
-      label: "Aucun"
+      label: "Aucun",
     },
     accelerateur: {
-      label: "Accelérateur de dégâts"
+      label: "Accelérateur de dégâts",
     },
     arrachement: {
-      label: "Arrachement"
+      label: "Arrachement",
     },
     assomme1: {
-      label: "Assommé pour 1mn"
+      label: "Assommé pour 1mn",
     },
     assomme10: {
-      label: "Assommé pour 10mn"
+      label: "Assommé pour 10mn",
     },
     degradation: {
-      label: "Dégradation polymérique"
+      label: "Dégradation polymérique",
     },
     deregulation: {
-      label: "Dérégulation"
+      label: "Dérégulation",
     },
     dereglement: {
-      label: "Dérèglement"
+      label: "Dérèglement",
     },
     disrupteur1: {
-      label: "Disrupteur 1"
+      label: "Disrupteur 1",
     },
     disrupteur2: {
-      label: "Disrupteur 2"
+      label: "Disrupteur 2",
     },
     entrave: {
-      label: "Entrave"
+      label: "Entrave",
     },
     etourdi: {
-      label: "Étourdi pour 1 tour"
+      label: "Étourdi pour 1 tour",
     },
     explosion: {
-      label: "Explosion"
+      label: "Explosion",
     },
     iem1: {
-      label: "IEM 1"
+      label: "IEM 1",
     },
     iem2: {
-      label: "IEM 2"
+      label: "IEM 2",
     },
     mort: {
-      label: "Mort subite"
+      label: "Mort subite",
     },
     renversement: {
-      label: "Renversement"
+      label: "Renversement",
     },
     resonnance: {
-      label: "Résonnance"
+      label: "Résonnance",
     },
     surchauffe: {
-      label: "Surchauffe"
+      label: "Surchauffe",
     },
     trouble: {
-      label: "Trouble sensoriel"
+      label: "Trouble sensoriel",
     },
   },
   EFFET_NEGATIF: {
     aucun: {
-      label: "Aucun"
+      label: "Aucun",
     },
     breche: {
-      label: "Brèche"
+      label: "Brèche",
     },
     chargeur: {
-      label: "Chargeur vide"
+      label: "Chargeur vide",
     },
     contamination: {
-      label: "Contamination"
+      label: "Contamination",
     },
     destruction: {
-      label: "Destruction"
+      label: "Destruction",
     },
     enraye: {
-      label: "Arme enrayée"
+      label: "Arme enrayée",
     },
     erreur: {
-      label: "Erreur système"
+      label: "Erreur système",
     },
     explosion_munition: {
-      label: "Explosion"
+      label: "Explosion",
     },
     perte: {
-      label: "Perte de l'arme"
+      label: "Perte de l'arme",
     },
     rate: {
-      label: "Raté"
+      label: "Raté",
     },
     reprogrammation: {
-      label: "Reprogrammation"
+      label: "Reprogrammation",
     },
     surchauffe_echec: {
-      label: "Surchauffe"
+      label: "Surchauffe",
     },
   },
   EXTENSION: {
@@ -172,40 +172,40 @@ export const OMEGA = {
       app: "Application immédiate",
       action: "Action",
       declenchement: "Déclenchement",
-      reaction: "Réaction"
+      reaction: "Réaction",
     },
   },
   FIRME: {
     futuretechnologies: {
       name: "Future Technologies",
       logoclass: "logo_futuretechnologies",
-      logoimg: "./assets/image/logo/logo_futuretechnologies.webp"
+      logoimg: "./assets/image/logo/logo_futuretechnologies.webp",
     },
     earthshield: {
       name: "Earthshield",
       logoclass: "logo_earthshield",
-      logoimg: "./assets/image/logo/logo_earthshield.webp"
+      logoimg: "./assets/image/logo/logo_earthshield.webp",
     },
     hegemon: {
       name: "Hegemon",
       logoclass: "logo_hegemon",
-      logoimg: "./assets/image/logo/logo_hegemon.webp"
+      logoimg: "./assets/image/logo/logo_hegemon.webp",
     },
     cyberlife: {
       name: "Cyberlife",
       logoclass: "logo_cyberlife",
-      logoimg: "./assets/image/logo/logo_cyberlife.webp"
+      logoimg: "./assets/image/logo/logo_cyberlife.webp",
     },
     prophetiaincorporated: {
       name: "Prophetia, inc.",
       logoclass: "logo_prophetiaincorporated",
-      logoimg: "./assets/image/logo/logo_prophetiaincorporated.webp"
+      logoimg: "./assets/image/logo/logo_prophetiaincorporated.webp",
     },
   },
   ORGANIQUE: {
     EQUIVALENCE: {
       armesaenergie: "tir",
-      exterminateur: "corpsacorps"
+      exterminateur: "corpsacorps",
     },
   },
   TYPESYNTH: {
@@ -213,6 +213,20 @@ export const OMEGA = {
     psi: "Psi",
     alpha: "Alpha",
     sigma: "Sigma",
+  },
+
+  TYPECOQUE: {
+    ordinaire: "Coque de technologie ordinaire",
+    basse: "Coque basse technologie",
+    haute: "Coque de haute technologie",
+    treshaute: "Coque de très haute technologie",
+  },
+  TYPEMOTEUR: {
+    mk1: "MK I",
+    mk2: "MK II",
+    mk3: "MK III",
+    mk4: "MK IV",
+    mk5: "MK V",
   },
 };
 

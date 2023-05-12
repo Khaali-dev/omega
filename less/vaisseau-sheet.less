@@ -18,32 +18,45 @@
     width: 220px;
     height: 129px;
   }
-  .vaisseauheadtable {
-    tbody td:nth-child(1) {
-      width: 30%;
+  .vaisseauheadgrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 0.5fr 0.5fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    .col-image-1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 7;
+      justify-content: center;
     }
-
-    tbody td:nth-child(2) {
-      width: 15%;
+    .row1 {
+      grid-row: 1 / 2;
     }
-
-    tbody td:nth-child(3) {
-      width: 20%;
+    .row2 {
+      grid-row: 2/3;
     }
-
-    tbody td:nth-child(4) {
-      width: 20%;
+    .row3 {
+      grid-row: 3 / 4;
     }
-
-    tbody td:nth-child(5) {
-      width: 10%;
+    .row4 {
+      grid-row: 4 / 5;
     }
-    tbody td:nth-child(6) {
-      width: 10%;
+    .row5 {
+      grid-row: 5 / 6;
     }
-
-    tbody td:nth-child(7) {
-      width: 5%;
+    .col3 {
+      grid-column: 3 / 4;
+    }
+    .col4 {
+      grid-column: 4 / 5;
+    }
+    .col5 {
+      grid-column: 5 / 6;
+    }
+    .col6 {
+      grid-column: 6 / 7;
+    }
+    .col7 {
+      grid-column: 7 / 8;
     }
   }
   .pont-tab {

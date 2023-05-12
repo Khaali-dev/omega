@@ -1,98 +1,110 @@
 <form class="{{cssClass}}" autocomplete="off">
     <div class="main droppable">
-        <table class="vaisseauheadtable">
-            <tbody>
-                <tr>
-                    <td rowspan="5"><img class="vaisseauimg" src="{{actor.img}}" data-edit="img"
-                            title="{{actor.name}}" /></td>
-                    <td class="name-text">{{localize "OMEGA.label.name"}}</td>
+        <div class="vaisseauheadgrid">
+            <!-- COLONNE 1 -->
+            <div class="col-image-1"><img class="vaisseauimg" src="{{actor.img}}" data-edit="img"
+                title="{{actor.name}}" /></div>
+            <div class="name-text row1">{{localize "OMEGA.label.name"}}</div>
+            {{#if unlocked}}
+            <div class="row1"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+            {{else}}
+            <div class="row1 pcname">{{actor.name}}
+            {{/if}}
+            </div>
+            <div class="row1 caract-text">{{localize "OMEGA.label.vaisseau.evolution"}}</div>
+            {{#if unlocked}}
+            <div class="row1"><input class="aux-input" title="Valeur courante" id="evolution" name="system.evolution"
+                type="number" value="{{system.evolution}}" /></div>
+            {{else}}
+            <div class="row1 caract-text">{{system.evolution}}</div>
+            {{/if}}
+            <div class="row2 name-text">{{localize "OMEGA.label.vaisseau.origine"}}</div>
+            {{#if unlocked}}
+            <div class="row2"><input name="system.origine" type="text" value="{{system.origine}}" placeholder="Origine" />
+            {{else}}
+            <div class="row2 pcfirme">{{system.origine}}
+            {{/if}}
+            </div>
+            <div class="row2 caract-text" data-field="classe">{{localize "OMEGA.label.vaisseau.defense"}}</div>
+            {{#if unlocked}}
+            <div class="row2"><input class="aux-input" title="Valeur courante" id="defense" name="system.defense"
+                type="number" value="{{system.defense}}" /></div>
+             {{else}}
+             <div class="row2 caract-text">{{system.defense}}</div>
+             {{/if}}
+             <div class="row3 name-text">{{localize "OMEGA.label.type"}}</div>
+             {{#if unlocked}}
+             <div class="row3"><input name="system.typevaisseau" type="text" value="{{system.typevaisseau}}" placeholder="Type" />
+             {{else}}
+             <div class="row3 pcfirme">{{system.typevaisseau}}
+             {{/if}}
+            </div>
+            <div class="row3 caract-text" data-field="classe">{{localize "OMEGA.label.vaisseau.vitesse"}}</div>
+            {{#if unlocked}}
+            <div class="row3"><input class="aux-input" title="Valeur courante" id="vitesse" name="system.vitesse"
+                            type="number" value="{{system.vitesse}}" /></div>
+            {{else}}
+            <div class="row3 caract-text">{{system.vitesse}}</div>
+            {{/if}}
+            <div class="row4 name-text">{{localize "OMEGA.label.vaisseau.classe"}}</div>
+            {{#if unlocked}}
+              <div class="row4 "><input class="small-input" name="system.classe" type="number" value="{{system.classe}}" placeholder="classe" />
+                {{else}}
+            <div class="row4 " class="pcfirme">{{system.classe}}
+                {{/if}}
+            </div>
+            <div class="row4">Coque</div>
+            <div class="row4"><input class="aux-input small-input" title="Valeur courante" id="coque" name="system.coque.value"
+                    type="number" min="0" max="{{system.coque.base}}" value="{{system.coque.value}}" /></div>
+            {{#if unlocked}}
+            <div class="row4"><input class="aux-input small-input" title="Maximum" id="coquebase" name="system.coque.base"
+                    type="number" value="{{system.coque.base}}" /></div>
+            {{else}}<div class="row4">/ {{system.coque.base}}</div>
+            {{/if}}
+            <div class="row5 col3"> 
+            <a class="right-icon sheet-reload" title="{{localize 'OMEGA.label.recharger'}}">
+            <i class="fas fa-redo"></i></a>
+            <a class="right-icon sheet-change-lock" title="{{localize 'OMEGA.label.unlock_sheet'}}">
+                {{#if unlocked}}
+                <i class="fas fa-lock-open"></i>
+                {{else}}
+                <i class="fas fa-lock"></i>
+                {{/if}}</a>
+            </div>
+                <div class="row5 col4">Comp. internes</div>
+                <div class="row5 col5"><input class="aux-input small-input" title="Valeur courante" id="compartimentsinternes"
+                        name="system.compartimentsinternes.value" type="number" min="0"
+                        max="{{system.compartimentsinternes.base}}"
+                        value="{{system.compartimentsinternes.value}}" /></div>
+                {{#if unlocked}}
+                <div class="row5 col6"><input class="aux-input small-input" title="Maximum" id="compartimentsinternesbase"
+                        name="system.compartimentsinternes.base" type="number"
+                        value="{{system.compartimentsinternes.base}}" /></div>
+                {{else}}<div class="row5 col6">/ {{system.compartimentsinternes.base}}</div>
+                {{/if}}
+                <div class="row3 col7">
                     {{#if unlocked}}
-                    <td colspan="2"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
-                        {{else}}
-                    <td colspan="2" class="pcname">{{actor.name}}
-                        {{/if}}
-                    </td>
-                    <td class="caract-text">{{localize "OMEGA.label.vaisseau.evolution"}}</td>
-                    {{#if unlocked}}
-                    <td><input class="aux-input" title="Valeur courante" id="evolution" name="system.evolution"
-                            type="number" value="{{system.evolution}}" /></td>
-                    {{else}}
-                    <td class="caract-text">{{system.evolution}}</td>
-                    {{/if}}
-                </tr>
-                <tr>
-                    <td class="name-text">{{localize "OMEGA.label.vaisseau.origine"}}</td>
-                    {{#if unlocked}}
-                    <td colspan="2"><input name="system.origine" type="text" value="{{system.origine}}" placeholder="Origine" />
-                        {{else}}
-                    <td colspan="2" class="pcfirme">{{system.origine}}
-                        {{/if}}
-                    </td>
-                    <td class="caract-text" data-field="classe">{{localize "OMEGA.label.vaisseau.defense"}}</td>
-                    {{#if unlocked}}
-                    <td><input class="aux-input" title="Valeur courante" id="defense" name="system.defense"
-                            type="number" value="{{system.defense}}" /></td>
-                    {{else}}
-                    <td class="caract-text">{{system.defense}}</td>
-                    {{/if}}
-                </tr>
-                <tr>
-                    <td class="name-text">{{localize "OMEGA.label.type"}}</td>
-                    {{#if unlocked}}
-                    <td colspan="2"><input name="system.typevaisseau" type="text" value="{{system.typevaisseau}}" placeholder="Type" />
-                        {{else}}
-                    <td colspan="2" class="pcfirme">{{system.typevaisseau}}
-                        {{/if}}
-                    </td>
-                    <td class="caract-text" data-field="classe">{{localize "OMEGA.label.vaisseau.vitesse"}}</td>
-                    {{#if unlocked}}
-                    <td><input class="aux-input" title="Valeur courante" id="vitesse" name="system.vitesse"
-                            type="number" value="{{system.vitesse}}" /></td>
-                    {{else}}
-                    <td class="caract-text">{{system.vitesse}}</td>
-                    {{/if}}
-                </tr>
-                <tr>
-                    <td class="name-text">{{localize "OMEGA.label.vaisseau.classe"}}</td>
-                    {{#if unlocked}}
-                    <td colspan="2"><input class="small-input" name="system.classe" type="number" value="{{system.classe}}" placeholder="classe" />
-                        {{else}}
-                    <td colspan="2" class="pcfirme">{{system.classe}}
-                        {{/if}}
-                    </td>
-                    <td>Coque</td>
-                    <td><input class="aux-input small-input" title="Valeur courante" id="coque" name="system.coque.value"
-                            type="number" min="0" max="{{system.coque.base}}" value="{{system.coque.value}}" /></td>
-                    {{#if unlocked}}
-                    <td><input class="aux-input small-input" title="Maximum" id="coquebase" name="system.coque.base"
-                            type="number" value="{{system.coque.base}}" /></td>
-                    {{else}}<td>/ {{system.coque.base}}</td>
-                    {{/if}}
-                </tr>
-                <tr><td></td><td>
-                    <a class="right-icon sheet-reload" title="{{localize 'OMEGA.label.recharger'}}">
-                    <i class="fas fa-redo"></i></a>
-                    <a class="right-icon sheet-change-lock" title="{{localize 'OMEGA.label.unlock_sheet'}}">
-                        {{#if unlocked}}
-                        <i class="fas fa-lock-open"></i>
-                        {{else}}
-                        <i class="fas fa-lock"></i>
-                        {{/if}}</a>
-                    </td><td></td>
-                        <td>Compartiments internes</td>
-                        <td><input class="aux-input small-input" title="Valeur courante" id="compartimentsinternes"
-                                name="system.compartimentsinternes.value" type="number" min="0"
-                                max="{{system.compartimentsinternes.base}}"
-                                value="{{system.compartimentsinternes.value}}" /></td>
-                        {{#if unlocked}}
-                        <td><input class="aux-input small-input" title="Maximum" id="compartimentsinternesbase"
-                                name="system.compartimentsinternes.base" type="number"
-                                value="{{system.compartimentsinternes.base}}" /></td>
-                        {{else}}<td>/ {{system.compartimentsinternes.base}}</td>
-                        {{/if}}
-                </tr>
-            </tbody>
-        </table>
+                    <select name="system.typeMoteur">
+                        {{#select system.typeMoteur}}
+                        {{#each config.TYPEMOTEUR as |name type|}}
+                        <option value="{{type}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                {{else}}{{typeMoteur}}
+            {{/if}}</div>
+            <div class="row4 col7">
+                {{#if unlocked}}
+                <select name="system.typeCoque">
+                    {{#select system.typeCoque}}
+                    {{#each config.TYPECOQUE as |name type|}}
+                    <option value="{{type}}">{{name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            {{else}}{{typeCoque}}
+        {{/if}}</div>
+        </div>
         <div class="sheet-tabs tabs" data-group="primary">
             <b class="tab-name" data-tab="vaisseau-pont">Pont principal</b>
             <b class="tab-name" data-tab="equipage">Équipage</b>

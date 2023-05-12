@@ -265,23 +265,24 @@ export default class OmegaBaseActor extends Actor {
   }
 
   async shoot(armeId) {
-    let arme = this.items.get(armeId);
-    let group = this.estOrganique() ? "caracteristiques" : "programmes";
-    let field = arme.system?.typeprogramme;
+    const arme = this.items.get(armeId);
     let program = {};
-    if (this.estOrganique()) {
-      field = this.getEquivalentOrga(arme.system.typeprogramme);
-    } else if (this.estSynthetique() && this.system.programmes[arme.system.typeprogramme].value < this.system.caracteristiques.attaque.value) {
-      group = "caracteristiques";
-      field = "attaque";
-    }
     if (this.estVaisseau()) {
-      program = {
-        value: arme.system.attackvalue,
-        label: game.i18n.localize("OMEGA.label.programmes.conduitedetir"),
-        reference: "cannonier",
-      };
+      program.value= arme.system.attackvalue;
+      program.label= game.i18n.localize("OMEGA.label.programmes.conduitedetir");
+      program.reference= "cannonier";
     } else {
+      let group = "caracteristiques";
+      let field = "attaque";
+      if (this.estOrganique()) {
+        field = this.getEquivalentOrga(arme.system.typeprogramme);
+      } else if (this.estSynthetique() && (this.system.programmes[arme.system.typeprogramme].value < this.system.caracteristiques.attaque.value)) {
+        group = "caracteristiques";
+      }
+      else{
+        group = "programmes";
+        field = arme.system?.typeprogramme;
+      }
       program = {
         value: this.system[group][field].value,
         label: game.i18n.localize(this.system[group][field].label),
@@ -294,7 +295,7 @@ export default class OmegaBaseActor extends Actor {
       malusDegatsSubis: this.system.malusDegatsSubis,
     };
     let diodes = new Diodes(this, ROLL_TYPE.ATTACK, program, data);
-    diodes.openDialog();
+    await diodes.openDialog();
   }
   async chanceRoll() {
     let program = {

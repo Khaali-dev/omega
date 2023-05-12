@@ -437,6 +437,8 @@
         "base": 3,
         "value": 3
       },
+      "typeCoque": "ordinaire",
+      "typeMoteur": "mk4",
       "coque": {
         "base": 9,
         "value": 9

@@ -37,6 +37,8 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
       element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
     });
     context.equipage = duplicate(this.actor.system.equipage);
+    context.typeCoque = game.omega.config.TYPECOQUE[this.actor.system.typeCoque];
+    context.typeMoteur = game.omega.config.TYPEMOTEUR[this.actor.system.typeMoteur];
     return context;
   }
 
