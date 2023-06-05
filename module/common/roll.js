@@ -240,7 +240,7 @@ export class Diodes {
     if (rerollButton) {
       if (this.playerCanReroll) this.chat.setFlag("world", "reRollUserId", game.user.id);
       this.chat.setFlag("world", "reRoll", templateData);
-      this.chat.setFlag("world", "diodeData", { actor: this.actor, rolltype: this.rolltype, program: this.program, data: this.data });
+      this.chat.setFlag("world", "diodeData", { actorId: this.actor.id, rolltype: this.rolltype, program: this.program, data: this.data });
     }
     if (this.rolltype === ROLL_TYPE.INITIATIVE) {
       return this.data;

@@ -1,3 +1,6 @@
+# Version 1.7.0
+- update vers Foundry v11
+- Ajout de nouveaux types de vaisseaux
 # Version 1.6.0
 - Ajout des types de réacteurs et de coques dans les fiches de vaisseaux
 - correction d'un bug dans les tirs des regroupements d'armes

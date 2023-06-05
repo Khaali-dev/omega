@@ -76,7 +76,8 @@ export default function registerHooks() {
     if (!game.user.isGM && game.user._id !== userId) return;
 
     let flagData = newMessage.getFlag("world", "diodeData");
-    let diode = new Diodes(flagData.actor, flagData.rolltype, flagData.program, flagData.data);
+    let actor=game.actors.get(flagData.actorId);
+    let diode = new Diodes(actor, flagData.rolltype, flagData.program, flagData.data);
     diode.reroll(eventData, message);
   }
 
