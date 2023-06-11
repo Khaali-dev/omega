@@ -1,3 +1,5 @@
+# Version 1.7.1
+- Ajout d'extensions
 # Version 1.7.0
 - update vers Foundry v11
 - Ajout de nouveaux types de vaisseaux
