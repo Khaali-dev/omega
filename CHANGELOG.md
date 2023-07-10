@@ -1,3 +1,5 @@
+# Version 1.7.2
+- Thumbnail accueil v11
 # Version 1.7.1
 - Ajout d'extensions
 # Version 1.7.0
