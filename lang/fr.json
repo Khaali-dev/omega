@@ -1,22 +1,25 @@
 {
-  "ACTOR": {
-    "TypeAdvancedsynth": "Synthetique avancé",
-    "TypeSynthetique": "Synthetique asservi",
-    "TypeOrganique": "Organique",
-    "TypeVaisseau": "Vaisseau"
+  "TYPES": {
+      "Actor":{
+        "advancedsynth": "Synthetique avancé",
+        "synthetique": "Synthetique asservi",
+        "organique": "Organique",
+        "vaisseau": "Vaisseau"
+      },
+
+      "Item": {
+        "arme": "Arme",
+        "avantage": "Avantage",
+        "chassis": "Chassis",
+        "equipement": "Équipement",
+        "extension": "Extension",
+        "regroupement": "Regroupement d'armes",
+        "upgrade": "Upgrade"
+      }
   },
   "COMBAT": {
     "augmentercouleur": "Augmenter d'une couleur",
     "diminuercouleur": "Diminuer d'une couleur"
-  },
-  "ITEM": {
-    "TypeArme": "Arme",
-    "TypeAvantage": "Avantage",
-    "TypeChassis": "Chassis",
-    "TypeEquipement": "Équipement",
-    "TypeExtension": "Extension",
-    "TypeRegroupement": "Regroupement d'armes",
-    "TypeUpgrade": "Upgrade"
   },
 
   "OMEGA": {

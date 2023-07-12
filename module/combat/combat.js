@@ -1,9 +1,7 @@
 export default class OmegaCombat extends Combat {
-
-  
   /**
    * @description Ordre des combatants
-   * 
+   *
    */
   _sortCombatants(a, b) {
     if (a.defeated) {
@@ -23,14 +21,13 @@ export default class OmegaCombat extends Combat {
     return a.tokenId - b.tokenId;
   }
 
-  _onUpdateEmbeddedDocuments(embeddedName, documents, result, options, userId) {
+  _onUpdateDescendantDocuments(parent, collection, documents, changes, options, userId) {
     this.setupTurns();
     if (game.user.id === userId) this.update({ turn: 0 });
     else this.updateSource({ turn: 0 });
 
-    if (this.active && (options.render !== false)) this.collection.render();
+    if (this.active && options.render !== false) this.collection.render();
   }
-
 
   async rollInitiative(ids, { formula = null, updateTurn = true, messageOptions = {} } = {}) {
     ids = typeof ids === "string" ? [ids] : ids;
@@ -65,8 +62,10 @@ export default class OmegaCombat extends Combat {
 
   async startCombat() {
     //await this.setupTurns();
-//flag to register turn history (for allowing going back to previous turn)
-    if(game.user.isGM) {await this.setFlag("omega", "turnHistory", []);}
+    //flag to register turn history (for allowing going back to previous turn)
+    if (game.user.isGM) {
+      await this.setFlag("omega", "turnHistory", []);
+    }
     return super.startCombat();
   }
 
@@ -74,20 +73,19 @@ export default class OmegaCombat extends Combat {
     await this._pushHistory(this.combatant.getState());
     await this.combatant.depenserDiode();
     if (this.combatant.initiative <= 0) {
-        return this.nextRound();
-      }
+      return this.nextRound();
+    }
 
-    return this.update({ turn: 0});
+    return this.update({ turn: 0 });
   }
 
   async nextRound() {
-    await this._pushHistory(this.combatants.map(c => c.getState()));
+    await this._pushHistory(this.combatants.map((c) => c.getState()));
     await this._pushHistory("newRound");
 
     await this.resetAll();
     return this.update({ round: this.round + 1, turn: 0 }, { advanceTime: CONFIG.time.roundTime });
   }
-
 
   async previousTurn() {
     let data = await this._popHistory();
@@ -113,11 +111,9 @@ export default class OmegaCombat extends Combat {
 
       if (Array.isArray(data)) {
         roundState = data;
-      }
-      else if (data==="newRound") {
+      } else if (data === "newRound") {
         roundState = turnHistory.pop();
-      }
-      else {
+      } else {
         let index = turnHistory.lastIndexOf("newRound");
         turnHistory.splice(index);
         roundState = turnHistory.pop();
@@ -132,7 +128,6 @@ export default class OmegaCombat extends Combat {
       return this.update({ round: round, turn: 0 }, { advanceTime: -CONFIG.time.roundTime });
     }
   }
-
 
   /**
    * Reset all combatant initiative scores, setting the turn back to zero
@@ -156,7 +151,7 @@ export default class OmegaCombat extends Combat {
 
   /**
    * @description sauvegarder les données des tours passés depuis le flag
-   * 
+   *
    */
   async _pushHistory(data) {
     let turnHistory = this.getFlag("omega", "turnHistory").slice();
@@ -166,7 +161,7 @@ export default class OmegaCombat extends Combat {
 
   /**
    * @description Recuperer les données des tours passés depuis le flag
-   * 
+   *
    */
   async _popHistory() {
     let turnHistory = this.getFlag("omega", "turnHistory").slice();
@@ -174,5 +169,4 @@ export default class OmegaCombat extends Combat {
     await this.setFlag("omega", "turnHistory", turnHistory);
     return result;
   }
-
 }

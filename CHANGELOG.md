@@ -1,3 +1,6 @@
+# Version 2.0.0
+version V11 only
+correction d'un bug sur le combat tracker en v11
 # Version 1.7.2
 - Thumbnail accueil v11
 # Version 1.7.1
