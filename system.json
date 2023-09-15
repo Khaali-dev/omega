@@ -2,7 +2,7 @@
   "id": "omega",
   "title": "Omega",
   "description": "Le système Omega pour FoundryVTT.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "compatibility": {
     "minimum": "11",
     "verified": "11"
@@ -25,6 +25,7 @@
       "label": "Guide utilisateur du système",
       "system": "omega",
       "path": "packs/userguide.db",
+      "banner": "systems/omega/assets/image/logo_thumb.webp",
       "type": "JournalEntry",
       "private": false,
       "flags": {}
@@ -34,6 +35,7 @@
       "label": "Oméga - armes, extensions et personnages",
       "system": "omega",
       "path": "packs/omega_base.db",
+      "banner": "systems/omega/assets/image/logo_thumb.webp",
       "type": "Adventure",
       "private": false,
       "flags": {}
@@ -73,6 +75,6 @@
   "initiative": "",
   "url": "https://github.com/khaali-dev/omega",
   "manifest": "https://github.com/khaali-dev/omega/releases/latest/download/system.json",
-  "download": "https://github.com/khaali-dev/omega/releases/download/2.0.0/system.zip",
+  "download": "https://github.com/khaali-dev/omega/releases/download/2.1.0/system.zip",
   "license": "LICENSE"
 }

@@ -142,6 +142,17 @@ export class Diodes {
       }).render(true);
     }
   }
+  
+  /**
+   * Piocher le nombre de diodes selon data.formulaValue et les placer
+   * @param actor L'acteur qui agit
+   * @param rolltype le type de tirage  (ROLL_TYPE)
+   * @param program  Le programme utilisé : '{Value , label, reference}
+   * @param data
+   *        itemId  L'id de l'arme si attaque
+   *        malusDegatsSubis  le malus au actions du aux dégâts subis
+   *        mod  modificateur au jet
+   */
   async piocher() {
     this.data.nbDiodes = await this.evaluerDiodesAPiocher(this.data.formulaValue);
     this.data.diodesResult = [];
@@ -153,32 +164,35 @@ export class Diodes {
       blanche: 0,
       noire: 0,
     };
+    const bag = Array.from(Array(30).keys()).map(i => i + 1); // Sac contient 1..30.
+
+    // Mélanger le sac (algorithme Fisher-Yates).
+    for (let i = bag.length - 1; i > 0; i--) {
+      const r = Math.floor(Math.random() * (i + 1)); // Nombre aléatoire entre 0 et i.
+      const temp = bag[i];
+      bag[i] = bag[r];
+      bag[r] = temp;
+    }
+    
     for (let i = 0; i < this.data.nbDiodes; i++) {
-      let newDiode = await this.piocherDiode();
-      while (this.data.diodesSorties.includes(newDiode.value)) {
-        newDiode = await this.piocherDiode();
-      }
-      await this.data.diodesResult.push(newDiode);
-      await this.data.diodesSorties.push(newDiode.value);
-      this.data.diodesParCouleur[newDiode.color] += 1;
+      const value = bag.pop(); // Lire et retirer une diode.
+      const color = await this.couleur(value); // Récupérer la couleur à partir de la valeur pioché.
+      this.data.diodesResult.push({ value: value, color: color });
+      console.log({ value: value, color: color });
+      this.data.diodesSorties.push(value);
+      this.data.diodesParCouleur[color] += 1;
     }
   }
   async evaluerDiodesAPiocher(formula) {
     if (formula) return Math.abs(formula);
     else return 1;
   }
-  async piocherDiode() {
-    const roll = new Roll("1d30", {}).roll({ async: false });
-    let color = "blanche";
-    if (roll.result < 4) color = "noire";
-    else if (roll.result > 27) color = "rouge";
-    else if (roll.result > 21) color = "verte";
-    else if (roll.result > 15) color = "bleue";
-
-    return {
-      value: roll.result,
-      color: color,
-    };
+  async couleur(value) {
+    if (value < 4) return "noire";
+    else if (value > 27) return "rouge";
+    else if (value > 21) return "verte";
+    else if (value > 15) return "bleue";
+    return "blanche";
   }
   async showResult() {
     let rerollButton = false;

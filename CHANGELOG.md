@@ -1,3 +1,5 @@
+# Version 2.1.0
+Amélioration du code pour le tirage de diode (Merci à Shivien pour sa contribution #5)
 # Version 2.0.0
 version V11 only
 correction d'un bug sur le combat tracker en v11
