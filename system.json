@@ -2,7 +2,8 @@
   "id": "omega",
   "title": "Omega",
   "description": "Le système Omega pour FoundryVTT.",
-  "version": "2.1.1",
+  "url": "#{URL}#",
+  "version": "#{VERSION}#",
   "compatibility": {
     "minimum": "11",
     "verified": "11"
@@ -73,8 +74,7 @@
   "gridUnits": "m",
   "primaryTokenAttribute": "systemesauxiliaires.blindage",
   "initiative": "",
-  "url": "https://github.com/khaali-dev/omega",
-  "manifest": "https://github.com/khaali-dev/omega/releases/latest/download/system.json",
-  "download": "https://github.com/khaali-dev/omega/releases/download/2.1.0/system.zip",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#",
   "license": "LICENSE"
 }
