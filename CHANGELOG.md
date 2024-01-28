@@ -1,4 +1,4 @@
-# Version 2.1.1
+# Version 2.1.2
 Automatisation release Github vers Foundry
 # Version 2.1.0
 Amélioration du code pour le tirage de diode (Merci à Shivien pour sa contribution #5)

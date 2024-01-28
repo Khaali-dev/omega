@@ -151,4 +151,4 @@ jobs:
           method: 'POST'
           contentType: 'application/json'
           customHeaders: '{"Authorization": "${{ secrets.FVTT_PACKAGE_RELEASE_TOKEN }}"}'
-          data: '{"id": "omega","dry-run":false,"release":{"version":"${{github.event.release.tag_name}}","manifest":"https://github.com/Khaali-dev/omega/releases/download/${{github.event.release.tag_name}}/system.json","notes":"https://github.com/Khaali-dev/omega/blob/main/CHANGELOG.md","compatibility":{"minimum":"11","verified":"11"}}}'
+          data: '{"id": "omega","dry-run":false,"release":{"version":"${{github.event.release.tag_name}}","manifest":"https://github.com/Khaali-dev/omega/releases/download/${{github.event.release.tag_name}}/system.json","notes":"https://github.com/Khaali-dev/omega/blob/master/CHANGELOG.md","compatibility":{"minimum":"11","verified":"11"}}}'
