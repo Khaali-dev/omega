@@ -1,5 +1,6 @@
 import { OMEGA, LOG_HEAD, ROLL_TYPE } from "./module/common/config.js";
 import { Diodes } from "./module/common/roll.js";
+import setupTextEnrichers from "./module/common/text-enrichers.js";
 
 import preloadTemplates from "./module/common/templates.js";
 import registerHandlebarsHelpers from "./module/common/helpers.js";
@@ -52,6 +53,9 @@ Hooks.once("init", function () {
 
   // Register Hooks
   registerHooks();
+
+  // Configuration text enrichers
+  setupTextEnrichers();
 });
 
 Hooks.on("init", () => {

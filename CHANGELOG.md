@@ -1,3 +1,5 @@
+# Version 2.1.4
+- Option pour la visibilité des tirages du MJ.
 # Version 2.1.3
 Automatisation release Github vers Foundry
 # Version 2.1.0

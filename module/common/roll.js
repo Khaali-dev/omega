@@ -22,6 +22,19 @@ export class Diodes {
 
   async openDialog() {
     this.data.isAttack = this.rolltype === ROLL_TYPE.ATTACK ? true : false;
+
+    // Si rollMode n'est pas défini, on prend celui par défaut (celui du chat)
+    let visibilityMode = this.data.rollMode ?? game.settings.get('core', 'rollMode');
+
+    // Visibilité des jet des PNJs en fonction de l'option choisie
+    if (game.user.isGM) {
+      let visibilityChoice = game.settings.get("omega", "visibiliteJetsPNJ");
+      if (visibilityChoice === "public") visibilityMode = "publicroll";
+      else if (visibilityChoice === "private") visibilityMode = "gmroll";
+      else if (visibilityChoice === "depends") visibilityMode = game.settings.get('core', 'rollMode');
+    }
+    this.data.rollMode = visibilityMode;
+
     if (this.rolltype === ROLL_TYPE.SIMPLE) {
       let userId = game.userId;
       this.data.introText = "Pioche simple de diodes";
@@ -250,6 +263,28 @@ export class Diodes {
       content: html,
       type: CONST.CHAT_MESSAGE_TYPES.OTHER,
     };
+
+    // Si rollMode n'est pas défini, on prend celui par défaut (celui du chat)
+    let visibilityMode = this.data.rollMode ?? game.settings.get('core', 'rollMode');
+
+    // Le joueur a choisi de chuchoter au le MJ
+    if (this.data.isWhisper) visibilityMode = "gmroll";
+
+    switch (visibilityMode) {
+      case "gmroll":
+        chatData.whisper = ChatMessage.getWhisperRecipients("GM").map((u) => u.id);
+        break;
+      case "blindroll":
+        chatData.whisper = ChatMessage.getWhisperRecipients("GM").map((u) => u.id);
+        chatData.blind = true;
+        break;
+      case "selfroll":
+        chatData.whisper = [game.user.id];
+        break;
+    }
+
+    chatData.rollMode = visibilityMode;
+
     this.chat = await ChatMessage.create(chatData);
     if (rerollButton) {
       if (this.playerCanReroll) this.chat.setFlag("world", "reRollUserId", game.user.id);
