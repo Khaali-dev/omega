@@ -39,9 +39,9 @@ export default class OmegaBaseItem extends Item {
 
   _prepareLabelDiodes(){
     let listeEffets = {
-      ...duplicate(game.omega.config.EFFET_NEGATIF),
-      ...duplicate(game.omega.config.EFFET_CRITIQUE),
-      ...duplicate(game.omega.config.REGROUPEMENT_ARMES.EFFET_CRITIQUE)
+      ...foundry.utils.duplicate(game.omega.config.EFFET_NEGATIF),
+      ...foundry.utils.duplicate(game.omega.config.EFFET_CRITIQUE),
+      ...foundry.utils.duplicate(game.omega.config.REGROUPEMENT_ARMES.EFFET_CRITIQUE)
     }
     for(let diode in this.system.effetdiode){
       this.system.effetdiode[diode].label = this.system.effetdiode[diode].degat.toString();

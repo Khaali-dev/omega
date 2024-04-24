@@ -1,3 +1,5 @@
+# Version 2.2.0
+- Mises à jour du code pour v12.
 # Version 2.1.4
 - Option pour la visibilité des tirages du MJ.
 # Version 2.1.3

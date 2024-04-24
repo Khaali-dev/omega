@@ -17,9 +17,7 @@
           <td><input name="system.nbSlots" type="number" value="{{system.nbSlots}}" /></td>
           <td>
             <select name="system.type">
-              {{#select system.type}} {{#each config.EXTENSION.TYPE as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}} {{/select}}
+              {{selectOptions config.EXTENSION.TYPE selected=system.type}}
             </select>
           </td>
           <td><input name="system.coutenergie.label" type="text" value="{{system.coutenergie.label}}" /></td>

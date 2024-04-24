@@ -564,7 +564,7 @@ async function extractAllData(npcRawName, npcRawData, npcType, extensionRaw, des
     if (resultData.length) {
       let searcheditem = game.items.filter((item) => item.type === "chassis" && item.name === resultData);
       if (searcheditem.length) {
-        let ItemCopy = duplicate(searcheditem[0]);
+        let ItemCopy = foundry.utils.duplicate(searcheditem[0]);
         itemArray.push(ItemCopy);
       }
     }
@@ -580,7 +580,7 @@ async function extractAllData(npcRawName, npcRawData, npcType, extensionRaw, des
         if (index) {
           let searcheditem = game.items.filter((item) => item.name === element);
           if (searcheditem.length) {
-            let ItemCopy = duplicate(searcheditem[0]);
+            let ItemCopy = foundry.utils.duplicate(searcheditem[0]);
             itemArray.push(ItemCopy);
           }
         }

@@ -19,8 +19,13 @@ export const OMEGA = {
     TYPEPROGRAMME: {
       armesaenergie: "AAE",
       exterminateur: "Exterminateur",
-      tir: "Tir",
-      corpsacorps: "Corps à corps",
+    },
+    PRECISION: {
+      "-2": "-2",
+      "-1": "-1",
+      0: "0",
+      1: "1",
+      2: "2",
     },
   },
   REGROUPEMENT_ARMES: {

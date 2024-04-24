@@ -13,7 +13,7 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
    * @override
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       height: 800,
       width: 600,
       resizable: false,
@@ -25,11 +25,11 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
   }
 
   /** @override */
-  getData(options) {
-    const context = super.getData(options);
+  async getData(options) {
+    const context = await super.getData(options);
     const stockchassis = [];
     for (let chassis in this.actor.system.chassis) {
-      let dupChassis = duplicate(this.actor.system.chassis[chassis]);
+      let dupChassis = foundry.utils.duplicate(this.actor.system.chassis[chassis]);
       stockchassis.push(dupChassis);
     }
     context.typeSynth = game.omega.config.TYPESYNTH[this.actor.system.typeSynth];
@@ -41,8 +41,8 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
       .sort(function (a, b) {
         return a.name.localeCompare(b.name);
       });
-    context.armes.forEach((element) => {
-      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    context.armes.forEach(async (element) => {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
       element.system.attacklabel = game.omega.config.ARME.TYPEPROGRAMME[element.system.typeprogramme];
       element.system.attackvalue = this.actor.system.programmes[element.system.typeprogramme].value;
       element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
@@ -59,7 +59,7 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
   _onDropItem(event, data) {
     event.preventDefault();
     Item.fromDropData(data).then((item) => {
-      const itemData = duplicate(item);
+      const itemData = foundry.utils.duplicate(item);
       switch (itemData.type) {
         case "extension":
           return this._onDropExtension(event, itemData, data);

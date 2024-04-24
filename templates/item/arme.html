@@ -17,26 +17,14 @@
             <tbody>
                 <tr>
                     <td><select name="system.technologie">
-                            {{#select system.technologie}}
-                            {{#each config.ARME.TECHNOLOGIE as |name type|}}
-                            <option value="{{type}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                        {{selectOptions config.ARME.TECHNOLOGIE selected=system.technologie}}
                         </select></td>
                     <td><select name="system.typeprogramme">
-                            {{#select system.typeprogramme}}
-                            {{#each config.ARME.TYPEPROGRAMME as |name type|}}
-                            <option value="{{type}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                        {{selectOptions config.ARME.TYPEPROGRAMME selected=system.typeprogramme}}
                         </select></td>
                     <td><input name="system.nbSlots" type="number" value="{{system.nbSlots}}" /></td>
                     <td><select name="system.type">
-                            {{#select system.type}}
-                            {{#each config.EXTENSION.TYPE as |name type|}}
-                            <option value="{{type}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                        {{selectOptions config.EXTENSION.TYPE selected=system.type}}
                         </select></td>
                     <td><input name="system.coutenergie.label" type="text" value="{{system.coutenergie.label}}" /></td>
                     </td>
@@ -61,13 +49,7 @@
                     <td><input name="system.cadence" type="text" value="{{system.cadence}}" /></td>
                     <td><input name="system.initiative" type="text" value="{{system.initiative}}" </td>
                     <td><select name="system.precision">
-                            {{#select system.precision}}
-                            <option value="-2">-2</option>
-                            <option value="-1">-1</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            {{/select}}
+                        {{selectOptions config.ARME.PRECISION selected=system.precision}}
                         </select></td>
                     <td><input name="system.zone" type="text" value="{{system.zone}}" /></td>
                 </tr>
@@ -87,83 +69,43 @@
                 <tr>
                     <td>
                         <select name="system.effetdiode.noire.degat">
-                            {{#select system.effetdiode.noire.degat}}
-                            {{#each damagevalue as |name type|}}
-                            <option value="{{name}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                            {{selectOptions damagevalue selected=system.effetdiode.noire.degat}}
                         </select>
                     </td>
                     <td><select name="system.effetdiode.noire.effetcritique">
-                            {{#select system.effetdiode.noire.effetcritique}}
-                            {{#each config.EFFET_NEGATIF as |name type|}}
-                            <option value="{{type}}">{{name.label}}</option>
-                            {{/each}}
-                            {{/select}}
+                        {{selectOptions config.EFFET_NEGATIF selected=system.effetdiode.noire.effetcritique labelAttr="label"}}
                         </select></td>
                     <td>
                         <select name="system.effetdiode.blanche.degat">
-                            {{#select system.effetdiode.blanche.degat}}
-                            {{#each damagevalue as |name type|}}
-                            <option value="{{name}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                            {{selectOptions damagevalue selected=system.effetdiode.blanche.degat}}
                         </select>
                     </td>
                     <td><select name="system.effetdiode.blanche.effetcritique">
-                            {{#select system.effetdiode.blanche.effetcritique}}
-                            {{#each config.EFFET_NEGATIF as |name type|}}
-                            <option value="{{type}}">{{name.label}}</option>
-                            {{/each}}
-                            {{/select}}
+                        {{selectOptions config.EFFET_NEGATIF selected=system.effetdiode.blanche.effetcritique labelAttr="label"}}
                         </select></td>
                     <td>
                         <select name="system.effetdiode.bleue.degat">
-                            {{#select system.effetdiode.bleue.degat}}
-                            {{#each damagevalue as |name type|}}
-                            <option value="{{name}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                            {{selectOptions damagevalue selected=system.effetdiode.bleue.degat}}
                         </select>
                     </td>
                     <td><select name="system.effetdiode.bleue.effetcritique">
-                            {{#select system.effetdiode.bleue.effetcritique}}
-                            {{#each config.EFFET_CRITIQUE as |name type|}}
-                            <option value="{{type}}">{{name.label}}</option>
-                            {{/each}}
-                            {{/select}}
+                        {{selectOptions config.EFFET_CRITIQUE selected=system.effetdiode.bleue.effetcritique labelAttr="label"}}
                         </select></td>
                     <td>
                         <select name="system.effetdiode.verte.degat">
-                            {{#select system.effetdiode.verte.degat}}
-                            {{#each damagevalue as |name type|}}
-                            <option value="{{name}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                            {{selectOptions damagevalue selected=system.effetdiode.verte.degat}}
                         </select>
                     </td>
                     <td><select name="system.effetdiode.verte.effetcritique">
-                            {{#select system.effetdiode.verte.effetcritique}}
-                            {{#each config.EFFET_CRITIQUE as |name type|}}
-                            <option value="{{type}}">{{name.label}}</option>
-                            {{/each}}
-                            {{/select}}
+                        {{selectOptions config.EFFET_CRITIQUE selected=system.effetdiode.verte.effetcritique labelAttr="label"}}
                         </select></td>
                     <td>
                         <select name="system.effetdiode.rouge.degat">
-                            {{#select system.effetdiode.rouge.degat}}
-                            {{#each damagevalue as |name type|}}
-                            <option value="{{name}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                            {{selectOptions damagevalue selected=system.effetdiode.rouge.degat}}
                         </select>
                     </td>
                     <td><select name="system.effetdiode.rouge.effetcritique">
-                            {{#select system.effetdiode.rouge.effetcritique}}
-                            {{#each config.EFFET_CRITIQUE as |name type|}}
-                            <option value="{{type}}">{{name.label}}</option>
-                            {{/each}}
-                            {{/select}}
+                        {{selectOptions config.EFFET_CRITIQUE selected=system.effetdiode.rouge.effetcritique labelAttr="label"}}
                         </select></td>
                 </tr>
             </tbody>

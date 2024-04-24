@@ -20,7 +20,7 @@ export default class OmegaBaseItemSheet extends ItemSheet {
    * @override
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       width: 600,
       height: 400,
       resizable: true,
@@ -32,8 +32,8 @@ export default class OmegaBaseItemSheet extends ItemSheet {
   /**
    * @override
    */
-  getData() {
-    const context = super.getData();
+  async getData(options) {
+    const context = await super.getData(options);
     let sheetData = {
       id: this.item.id,
       editable: this.isEditable,
@@ -41,16 +41,16 @@ export default class OmegaBaseItemSheet extends ItemSheet {
       system: context.item.system,
       config: game.omega.config,
       damagevalue: {
-        degats0: 0,
-        degats1: 1,
-        degats2: 2,
-        degats3: 3,
-        degats4: 4,
-        degats5: 5,
-        degats6: 6,
-        degats7: 7,
-        degats8: 8
-      }
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+      },
     };
 
     return sheetData;

@@ -9,8 +9,8 @@ export class OmegaBaseActorSheet extends ActorSheet {
   }
 
   /** @override */
-  getData(options) {
-    const context = super.getData(options);
+  async getData(options) {
+    const context = await super.getData(options);
     context.system = context.actor.system;
     context.flags = context.actor.flags;
     context.id = context.actor.id;
@@ -24,18 +24,18 @@ export class OmegaBaseActorSheet extends ActorSheet {
       .sort(function (a, b) {
         return a.name.localeCompare(b.name);
       });
-    context.extensions.forEach((element) => {
-      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    context.extensions.forEach(async (element) => {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
     });
-    context.descriptionhtml = TextEditor.enrichHTML(this.actor.system.description, { async: false });
+    context.descriptionhtml = await TextEditor.enrichHTML(this.actor.system.description, { async: false });
     context.equipements = this.actor.items.filter((item) => item.type == "equipement");
-    context.equipements.forEach((element) => {
-      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    context.equipements.forEach(async (element) => {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
     });
 
     context.unlocked = this.actor.getFlag(game.system.id, "SheetUnlocked");
     context.estAdvancedSynth = this.actor.estAdvancedSynth();
-    context.descriptionhtml = TextEditor.enrichHTML(this.actor.system.description, { async: false });
+    context.descriptionhtml = await TextEditor.enrichHTML(this.actor.system.description, { async: false });
     context.system = context.actor.system;
     context.flags = context.actor.flags;
     context.ssprognonnul = [];
@@ -179,7 +179,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let extensionId = element.dataset.field;
     const target = this.actor.items.get(extensionId);
     if (target) {
-      const itemData = duplicate(target);
+      const itemData = foundry.utils.duplicate(target);
       itemData.system.chassisId = "";
       return this.actor.updateEmbeddedDocuments("Item", [itemData]);
     }

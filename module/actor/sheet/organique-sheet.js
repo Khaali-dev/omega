@@ -13,7 +13,7 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
    * @override
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       height: 800,
       width: 600,
       resizable: false,
@@ -25,19 +25,19 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
   }
 
   /** @override */
-  getData(options) {
-    const context = super.getData(options);
+  async getData(options) {
+    const context = await super.getData(options);
     context.armes = this.actor.items.filter((item) => item.type === "arme");
-    context.armes.forEach((element) => {
-      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    context.armes.forEach(async (element) => {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
       element.system.attacklabel = game.omega.config.ARME.TYPEPROGRAMME[this.actor.getEquivalentOrga(element.system.typeprogramme)];
       element.system.attackvalue = this.actor.system.caracteristiques[this.actor.getEquivalentOrga(element.system.typeprogramme)].value;
       element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
       element.system.estActif = true;
     });
     context.avantages = this.actor.items.filter((item) => item.type === "avantage");
-    context.avantages.forEach((element) => {
-      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    context.avantages.forEach(async (element) => {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
     });
 
     return context;
@@ -51,7 +51,7 @@ export default class OrganiqueSheet extends OmegaBaseActorSheet {
   _onDropItem(event, data) {
     event.preventDefault();
     Item.fromDropData(data).then((item) => {
-      const itemData = duplicate(item);
+      const itemData = foundry.utils.duplicate(item);
       switch (itemData.type) {
         case "extension":
           return this._onDropExtension(event, itemData, data);

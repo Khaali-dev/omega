@@ -99,7 +99,7 @@ export default class OmegaBaseActor extends Actor {
     if (item) {
       this.system.chassisActif.label = item.name;
       this.system.chassisActif.id = chassisId;
-      let itemDup = duplicate(item);
+      let itemDup = foundry.utils.duplicate(item);
       itemDup.system.estActif = true;
       chassisArray.push(itemDup);
       this._bonusEffets(itemDup);
@@ -107,7 +107,7 @@ export default class OmegaBaseActor extends Actor {
       //desactive tous les autres chassis
       for (const [key, item2] of this.items.entries()) {
         if (item2.type === "chassis" && item2.id !== chassisId) {
-          let itemDup2 = duplicate(item2);
+          let itemDup2 = foundry.utils.duplicate(item2);
           itemDup2.system.estActif = false;
           chassisArray.push(itemDup2);
         }
@@ -174,7 +174,7 @@ export default class OmegaBaseActor extends Actor {
     let extensionArray = [];
     for (const [key, item] of this.items.entries()) {
       if (["extension", "arme"].includes(item.type)) {
-        let itemDup = duplicate(item);
+        let itemDup = foundry.utils.duplicate(item);
         if (item.system.chassisId.length) {
           let chassis = this.items.get(item.system.chassisId);
           if (chassis) {
@@ -268,18 +268,17 @@ export default class OmegaBaseActor extends Actor {
     const arme = this.items.get(armeId);
     let program = {};
     if (this.estVaisseau()) {
-      program.value= arme.system.attackvalue;
-      program.label= game.i18n.localize("OMEGA.label.programmes.conduitedetir");
-      program.reference= "cannonier";
+      program.value = arme.system.attackvalue;
+      program.label = game.i18n.localize("OMEGA.label.programmes.conduitedetir");
+      program.reference = "cannonier";
     } else {
       let group = "caracteristiques";
       let field = "attaque";
       if (this.estOrganique()) {
         field = this.getEquivalentOrga(arme.system.typeprogramme);
-      } else if (this.estSynthetique() && (this.system.programmes[arme.system.typeprogramme].value < this.system.caracteristiques.attaque.value)) {
+      } else if (this.estSynthetique() && this.system.programmes[arme.system.typeprogramme].value < this.system.caracteristiques.attaque.value) {
         group = "caracteristiques";
-      }
-      else{
+      } else {
         group = "programmes";
         field = arme.system?.typeprogramme;
       }
@@ -351,7 +350,7 @@ export default class OmegaBaseActor extends Actor {
   }
 
   async changerEquipage(actorId, posteEquipage) {
-    let updateData = duplicate(this);
+    let updateData = foundry.utils.duplicate(this);
     let actorEquipage = game.actors.get(actorId);
     if (actorEquipage) {
       updateData.system.equipage[posteEquipage].actorid = actorId;

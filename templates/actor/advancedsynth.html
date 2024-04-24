@@ -14,18 +14,10 @@
                     {{#if unlocked}}
                     <td style="display: flex; flex-direction: column;">
                         <select name="system.firme">
-                            {{#select system.firme}}
-                            {{#each config.FIRME as |name type|}}
-                            <option value="{{type}}">{{name.name}}</option>
-                            {{/each}}
-                            {{/select}}
+                            {{selectOptions config.FIRME selected=system.firme labelAttr="name"}}
                         </select>
                         <select name="system.typeSynth">
-                            {{#select system.typeSynth}}
-                            {{#each config.TYPESYNTH as |name type|}}
-                            <option value="{{type}}">{{name}}</option>
-                            {{/each}}
-                            {{/select}}
+                            {{selectOptions config.TYPESYNTH selected=system.typeSynth}}
                         </select>
                         {{else}}
                     <td style="display: flex; flex-direction: column;"><img class="logo_firme {{logofirme}}" /><div style="text-align: center; font-size: 1.1em;">{{typeSynth}}</div>

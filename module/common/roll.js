@@ -235,7 +235,7 @@ export class Diodes {
     let armedata;
     if (this.rolltype === ROLL_TYPE.ATTACK) {
       let arme = this.actor.items.get(this.data.itemId);
-      armedata = duplicate(arme.system.effetdiode);
+      armedata = foundry.utils.duplicate(arme.system.effetdiode);
       if(arme.type === "regroupement"){
         const updates = {"_id": this.data.itemId, "system.tireffectue" : true};
         this.actor.updateEmbeddedDocuments('Item', [updates]);

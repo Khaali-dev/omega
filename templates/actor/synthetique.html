@@ -20,11 +20,7 @@
                             {{/if}}
                             {{#if unlocked}}</a>
                         <select name="system.firme">
-                            {{#select system.firme}}
-                            {{#each config.FIRME as |name type|}}
-                            <option value="{{type}}">{{name.name}}</option>
-                            {{/each}}
-                            {{/select}}
+                            {{selectOptions config.FIRME selected=system.firme labelAttr="name"}}
                         </select>
                         {{else}}
                         <img class="logo_firme {{logofirme}}" />

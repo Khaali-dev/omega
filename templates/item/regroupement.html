@@ -17,16 +17,12 @@
         <tr>
           <td>
             <select name="system.technologie">
-              {{#select system.technologie}} {{#each config.REGROUPEMENT_ARMES.TECHNOLOGIE as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}} {{/select}}
+              {{selectOptions config.REGROUPEMENT_ARMES.TECHNOLOGIE selected=system.technologie}}
             </select>
           </td>
           <td>
             <select name="system.typera">
-              {{#select system.typera}} {{#each config.REGROUPEMENT_ARMES.TYPERA as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}} {{/select}}
+              {{selectOptions config.REGROUPEMENT_ARMES.TYPERA selected=system.typera}}
             </select>
           </td>
           <td>

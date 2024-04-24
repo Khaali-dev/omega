@@ -85,22 +85,14 @@
                 <div class="row3 col7">
                     {{#if unlocked}}
                     <select name="system.typeMoteur">
-                        {{#select system.typeMoteur}}
-                        {{#each config.TYPEMOTEUR as |name type|}}
-                        <option value="{{type}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions config.TYPEMOTEUR selected=system.typeMoteur}}
                     </select>
                 {{else}}{{typeMoteur}}
             {{/if}}</div>
             <div class="row4 col7">
                 {{#if unlocked}}
                 <select name="system.typeCoque">
-                    {{#select system.typeCoque}}
-                    {{#each config.TYPECOQUE as |name type|}}
-                    <option value="{{type}}">{{name}}</option>
-                    {{/each}}
-                    {{/select}}
+                    {{selectOptions config.TYPECOQUE selected=system.typeCoque}}
                 </select>
             {{else}}{{typeCoque}}
         {{/if}}</div>

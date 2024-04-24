@@ -14,7 +14,7 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
    * @override
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       height: 600,
       width: 800,
       resizable: false,
@@ -26,17 +26,17 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
   }
 
   /** @override */
-  getData(options) {
-    const context = super.getData(options);
+  async getData(options) {
+    const context = await super.getData(options);
     context.regroupements = this.actor.items.filter((item) => item.type === "regroupement");
-    context.regroupements.forEach((element) => {
-      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    context.regroupements.forEach(async (element) => {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
     });
     context.upgrades = this.actor.items.filter((item) => item.type === "upgrade");
-    context.upgrades.forEach((element) => {
-      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    context.upgrades.forEach(async (element) => {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
     });
-    context.equipage = duplicate(this.actor.system.equipage);
+    context.equipage = foundry.utils.duplicate(this.actor.system.equipage);
     context.typeCoque = game.omega.config.TYPECOQUE[this.actor.system.typeCoque];
     context.typeMoteur = game.omega.config.TYPEMOTEUR[this.actor.system.typeMoteur];
     return context;
@@ -52,7 +52,7 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
   _onDropItem(event, data) {
     event.preventDefault();
     Item.fromDropData(data).then((item) => {
-      const itemData = duplicate(item);
+      const itemData = foundry.utils.duplicate(item);
       switch (itemData.type) {
         case "extension":
           return false;
@@ -102,7 +102,7 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
   }
 
   async changerEquipage(actorId, posteEquipage) {
-    let updateData = duplicate(this.actor);
+    let updateData = foundry.utils.duplicate(this.actor);
     let actorEquipage = game.actors.get(actorId);
     if (actorEquipage) {
       updateData.system.equipage[posteEquipage].actorid = actorId;

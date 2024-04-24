@@ -8,7 +8,7 @@ export default function registerHooks() {
   Hooks.on("createActor", async (document, options, userId) => {
     if (game.user.isGM) {
       let createChanges = {};
-      mergeObject(createChanges, {
+      foundry.utils.mergeObject(createChanges, {
         "token.disposition": CONST.TOKEN_DISPOSITIONS.NEUTRAL,
       });
       if (document.type === "advancedsynth") {

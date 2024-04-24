@@ -13,7 +13,7 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
    * @override
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       height: 800,
       width: 600,
       resizable: false,
@@ -25,12 +25,12 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
   }
 
   /** @override */
-  getData(options) {
-    const context = super.getData(options);
+  async getData(options) {
+    const context = await super.getData(options);
     context.logofirme = game.omega.config.FIRME[this.actor.system.firme].logoclass;
     context.armes = this.actor.items.filter((item) => item.type == "arme");
-    context.armes.forEach((element) => {
-      element.system.descriptionhtml = TextEditor.enrichHTML(element.system.description, { async: false });
+    context.armes.forEach(async (element) => {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
       element.system.attacklabel = "Attaque";
       element.system.attackvalue = this.actor.system.caracteristiques.attaque.value;
       element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
@@ -47,7 +47,7 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
 
     context.equipements = context.items.filter((item) => ["equipement", "chassis"].includes(item.type));
     for (let item of context.equipements) {
-      item.system.descriptionhtml = TextEditor.enrichHTML(item.system.description, { async: false });
+      item.system.descriptionhtml = await TextEditor.enrichHTML(item.system.description, { async: false });
     }
     return context;
   }
@@ -60,7 +60,7 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
   _onDropItem(event, data) {
     event.preventDefault();
     Item.fromDropData(data).then((item) => {
-      const itemData = duplicate(item);
+      const itemData = foundry.utils.duplicate(item);
       switch (itemData.type) {
         case "extension":
           return this._onDropExtension(event, itemData, data);
