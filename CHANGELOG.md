@@ -1,3 +1,5 @@
+# Version 2.3.0
+- Version validée pour Foundry v12.
 # Version 2.2.0
 - Mises à jour du code pour v12.
 # Version 2.1.4

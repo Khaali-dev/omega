@@ -6,7 +6,7 @@
   "version": "#{VERSION}#",
   "compatibility": {
     "minimum": "11",
-    "verified": "11"
+    "verified": "12"
   },
   "authors": [
     {
@@ -25,7 +25,7 @@
       "name": "systemuserguidefr",
       "label": "Guide utilisateur du système",
       "system": "omega",
-      "path": "packs/userguide.db",
+      "path": "packs/userguide",
       "banner": "systems/omega/assets/image/logo_thumb.webp",
       "type": "JournalEntry",
       "private": false,
@@ -35,7 +35,7 @@
       "name": "omegabasefr",
       "label": "Oméga - armes, extensions et personnages",
       "system": "omega",
-      "path": "packs/omega_base.db",
+      "path": "packs/omega_base",
       "banner": "systems/omega/assets/image/logo_thumb.webp",
       "type": "Adventure",
       "private": false,
