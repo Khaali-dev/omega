@@ -1856,7 +1856,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: as5nX4EAVVqLuv2x
           type: declenchement
           coutenergie:
@@ -1870,12 +1870,12 @@ actors:
         _stats:
           compendiumSource: Item.86Drf6vV42SnlWBU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183370
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -1898,7 +1898,7 @@ actors:
             synth&eacute;tique &eacute;quip&eacute; de l'extention <em>Cyborg
             organique</em>.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: as5nX4EAVVqLuv2x
           type: app
           coutenergie:
@@ -1946,12 +1946,12 @@ actors:
         _stats:
           compendiumSource: Item.frNrz8fNGtPqLtX6
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183370
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -1971,7 +1971,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: ''
           initiative: ''
@@ -2016,12 +2016,12 @@ actors:
         _stats:
           compendiumSource: Item.FFAEY9EKPde83Vfs
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183370
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -2041,7 +2041,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 1
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'énergie disponible
           cadence: Coup par coup
           initiative: ''
@@ -2086,12 +2086,12 @@ actors:
         _stats:
           compendiumSource: Item.C6gvsE03QolkbtGU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183370
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3096,7 +3096,7 @@ actors:
             d&eacute;gats sont augment&eacute;s de 1 avec le
             logiciel&nbsp;<em>Exterminateur</em> seulement.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: 4Z5kKw5aYNiUYK7I
           type: app
           coutenergie:
@@ -3110,12 +3110,12 @@ actors:
         _stats:
           compendiumSource: Item.niyOouGVNnGLCwQC
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183381
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3133,7 +3133,7 @@ actors:
             <p><strong>Effet :</strong> Am&eacute;liore les d&eacute;g&acirc;ts
             d'une couleur.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: 4Z5kKw5aYNiUYK7I
           type: declenchement
           coutenergie:
@@ -3181,12 +3181,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183381
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3206,7 +3206,7 @@ actors:
             label: Non applicable
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: Coup-par-coup
           initiative: ''
@@ -3251,12 +3251,12 @@ actors:
         _stats:
           compendiumSource: Item.MuSWh5AvmKH8ffC1
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183381
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3276,7 +3276,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'energie disponible
           cadence: Coup par coup et rafale
           initiative: Couleur augmentée d'un niveau
@@ -3321,12 +3321,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183381
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3654,7 +3654,7 @@ actors:
             ou plusieurs diodes initiative avec ses &eacute;quipiers
             Om&eacute;gas (uniquement durant la phase d'initiative).</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: ftf6zADbpG3sDhac
           type: declenchement
           coutenergie:
@@ -3702,12 +3702,12 @@ actors:
         _stats:
           compendiumSource: Item.p96BWlVAaX6gdKK9
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183390
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3733,7 +3733,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 1
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: Coup-par-coup
           initiative: ''
@@ -3778,12 +3778,12 @@ actors:
         _stats:
           compendiumSource: Item.MuSWh5AvmKH8ffC1
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183390
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3810,7 +3810,7 @@ actors:
             label: Non applicable
             value: 0
           nbSlots: 1
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup
           initiative: Double coup (deux tirs lors d’une phase d’initiative)
@@ -3855,12 +3855,12 @@ actors:
         _stats:
           compendiumSource: Item.nQTCvZQUzGlUj9E4
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183390
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3883,7 +3883,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 1
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'energie disponible
           cadence: Coup par coup et rafale
           initiative: Normale
@@ -3928,12 +3928,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183390
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -3951,7 +3951,7 @@ actors:
             <p><strong>Effet :</strong> D&eacute;ploie des drones d'assitance,
             +1 / drone &agrave; un programme.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: ftf6zADbpG3sDhac
           type: declenchement
           coutenergie:
@@ -3999,12 +3999,12 @@ actors:
         _stats:
           compendiumSource: Item.p96BWlVAaX6gdKK9
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183390
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -4524,7 +4524,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: A4USF2AK5NDjbvHB
           type: action
           coutenergie:
@@ -4538,12 +4538,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183386
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -4559,7 +4559,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: A4USF2AK5NDjbvHB
           type: app
           coutenergie:
@@ -4573,12 +4573,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183386
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -4598,7 +4598,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: ''
           initiative: ''
@@ -4643,12 +4643,12 @@ actors:
         _stats:
           compendiumSource: Item.FFAEY9EKPde83Vfs
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183386
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -4668,7 +4668,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup et rafale
           initiative: Couleur baissée d'un niveau
@@ -4713,12 +4713,12 @@ actors:
         _stats:
           compendiumSource: Item.C6gvsE03QolkbtGU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183386
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -5006,7 +5006,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: UZtyERur7wPCczo9
           type: action
           coutenergie:
@@ -5020,12 +5020,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183396
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -5046,7 +5046,7 @@ actors:
             label: 2 / combat
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'énergie disponible
           cadence: Coup-par-coup
           initiative: ''
@@ -5090,12 +5090,12 @@ actors:
         _stats:
           compendiumSource: Item.dW5pKyrrtgdnxTJY
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183396
+          lastModifiedBy: xQggvh9gKxuTID4c
         _id: aATDOANGV8vYNlnl
       - name: Emetteur IEM
         type: arme
@@ -5109,7 +5109,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 1
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'énergie disponible
           cadence: Coup par coup
           initiative: Couleur augmentée d'un niveau
@@ -5154,12 +5154,12 @@ actors:
         _stats:
           compendiumSource: Item.DUndgqZC6HlNH0g0
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183396
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -5179,7 +5179,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 4
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Rafale
           initiative: ''
@@ -5224,12 +5224,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183396
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -5261,7 +5261,7 @@ actors:
               options:
                 reference: blindage
                 value: 2
-          estActif: true
+          estActif: false
           chassisId: UZtyERur7wPCczo9
           type: app
           coutenergie:
@@ -5309,12 +5309,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183396
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -5746,7 +5746,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'énergie disponible
           cadence: Coup par coup et rafale
           initiative: Couleur augmentée d'un niveau
@@ -5791,12 +5791,12 @@ actors:
         _stats:
           compendiumSource: Item.C6gvsE03QolkbtGU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183374
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -5815,7 +5815,7 @@ actors:
             dans l'espace, s'y diriger et d'avoir la capacit&eacute; d'entrer et
             de sortir d'une atmosph&egrave;re.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: BaUnqdQARdTFNESr
           type: declenchement
           coutenergie:
@@ -5829,12 +5829,12 @@ actors:
         _stats:
           compendiumSource: Item.niyOouGVNnGLCwQC
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183374
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -5855,7 +5855,7 @@ actors:
             moment ou des d&eacute;g&acirc;ts doivent &ecirc;tre
             appliqu&eacute;s.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: BaUnqdQARdTFNESr
           type: action
           coutenergie:
@@ -5903,12 +5903,12 @@ actors:
         _stats:
           compendiumSource: Item.frNrz8fNGtPqLtX6
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183374
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -5927,7 +5927,7 @@ actors:
             une pression et d'&ecirc;tre &eacute;tanche jusqu'&agrave; -10.000m
             sous l'eau.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: BaUnqdQARdTFNESr
           type: app
           coutenergie:
@@ -5941,12 +5941,12 @@ actors:
         _stats:
           compendiumSource: Item.niyOouGVNnGLCwQC
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183374
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -6287,7 +6287,7 @@ actors:
             encaisse 6 points de d&eacute;g&acirc;ts, puis est
             d&eacute;truit.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: HFXElpu4xbdUPJr5
           type: action
           coutenergie:
@@ -6335,12 +6335,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183404
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -6367,7 +6367,7 @@ actors:
               options:
                 reference: energiedisponible
                 value: 3
-          estActif: true
+          estActif: false
           chassisId: HFXElpu4xbdUPJr5
           type: app
           coutenergie:
@@ -6415,12 +6415,12 @@ actors:
         _stats:
           compendiumSource: Item.4Q82rl0pO13Oj2OT
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183404
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -6440,7 +6440,7 @@ actors:
             (arrondie &agrave; l'entier inf&eacute;rieur). Ceci est valable 1
             fois par sc&eacute;nario.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: HFXElpu4xbdUPJr5
           type: declenchement
           coutenergie:
@@ -6488,12 +6488,12 @@ actors:
         _stats:
           compendiumSource: Item.4Q82rl0pO13Oj2OT
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183404
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -6519,7 +6519,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 1
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: Coup-par-coup
           initiative: ''
@@ -6564,12 +6564,12 @@ actors:
         _stats:
           compendiumSource: Item.MuSWh5AvmKH8ffC1
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183404
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -6589,7 +6589,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'énergie disponible
           cadence: Coup par coup et rafale
           initiative: Couleur augmentée d'un niveau
@@ -6634,12 +6634,12 @@ actors:
         _stats:
           compendiumSource: Item.C6gvsE03QolkbtGU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183404
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -6659,7 +6659,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 4
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Rafale
           initiative: ''
@@ -6704,12 +6704,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183404
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7057,7 +7057,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: a19nUuAwwiJlrlSV
           type: declenchement
           coutenergie:
@@ -7105,12 +7105,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183383
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7141,7 +7141,7 @@ actors:
               options:
                 reference: integriteinformatique
                 value: 1
-          estActif: true
+          estActif: false
           chassisId: a19nUuAwwiJlrlSV
           type: app
           coutenergie:
@@ -7189,12 +7189,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183383
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7214,7 +7214,7 @@ actors:
             label: Non applicable
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: Coup-par-coup
           initiative: ''
@@ -7259,12 +7259,12 @@ actors:
         _stats:
           compendiumSource: Item.MuSWh5AvmKH8ffC1
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183383
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7284,7 +7284,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup et rafale
           initiative: ''
@@ -7329,12 +7329,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183383
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7672,7 +7672,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: NCiGP9bqrCxffjvq
           type: app
           coutenergie:
@@ -7686,12 +7686,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183406
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7707,7 +7707,7 @@ actors:
             <p>&nbsp;</p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: NCiGP9bqrCxffjvq
           type: action
           coutenergie:
@@ -7755,12 +7755,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183406
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7779,7 +7779,7 @@ actors:
             encaisse 6 points de d&eacute;g&acirc;ts, puis est
             d&eacute;truit.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: NCiGP9bqrCxffjvq
           type: action
           coutenergie:
@@ -7827,12 +7827,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183406
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7850,7 +7850,7 @@ actors:
             <p><strong>Effet : </strong> Double la vitesse de l'Om&eacute;ga
             durant une phase de combat.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: NCiGP9bqrCxffjvq
           type: declenchement
           coutenergie:
@@ -7864,12 +7864,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183406
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7895,7 +7895,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 1
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: Coup-par-coup
           initiative: ''
@@ -7940,12 +7940,12 @@ actors:
         _stats:
           compendiumSource: Item.MuSWh5AvmKH8ffC1
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183406
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -7965,7 +7965,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup et rafale
           initiative: ''
@@ -8010,12 +8010,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183406
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -8332,7 +8332,7 @@ actors:
             label: Non applicable
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: Coup-par-coup
           initiative: ''
@@ -8377,12 +8377,12 @@ actors:
         _stats:
           compendiumSource: Item.DrztWmUoWYjxIyv6
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183399
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -8435,7 +8435,7 @@ actors:
             moment ou des d&eacute;g&acirc;ts doivent &ecirc;tre
             appliqu&eacute;s.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: HFXElpu4xbdUPJr5
           type: action
           coutenergie:
@@ -8483,12 +8483,12 @@ actors:
         _stats:
           compendiumSource: Item.frNrz8fNGtPqLtX6
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183399
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -8506,7 +8506,7 @@ actors:
             <p><strong>Effet :</strong> D&eacute;ploie des drones d'assitance,
             +1 / drone &agrave; un programme.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: HFXElpu4xbdUPJr5
           type: declenchement
           coutenergie:
@@ -8554,12 +8554,12 @@ actors:
         _stats:
           compendiumSource: Item.p96BWlVAaX6gdKK9
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183399
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -8578,7 +8578,7 @@ actors:
             personnage &agrave; la possibilit&eacute; d'am&eacute;liorer la
             couleur d'une diode d'initiative.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: HFXElpu4xbdUPJr5
           type: declenchement
           coutenergie:
@@ -8592,12 +8592,12 @@ actors:
         _stats:
           compendiumSource: Item.niyOouGVNnGLCwQC
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183399
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -8617,7 +8617,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 5
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup
           initiative: Couleur baissée d'un niveau
@@ -8662,12 +8662,12 @@ actors:
         _stats:
           compendiumSource: Item.6Om7LCvAb1s4Nq2W
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183399
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -9031,7 +9031,7 @@ actors:
               options:
                 reference: resistancemoteur
                 value: 2
-          estActif: true
+          estActif: false
           chassisId: M9BjucfnKaZaW41B
           type: app
           coutenergie:
@@ -9079,12 +9079,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183372
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -9108,7 +9108,7 @@ actors:
             label: Non applicable
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: Coup-par-coup
           initiative: ''
@@ -9153,12 +9153,12 @@ actors:
         _stats:
           compendiumSource: Item.DrztWmUoWYjxIyv6
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183372
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -9178,7 +9178,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup
           initiative: ''
@@ -9223,12 +9223,12 @@ actors:
         _stats:
           compendiumSource: Item.C6gvsE03QolkbtGU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183372
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -9248,7 +9248,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 4
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup et rafale
           initiative: Couleur baissée d'un niveau
@@ -9293,12 +9293,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183372
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -9633,7 +9633,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: n5X4ngNtGztCfh81
           type: declenchement
           coutenergie:
@@ -9647,12 +9647,12 @@ actors:
         _stats:
           compendiumSource: Item.sXPvVn23vQtCbXqH
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183376
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -9672,7 +9672,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: ''
           initiative: ''
@@ -9717,12 +9717,12 @@ actors:
         _stats:
           compendiumSource: Item.FFAEY9EKPde83Vfs
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183376
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -9738,7 +9738,7 @@ actors:
             <p>&nbsp;</p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: n5X4ngNtGztCfh81
           type: declenchement
           coutenergie:
@@ -9786,12 +9786,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183376
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -9811,7 +9811,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'energie disponible
           cadence: Coup par coup
           initiative: Couleur augmentée d'un niveau
@@ -9856,12 +9856,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183376
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10198,7 +10198,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: YKAp337LMgIVsiSc
           type: declenchement
           coutenergie:
@@ -10212,12 +10212,12 @@ actors:
         _stats:
           compendiumSource: Item.sXPvVn23vQtCbXqH
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183402
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10233,7 +10233,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: YKAp337LMgIVsiSc
           type: action
           coutenergie:
@@ -10247,12 +10247,12 @@ actors:
         _stats:
           compendiumSource: Item.sXPvVn23vQtCbXqH
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183402
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10272,7 +10272,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 5
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup
           initiative: Couleur baissée d'un niveau
@@ -10317,12 +10317,12 @@ actors:
         _stats:
           compendiumSource: Item.6Om7LCvAb1s4Nq2W
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183402
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10342,7 +10342,7 @@ actors:
             label: Non applicable
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: ''
           initiative: ''
@@ -10387,12 +10387,12 @@ actors:
         _stats:
           compendiumSource: Item.MuSWh5AvmKH8ffC1
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183402
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10412,7 +10412,7 @@ actors:
             (arrondie &agrave; l'entier inf&eacute;rieur). Ceci est valable 1
             fois par sc&eacute;nario.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: YKAp337LMgIVsiSc
           type: declenchement
           coutenergie:
@@ -10460,12 +10460,12 @@ actors:
         _stats:
           compendiumSource: Item.4Q82rl0pO13Oj2OT
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183402
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10481,7 +10481,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: YKAp337LMgIVsiSc
           type: app
           coutenergie:
@@ -10495,12 +10495,12 @@ actors:
         _stats:
           compendiumSource: Item.86Drf6vV42SnlWBU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183402
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10838,7 +10838,7 @@ actors:
             <p><strong>Effet : </strong> Double la vitesse de l'Om&eacute;ga
             durant une phase de combat.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: oyqONHW9yRKAvb6b
           type: declenchement
           coutenergie:
@@ -10852,12 +10852,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183365
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10873,7 +10873,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: oyqONHW9yRKAvb6b
           type: app
           coutenergie:
@@ -10887,12 +10887,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183365
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -10912,7 +10912,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'énergie disponible
           cadence: Coup par coup
           initiative: ''
@@ -10957,12 +10957,12 @@ actors:
         _stats:
           compendiumSource: Item.DUndgqZC6HlNH0g0
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183365
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -11314,7 +11314,7 @@ actors:
             label: 1 / utilisation
             value: 0
           nbSlots: 1
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'énergie disponible
           cadence: Coup par coup
           initiative: ''
@@ -11359,12 +11359,12 @@ actors:
         _stats:
           compendiumSource: Item.U7FSY1O9lZKGeOf1
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183393
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -11390,7 +11390,7 @@ actors:
             r&eacute;sultat rouge sur le programme d&eacute;tecteur ne pourra
             pas discerner &laquo;la supercherie&raquo;.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: 2kw4uVSKEy8c0tuz
           type: app
           coutenergie:
@@ -11438,12 +11438,12 @@ actors:
         _stats:
           compendiumSource: Item.HmCdMmrXAgL03md2
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183393
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -11459,7 +11459,7 @@ actors:
             <p>&nbsp;</p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: 2kw4uVSKEy8c0tuz
           type: declenchement
           coutenergie:
@@ -11473,12 +11473,12 @@ actors:
         _stats:
           compendiumSource: Item.86Drf6vV42SnlWBU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183393
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -11494,7 +11494,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: 2kw4uVSKEy8c0tuz
           type: declenchement
           coutenergie:
@@ -11510,12 +11510,12 @@ actors:
         _stats:
           compendiumSource: Item.niyOouGVNnGLCwQC
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183393
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -11535,7 +11535,7 @@ actors:
             (arrondie &agrave; l'entier inf&eacute;rieur). Ceci est valable 1
             fois par sc&eacute;nario.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: 2kw4uVSKEy8c0tuz
           type: declenchement
           coutenergie:
@@ -11583,12 +11583,12 @@ actors:
         _stats:
           compendiumSource: Item.4Q82rl0pO13Oj2OT
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183393
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -12303,7 +12303,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: cco55qRPCDp2IELL
           type: app
           coutenergie:
@@ -12317,12 +12317,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183388
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -12342,7 +12342,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Coup par coup
           initiative: Couleur baissée d'un niveau
@@ -12387,12 +12387,12 @@ actors:
         _stats:
           compendiumSource: Item.DUndgqZC6HlNH0g0
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183388
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -12408,7 +12408,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: cco55qRPCDp2IELL
           type: action
           coutenergie:
@@ -12422,12 +12422,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183388
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -12446,7 +12446,7 @@ actors:
             est requis, l'Om&eacute;ga &eacute;quip&eacute; de cette extension
             peut donner une identification valide d'une autre firme.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: cco55qRPCDp2IELL
           type: declenchement
           coutenergie:
@@ -12460,12 +12460,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183388
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -12481,7 +12481,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: cco55qRPCDp2IELL
           type: app
           coutenergie:
@@ -12495,12 +12495,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183388
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -12836,7 +12836,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: oyqONHW9yRKAvb6b
           type: declenchement
           coutenergie:
@@ -12850,12 +12850,12 @@ actors:
         _stats:
           compendiumSource: Item.sXPvVn23vQtCbXqH
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183355
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -12871,7 +12871,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: oyqONHW9yRKAvb6b
           type: declenchement
           coutenergie:
@@ -12885,12 +12885,12 @@ actors:
         _stats:
           compendiumSource: Item.sXPvVn23vQtCbXqH
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183355
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -13243,7 +13243,7 @@ actors:
             label: N/A
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: Chargeur
           cadence: Rafale
           initiative: Couleur baissée d'un niveau
@@ -13288,12 +13288,12 @@ actors:
         _stats:
           compendiumSource: Item.CT6moaRQDeleUHSt
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183378
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -13316,7 +13316,7 @@ actors:
             synth&eacute;tique &eacute;quip&eacute; de l'extention <em>Cyborg
             organique</em>.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: IsaZw0kvPLlCI620
           type: app
           coutenergie:
@@ -13364,12 +13364,12 @@ actors:
         _stats:
           compendiumSource: Item.frNrz8fNGtPqLtX6
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183378
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -13385,7 +13385,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: IsaZw0kvPLlCI620
           type: declenchement
           coutenergie:
@@ -13399,12 +13399,12 @@ actors:
         _stats:
           compendiumSource: Item.sXPvVn23vQtCbXqH
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183378
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -13420,7 +13420,7 @@ actors:
             <p>&nbsp;</p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: IsaZw0kvPLlCI620
           type: declenchement
           coutenergie:
@@ -13468,12 +13468,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183378
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -13818,7 +13818,7 @@ actors:
             moment ou des d&eacute;g&acirc;ts doivent &ecirc;tre
             appliqu&eacute;s.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: 9XUczEIO6dNm3yvJ
           type: action
           coutenergie:
@@ -13866,12 +13866,12 @@ actors:
         _stats:
           compendiumSource: Item.frNrz8fNGtPqLtX6
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183367
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -13898,7 +13898,7 @@ actors:
               options:
                 reference: energiedisponible
                 value: 3
-          estActif: true
+          estActif: false
           chassisId: 9XUczEIO6dNm3yvJ
           type: app
           coutenergie:
@@ -13946,12 +13946,12 @@ actors:
         _stats:
           compendiumSource: Item.4Q82rl0pO13Oj2OT
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183367
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -13971,7 +13971,7 @@ actors:
             (arrondie &agrave; l'entier inf&eacute;rieur). Ceci est valable 1
             fois par sc&eacute;nario.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: 9XUczEIO6dNm3yvJ
           type: declenchement
           coutenergie:
@@ -14019,12 +14019,12 @@ actors:
         _stats:
           compendiumSource: Item.4Q82rl0pO13Oj2OT
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183367
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -14379,7 +14379,7 @@ actors:
             synth&eacute;tique &eacute;quip&eacute; de l'extention <em>Cyborg
             organique</em>.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: zsOWhhPW7WgW0krQ
           type: app
           coutenergie:
@@ -14427,12 +14427,12 @@ actors:
         _stats:
           compendiumSource: Item.frNrz8fNGtPqLtX6
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183408
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -14448,7 +14448,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: zsOWhhPW7WgW0krQ
           type: app
           coutenergie:
@@ -14462,12 +14462,12 @@ actors:
         _stats:
           compendiumSource: Item.ZHCaryYwVjVJWY4J
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183408
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -14487,7 +14487,7 @@ actors:
             <p><strong>Effet :</strong>La hauteur maximale de ce type de
             d&eacute;placement est de 1 m&egrave;tre.</p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: zsOWhhPW7WgW0krQ
           type: declenchement
           coutenergie:
@@ -14501,12 +14501,12 @@ actors:
         _stats:
           compendiumSource: Item.niyOouGVNnGLCwQC
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183408
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -14522,7 +14522,7 @@ actors:
             <p><strong>Description :</strong></p>
             <p><strong>Effet :</strong></p>
           effet: []
-          estActif: true
+          estActif: false
           chassisId: zsOWhhPW7WgW0krQ
           type: action
           coutenergie:
@@ -14570,12 +14570,12 @@ actors:
         _stats:
           compendiumSource: Item.Vc45W0K0b3zytceO
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183408
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -14595,7 +14595,7 @@ actors:
             label: 1 par combat
             value: 0
           nbSlots: 2
-          estActif: true
+          estActif: false
           autonomie: Puise dans l'énergie disponible
           cadence: Coup par coup et rafale
           initiative: Couleur augmentée d'un niveau
@@ -14640,12 +14640,12 @@ actors:
         _stats:
           compendiumSource: Item.C6gvsE03QolkbtGU
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183408
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -14665,7 +14665,7 @@ actors:
             label: Non applicable
             value: 0
           nbSlots: 3
-          estActif: true
+          estActif: false
           autonomie: ''
           cadence: ''
           initiative: ''
@@ -14710,12 +14710,12 @@ actors:
         _stats:
           compendiumSource: Item.MuSWh5AvmKH8ffC1
           duplicateSource: null
-          coreVersion: '12.325'
+          coreVersion: '12.327'
           systemId: omega
           systemVersion: '#{VERSION}#'
           createdTime: null
-          modifiedTime: null
-          lastModifiedBy: null
+          modifiedTime: 1718814183408
+          lastModifiedBy: xQggvh9gKxuTID4c
         ownership:
           default: 0
           MYaS2dWK9oDJrqgJ: 3
@@ -43006,9 +43006,9 @@ flags: {}
 _stats:
   systemId: omega
   systemVersion: 2.1.0
-  coreVersion: '12.325'
+  coreVersion: '12.327'
   createdTime: 1675202902378
-  modifiedTime: 1717184528129
+  modifiedTime: 1719044167241
   lastModifiedBy: xQggvh9gKxuTID4c
   compendiumSource: null
   duplicateSource: null

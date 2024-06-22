@@ -1,4 +1,5 @@
-# Version 2.4.0
+# Version 3.0.0
+- importation packs
 - bug affichage des chassis en v12.
 # Version 2.3.0
 - Version validée pour Foundry v12.

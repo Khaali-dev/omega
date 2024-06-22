@@ -5,7 +5,7 @@ export default function registerHooks() {
     _showUserGuide();
   });
 
-  Hooks.on("createActor", async (document, options, userId) => {
+  Hooks.on('preCreateActor', (document, createData, options, userid) => {
     if (game.user.isGM) {
       let createChanges = {};
       foundry.utils.mergeObject(createChanges, {
@@ -28,7 +28,7 @@ export default function registerHooks() {
           createChanges.img = 'systems/omega/assets/image/spaceship.svg';
         }
       }
-      document.update(createChanges);
+      document.updateSource(createChanges);
     }
   });
   Hooks.on("createItem", async (document, options, userId) => {

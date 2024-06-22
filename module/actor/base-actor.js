@@ -3,9 +3,9 @@ import { ROLL_TYPE } from "../common/config.js";
 
 export default class OmegaBaseActor extends Actor {
   /** @override */
-  prepareData() {
+  prepareDerivedData() {
     console.log("demarrage Acteurs");
-    super.prepareData();
+  //  super.prepareData();
     if (this.estAdvancedSynth()) this._prepareDataAdvancedSynth();
     if (this.estSynthetique()) this._prepareDataSynthetique();
     if (this.estOrganique()) this._prepareDataOrganique();
