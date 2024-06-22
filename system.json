@@ -5,7 +5,7 @@
   "url": "#{URL}#",
   "version": "#{VERSION}#",
   "compatibility": {
-    "minimum": "11",
+    "minimum": "12",
     "verified": "12"
   },
   "authors": [

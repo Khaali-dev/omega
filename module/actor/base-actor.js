@@ -71,7 +71,8 @@ export default class OmegaBaseActor extends Actor {
     this.system.malusDegatsSubis = Math.min(3, this.system.systemesauxiliaires.resistancemoteur.max - this.system.systemesauxiliaires.resistancemoteur.value);
 
     //traitement du chassis
-
+    this.activerChassis(this.getChassisActif());
+    /*
     this.system.chassis = {};
     this.system.chassisActif = {};
     let chassisList = this.items.filter((item) => item.type == "chassis");
@@ -83,13 +84,13 @@ export default class OmegaBaseActor extends Actor {
       this.system.chassis[chassis.id] = {
         name: chassis.name,
         id: chassis.id,
-        descriptionhtml: TextEditor.enrichHTML(chassis.description, { async: false }),
+        descriptionhtml: await TextEditor.enrichHTML(chassis.system.description, { async: false }),
         estActif: chassis.system.estActif,
         nbslotstotal: chassis.system.nbslots + this.system.systemesauxiliaires.slots.value,
         nbslotslibres: chassis.system.nbslots + this.system.systemesauxiliaires.slots.value,
       };
     }
-
+*/
     await this.initialiserExtensions();
   }
 
@@ -97,8 +98,8 @@ export default class OmegaBaseActor extends Actor {
     let chassisArray = [];
     let item = this.items.get(chassisId);
     if (item) {
-      this.system.chassisActif.label = item.name;
-      this.system.chassisActif.id = chassisId;
+      //this.system.chassisActif.label = item.name;
+      //this.system.chassisActif.id = chassisId;
       let itemDup = foundry.utils.duplicate(item);
       itemDup.system.estActif = true;
       chassisArray.push(itemDup);
@@ -172,18 +173,18 @@ export default class OmegaBaseActor extends Actor {
 
   async initialiserExtensions() {
     let extensionArray = [];
+    const chassisActifId = this.getChassisActif();
     for (const [key, item] of this.items.entries()) {
       if (["extension", "arme"].includes(item.type)) {
         let itemDup = foundry.utils.duplicate(item);
         if (item.system.chassisId.length) {
           let chassis = this.items.get(item.system.chassisId);
           if (chassis) {
-            if (item.system.chassisId === this.system.chassisActif.id) {
+            if (item.system.chassisId === chassisActifId) {
               itemDup.system.estActif = true;
             } else {
               itemDup.system.estActif = false;
             }
-            this.utiliserSlots(item.system.chassisId, item.system.nbSlots);
             this._bonusEffets(itemDup);
           } else {
             itemDup.system.chassisId = "";
@@ -194,10 +195,6 @@ export default class OmegaBaseActor extends Actor {
       }
     }
     this.updateEmbeddedDocuments("Item", extensionArray);
-  }
-
-  utiliserSlots(chassisId, nbSlots) {
-    this.system.chassis[chassisId].nbslotslibres = this.system.chassis[chassisId].nbslotslibres - nbSlots;
   }
 
   estAdvancedSynth() {
@@ -395,5 +392,30 @@ export default class OmegaBaseActor extends Actor {
     }
     this.system.systemesauxiliaires[options.reference].tooltip += "+" + options.value.toString() + "[" + extensionName + "]";
     return;
+  }
+
+  async getChassisActif() {
+    let chassisActif = this.items.filter((item) => item.type == "chassis" && item.system.estActif);
+    if (chassisActif.length) {
+      return chassisActif[0].id;
+    }
+  }
+
+  async getNbslotsTotal(chassisId) {
+    const target = await this.items.get(chassisId);
+    if (target) return (target.system.nbslots + this.system.systemesauxiliaires.slots.value);
+  }
+
+  async getNbslotsLibres(chassisId) {
+    const target = this.items.get(chassisId);
+    if (!target) return 0;
+    let nbslotslibres = await this.getNbslotsTotal(chassisId);
+
+    await this.items.forEach(async (element) => {
+      if (["extension", "arme"].includes(element.type) && element.system.chassisId === chassisId) {
+        nbslotslibres = nbslotslibres - element.system.nbSlots;
+      }
+    });
+    return nbslotslibres;
   }
 }

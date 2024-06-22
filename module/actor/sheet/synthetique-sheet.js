@@ -29,13 +29,13 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
     const context = await super.getData(options);
     context.logofirme = game.omega.config.FIRME[this.actor.system.firme].logoclass;
     context.armes = this.actor.items.filter((item) => item.type == "arme");
-    context.armes.forEach(async (element) => {
+    for (let element of context.armes) {
       element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
       element.system.attacklabel = "Attaque";
       element.system.attackvalue = this.actor.system.caracteristiques.attaque.value;
       element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
       element.system.estActif = true;
-    });
+    }
     context.prognonnul = [];
     context.progfull = [];
     for (let prog in this.actor.system.programmes) {
@@ -44,6 +44,10 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
         context.prognonnul.push({ label: game.i18n.localize(this.actor.system.programmes[prog].label), value: this.actor.system.programmes[prog].value, reference: prog });
       }
     }
+
+    context.nomChassisActif = "Aucun";
+    const chassisActifId = await this.actor.getChassisActif();
+    if (chassisActifId) context.nomChassisActif = this.actor.items.get(chassisActifId).name;
 
     context.equipements = context.items.filter((item) => ["equipement", "chassis"].includes(item.type));
     for (let item of context.equipements) {
@@ -84,8 +88,8 @@ export default class SynthetiqueSheet extends OmegaBaseActorSheet {
     let element = event.currentTarget;
     let prog = element.dataset.field;
     let value = element.valueAsNumber;
-      let linkMod = "system.programmes." + prog + ".value";
-      await this.actor.update({ [linkMod]: value });
+    let linkMod = "system.programmes." + prog + ".value";
+    await this.actor.update({ [linkMod]: value });
     return;
   }
 }

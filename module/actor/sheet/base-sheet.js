@@ -82,7 +82,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     let flagData = await this.actor.getFlag(game.system.id, "SheetUnlocked");
     flagData ? await this.actor.unsetFlag(game.system.id, "SheetUnlocked") : await this.actor.setFlag(game.system.id, "SheetUnlocked", "SheetUnlocked");
 
-    this.actor.sheet.render(true);
+    await this.actor.sheet.render(true);
   }
   async _onssprogChange(event) {
     event.preventDefault();

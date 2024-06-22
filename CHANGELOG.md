@@ -1,3 +1,5 @@
+# Version 2.4.0
+- bug affichage des chassis en v12.
 # Version 2.3.0
 - Version validée pour Foundry v12.
 # Version 2.2.0

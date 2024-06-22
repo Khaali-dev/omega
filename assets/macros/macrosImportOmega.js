@@ -536,7 +536,7 @@ async function extractAllData(npcRawName, npcRawData, npcType, extensionRaw, des
       pattern = game.i18n.localize(system[key][prog].label) + " ([0-9]+)";
       attributePattern = new RegExp(pattern);
       resultData = extractData(expectedData, attributePattern);
-      console.log("resultData", resultData);
+      //console.log("resultData", resultData);
       if (resultData.length) {
         system[key][prog].value = parseInt(resultData, 10);
         if (system[key][prog]?.base) system[key][prog].base = parseInt(resultData, 10);

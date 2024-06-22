@@ -1,0 +1,53 @@
+name: Présentation du Système Oméga
+pages:
+  - sort: 100000
+    name: Guide d'utilisation du système
+    type: text
+    _id: YzmkqjKP9uuVZXpj
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: <p>@contenu[/systems/omega/templates/user_guide_fr.html]</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    ownership:
+      default: -1
+    flags: {}
+    _stats:
+      systemId: omega
+      systemVersion: '#{VERSION}#'
+      coreVersion: '12.325'
+      createdTime: null
+      modifiedTime: 1708426496778
+      lastModifiedBy: Wo0LB1ricUzVYyFc
+      compendiumSource: null
+      duplicateSource: null
+    _key: '!journal.pages!hrSEscOsVhLx5Igz.YzmkqjKP9uuVZXpj'
+ownership:
+  default: 0
+  Wo0LB1ricUzVYyFc: 3
+flags:
+  core: {}
+  omega:
+    ver: '#{VERSION}#'
+_stats:
+  systemId: omega
+  systemVersion: '#{VERSION}#'
+  coreVersion: '12.325'
+  createdTime: 1674656304009
+  modifiedTime: 1708426592325
+  lastModifiedBy: Wo0LB1ricUzVYyFc
+  compendiumSource: null
+  duplicateSource: null
+folder: null
+_id: hrSEscOsVhLx5Igz
+sort: 0
+_key: '!journal!hrSEscOsVhLx5Igz'
+

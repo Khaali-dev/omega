@@ -29,13 +29,13 @@ export default class VaisseauSheet extends OmegaBaseActorSheet {
   async getData(options) {
     const context = await super.getData(options);
     context.regroupements = this.actor.items.filter((item) => item.type === "regroupement");
-    context.regroupements.forEach(async (element) => {
+    for (let element of context.regroupements) {
       element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
-    });
+    }
     context.upgrades = this.actor.items.filter((item) => item.type === "upgrade");
-    context.upgrades.forEach(async (element) => {
+    for (let element of context.upgrades) {
       element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
-    });
+    }
     context.equipage = foundry.utils.duplicate(this.actor.system.equipage);
     context.typeCoque = game.omega.config.TYPECOQUE[this.actor.system.typeCoque];
     context.typeMoteur = game.omega.config.TYPEMOTEUR[this.actor.system.typeMoteur];

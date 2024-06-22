@@ -1,209 +1,173 @@
 <div class="chassis-tab">
-    <div class="main">
-        {{#each stockchassis as |chassis index|}}
-        {{#if chassis.estActif}}
-        <div class="chassisbloc" data-chassis="{{chassis.id}}">
-            <div class="chassis-block-name">
-                <div>Chassis équipé : <span class="chassisname">{{chassis.name}}</span></div>
-                <div>Slots libres: {{chassis.nbslotslibres}} /
-                    {{chassis.nbslotstotal}}</div>
-                <div class="icon-group"><a class="item-control item-edit" data-field="{{chassis.id}}"
-                        data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
-                    {{#if ../unlocked}}
-                    <a class="item-control item-delete" data-field="{{chassis.id}}" data-tooltip="Supprimer"><i
-                            class="fas fa-trash"></i></a>
-                    {{/if}}
-                </div>
-            </div>
-            {{chassis.descriptionhtml}}
-            <div class="extensions-block" data-chassis="{{chassis.id}}">
-                {{#each ../extensions as |extension id|}}
-                {{#ife extension.system.chassisId chassis.id}}
-                <div class="extensioncontenu bordvert" data-chassis="{{../chassis.id}}">
-                    <div class="nameline">
-                        <div>{{extension.name}}</div>
-                        <div class="icon-group">
-                            <a class="item-control item-remove" data-field="{{extension.id}}"
-                                data-tooltip="Enlever du chassis"><i class="fas fa-arrow-up-from-bracket"></i></a>
-                            <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i
-                                    class="fas fa-cog"></i></a>
-                            {{#if ../unlocked}}
-                            <a class="item-control item-delete" data-field="{{extension.id}}"
-                                data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
-                            {{/if}}
-                        </div>
-                    </div>
-                    <details>
-                        <summary style="text-align:center;">Description</summary>
-                        <p>Déclenchement : <span style="font-style: italic;">{{extension.system.type}}</span> - Coût en
-                            énergie:
-                            <span style="font-style: italic;">{{extension.system.coutenergie.label}}</span>
-                        </p>{{{extension.system.descriptionhtml}}}
-                    </details>
-                </div>
-                {{/ife}}
-                {{/each}}
-                {{#each ../armes as |extension id|}}
-                {{#ife extension.system.chassisId chassis.id}}
-                <div class="extensioncontenu bordrouge" data-chassis="{{../chassis.id}}">
-                    <div class="nameline">
-                        <div>{{extension.name}}</div>
-                        <div class="icon-group">
-                            <a class="item-control item-remove" data-field="{{extension.id}}"
-                                data-tooltip="Enlever du chassis"><i class="fas fa-arrow-up-from-bracket"></i></a>
-                            <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i
-                                    class="fas fa-cog"></i></a>
-                            {{#if ../unlocked}}
-                            <a class="item-control item-delete" data-field="{{extension.id}}"
-                                data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
-                            {{/if}}
-                        </div>
-                    </div>
-                    <details>
-                        <summary style="text-align:center;">Description</summary>
-                        <p>Déclenchement : <span style="font-style: italic;">{{extension.system.type}}</span> - Coût en
-                            énergie:
-                            <span style="font-style: italic;">{{extension.system.coutenergie.label}}</span>
-                        </p>{{{extension.system.descriptionhtml}}}
-                    </details>
-                </div>
-                {{/ife}}
-                {{/each}}
-                {{#if ../unlocked}}
-                <p class="zonededrop" data-chassis="{{chassis.id}}">Glissez-déposez les extensions ici<br />pour les
-                    inclure dans le chassis.</p>
-                {{/if}}
-            </div>
+  <div class="main">
+    {{#each stockchassis as |chassis index|}} {{#if chassis.system.estActif}}
+    <div class="chassisbloc" data-chassis="{{chassis.id}}">
+      <div class="chassis-block-name">
+        <div>Chassis équipé : <span class="chassisname">{{chassis.name}}</span></div>
+        <div>Slots libres: {{chassis.system.nbslotsLibres}} / {{chassis.system.nbslotsTotal}}</div>
+        <div class="icon-group">
+          <a class="item-control item-edit" data-field="{{chassis.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
+          {{#if ../unlocked}}
+          <a class="item-control item-delete" data-field="{{chassis.id}}" data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+          {{/if}}
         </div>
+      </div>
+      <details>
+        <summary style="text-align: center">Description</summary>
+        {{{chassis.system.descriptionhtml}}}
+      </details>
+      <div class="extensions-block" data-chassis="{{chassis.id}}">
+        {{#each ../extensions as |extension id|}} {{#ife extension.system.chassisId chassis.id}}
+        <div class="extensioncontenu bordvert" data-chassis="{{../chassis.id}}">
+          <div class="nameline">
+            <div>{{extension.name}}</div>
+            <div class="icon-group">
+              <a class="item-control item-remove" data-field="{{extension.id}}" data-tooltip="Enlever du chassis"><i class="fas fa-arrow-up-from-bracket"></i></a>
+              <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
+              {{#if ../unlocked}}
+              <a class="item-control item-delete" data-field="{{extension.id}}" data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+              {{/if}}
+            </div>
+          </div>
+          <details>
+            <summary style="text-align: center">Description</summary>
+            <p>
+              Déclenchement : <span style="font-style: italic">{{extension.system.type}}</span> - Coût en énergie:
+              <span style="font-style: italic">{{extension.system.coutenergie.label}}</span>
+            </p>
+            {{{extension.system.descriptionhtml}}}
+          </details>
+        </div>
+        {{/ife}} {{/each}} {{#each ../armes as |extension id|}} {{#ife extension.system.chassisId chassis.id}}
+        <div class="extensioncontenu bordrouge" data-chassis="{{../chassis.id}}">
+          <div class="nameline">
+            <div>{{extension.name}}</div>
+            <div class="icon-group">
+              <a class="item-control item-remove" data-field="{{extension.id}}" data-tooltip="Enlever du chassis"><i class="fas fa-arrow-up-from-bracket"></i></a>
+              <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
+              {{#if ../unlocked}}
+              <a class="item-control item-delete" data-field="{{extension.id}}" data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+              {{/if}}
+            </div>
+          </div>
+          <details>
+            <summary style="text-align: center">Description</summary>
+            <p>
+              Déclenchement : <span style="font-style: italic">{{extension.system.type}}</span> - Coût en énergie:
+              <span style="font-style: italic">{{extension.system.coutenergie.label}}</span>
+            </p>
+            {{{extension.system.descriptionhtml}}}
+          </details>
+        </div>
+        {{/ife}} {{/each}} {{#if ../unlocked}}
+        <p class="zonededrop" data-chassis="{{chassis.id}}">Glissez-déposez les extensions ici<br />pour les inclure dans le chassis.</p>
         {{/if}}
-        {{/each}}
-        <div class="lignejaune"></div>
-        <div class="chassis-title">Chassis non utilisés</div>
-        <div class="lignejaune"></div>
-        {{#each stockchassis as |chassis index|}}
-            {{#if (ne chassis.estActif)}}
-            <div class="chassisbloc" data-chassis="{{chassis.id}}">
-                <div class="chassis-block-name">
-                    <div class="chassisname">{{chassis.name}}</div>
-                    <div>Slots libres: {{chassis.nbslotslibres}} /
-                        {{chassis.nbslotstotal}}</div>
-                    <div class="icon-group">
-                        <a class="item-control item-activer" data-field="{{chassis.id}}" data-tooltip="Activer"><i
-                                class="fas fa-microchip"></i></a><a class="item-control item-edit"
-                            data-field="{{chassis.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
-                        {{#if ../unlocked}}
-                        <a class="item-control item-delete" data-field="{{chassis.id}}" data-tooltip="Supprimer"><i
-                                class="fas fa-trash"></i></a>
-                        {{/if}}
-                    </div>
-                </div>
-                {{{chassis.descriptionhtml}}}
-                <div class="extensions-block" data-chassis="{{chassis.id}}">
-                    {{#each ../extensions as |extension id|}}
-                    {{#ife extension.system.chassisId chassis.id}}
-                    <div class="extensioncontenu bordvert" data-chassis="{{../chassis.id}}">
-                        <div class="nameline">
-                            <div>{{extension.name}}</div>
-                            <div class="icon-group">
-                                <a class="item-control item-remove" data-field="{{extension.id}}"
-                                    data-tooltip="Enlever du chassis"><i class="fas fa-arrow-up-from-bracket"></i></a>
-                                <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i
-                                        class="fas fa-cog"></i></a>
-                                {{#if ../unlocked}}
-                                <a class="item-control item-delete" data-field="{{extension.id}}"
-                                    data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
-                                {{/if}}
-                            </div>
-                        </div>
-                        <details>
-                            <summary style="text-align:center;">Description</summary>
-                            <p>Déclenchement : {{extension.system.type}} - Coût en énergie:
-                                {{extension.system.coutenergie.label}}</p>{{{extension.system.descriptionhtml}}}
-                        </details>
-                    </div>
-                    {{/ife}}
-                    {{/each}}
-                    {{#each ../armes as |extension id|}}
-                    {{#ife extension.system.chassisId chassis.id}}
-                    <div class="extensioncontenu bordrouge" data-chassis="{{../chassis.id}}">
-                        <div class="nameline">
-                            <div>{{extension.name}}</div>
-                            <div class="icon-group">
-                                <a class="item-control item-remove" data-field="{{extension.id}}"
-                                    data-tooltip="Enlever du chassis"><i class="fas fa-arrow-up-from-bracket"></i></a>
-                                <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i
-                                        class="fas fa-cog"></i></a>
-                                {{#if ../unlocked}}
-                                <a class="item-control item-delete" data-field="{{extension.id}}"
-                                    data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
-                                {{/if}}
-                            </div>
-                        </div>
-                        <details>
-                            <summary style="text-align:center;">Description</summary>
-                            <p>Déclenchement : {{extension.system.type}} - Coût en énergie:
-                                {{extension.system.coutenergie.label}}</p>{{{extension.system.descriptionhtml}}}
-                        </details>
-                    </div>
-                    {{/ife}}
-                    {{/each}}
-                    {{#if ../unlocked}}
-                    <p class="zonededrop" data-chassis="{{chassis.id}}">Glissez-déposez les extensions ici<br />pour les
-                        inclure dans le chassis.</p>
-                    {{/if}}
-                </div>
-            </div>
-            <div class="lignejaune"></div>
-            {{/if}}
-        {{/each}}
-        <div class="chassisbloc">
-            <div class="chassis-title">Extensions non installées</div>
-            <div class="extensions-block">
-                {{#each extensions as |extension id|}}
-                {{#ife extension.system.chassisId ""}}
-                <div class="extensioncontenu bordvert draggable item" data-item-id="{{_id}}">
-                    <div class="nameline">
-                        <div>{{extension.name}}</div>
-                        <div class="icon-group">
-                            <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i
-                                    class="fas fa-cog"></i></a>
-                            {{#if ../unlocked}}
-                            <a class="item-control item-delete" data-field="{{extension.id}}"
-                                data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
-                            {{/if}}
-                        </div>
-                    </div>
-                    <details>
-                        <summary style="text-align:center;">Description</summary>
-                        <p>Déclenchement : {{extension.system.type}} - Coût en énergie:
-                            {{extension.system.coutenergie.label}}</p>{{{extension.system.descriptionhtml}}}
-                    </details>
-                </div>
-                {{/ife}}
-                {{/each}}
-                {{#each armes as |extension id|}}
-                {{#ife extension.system.chassisId ""}}
-                <div class="extensioncontenu bordrouge draggable item" data-item-id="{{_id}}">
-                    <div class="nameline">
-                        <div>{{extension.name}}</div>
-                        <div class="icon-group">
-                            <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i
-                                    class="fas fa-cog"></i></a>
-                            {{#if ../unlocked}}
-                            <a class="item-control item-delete" data-field="{{extension.id}}"
-                                data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
-                            {{/if}}
-                        </div>
-                    </div>
-                    <details>
-                        <summary style="text-align:center;">Description</summary>
-                        <p>Déclenchement : {{extension.system.type}} - Coût en énergie:
-                            {{extension.system.coutenergie.label}}</p>{{{extension.system.descriptionhtml}}}
-                    </details>
-                </div>
-                {{/ife}}
-                {{/each}}
-            </div>
-        </div>
+      </div>
     </div>
+    {{/if}} {{/each}}
+    <div class="lignejaune"></div>
+    <div class="chassis-title">Chassis non utilisés</div>
+    <div class="lignejaune"></div>
+    {{#each stockchassis as |chassis index|}} {{#ifn chassis.system.estActif}}
+    <div class="chassisbloc" data-chassis="{{chassis.id}}">
+      <div class="chassis-block-name">
+        <div class="chassisname">{{chassis.name}}</div>
+        <div>Slots libres: {{{chassis.system.nbslotsLibres}}} / {{chassis.system.nbslotsTotal}}</div>
+        <div class="icon-group">
+          <a class="item-control item-activer" data-field="{{chassis.id}}" data-tooltip="Activer"><i class="fas fa-microchip"></i></a
+          ><a class="item-control item-edit" data-field="{{chassis.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
+          {{#if ../unlocked}}
+          <a class="item-control item-delete" data-field="{{chassis.id}}" data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+          {{/if}}
+        </div>
+      </div>
+      <details>
+        <summary style="text-align: center">Description</summary>
+        {{{chassis.system.descriptionhtml}}}
+      </details>
+      <div class="extensions-block" data-chassis="{{chassis.id}}">
+        {{#each ../extensions as |extension id|}} {{#ife extension.system.chassisId chassis.id}}
+        <div class="extensioncontenu bordvert" data-chassis="{{../chassis.id}}">
+          <div class="nameline">
+            <div>{{extension.name}}</div>
+            <div class="icon-group">
+              <a class="item-control item-remove" data-field="{{extension.id}}" data-tooltip="Enlever du chassis"><i class="fas fa-arrow-up-from-bracket"></i></a>
+              <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
+              {{#if ../unlocked}}
+              <a class="item-control item-delete" data-field="{{extension.id}}" data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+              {{/if}}
+            </div>
+          </div>
+          <details>
+            <summary style="text-align: center">Description</summary>
+            <p>Déclenchement : {{extension.system.type}} - Coût en énergie: {{extension.system.coutenergie.label}}</p>
+            {{{extension.system.descriptionhtml}}}
+          </details>
+        </div>
+        {{/ife}} {{/each}} {{#each ../armes as |extension id|}} {{#ife extension.system.chassisId chassis.id}}
+        <div class="extensioncontenu bordrouge" data-chassis="{{../chassis.id}}">
+          <div class="nameline">
+            <div>{{extension.name}}</div>
+            <div class="icon-group">
+              <a class="item-control item-remove" data-field="{{extension.id}}" data-tooltip="Enlever du chassis"><i class="fas fa-arrow-up-from-bracket"></i></a>
+              <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
+              {{#if ../unlocked}}
+              <a class="item-control item-delete" data-field="{{extension.id}}" data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+              {{/if}}
+            </div>
+          </div>
+          <details>
+            <summary style="text-align: center">Description</summary>
+            <p>Déclenchement : {{extension.system.type}} - Coût en énergie: {{extension.system.coutenergie.label}}</p>
+            <p>{{{extension.system.descriptionhtml}}}</p>
+          </details>
+        </div>
+        {{/ife}} {{/each}} {{#if ../unlocked}}
+        <p class="zonededrop" data-chassis="{{chassis.id}}">Glissez-déposez les extensions ici<br />pour les inclure dans le chassis.</p>
+        {{/if}}
+      </div>
+    </div>
+    <div class="lignejaune"></div>
+    {{/ifn}} {{/each}}
+    <div class="chassisbloc">
+      <div class="chassis-title">Extensions non installées</div>
+      <div class="extensions-block">
+        {{#each extensions as |extension id|}} {{#ife extension.system.chassisId ""}}
+        <div class="extensioncontenu bordvert draggable item" data-item-id="{{_id}}">
+          <div class="nameline">
+            <div>{{extension.name}}</div>
+            <div class="icon-group">
+              <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
+              {{#if ../unlocked}}
+              <a class="item-control item-delete" data-field="{{extension.id}}" data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+              {{/if}}
+            </div>
+          </div>
+          <details>
+            <summary style="text-align: center">Description</summary>
+            <p>Déclenchement : {{extension.system.type}} - Coût en énergie: {{extension.system.coutenergie.label}}</p>
+            {{{extension.system.descriptionhtml}}}
+          </details>
+        </div>
+        {{/ife}} {{/each}} {{#each armes as |extension id|}} {{#ife extension.system.chassisId ""}}
+        <div class="extensioncontenu bordrouge draggable item" data-item-id="{{_id}}">
+          <div class="nameline">
+            <div>{{extension.name}}</div>
+            <div class="icon-group">
+              <a class="item-control item-edit" data-field="{{extension.id}}" data-tooltip="Modifier"><i class="fas fa-cog"></i></a>
+              {{#if ../unlocked}}
+              <a class="item-control item-delete" data-field="{{extension.id}}" data-tooltip="Supprimer"><i class="fas fa-trash"></i></a>
+              {{/if}}
+            </div>
+          </div>
+          <details>
+            <summary style="text-align: center">Description</summary>
+            <p>Déclenchement : {{extension.system.type}} - Coût en énergie: {{extension.system.coutenergie.label}}</p>
+            {{{extension.system.descriptionhtml}}}
+          </details>
+        </div>
+        {{/ife}} {{/each}}
+      </div>
+    </div>
+  </div>
 </div>

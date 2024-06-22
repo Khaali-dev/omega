@@ -191,7 +191,7 @@ export class Diodes {
       const value = bag.pop(); // Lire et retirer une diode.
       const color = await this.couleur(value); // Récupérer la couleur à partir de la valeur pioché.
       this.data.diodesResult.push({ value: value, color: color });
-      console.log({ value: value, color: color });
+      //console.log({ value: value, color: color });
       this.data.diodesSorties.push(value);
       this.data.diodesParCouleur[color] += 1;
     }
@@ -261,7 +261,7 @@ export class Diodes {
         actor: this.actor?.id,
       }),
       content: html,
-      type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+      type: CONST.CHAT_MESSAGE_STYLES.OTHER,
     };
 
     // Si rollMode n'est pas défini, on prend celui par défaut (celui du chat)

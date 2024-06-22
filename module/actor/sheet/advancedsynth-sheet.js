@@ -27,13 +27,22 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
   /** @override */
   async getData(options) {
     const context = await super.getData(options);
-    const stockchassis = [];
-    for (let chassis in this.actor.system.chassis) {
-      let dupChassis = foundry.utils.duplicate(this.actor.system.chassis[chassis]);
-      stockchassis.push(dupChassis);
+    context.stockchassis = this.actor.items
+      .filter((item) => item.type == "chassis")
+      .sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
+    for (let element of context.stockchassis) {
+      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
+      element.system.nbslotsTotal = await this.actor.getNbslotsTotal(element.id);
+      element.system.nbslotsLibres = await this.actor.getNbslotsLibres(element.id);
     }
+    context.nomChassisActif = "Aucun";
+    const chassisActifId = await this.actor.getChassisActif();
+    if (chassisActifId) context.nomChassisActif = this.actor.items.get(chassisActifId).name;
+    
     context.typeSynth = game.omega.config.TYPESYNTH[this.actor.system.typeSynth];
-    context.stockchassis = stockchassis;
+    //context.stockchassis = stockchassis;
     context.logofirme = game.omega.config.FIRME[this.actor.system.firme].logoclass;
     // Ordre alphabetique
     context.armes = this.actor.items
@@ -41,12 +50,12 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
       .sort(function (a, b) {
         return a.name.localeCompare(b.name);
       });
-    context.armes.forEach(async (element) => {
+    for (let element of context.armes) {
       element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
       element.system.attacklabel = game.omega.config.ARME.TYPEPROGRAMME[element.system.typeprogramme];
       element.system.attackvalue = this.actor.system.programmes[element.system.typeprogramme].value;
       element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
-    });
+    }
 
     return context;
   }

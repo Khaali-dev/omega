@@ -40,7 +40,7 @@ export default class OmegaCombat extends Combat {
       if (!actor) return;
       let diodesResult = await actor.piocherInitiative();
       let vitesse = await actor.valeurVitesse();
-      console.log("Initiative tirée pour le combattant " + c.name + " : ", diodesResult);
+      //console.log("Initiative tirée pour le combattant " + c.name + " : ", diodesResult);
 
       let initDiodes = {
         rougeplus: 0,
