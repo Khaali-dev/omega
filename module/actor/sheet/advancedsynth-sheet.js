@@ -40,7 +40,7 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
     context.nomChassisActif = "Aucun";
     const chassisActifId = await this.actor.getChassisActif();
     if (chassisActifId) context.nomChassisActif = this.actor.items.get(chassisActifId).name;
-    
+
     context.typeSynth = game.omega.config.TYPESYNTH[this.actor.system.typeSynth];
     //context.stockchassis = stockchassis;
     context.logofirme = game.omega.config.FIRME[this.actor.system.firme].logoclass;
@@ -56,7 +56,7 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
       element.system.attackvalue = this.actor.system.programmes[element.system.typeprogramme].value;
       element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];
     }
-
+    //console.log("context", context);
     return context;
   }
 

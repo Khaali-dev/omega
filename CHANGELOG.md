@@ -1,3 +1,5 @@
+# Version 3.1.0
+- bug : armes dans l'onglet combat
 # Version 3.0.0
 - importation packs
 - bug affichage des chassis en v12.

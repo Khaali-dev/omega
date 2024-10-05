@@ -181,6 +181,7 @@ export class OmegaBaseActorSheet extends ActorSheet {
     if (target) {
       const itemData = foundry.utils.duplicate(target);
       itemData.system.chassisId = "";
+      itemData.system.estActif = false;
       return this.actor.updateEmbeddedDocuments("Item", [itemData]);
     }
   }
@@ -221,8 +222,9 @@ export class OmegaBaseActorSheet extends ActorSheet {
 
     // Get the target chassis
     if (this.actor.estAdvancedSynth()) {
-      const id = event.target.dataset.chassis;
-      const target = this.actor.items.get(id);
+      console.log("eventtar",event.target.dataset);
+      const id = event.target.closest('.chassisbloc').dataset.chassis;
+      const target = await this.actor.items.get(id);
       if (!target || target.type !== "chassis") {
         return super._onDropItem(event, data);
       } else {

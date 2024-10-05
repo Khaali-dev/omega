@@ -5,7 +5,7 @@ export default class OmegaBaseActor extends Actor {
   /** @override */
   prepareDerivedData() {
     console.log("demarrage Acteurs");
-  //  super.prepareData();
+    //  super.prepareData();
     if (this.estAdvancedSynth()) this._prepareDataAdvancedSynth();
     if (this.estSynthetique()) this._prepareDataSynthetique();
     if (this.estOrganique()) this._prepareDataOrganique();
@@ -173,7 +173,7 @@ export default class OmegaBaseActor extends Actor {
 
   async initialiserExtensions() {
     let extensionArray = [];
-    const chassisActifId = this.getChassisActif();
+    const chassisActifId = await this.getChassisActif();
     for (const [key, item] of this.items.entries()) {
       if (["extension", "arme"].includes(item.type)) {
         let itemDup = foundry.utils.duplicate(item);
@@ -208,6 +208,17 @@ export default class OmegaBaseActor extends Actor {
   }
   estVaisseau() {
     return this.type === "vaisseau";
+  }
+
+  async checkExtensionActive(extensionId) {
+    const chassisActifId = await this.getChassisActif();
+    const item = this.items.get(extensionId);
+    if (item) {
+      if (item.system.chassisId === chassisActifId) {
+        return true;
+      }
+    }
+    return false;
   }
 
   mettre_programmes_auxiliaires_au_maximum() {
@@ -403,7 +414,7 @@ export default class OmegaBaseActor extends Actor {
 
   async getNbslotsTotal(chassisId) {
     const target = await this.items.get(chassisId);
-    if (target) return (target.system.nbslots + this.system.systemesauxiliaires.slots.value);
+    if (target) return target.system.nbslots + this.system.systemesauxiliaires.slots.value;
   }
 
   async getNbslotsLibres(chassisId) {
