@@ -70,8 +70,11 @@
       "flags": {}
     }
   ],
-  "gridDistance": 1,
-  "gridUnits": "m",
+  "grid": {
+    "distance": 1.5,
+    "units": "m",
+    "type": 0
+  },
   "primaryTokenAttribute": "systemesauxiliaires.blindage",
   "initiative": "",
   "manifest": "#{MANIFEST}#",

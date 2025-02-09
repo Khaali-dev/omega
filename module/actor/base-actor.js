@@ -71,7 +71,8 @@ export default class OmegaBaseActor extends Actor {
     this.system.malusDegatsSubis = Math.min(3, this.system.systemesauxiliaires.resistancemoteur.max - this.system.systemesauxiliaires.resistancemoteur.value);
 
     //traitement du chassis
-    this.activerChassis(this.getChassisActif());
+    const chassisActifId = await this.getChassisActif();
+    this.activerChassis(chassisActifId);
     /*
     this.system.chassis = {};
     this.system.chassisActif = {};
@@ -174,6 +175,7 @@ export default class OmegaBaseActor extends Actor {
   async initialiserExtensions() {
     let extensionArray = [];
     const chassisActifId = await this.getChassisActif();
+    // activer uniquement les extensions du chassis actif
     for (const [key, item] of this.items.entries()) {
       if (["extension", "arme"].includes(item.type)) {
         let itemDup = foundry.utils.duplicate(item);
@@ -182,10 +184,10 @@ export default class OmegaBaseActor extends Actor {
           if (chassis) {
             if (item.system.chassisId === chassisActifId) {
               itemDup.system.estActif = true;
+              this._bonusEffets(itemDup);
             } else {
               itemDup.system.estActif = false;
             }
-            this._bonusEffets(itemDup);
           } else {
             itemDup.system.chassisId = "";
             itemDup.system.estActif = false;
@@ -388,6 +390,7 @@ export default class OmegaBaseActor extends Actor {
   }
 
   _bonusEffets(extension) {
+    console.log("sys",extension)
     for (let effetExtension of extension.system.effet) {
       if (typeof this["effetExtension_" + effetExtension.name] == "function") {
         this["effetExtension_" + effetExtension.name](effetExtension.options, extension.name, extension._id);

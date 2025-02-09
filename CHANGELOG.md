@@ -1,3 +1,5 @@
+# Version 3.2.0
+- bug dans l'application des bonus des chassis et extensions
 # Version 3.1.0
 - bug : armes dans l'onglet combat
 # Version 3.0.0
