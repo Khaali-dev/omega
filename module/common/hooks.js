@@ -64,8 +64,12 @@ export default function registerHooks() {
   });
 
   Hooks.on("renderChatMessage", (message, html, data) => {
+    console.log("hook renderChatMessage", html);
+
+
     html.find(".repiocher").click((ev) => reroll(ev, data.message));
   });
+
 
   function reroll(eventData, message) {
     // Get the message

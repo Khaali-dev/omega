@@ -63,40 +63,36 @@ Hooks.on("init", () => {
 });
 
 async function initControlButtons() {
-  CONFIG.Canvas.layers.omega = { layerClass: ControlsLayer, group: "primary" };
-
-  Hooks.on("getSceneControlButtons", (btns) => {
-    let menu = [];
-
-    menu.push(
-      {
-        name: "piocherdiodes",
-        title: "Piocher des diodes",
-        icon: "fas fa-sack",
-        button: true,
-        onClick: () => {
-          let data = {};
-          let diodes = new Diodes(undefined, ROLL_TYPE.SIMPLE, undefined, data);
-          diodes.openDialog();
+  Hooks.on("getSceneControlButtons", (controls) => {
+    if (game.user.isGM) {
+      controls.omega = {
+        name: "omega",
+        title: "Oméga",
+        icon: "fas fa-microchip",
+        tools: {
+          piocherdiodes: {
+            name: "piocherdiodes",
+            title: "Piocher des diodes",
+            icon: "fas fa-sack",
+            onChange: (event, active) => {
+              let data = {};
+              let diodes = new Diodes(undefined, ROLL_TYPE.SIMPLE, undefined, data);
+              diodes.openDialog();
+            },
+            button: true,
+          },
+          aides: {
+            name: "aides",
+            title: "Règles",
+            icon: "fas fa-book-reader",
+            button: true,
+            onChange: (event, active) => {
+              let journal = game.journal.get("G2bbpAMYnMOn1yma");
+              if (journal) journal.sheet.render(true, { pageId: "cZQwHDWFAcWywTUz", sheetMode: "text" });
+            },
+          },
         },
-      },
-      {
-        name: "aides",
-        title: "Règles",
-        icon: "fas fa-book-reader",
-        button: true,
-        onClick: () => {
-          let journal = game.journal.get("G2bbpAMYnMOn1yma");
-          if (journal) journal.sheet.render(true, { pageId: "cZQwHDWFAcWywTUz", sheetMode: "text" });
-        },
-      }
-    );
-    btns.push({
-      name: "omega",
-      title: "Oméga",
-      icon: "fas fa-microchip",
-      layer: "omega",
-      tools: menu,
-    });
+      };
+    }
   });
 }

@@ -390,7 +390,6 @@ export default class OmegaBaseActor extends Actor {
   }
 
   _bonusEffets(extension) {
-    console.log("sys",extension)
     for (let effetExtension of extension.system.effet) {
       if (typeof this["effetExtension_" + effetExtension.name] == "function") {
         this["effetExtension_" + effetExtension.name](effetExtension.options, extension.name, extension._id);
