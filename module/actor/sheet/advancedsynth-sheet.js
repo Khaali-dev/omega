@@ -33,7 +33,7 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
         return a.name.localeCompare(b.name);
       });
     for (let element of context.stockchassis) {
-      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
+      element.system.descriptionhtml = await foundry.applications.ux.TextEditor.implementation.enrichHTML(element.system.description, { async: false });
       element.system.nbslotsTotal = await this.actor.getNbslotsTotal(element.id);
       element.system.nbslotsLibres = await this.actor.getNbslotsLibres(element.id);
     }
@@ -51,7 +51,7 @@ export default class AdvancedSynthSheet extends OmegaBaseActorSheet {
         return a.name.localeCompare(b.name);
       });
     for (let element of context.armes) {
-      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
+      element.system.descriptionhtml = await foundry.applications.ux.TextEditor.implementation.enrichHTML(element.system.description, { async: false });
       element.system.attacklabel = game.omega.config.ARME.TYPEPROGRAMME[element.system.typeprogramme];
       element.system.attackvalue = this.actor.system.programmes[element.system.typeprogramme].value;
       element.system.technologielabel = game.omega.config.ARME.TECHNOLOGIE[element.system.technologie];

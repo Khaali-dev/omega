@@ -1,4 +1,4 @@
-export class OmegaBaseActorSheet extends ActorSheet {
+export class OmegaBaseActorSheet extends foundry.appv1.sheets.ActorSheet {
   /**
    * @constructor
    * @param  {...any} args
@@ -25,17 +25,17 @@ export class OmegaBaseActorSheet extends ActorSheet {
         return a.name.localeCompare(b.name);
       });
     context.extensions.forEach(async (element) => {
-      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
+      element.system.descriptionhtml = await foundry.applications.ux.TextEditor.implementation.enrichHTML(element.system.description, { async: false });
     });
-    context.descriptionhtml = await TextEditor.enrichHTML(this.actor.system.description, { async: false });
+    context.descriptionhtml = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.actor.system.description, { async: false });
     context.equipements = this.actor.items.filter((item) => item.type == "equipement");
     context.equipements.forEach(async (element) => {
-      element.system.descriptionhtml = await TextEditor.enrichHTML(element.system.description, { async: false });
+      element.system.descriptionhtml = await foundry.applications.ux.TextEditor.implementation.enrichHTML(element.system.description, { async: false });
     });
 
     context.unlocked = this.actor.getFlag(game.system.id, "SheetUnlocked");
     context.estAdvancedSynth = this.actor.estAdvancedSynth();
-    context.descriptionhtml = await TextEditor.enrichHTML(this.actor.system.description, { async: false });
+    context.descriptionhtml = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.actor.system.description, { async: false });
     context.system = context.actor.system;
     context.flags = context.actor.flags;
     context.ssprognonnul = [];
@@ -222,7 +222,6 @@ export class OmegaBaseActorSheet extends ActorSheet {
 
     // Get the target chassis
     if (this.actor.estAdvancedSynth()) {
-      console.log("eventtar",event.target.dataset);
       const id = event.target.closest('.chassisbloc').dataset.chassis;
       const target = await this.actor.items.get(id);
       if (!target || target.type !== "chassis") {

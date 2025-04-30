@@ -1,5 +1,5 @@
 import { OMEGA } from "../../common/config.js";
-export default class OmegaBaseItemSheet extends ItemSheet {
+export default class OmegaBaseItemSheet extends foundry.appv1.sheets.ItemSheet {
   /**
    * @constructor
    * @param  {...any} args

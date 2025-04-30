@@ -1,3 +1,5 @@
+# Version 4.0.0
+- compatibilité Foundry v13
 # Version 3.2.0
 - bug dans l'application des bonus des chassis et extensions
 # Version 3.1.0

@@ -73,25 +73,6 @@ export default class OmegaBaseActor extends Actor {
     //traitement du chassis
     const chassisActifId = await this.getChassisActif();
     this.activerChassis(chassisActifId);
-    /*
-    this.system.chassis = {};
-    this.system.chassisActif = {};
-    let chassisList = this.items.filter((item) => item.type == "chassis");
-    let chassisActif = this.items.filter((item) => item.type == "chassis" && item.system.estActif);
-    if (chassisActif.length) {
-      this.activerChassis(chassisActif[0].id);
-    }
-    for (let chassis of chassisList) {
-      this.system.chassis[chassis.id] = {
-        name: chassis.name,
-        id: chassis.id,
-        descriptionhtml: await TextEditor.enrichHTML(chassis.system.description, { async: false }),
-        estActif: chassis.system.estActif,
-        nbslotstotal: chassis.system.nbslots + this.system.systemesauxiliaires.slots.value,
-        nbslotslibres: chassis.system.nbslots + this.system.systemesauxiliaires.slots.value,
-      };
-    }
-*/
     await this.initialiserExtensions();
   }
 
@@ -390,7 +371,6 @@ export default class OmegaBaseActor extends Actor {
   }
 
   _bonusEffets(extension) {
-    console.log("sys",extension)
     for (let effetExtension of extension.system.effet) {
       if (typeof this["effetExtension_" + effetExtension.name] == "function") {
         this["effetExtension_" + effetExtension.name](effetExtension.options, extension.name, extension._id);

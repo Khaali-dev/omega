@@ -74,7 +74,7 @@ export class Diodes {
       await this.piocher();
       return await this.showResult();
     } else {
-      const html = await renderTemplate("systems/omega/templates/chat/roll-dialog.html", {
+      const html = await foundry.applications.handlebars.renderTemplate("systems/omega/templates/chat/roll-dialog.html", {
         actorname: this.data.actorname,
         program: this.program,
         type: this.rollType,
@@ -216,7 +216,7 @@ export class Diodes {
       this.resultText = "";
       let modification = {};
       for (let diodecolor of ["noire", "blanche", "verte", "bleue", "rouge"]) {
-        await setProperty(modification, "system.chance." + diodecolor, this.data.diodesParCouleur[diodecolor]);
+        await foundry.utils.setProperty(modification, "system.chance." + diodecolor, this.data.diodesParCouleur[diodecolor]);
       }
       await this.actor.update(modification);
     } else if (this.data.formulaValue === 1 && !this.isReroll) {
@@ -253,7 +253,7 @@ export class Diodes {
       armedata: armedata,
     };
 
-    const html = await renderTemplate("systems/omega/templates/chat/roll-result.html", templateData);
+    const html = await foundry.applications.handlebars.renderTemplate("systems/omega/templates/chat/roll-result.html", templateData);
     const chatData = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({
@@ -313,7 +313,7 @@ export class Diodes {
     await this.piocher();
     templateData.data = this.data;
     templateData.resultText = "Nouvelle pioche effectuée.";
-    const html = await renderTemplate("systems/omega/templates/chat/roll-result.html", templateData);
+    const html = await foundry.applications.handlebars.renderTemplate("systems/omega/templates/chat/roll-result.html", templateData);
     // Update the chat message content
     await newMessage.update({ content: html });
   }

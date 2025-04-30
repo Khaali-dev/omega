@@ -29,15 +29,15 @@ Hooks.once("init", function () {
   CONFIG.ui.combat = OmegaCombatTracker;
   CONFIG.Combatant.documentClass = OmegaCombatant;
 
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("omega", OmegaBaseItemSheet, { makeDefault: true });
+  foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
+  foundry.documents.collections.Items.registerSheet("omega", OmegaBaseItemSheet, { makeDefault: true });
   /*Items.registerSheet('omega', WeaponSheet, {label: "WeaponSheet", makeDefault: true, types: ['arme']});*/
 
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("omega", AdvancedSynthSheet, { types: ["advancedsynth"], makeDefault: true });
-  Actors.registerSheet("omega", OrganiqueSheet, { types: ["organique"], makeDefault: true });
-  Actors.registerSheet("omega", SynthetiqueSheet, { types: ["synthetique"], makeDefault: true });
-  Actors.registerSheet("omega", VaisseauSheet, { types: ["vaisseau"], makeDefault: true });
+  foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
+  foundry.documents.collections.Actors.registerSheet("omega", AdvancedSynthSheet, { types: ["advancedsynth"], makeDefault: true });
+  foundry.documents.collections.Actors.registerSheet("omega", OrganiqueSheet, { types: ["organique"], makeDefault: true });
+  foundry.documents.collections.Actors.registerSheet("omega", SynthetiqueSheet, { types: ["synthetique"], makeDefault: true });
+  foundry.documents.collections.Actors.registerSheet("omega", VaisseauSheet, { types: ["vaisseau"], makeDefault: true });
 
   game.omega = {
     config: OMEGA,
@@ -63,40 +63,36 @@ Hooks.on("init", () => {
 });
 
 async function initControlButtons() {
-  CONFIG.Canvas.layers.omega = { layerClass: ControlsLayer, group: "primary" };
-
-  Hooks.on("getSceneControlButtons", (btns) => {
-    let menu = [];
-
-    menu.push(
-      {
-        name: "piocherdiodes",
-        title: "Piocher des diodes",
-        icon: "fas fa-sack",
-        button: true,
-        onClick: () => {
-          let data = {};
-          let diodes = new Diodes(undefined, ROLL_TYPE.SIMPLE, undefined, data);
-          diodes.openDialog();
+  Hooks.on("getSceneControlButtons", (controls) => {
+    if (game.user.isGM) {
+      controls.omega = {
+        name: "omega",
+        title: "Oméga",
+        icon: "fas fa-microchip",
+        tools: {
+          piocherdiodes: {
+            name: "piocherdiodes",
+            title: "Piocher des diodes",
+            icon: "fas fa-sack",
+            onChange: (event, active) => {
+              let data = {};
+              let diodes = new Diodes(undefined, ROLL_TYPE.SIMPLE, undefined, data);
+              diodes.openDialog();
+            },
+            button: true,
+          },
+          aides: {
+            name: "aides",
+            title: "Règles",
+            icon: "fas fa-book-reader",
+            button: true,
+            onChange: (event, active) => {
+              let journal = game.journal.get("G2bbpAMYnMOn1yma");
+              if (journal) journal.sheet.render(true, { pageId: "cZQwHDWFAcWywTUz", sheetMode: "text" });
+            },
+          },
         },
-      },
-      {
-        name: "aides",
-        title: "Règles",
-        icon: "fas fa-book-reader",
-        button: true,
-        onClick: () => {
-          let journal = game.journal.get("G2bbpAMYnMOn1yma");
-          if (journal) journal.sheet.render(true, { pageId: "cZQwHDWFAcWywTUz", sheetMode: "text" });
-        },
-      }
-    );
-    btns.push({
-      name: "omega",
-      title: "Oméga",
-      icon: "fas fa-microchip",
-      layer: "omega",
-      tools: menu,
-    });
+      };
+    }
   });
 }
