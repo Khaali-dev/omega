@@ -73,25 +73,6 @@ export default class OmegaBaseActor extends Actor {
     //traitement du chassis
     const chassisActifId = await this.getChassisActif();
     this.activerChassis(chassisActifId);
-    /*
-    this.system.chassis = {};
-    this.system.chassisActif = {};
-    let chassisList = this.items.filter((item) => item.type == "chassis");
-    let chassisActif = this.items.filter((item) => item.type == "chassis" && item.system.estActif);
-    if (chassisActif.length) {
-      this.activerChassis(chassisActif[0].id);
-    }
-    for (let chassis of chassisList) {
-      this.system.chassis[chassis.id] = {
-        name: chassis.name,
-        id: chassis.id,
-        descriptionhtml: await TextEditor.enrichHTML(chassis.system.description, { async: false }),
-        estActif: chassis.system.estActif,
-        nbslotstotal: chassis.system.nbslots + this.system.systemesauxiliaires.slots.value,
-        nbslotslibres: chassis.system.nbslots + this.system.systemesauxiliaires.slots.value,
-      };
-    }
-*/
     await this.initialiserExtensions();
   }
 

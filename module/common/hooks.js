@@ -5,7 +5,7 @@ export default function registerHooks() {
     _showUserGuide();
   });
 
-  Hooks.on('preCreateActor', (document, createData, options, userid) => {
+  Hooks.on("preCreateActor", (document, createData, options, userid) => {
     if (game.user.isGM) {
       let createChanges = {};
       foundry.utils.mergeObject(createChanges, {
@@ -14,18 +14,16 @@ export default function registerHooks() {
       if (document.type === "advancedsynth") {
         createChanges.token.vision = true;
         createChanges.token.actorLink = true;
-        if (document.img === 'icons/svg/mystery-man.svg') {
-          createChanges.img = 'systems/omega/assets/image/robot.svg';
+        if (document.img === "icons/svg/mystery-man.svg") {
+          createChanges.img = "systems/omega/assets/image/robot.svg";
         }
-      }
-      else if (document.type === "synthetique") {
-        if (document.img === 'icons/svg/mystery-man.svg') {
-          createChanges.img = 'systems/omega/assets/image/robot.svg';
+      } else if (document.type === "synthetique") {
+        if (document.img === "icons/svg/mystery-man.svg") {
+          createChanges.img = "systems/omega/assets/image/robot.svg";
         }
-      }
-      else if (document.type === "vaisseau") {
-        if (document.img === 'icons/svg/mystery-man.svg') {
-          createChanges.img = 'systems/omega/assets/image/spaceship.svg';
+      } else if (document.type === "vaisseau") {
+        if (document.img === "icons/svg/mystery-man.svg") {
+          createChanges.img = "systems/omega/assets/image/spaceship.svg";
         }
       }
       document.updateSource(createChanges);
@@ -35,41 +33,38 @@ export default function registerHooks() {
     if (game.user.isGM) {
       let createChanges = {};
       if (document.type === "regroupement") {
-        if (document.img === 'icons/svg/item-bag.svg') {
-          createChanges.img = 'systems/omega/assets/image/ra.svg';
+        if (document.img === "icons/svg/item-bag.svg") {
+          createChanges.img = "systems/omega/assets/image/ra.svg";
         }
-      }
-      else if (document.type === "arme") {
-        if (document.img === 'icons/svg/item-bag.svg') {
-          createChanges.img = 'systems/omega/assets/image/arme.svg';
+      } else if (document.type === "arme") {
+        if (document.img === "icons/svg/item-bag.svg") {
+          createChanges.img = "systems/omega/assets/image/arme.svg";
         }
-      }
-      else if (document.type === "extension") {
-        if (document.img === 'icons/svg/item-bag.svg') {
-          createChanges.img = 'systems/omega/assets/image/extension.svg';
+      } else if (document.type === "extension") {
+        if (document.img === "icons/svg/item-bag.svg") {
+          createChanges.img = "systems/omega/assets/image/extension.svg";
         }
-      }
-      else if (document.type === "upgrade") {
-        if (document.img === 'icons/svg/item-bag.svg') {
-          createChanges.img = 'systems/omega/assets/image/upgrade.svg';
+      } else if (document.type === "upgrade") {
+        if (document.img === "icons/svg/item-bag.svg") {
+          createChanges.img = "systems/omega/assets/image/upgrade.svg";
         }
-      }
-      else if (document.type === "avantage") {
-        if (document.img === 'icons/svg/item-bag.svg') {
-          createChanges.img = 'systems/omega/assets/svg/avantages.svg';
+      } else if (document.type === "avantage") {
+        if (document.img === "icons/svg/item-bag.svg") {
+          createChanges.img = "systems/omega/assets/svg/avantages.svg";
         }
       }
       document.update(createChanges);
     }
   });
 
-  Hooks.on("renderChatMessage", (message, html, data) => {
-    console.log("hook renderChatMessage", html);
-
-
-    html.find(".repiocher").click((ev) => reroll(ev, data.message));
+  Hooks.on("renderChatMessageHTML", (message, html) => {
+    const actionButtons = html.querySelectorAll(".repiocher");
+    for (const actionButton of actionButtons) {
+      actionButton.addEventListener("click", async (ev) => {
+        reroll(ev, message);
+      });
+    }
   });
-
 
   function reroll(eventData, message) {
     // Get the message
@@ -80,7 +75,7 @@ export default function registerHooks() {
     if (!game.user.isGM && game.user._id !== userId) return;
 
     let flagData = newMessage.getFlag("world", "diodeData");
-    let actor=game.actors.get(flagData.actorId);
+    let actor = game.actors.get(flagData.actorId);
     let diode = new Diodes(actor, flagData.rolltype, flagData.program, flagData.data);
     diode.reroll(eventData, message);
   }

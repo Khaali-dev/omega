@@ -5,7 +5,7 @@
  */
  export default async function preloadTemplates() {
 
-    return loadTemplates([
+    return foundry.applications.handlebars.loadTemplates([
         //Actors
         "systems/omega/templates/actor/advancedsynth.html",
         "systems/omega/templates/actor/organique.html",

@@ -29,15 +29,15 @@ Hooks.once("init", function () {
   CONFIG.ui.combat = OmegaCombatTracker;
   CONFIG.Combatant.documentClass = OmegaCombatant;
 
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("omega", OmegaBaseItemSheet, { makeDefault: true });
+  foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
+  foundry.documents.collections.Items.registerSheet("omega", OmegaBaseItemSheet, { makeDefault: true });
   /*Items.registerSheet('omega', WeaponSheet, {label: "WeaponSheet", makeDefault: true, types: ['arme']});*/
 
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("omega", AdvancedSynthSheet, { types: ["advancedsynth"], makeDefault: true });
-  Actors.registerSheet("omega", OrganiqueSheet, { types: ["organique"], makeDefault: true });
-  Actors.registerSheet("omega", SynthetiqueSheet, { types: ["synthetique"], makeDefault: true });
-  Actors.registerSheet("omega", VaisseauSheet, { types: ["vaisseau"], makeDefault: true });
+  foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
+  foundry.documents.collections.Actors.registerSheet("omega", AdvancedSynthSheet, { types: ["advancedsynth"], makeDefault: true });
+  foundry.documents.collections.Actors.registerSheet("omega", OrganiqueSheet, { types: ["organique"], makeDefault: true });
+  foundry.documents.collections.Actors.registerSheet("omega", SynthetiqueSheet, { types: ["synthetique"], makeDefault: true });
+  foundry.documents.collections.Actors.registerSheet("omega", VaisseauSheet, { types: ["vaisseau"], makeDefault: true });
 
   game.omega = {
     config: OMEGA,

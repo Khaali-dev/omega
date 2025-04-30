@@ -1,4 +1,4 @@
-export default class OmegaCombatTracker extends CombatTracker {
+export default class OmegaCombatTracker extends foundry.applications.sidebar.tabs.CombatTracker {
   get template() {
     return "systems/omega/templates/combat/combat-tracker.html";
   }

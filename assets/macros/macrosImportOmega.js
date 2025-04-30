@@ -553,7 +553,7 @@ async function extractAllData(npcRawName, npcRawData, npcType, extensionRaw, des
     else if (resultData === "CYBERLIFE") system.firm = "cyberlife";
   }
 
-  setProperty(newValues, "system", system);
+  foundry.utils.setProperty(newValues, "system", system);
   let actor = await Actor.create(newValues);
   let itemArray = [];
 
