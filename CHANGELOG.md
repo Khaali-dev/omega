@@ -1,3 +1,5 @@
+# Version 4.1.0
+- Le combat tracker n'affiche pas les diodes d'initiative
 # Version 4.0.0
 - compatibilité Foundry v13
 # Version 3.2.0
