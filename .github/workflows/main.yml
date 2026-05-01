@@ -108,7 +108,7 @@ jobs:
       
       # Pull YAML to LDB packs
       - name: Build Packs
-        run: npm run pullYMLtoLDB
+        run: npm run YMLtoLDB
 
 
       # Create a "system.zip" archive containing all the module's required files.
@@ -129,11 +129,11 @@ jobs:
             README.md                            \
             LICENSE                              \
             CHANGELOG.md                         \
-            omega.css                            \
             omega.js                             \
             templates/                           \
             module/                              \
             assets/                              \
+            css/                                 \
             lang/                                \
             packs/
           # Don't forget to add a backslash at the end of the line for any
@@ -157,8 +157,8 @@ jobs:
         id: deploy_release
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://api.foundryvtt.com/_api/packages/release_version'
+          url: 'https://foundryvtt.com/_api/packages/release_version/'
           method: 'POST'
           contentType: 'application/json'
           customHeaders: '{"Authorization": "${{ secrets.FVTT_PACKAGE_RELEASE_TOKEN }}"}'
-          data: '{"id": "omega","dry-run":false,"release":{"version":"${{github.event.release.tag_name}}","manifest":"https://github.com/Khaali-dev/omega/releases/download/${{github.event.release.tag_name}}/system.json","notes":"https://github.com/Khaali-dev/omega/blob/main/CHANGELOG.md","compatibility":{"minimum":"13","verified":"13","maximum":"13"}}}'
+          data: '{"id": "omega","dry-run":false,"release":{"version":"${{github.event.release.tag_name}}","manifest":"https://github.com/Khaali-dev/omega/releases/download/${{github.event.release.tag_name}}/system.json","notes":"https://github.com/Khaali-dev/omega/blob/main/CHANGELOG.md","compatibility":{"minimum":"14","verified":"14","maximum":"14"}}}'

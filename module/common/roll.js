@@ -261,7 +261,7 @@ export class Diodes {
         actor: this.actor?.id,
       }),
       content: html,
-      type: CONST.CHAT_MESSAGE_STYLES.OTHER,
+      style: CONST.CHAT_MESSAGE_STYLES.OTHER,
     };
 
     // Si rollMode n'est pas défini, on prend celui par défaut (celui du chat)

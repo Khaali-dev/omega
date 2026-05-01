@@ -1,54 +1,54 @@
 @font-face {
   font-family: "exo2";
-  src: url("./assets/fonts/exo2regular.ttf");
+  src: url("../assets/fonts/exo2regular.ttf");
 }
 @font-face {
   font-family: "exo2";
-  src: url("./assets/fonts/exo2bold.ttf");
+  src: url("../assets/fonts/exo2bold.ttf");
   font-weight: bold;
 }
 @font-face {
   font-family: "exo2";
-  src: url("./assets/fonts/exo2italic.ttf");
+  src: url("../assets/fonts/exo2italic.ttf");
   font-style: italic;
 }
 @font-face {
   font-family: "exo2";
-  src: url("./assets/fonts/exo2bolditalic.ttf");
+  src: url("../assets/fonts/exo2bolditalic.ttf");
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: "helvetica";
-  src: url("./assets/fonts/helvetica.ttf");
+  src: url("../assets/fonts/helvetica.ttf");
 }
 @font-face {
   font-family: "helvetica";
-  src: url("./assets/fonts/helveticabold.ttf");
+  src: url("../assets/fonts/helveticabold.ttf");
   font-weight: bold;
 }
 @font-face {
   font-family: "helvetica";
-  src: url("./assets/fonts/helveticaoblique.ttf");
+  src: url("../assets/fonts/helveticaoblique.ttf");
   font-style: italic;
 }
 @font-face {
   font-family: "helvetica";
-  src: url("./assets/fonts/helveticaboldoblique.ttf");
+  src: url("../assets/fonts/helveticaboldoblique.ttf");
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: "courier";
-  src: url("./assets/fonts/courierprimeregular.ttf");
+  src: url("../assets/fonts/courierprimeregular.ttf");
 }
 @font-face {
   font-family: "frutiger";
-  src: url("./assets/fonts/frutiger.woff");
+  src: url("../assets/fonts/frutiger.woff");
 }
 @font-face {
   font-family: "frutiger";
-  src: url("./assets/fonts/frutigerbold.woff");
+  src: url("../assets/fonts/frutigerbold.woff");
   font-weight: bold;
 }
 .diode {
@@ -72,25 +72,25 @@
   margin-right: auto;
 }
 .diode-rougeplus {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_rouge_plus.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_rouge_plus.webp');
 }
 .diode-rouge {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_rouge.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_rouge.webp');
 }
 .diode-verte {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_verte.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_verte.webp');
 }
 .diode-bleue {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_bleue.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_bleue.webp');
 }
 .diode-blanche {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_blanche.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_blanche.webp');
 }
 .diode-noire {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_noire.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_noire.webp');
 }
 .diode-noiremoins {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_noire_moins.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_noire_moins.webp');
 }
 .small-input {
   width: 2em;
@@ -104,19 +104,19 @@
   background-repeat: no-repeat;
 }
 .logo_futuretechnologies {
-  background: center / contain no-repeat url('./assets/image/logo/logo_futuretechnologies.webp');
+  background: center / contain no-repeat url('../assets/image/logo/logo_futuretechnologies.webp');
 }
 .logo_earthshield {
-  background: center / contain no-repeat url('./assets/image/logo/logo_earthshield.webp');
+  background: center / contain no-repeat url('../assets/image/logo/logo_earthshield.webp');
 }
 .logo_hegemon {
-  background: center / contain no-repeat url('./assets/image/logo/logo_hegemon.webp');
+  background: center / contain no-repeat url('../assets/image/logo/logo_hegemon.webp');
 }
 .logo_cyberlife {
-  background: center / contain no-repeat url('./assets/image/logo/logo_cyberlife.webp');
+  background: center / contain no-repeat url('../assets/image/logo/logo_cyberlife.webp');
 }
 .logo_prophetiaincorporated {
-  background: center / contain no-repeat url('./assets/image/logo/logo_prophetiaincorporated.webp');
+  background: center / contain no-repeat url('../assets/image/logo/logo_prophetiaincorporated.webp');
 }
 .noover {
   overflow: hidden;
@@ -143,7 +143,7 @@
   /* Tooltip text */
 }
 .omega.sheet .window-content {
-  background: repeat url('./assets/image/feuilleperso.webp');
+  background: repeat url('../assets/image/feuilleperso.webp');
   background-color: black;
   font: 1em "helvetica";
   color: white;
@@ -201,19 +201,19 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 .omega.sheet .redline {
-  background: center / contain no-repeat url("./assets/image/lignerouge.webp");
+  background: center / contain no-repeat url("../assets/image/lignerouge.webp");
   height: 16px;
 }
 .omega.sheet .lignejaune {
-  background: center / contain no-repeat url("./assets/image/lignejaune.webp");
+  background: center / contain no-repeat url("../assets/image/lignejaune.webp");
   height: 28px;
 }
 .omega.sheet .bloodline {
-  background: center / contain no-repeat url("./assets/image/bloodline.webp");
+  background: center / contain no-repeat url("../assets/image/bloodline.webp");
   height: 28px;
 }
 .omega.sheet .spaceline {
-  background: center / contain no-repeat url("./assets/image/ligne-space.webp");
+  background: center / contain no-repeat url("../assets/image/ligne-space.webp");
   height: 28px;
 }
 .omega.sheet .tooltip .tooltiptext {
@@ -322,7 +322,7 @@
 .omega.sheet .main .central-block .stats-block .program-line .prog-value {
   width: 29px;
   height: 25px;
-  background-image: url("./assets/image/cadre1.webp");
+  background-image: url("../assets/image/cadre1.webp");
   text-align: center;
 }
 .omega.sheet .main .aux-block {
@@ -604,7 +604,7 @@
   list-style: none;
 }
 .omega.sheet.organique .window-content {
-  background: repeat url('./assets/image/fond_organique.webp');
+  background: repeat url('../assets/image/fond_organique.webp');
   background-color: black;
   font: 1em "helvetica";
   color: white;
@@ -707,7 +707,7 @@
   min-height: 10em;
 }
 .omega.sheet.vaisseau .window-content {
-  background: repeat url('./assets/image/fond_fdp_vaisseau.webp');
+  background: repeat url('../assets/image/fond_fdp_vaisseau.webp');
   background-color: black;
   font: 1em "helvetica";
   color: white;
@@ -833,6 +833,7 @@
   background-color: #f5fdfb;
   box-shadow: inset 0 0 3px black;
   height: 1.5em;
+  color: black;
 }
 .omega.sheet.item form {
   display: flex;
@@ -864,19 +865,19 @@
   white-space: normal;
 }
 .omega.sheet.item .main table .diode-rouge {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_rouge.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_rouge.webp');
 }
 .omega.sheet.item .main table .diode-verte {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_verte.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_verte.webp');
 }
 .omega.sheet.item .main table .diode-bleue {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_bleue.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_bleue.webp');
 }
 .omega.sheet.item .main table .diode-blanche {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_blanche.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_blanche.webp');
 }
 .omega.sheet.item .main table .diode-noire {
-  background: center / contain no-repeat url('./assets/image/diodes/diode_noire.webp');
+  background: center / contain no-repeat url('../assets/image/diodes/diode_noire.webp');
 }
 .omega-journal {
   background-color: #f8fcfc;
